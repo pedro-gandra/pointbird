@@ -1,0 +1,62 @@
+// Export pages
+export '/pages/app_pages/start/home_page/home_page_widget.dart'
+    show HomePageWidget;
+export '/pages/authentication/login_page/login_page_widget.dart'
+    show LoginPageWidget;
+export '/pages/authentication/create_account_page/create_account_page_widget.dart'
+    show CreateAccountPageWidget;
+export '/pages/app_pages/start/onboarding_company/onboarding_company_widget.dart'
+    show OnboardingCompanyWidget;
+export '/pages/app_pages/start/onboarding_client/onboarding_client_widget.dart'
+    show OnboardingClientWidget;
+export '/pages/app_pages/client/profile_client/profile_client_widget.dart'
+    show ProfileClientWidget;
+export '/pages/app_pages/client/home_client/home_client_widget.dart'
+    show HomeClientWidget;
+export '/pages/app_pages/company/home_company/home_company_widget.dart'
+    show HomeCompanyWidget;
+export '/pages/app_pages/client/company_view/company_view_widget.dart'
+    show CompanyViewWidget;
+export '/pages/app_pages/client/points_hub/points_hub_widget.dart'
+    show PointsHubWidget;
+export '/pages/authentication/recover_pass/recover_pass_widget.dart'
+    show RecoverPassWidget;
+export '/pages/app_pages/client/edit_profile_client/edit_profile_client_widget.dart'
+    show EditProfileClientWidget;
+export '/pages/app_pages/change_password/change_password_widget.dart'
+    show ChangePasswordWidget;
+export '/pages/app_pages/client/list_company/list_company_widget.dart'
+    show ListCompanyWidget;
+export '/pages/app_pages/client/point_statement/point_statement_widget.dart'
+    show PointStatementWidget;
+export '/pages/app_pages/client/coupon_list/coupon_list_widget.dart'
+    show CouponListWidget;
+export '/pages/app_pages/client/exchange_points/exchange_points_widget.dart'
+    show ExchangePointsWidget;
+export '/pages/app_pages/client/help_client/help_client_widget.dart'
+    show HelpClientWidget;
+export '/pages/app_pages/full_info/full_info_widget.dart' show FullInfoWidget;
+export '/pages/app_pages/send_message/send_message_widget.dart'
+    show SendMessageWidget;
+export '/pages/app_pages/company/profile_company/profile_company_widget.dart'
+    show ProfileCompanyWidget;
+export '/pages/app_pages/company/analytics/analytics_widget.dart'
+    show AnalyticsWidget;
+export '/pages/app_pages/company/help_company/help_company_widget.dart'
+    show HelpCompanyWidget;
+export '/pages/app_pages/company/create_post/create_post_widget.dart'
+    show CreatePostWidget;
+export '/pages/app_pages/company/edit_post/edit_post_widget.dart'
+    show EditPostWidget;
+export '/pages/app_pages/company/business_set/business_set_widget.dart'
+    show BusinessSetWidget;
+export '/pages/app_pages/company/tutorial/tutorial_widget.dart'
+    show TutorialWidget;
+export '/pages/app_pages/company/company_coupons/company_coupons_widget.dart'
+    show CompanyCouponsWidget;
+export '/pages/app_pages/company/stats/stats_widget.dart' show StatsWidget;
+export '/pages/app_pages/company/edit_profile_company/edit_profile_company_widget.dart'
+    show EditProfileCompanyWidget;
+export '/pages/app_pages/client/explore/explore_widget.dart' show ExploreWidget;
+export '/pages/app_pages/client/explore_company/explore_company_widget.dart'
+    show ExploreCompanyWidget;

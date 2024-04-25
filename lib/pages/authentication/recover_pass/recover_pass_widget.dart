@@ -1,11 +1,15 @@
-import '/auth/supabase_auth/auth_util.dart';
+import '/backend/schema/structs/index.dart';
+import '/backend/supabase/supabase.dart';
+import '/components/reset_pass/reset_pass_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'recover_pass_model.dart';
 export 'recover_pass_model.dart';
 
@@ -87,20 +91,21 @@ class _RecoverPassWidgetState extends State<RecoverPassWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                'Recover password',
+                                'Forgot password',
                                 style: FlutterFlowTheme.of(context)
                                     .headlineMedium
                                     .override(
                                       fontFamily: 'Poppins',
-                                      fontSize: 22.0,
+                                      fontSize: 20.0,
                                       letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w500,
                                     ),
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 10.0),
                                 child: Text(
-                                  'We will send you an email with a link to reset your password, enter the email in the field below.',
+                                  'We will send you an email with a link to log in to your account, enter the email in the field below.',
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -114,7 +119,7 @@ class _RecoverPassWidgetState extends State<RecoverPassWidget> {
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 16.0, 0.0, 0.0),
+                                    0.0, 16.0, 0.0, 4.0),
                                 child: TextFormField(
                                   controller: _model.emailTextController,
                                   focusNode: _model.emailFocusNode,
@@ -192,58 +197,131 @@ class _RecoverPassWidgetState extends State<RecoverPassWidget> {
                                       .asValidator(context),
                                 ),
                               ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 20.0, 0.0, 0.0),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    if (_model.formKey.currentState == null ||
-                                        !_model.formKey.currentState!
-                                            .validate()) {
-                                      return;
-                                    }
-                                    if (_model
-                                        .emailTextController.text.isEmpty) {
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                        SnackBar(
-                                          content: Text(
-                                            'Email required!',
-                                          ),
-                                        ),
-                                      );
-                                      return;
-                                    }
-                                    await authManager.resetPassword(
-                                      email: _model.emailTextController.text,
-                                      context: context,
-                                    );
-                                  },
-                                  text: 'Send link',
-                                  options: FFButtonOptions(
-                                    width: double.infinity,
-                                    height: 50.0,
+                              if (_model.noEmail)
+                                Align(
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                  child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryButtonText,
-                                          fontSize: 15.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                    elevation: 3.0,
-                                    borderSide: BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
+                                        0.0, 8.0, 0.0, 0.0),
+                                    child: Text(
+                                      'This email is not registered',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodySmall
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w600,
+                                          ),
                                     ),
-                                    borderRadius: BorderRadius.circular(9.0),
+                                  ),
+                                ),
+                              Builder(
+                                builder: (context) => Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 16.0, 0.0, 0.0),
+                                  child: FFButtonWidget(
+                                    onPressed: () async {
+                                      if (_model.formKey.currentState == null ||
+                                          !_model.formKey.currentState!
+                                              .validate()) {
+                                        return;
+                                      }
+                                      _model.isEmail =
+                                          await actions.isEmailRegistered(
+                                        _model.emailTextController.text,
+                                      );
+                                      if (_model.isEmail!) {
+                                        setState(() {
+                                          _model.noEmail = false;
+                                        });
+                                        await actions.resetPass(
+                                          _model.emailTextController.text,
+                                        );
+                                        setState(() {
+                                          _model.emailTextController?.clear();
+                                        });
+                                        _model.userInfo =
+                                            await actions.getUserType(
+                                          _model.emailTextController.text,
+                                        );
+                                        setState(() {
+                                          FFAppState().updateUserStruct(
+                                            (e) => e
+                                              ..type = _model.userInfo?.type
+                                              ..id = _model.userInfo?.id,
+                                          );
+                                        });
+                                        await showDialog(
+                                          context: context,
+                                          builder: (dialogContext) {
+                                            return Dialog(
+                                              elevation: 0,
+                                              insetPadding: EdgeInsets.zero,
+                                              backgroundColor:
+                                                  Colors.transparent,
+                                              alignment:
+                                                  AlignmentDirectional(0.0, 0.0)
+                                                      .resolve(
+                                                          Directionality.of(
+                                                              context)),
+                                              child: WebViewAware(
+                                                child: GestureDetector(
+                                                  onTap: () => _model
+                                                          .unfocusNode
+                                                          .canRequestFocus
+                                                      ? FocusScope.of(context)
+                                                          .requestFocus(_model
+                                                              .unfocusNode)
+                                                      : FocusScope.of(context)
+                                                          .unfocus(),
+                                                  child: ResetPassWidget(
+                                                    email: _model
+                                                        .emailTextController
+                                                        .text,
+                                                  ),
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                        ).then((value) => setState(() {}));
+                                      } else {
+                                        setState(() {
+                                          _model.noEmail = true;
+                                        });
+                                      }
+
+                                      setState(() {});
+                                    },
+                                    text: 'Send link',
+                                    options: FFButtonOptions(
+                                      width: double.infinity,
+                                      height: 47.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryButtonText,
+                                            fontSize: 14.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                      elevation: 3.0,
+                                      borderSide: BorderSide(
+                                        color: Colors.transparent,
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(9.0),
+                                    ),
                                   ),
                                 ),
                               ),

@@ -7,20 +7,12 @@ import '/flutter_flow/flutter_flow_util.dart';
 
 class UserStruct extends BaseStruct {
   UserStruct({
-    bool? isRegistration,
     String? type,
     bool? filledData,
     int? id,
-  })  : _isRegistration = isRegistration,
-        _type = type,
+  })  : _type = type,
         _filledData = filledData,
         _id = id;
-
-  // "isRegistration" field.
-  bool? _isRegistration;
-  bool get isRegistration => _isRegistration ?? false;
-  set isRegistration(bool? val) => _isRegistration = val;
-  bool hasIsRegistration() => _isRegistration != null;
 
   // "type" field.
   String? _type;
@@ -42,7 +34,6 @@ class UserStruct extends BaseStruct {
   bool hasId() => _id != null;
 
   static UserStruct fromMap(Map<String, dynamic> data) => UserStruct(
-        isRegistration: data['isRegistration'] as bool?,
         type: data['type'] as String?,
         filledData: data['filledData'] as bool?,
         id: castToType<int>(data['id']),
@@ -52,7 +43,6 @@ class UserStruct extends BaseStruct {
       data is Map ? UserStruct.fromMap(data.cast<String, dynamic>()) : null;
 
   Map<String, dynamic> toMap() => {
-        'isRegistration': _isRegistration,
         'type': _type,
         'filledData': _filledData,
         'id': _id,
@@ -60,10 +50,6 @@ class UserStruct extends BaseStruct {
 
   @override
   Map<String, dynamic> toSerializableMap() => {
-        'isRegistration': serializeParam(
-          _isRegistration,
-          ParamType.bool,
-        ),
         'type': serializeParam(
           _type,
           ParamType.String,
@@ -80,11 +66,6 @@ class UserStruct extends BaseStruct {
 
   static UserStruct fromSerializableMap(Map<String, dynamic> data) =>
       UserStruct(
-        isRegistration: deserializeParam(
-          data['isRegistration'],
-          ParamType.bool,
-          false,
-        ),
         type: deserializeParam(
           data['type'],
           ParamType.String,
@@ -108,25 +89,21 @@ class UserStruct extends BaseStruct {
   @override
   bool operator ==(Object other) {
     return other is UserStruct &&
-        isRegistration == other.isRegistration &&
         type == other.type &&
         filledData == other.filledData &&
         id == other.id;
   }
 
   @override
-  int get hashCode =>
-      const ListEquality().hash([isRegistration, type, filledData, id]);
+  int get hashCode => const ListEquality().hash([type, filledData, id]);
 }
 
 UserStruct createUserStruct({
-  bool? isRegistration,
   String? type,
   bool? filledData,
   int? id,
 }) =>
     UserStruct(
-      isRegistration: isRegistration,
       type: type,
       filledData: filledData,
       id: id,

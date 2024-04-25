@@ -11,3 +11,6 @@ export 'create_poll_options.dart' show createPollOptions;
 export 'config_points.dart' show configPoints;
 export 'get_user_id.dart' show getUserId;
 export 'explore_companies.dart' show exploreCompanies;
+export 'is_email_registered.dart' show isEmailRegistered;
+export 'sign_up.dart' show signUp;
+export 'reset_pass.dart' show resetPass;

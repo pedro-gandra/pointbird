@@ -48,6 +48,8 @@ class LoginPageModel extends FlutterFlowModel<LoginPageWidget> {
     return null;
   }
 
+  // Stores action output result for [Custom Action - isEmailRegistered] action in Button widget.
+  bool? isEmail;
   // Stores action output result for [Custom Action - getUserType] action in Button widget.
   UsersRow? userInfo;
   // Stores action output result for [Custom Action - getUserId] action in Button widget.

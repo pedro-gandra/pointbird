@@ -1,6 +1,8 @@
+import '/auth/supabase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -27,18 +29,25 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (FFAppState().user.filledData == false) {
-        if (FFAppState().user.type == 'Business') {
-          context.goNamed('OnboardingCompany');
+      _model.isEmail = await actions.isEmailRegistered(
+        currentUserEmail,
+      );
+      if (_model.isEmail!) {
+        if (FFAppState().user.filledData == false) {
+          if (FFAppState().user.type == 'Business') {
+            context.goNamed('OnboardingCompany');
+          } else {
+            context.goNamed('OnboardingClient');
+          }
         } else {
-          context.goNamed('OnboardingClient');
+          if (FFAppState().user.type == 'Business') {
+            context.goNamed('homeCompany');
+          } else {
+            context.goNamed('homeClient');
+          }
         }
       } else {
-        if (FFAppState().user.type == 'Business') {
-          context.goNamed('homeCompany');
-        } else {
-          context.goNamed('homeClient');
-        }
+        context.goNamed('accountType');
       }
     });
   }

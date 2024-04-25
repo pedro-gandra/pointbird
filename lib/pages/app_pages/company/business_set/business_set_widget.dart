@@ -1673,34 +1673,23 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                             ],
                                           ),
                                         ),
-                                        Container(
-                                          height: 39.0,
-                                          decoration: BoxDecoration(
-                                            color: Color(0xFF4F4F4F),
-                                            borderRadius:
-                                                BorderRadius.circular(0.0),
-                                          ),
-                                          alignment:
-                                              AlignmentDirectional(0.0, 0.0),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    15.0, 0.0, 15.0, 0.0),
-                                            child: Text(
-                                              '%',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Poppins',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    fontSize: 16.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                            ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  12.0, 0.0, 0.0, 0.0),
+                                          child: Text(
+                                            '%',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryText,
+                                                  fontSize: 24.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
                                           ),
                                         ),
                                       ],
@@ -1971,7 +1960,8 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                           ),
                                           child: Checkbox(
                                             value: _model.checkboxValue ??=
-                                                false,
+                                                businessSetCompaniesRow!
+                                                    .shipping!,
                                             onChanged: (newValue) async {
                                               setState(() => _model
                                                   .checkboxValue = newValue!);

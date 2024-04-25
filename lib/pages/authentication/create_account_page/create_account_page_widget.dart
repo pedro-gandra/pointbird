@@ -1,16 +1,14 @@
-import '/auth/supabase_auth/auth_util.dart';
 import '/backend/schema/structs/index.dart';
-import '/backend/supabase/supabase.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/components/verify_email/verify_email_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'create_account_page_model.dart';
 export 'create_account_page_model.dart';
 
@@ -51,8 +49,6 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -101,21 +97,22 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                'Create your account',
+                                'Create account',
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .headlineMedium
                                     .override(
                                       fontFamily: 'Poppins',
-                                      fontSize: 22.0,
+                                      fontSize: 20.0,
                                       letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w500,
                                     ),
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 16.0, 0.0, 16.0),
+                                    0.0, 16.0, 0.0, 8.0),
                                 child: Text(
-                                  'You must choose between a customer or business account. You won\'t be able to change it later.',
+                                  'Use your email and create your account in 5 minutes!',
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -394,52 +391,6 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                       .asValidator(context),
                                 ),
                               ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 16.0, 0.0, 0.0),
-                                child: FlutterFlowDropDown<String>(
-                                  controller:
-                                      _model.accountTypeValueController ??=
-                                          FormFieldController<String>(
-                                    _model.accountTypeValue ??= '',
-                                  ),
-                                  options: List<String>.from(
-                                      ['Customer', 'Business']),
-                                  optionLabels: [
-                                    'Customer account',
-                                    'Business account'
-                                  ],
-                                  onChanged: (val) => setState(
-                                      () => _model.accountTypeValue = val),
-                                  width: double.infinity,
-                                  height: 50.0,
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        fontSize: 13.0,
-                                        letterSpacing: 0.0,
-                                      ),
-                                  hintText: 'Choose account type',
-                                  fillColor: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  elevation: 2.0,
-                                  borderColor:
-                                      FlutterFlowTheme.of(context).accent1,
-                                  borderWidth: 2.0,
-                                  borderRadius: 8.0,
-                                  margin: EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 0.0, 16.0, 0.0),
-                                  hidesUnderline: true,
-                                  isOverButton: true,
-                                  isSearchable: false,
-                                  isMultiSelect: false,
-                                  labelText: '',
-                                  labelTextStyle: TextStyle(),
-                                ),
-                              ),
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -460,146 +411,190 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .error,
                                                 letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w500,
+                                                fontWeight: FontWeight.w600,
                                               ),
                                         ),
                                       ),
                                     ),
                                 ],
                               ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 16.0, 0.0, 0.0),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    if (_model.formKey.currentState == null ||
-                                        !_model.formKey.currentState!
-                                            .validate()) {
-                                      return;
-                                    }
-                                    if (_model.accountTypeValue == null) {
-                                      return;
-                                    }
-                                    if (_model.passTextController.text ==
-                                        _model.confirmPassTextController.text) {
-                                      setState(() {
-                                        _model.isPassMiss = false;
-                                      });
-                                      GoRouter.of(context).prepareAuthEvent();
-                                      if (_model.passTextController.text !=
+                              if (_model.isEmailRegistered)
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Align(
+                                      alignment:
+                                          AlignmentDirectional(-1.0, 0.0),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 16.0, 0.0, 0.0),
+                                        child: Text(
+                                          'This email is already in use',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodySmall
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .error,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              if (_model.signUpRes)
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Align(
+                                      alignment:
+                                          AlignmentDirectional(-1.0, 0.0),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 16.0, 0.0, 0.0),
+                                        child: Text(
+                                          _model.signUp!.message,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodySmall
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    _model.signUp?.color ==
+                                                            'success'
+                                                        ? FlutterFlowTheme.of(
+                                                                context)
+                                                            .accent4
+                                                        : FlutterFlowTheme.of(
+                                                                context)
+                                                            .error,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              Builder(
+                                builder: (context) => Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 22.0, 0.0, 0.0),
+                                  child: FFButtonWidget(
+                                    onPressed: () async {
+                                      if (_model.formKey.currentState == null ||
+                                          !_model.formKey.currentState!
+                                              .validate()) {
+                                        return;
+                                      }
+                                      if (_model.passTextController.text ==
                                           _model
                                               .confirmPassTextController.text) {
-                                        ScaffoldMessenger.of(context)
-                                            .showSnackBar(
-                                          SnackBar(
-                                            content: Text(
-                                              'Passwords don\'t match!',
-                                            ),
-                                          ),
-                                        );
-                                        return;
-                                      }
-
-                                      final user = await authManager
-                                          .createAccountWithEmail(
-                                        context,
-                                        _model.emailTextController.text,
-                                        _model.passTextController.text,
-                                      );
-                                      if (user == null) {
-                                        return;
-                                      }
-
-                                      setState(() {
-                                        FFAppState().updateUserStruct(
-                                          (e) => e
-                                            ..isRegistration = true
-                                            ..type = _model.accountTypeValue
-                                            ..filledData = false,
-                                        );
-                                      });
-                                      if (FFAppState().user.isRegistration ==
-                                          true) {
-                                        await UsersTable().insert({
-                                          'email': currentUserEmail,
-                                          'user_id': currentUserUid,
-                                          'type': FFAppState().user.type,
+                                        setState(() {
+                                          _model.isPassMiss = false;
                                         });
-                                        if (FFAppState().user.type ==
-                                            'Business') {
-                                          await CompaniesTable().insert({
-                                            'email': currentUserEmail,
-                                          });
-                                        } else {
-                                          await ClientsTable().insert({
-                                            'email': currentUserEmail,
-                                          });
-                                        }
-
-                                        _model.userId = await actions.getUserId(
-                                          FFAppState().user.type,
-                                          currentUserEmail,
+                                        _model.isEmail =
+                                            await actions.isEmailRegistered(
+                                          _model.emailTextController.text,
                                         );
                                         setState(() {
-                                          FFAppState().updateUserStruct(
-                                            (e) => e
-                                              ..isRegistration = false
-                                              ..id = _model.userId,
+                                          _model.isEmailRegistered =
+                                              _model.isEmail!;
+                                        });
+                                        if (!_model.isEmailRegistered) {
+                                          _model.signUp = await actions.signUp(
+                                            _model.emailTextController.text,
+                                            _model.passTextController.text,
                                           );
+                                          setState(() {
+                                            _model.signUpRes = true;
+                                          });
+                                          await Future.delayed(const Duration(
+                                              milliseconds: 500));
+                                          if (_model.signUp?.color ==
+                                              'success') {
+                                            await showDialog(
+                                              context: context,
+                                              builder: (dialogContext) {
+                                                return Dialog(
+                                                  elevation: 0,
+                                                  insetPadding: EdgeInsets.zero,
+                                                  backgroundColor:
+                                                      Colors.transparent,
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                              0.0, 0.0)
+                                                          .resolve(
+                                                              Directionality.of(
+                                                                  context)),
+                                                  child: WebViewAware(
+                                                    child: GestureDetector(
+                                                      onTap: () => _model
+                                                              .unfocusNode
+                                                              .canRequestFocus
+                                                          ? FocusScope.of(
+                                                                  context)
+                                                              .requestFocus(_model
+                                                                  .unfocusNode)
+                                                          : FocusScope.of(
+                                                                  context)
+                                                              .unfocus(),
+                                                      child: VerifyEmailWidget(
+                                                        email: _model
+                                                            .emailTextController
+                                                            .text,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                );
+                                              },
+                                            ).then((value) => setState(() {}));
+                                          }
+                                        }
+                                      } else {
+                                        setState(() {
+                                          _model.isPassMiss = true;
                                         });
                                       }
-                                      if (FFAppState().user.filledData ==
-                                          false) {
-                                        if (FFAppState().user.type ==
-                                            'Business') {
-                                          context.goNamedAuth(
-                                              'OnboardingCompany',
-                                              context.mounted);
-                                        } else {
-                                          context.goNamedAuth(
-                                              'OnboardingClient',
-                                              context.mounted);
-                                        }
-                                      }
-                                    } else {
-                                      setState(() {
-                                        _model.isPassMiss = true;
-                                      });
-                                    }
 
-                                    setState(() {});
-                                  },
-                                  text: 'Create Account',
-                                  options: FFButtonOptions(
-                                    width: double.infinity,
-                                    height: 50.0,
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 0.0, 0.0, 0.0),
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryButtonText,
-                                          fontSize: 15.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                    elevation: 3.0,
-                                    borderSide: BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1.0,
+                                      setState(() {});
+                                    },
+                                    text: 'Create Account',
+                                    options: FFButtonOptions(
+                                      width: double.infinity,
+                                      height: 47.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryButtonText,
+                                            fontSize: 14.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                      elevation: 3.0,
+                                      borderSide: BorderSide(
+                                        color: Colors.transparent,
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(9.0),
                                     ),
-                                    borderRadius: BorderRadius.circular(9.0),
                                   ),
                                 ),
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 16.0, 0.0, 0.0),
+                                    0.0, 22.0, 0.0, 0.0),
                                 child: RichText(
                                   textScaler: MediaQuery.of(context).textScaler,
                                   text: TextSpan(

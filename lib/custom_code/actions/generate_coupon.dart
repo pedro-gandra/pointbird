@@ -11,15 +11,31 @@ import 'package:flutter/material.dart';
 
 import 'dart:math';
 
-Future<bool> generateCoupon(
+Future<ActionResponseStruct> generateCoupon(
   int idReference,
   int points,
   double minimum,
   double value,
+  int idClient,
 ) async {
   // Add your function code here!
   final supabase = SupaFlow.client;
   final now = DateTime.now().toUtc();
+  ActionResponseStruct actionResponse = new ActionResponseStruct();
+
+  final planRes = await supabase
+      .from('view_clients_plans')
+      .select('*')
+      .eq('id_client', idClient);
+
+  if (planRes[0]["coupons"] >= planRes[0]["limit_coupons"]) {
+    actionResponse.idPlan = planRes[0]["id_plan"];
+    actionResponse.failDesc = "coupon limit";
+    actionResponse.message = "You can only generate " +
+        planRes[0]["limit_coupons"].toString() +
+        " coupons per month in your current plan. Upgrade your plan to perform this action.";
+    return actionResponse;
+  }
 
   final expiration = now.add(Duration(days: 7));
   String sqlExpiration = expiration.toIso8601String();
@@ -47,5 +63,5 @@ Future<bool> generateCoupon(
     'purchase_min': minimum
   });
 
-  return true;
+  return actionResponse;
 }

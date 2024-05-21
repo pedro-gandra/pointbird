@@ -304,15 +304,30 @@ class _AccountTypeWidgetState extends State<AccountTypeWidget> {
                                             });
                                             if (_model.userInfo?.type ==
                                                 'Customer') {
-                                              await ClientsTable().insert({
+                                              _model.client =
+                                                  await ClientsTable().insert({
                                                 'email': currentUserEmail,
+                                              });
+                                              setState(() {
+                                                FFAppState().updateUserStruct(
+                                                  (e) =>
+                                                      e..id = _model.client?.id,
+                                                );
                                               });
 
                                               context
                                                   .goNamed('OnboardingClient');
                                             } else {
-                                              await CompaniesTable().insert({
+                                              _model.business =
+                                                  await CompaniesTable()
+                                                      .insert({
                                                 'email': currentUserEmail,
+                                              });
+                                              setState(() {
+                                                FFAppState().updateUserStruct(
+                                                  (e) => e
+                                                    ..id = _model.business?.id,
+                                                );
                                               });
 
                                               context

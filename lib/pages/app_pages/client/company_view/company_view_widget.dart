@@ -11,9 +11,11 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
+import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -65,6 +67,12 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
               'id_client',
               widget.idClient,
             ),
+      );
+      _model.planInfo = await ViewClientsPlansTable().queryRows(
+        queryFn: (q) => q.eq(
+          'id_client',
+          widget.idClient,
+        ),
       );
       setState(() {
         _model.checkInMessage =
@@ -182,11 +190,11 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                   ),
-                                  child: Image.network(
-                                    valueOrDefault<String>(
-                                      companyViewViewCompanyViewRow?.imageUrl,
-                                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/my-goals-base-project-0wt9gy/assets/msyzg7m733p5/cutf.png',
-                                    ),
+                                  child: CachedNetworkImage(
+                                    fadeInDuration: Duration(milliseconds: 0),
+                                    fadeOutDuration: Duration(milliseconds: 0),
+                                    imageUrl: companyViewViewCompanyViewRow!
+                                        .imageUrl!,
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -681,7 +689,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                               ),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 20.0, 20.0, 20.0),
+                                    20.0, 15.0, 20.0, 15.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -689,7 +697,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.start,
+                                          MainAxisAlignment.center,
                                       children: [
                                         if (companyViewViewCompanyViewRow
                                                 ?.currentPoints !=
@@ -720,16 +728,11 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                   ),
                                             ),
                                           ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  8.0, 0.0, 8.0, 0.0),
-                                          child: Icon(
-                                            Icons.arrow_right_alt_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .alternate,
-                                            size: 32.0,
-                                          ),
+                                        Icon(
+                                          Icons.arrow_right_alt_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .alternate,
+                                          size: 32.0,
                                         ),
                                         if (companyViewViewCompanyViewRow
                                                 ?.currentPoints !=
@@ -762,15 +765,15 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                   ),
                                             ),
                                           ),
-                                      ],
+                                      ].divide(SizedBox(width: 8.0)),
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 10.0, 0.0, 0.0),
+                                          0.0, 8.0, 0.0, 8.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
-                                            MainAxisAlignment.start,
+                                            MainAxisAlignment.spaceAround,
                                         children: [
                                           Opacity(
                                             opacity: _model.checkInMessage !=
@@ -860,10 +863,11 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                   size: 15.0,
                                                 ),
                                                 options: FFButtonOptions(
+                                                  width: 140.0,
                                                   height: 40.0,
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          20.0, 0.0, 20.0, 0.0),
+                                                          0.0, 0.0, 0.0, 0.0),
                                                   iconPadding:
                                                       EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
@@ -903,60 +907,53 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                               ),
                                             ),
                                           ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    20.0, 0.0, 0.0, 0.0),
-                                            child: FFButtonWidget(
-                                              onPressed: () async {
-                                                context.pushNamed(
-                                                  'exchangePoints',
-                                                  queryParameters: {
-                                                    'idReference':
-                                                        serializeParam(
-                                                      companyViewViewCompanyViewRow
-                                                          ?.idReference,
-                                                      ParamType.int,
-                                                    ),
-                                                  }.withoutNulls,
-                                                );
-                                              },
-                                              text: 'Exchange points',
-                                              icon: Icon(
-                                                Icons.monetization_on_sharp,
-                                                size: 15.0,
+                                          FFButtonWidget(
+                                            onPressed: () async {
+                                              context.pushNamed(
+                                                'exchangePoints',
+                                                queryParameters: {
+                                                  'idReference': serializeParam(
+                                                    companyViewViewCompanyViewRow
+                                                        ?.idReference,
+                                                    ParamType.int,
+                                                  ),
+                                                }.withoutNulls,
+                                              );
+                                            },
+                                            text: 'Exchange',
+                                            icon: Icon(
+                                              Icons.monetization_on_sharp,
+                                              size: 15.0,
+                                            ),
+                                            options: FFButtonOptions(
+                                              width: 140.0,
+                                              height: 40.0,
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              iconPadding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiary,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        fontSize: 13.0,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              elevation: 3.0,
+                                              borderSide: BorderSide(
+                                                color: Colors.transparent,
+                                                width: 1.0,
                                               ),
-                                              options: FFButtonOptions(
-                                                height: 40.0,
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        20.0, 0.0, 20.0, 0.0),
-                                                iconPadding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .tertiary,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                          fontSize: 13.0,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                elevation: 3.0,
-                                                borderSide: BorderSide(
-                                                  color: Colors.transparent,
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
+                                              borderRadius:
+                                                  BorderRadius.circular(8.0),
                                             ),
                                           ),
                                         ],
@@ -964,25 +961,30 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                     ),
                                     if (_model.checkInMessage != null &&
                                         _model.checkInMessage != '')
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            5.0, 15.0, 0.0, 0.0),
-                                        child: Text(
-                                          valueOrDefault<String>(
-                                            _model.checkInMessage,
-                                            'a',
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 7.0, 0.0, 0.0),
+                                          child: Text(
+                                            valueOrDefault<String>(
+                                              _model.checkInMessage,
+                                              'a',
+                                            ),
+                                            textAlign: TextAlign.start,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .alternate,
+                                                  fontSize: 12.0,
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
-                                          textAlign: TextAlign.start,
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                                fontSize: 12.0,
-                                                letterSpacing: 0.0,
-                                              ),
                                         ),
                                       ),
                                   ],
@@ -1353,124 +1355,162 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                           ],
                                                         ),
                                                       ),
-                                                      Builder(
-                                                        builder: (context) =>
-                                                            Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0,
-                                                                      7.0),
-                                                          child: InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              unawaited(
-                                                                () async {
-                                                                  await launchURL(
-                                                                      'https://${functions.replaceString('https://', '', offersViewPostsViewRow.link!)}');
-                                                                }(),
-                                                              );
-                                                              _model.actionPoints =
-                                                                  await actions
-                                                                      .postInteraction(
-                                                                offersViewPostsViewRow,
-                                                                companyViewViewCompanyViewRow!
-                                                                    .idReference!,
-                                                              );
-                                                              setState(() {
-                                                                _model
-                                                                    .clearOffersCache();
-                                                                _model.requestCompleted3 =
-                                                                    false;
-                                                              });
-                                                              await _model
-                                                                  .waitForRequestCompleted3();
-                                                              if (_model
-                                                                      .actionPoints! >
-                                                                  0) {
-                                                                setState(() =>
-                                                                    _model.requestCompleter4 =
-                                                                        null);
-                                                                await _model
-                                                                    .waitForRequestCompleted4();
-                                                                await showDialog(
-                                                                  context:
-                                                                      context,
-                                                                  builder:
-                                                                      (dialogContext) {
-                                                                    return Dialog(
-                                                                      elevation:
-                                                                          0,
-                                                                      insetPadding:
-                                                                          EdgeInsets
-                                                                              .zero,
-                                                                      backgroundColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      alignment: AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0)
-                                                                          .resolve(
-                                                                              Directionality.of(context)),
-                                                                      child:
-                                                                          WebViewAware(
-                                                                        child:
-                                                                            GestureDetector(
-                                                                          onTap: () => _model.unfocusNode.canRequestFocus
-                                                                              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-                                                                              : FocusScope.of(context).unfocus(),
-                                                                          child:
-                                                                              PointsReceivedWidget(
-                                                                            points:
-                                                                                _model.actionPoints!,
-                                                                            pointType:
-                                                                                'clicking on an offer post',
-                                                                            nameCompany:
-                                                                                companyViewViewCompanyViewRow!.name!,
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    );
-                                                                  },
-                                                                ).then((value) =>
-                                                                    setState(
-                                                                        () {}));
-                                                              }
-
-                                                              setState(() {});
-                                                            },
-                                                            child: ClipRRect(
-                                                              key: ValueKey(
-                                                                  'postExample'),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          0.0),
-                                                              child:
-                                                                  Image.network(
-                                                                key: ValueKey(
-                                                                    'postExample'),
-                                                                offersViewPostsViewRow
-                                                                    .imageUrl!,
-                                                                width: MediaQuery.sizeOf(
-                                                                            context)
-                                                                        .width *
-                                                                    1.0,
-                                                                fit:
-                                                                    BoxFit.fill,
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    3.0,
+                                                                    0.0,
+                                                                    7.0),
+                                                        child: Stack(
+                                                          children: [
+                                                            Container(
+                                                              width: MediaQuery
+                                                                          .sizeOf(
+                                                                              context)
+                                                                      .width *
+                                                                  1.0,
+                                                              height: functions.changeDouble(
+                                                                  MediaQuery.sizeOf(
+                                                                          context)
+                                                                      .width,
+                                                                  offersViewPostsViewRow
+                                                                      .imagePropotion!,
+                                                                  '/'),
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .tertiary,
                                                               ),
                                                             ),
-                                                          ),
+                                                            Builder(
+                                                              builder:
+                                                                  (context) =>
+                                                                      InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (!_model
+                                                                      .isClick) {
+                                                                    setState(
+                                                                        () {
+                                                                      _model.isClick =
+                                                                          true;
+                                                                    });
+                                                                    unawaited(
+                                                                      () async {
+                                                                        await launchURL(
+                                                                            'https://${functions.replaceString('https://', '', offersViewPostsViewRow.link!)}');
+                                                                      }(),
+                                                                    );
+                                                                    _model.actionPointsCopy =
+                                                                        await actions
+                                                                            .postInteraction(
+                                                                      offersViewPostsViewRow,
+                                                                      companyViewViewCompanyViewRow!
+                                                                          .idReference!,
+                                                                      widget
+                                                                          .idClient!,
+                                                                    );
+                                                                    setState(
+                                                                        () {
+                                                                      _model
+                                                                          .clearOffersCache();
+                                                                      _model.requestCompleted3 =
+                                                                          false;
+                                                                    });
+                                                                    await _model
+                                                                        .waitForRequestCompleted3();
+                                                                    if (_model
+                                                                            .actionPointsCopy! >
+                                                                        0) {
+                                                                      setState(() =>
+                                                                          _model.requestCompleter4 =
+                                                                              null);
+                                                                      await _model
+                                                                          .waitForRequestCompleted4();
+                                                                      await showDialog(
+                                                                        context:
+                                                                            context,
+                                                                        builder:
+                                                                            (dialogContext) {
+                                                                          return Dialog(
+                                                                            elevation:
+                                                                                0,
+                                                                            insetPadding:
+                                                                                EdgeInsets.zero,
+                                                                            backgroundColor:
+                                                                                Colors.transparent,
+                                                                            alignment:
+                                                                                AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                            child:
+                                                                                WebViewAware(
+                                                                              child: GestureDetector(
+                                                                                onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                child: PointsReceivedWidget(
+                                                                                  points: _model.actionPointsCopy!,
+                                                                                  pointType: 'clicking on an offer post',
+                                                                                  nameCompany: companyViewViewCompanyViewRow!.name!,
+                                                                                  multiplier: _model.planInfo![0].multiplier!,
+                                                                                  planName: _model.planInfo![0].namePlan!,
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          );
+                                                                        },
+                                                                      ).then((value) =>
+                                                                          setState(
+                                                                              () {}));
+                                                                    }
+                                                                    setState(
+                                                                        () {
+                                                                      _model.isClick =
+                                                                          false;
+                                                                    });
+                                                                  }
+
+                                                                  setState(
+                                                                      () {});
+                                                                },
+                                                                child:
+                                                                    ClipRRect(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              0.0),
+                                                                  child:
+                                                                      CachedNetworkImage(
+                                                                    fadeInDuration:
+                                                                        Duration(
+                                                                            milliseconds:
+                                                                                0),
+                                                                    fadeOutDuration:
+                                                                        Duration(
+                                                                            milliseconds:
+                                                                                0),
+                                                                    imageUrl:
+                                                                        offersViewPostsViewRow
+                                                                            .imageUrl!,
+                                                                    width: MediaQuery.sizeOf(context)
+                                                                            .width *
+                                                                        1.0,
+                                                                    fit: BoxFit
+                                                                        .fill,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ],
                                                         ),
                                                       ),
                                                       if (offersViewPostsViewRow
@@ -1550,15 +1590,21 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                   Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
-                                      FutureBuilder<List<ViewPostsPollRow>>(
+                                      FutureBuilder<
+                                          List<ViewPostsPollClientRow>>(
                                         future: _model
                                             .polls(
                                           requestFn: () =>
-                                              ViewPostsPollTable().queryRows(
+                                              ViewPostsPollClientTable()
+                                                  .queryRows(
                                             queryFn: (q) => q
                                                 .eq(
                                                   'id_company',
                                                   widget.idCompany,
+                                                )
+                                                .eq(
+                                                  'client_id',
+                                                  widget.idClient,
                                                 )
                                                 .order('created_at'),
                                           ),
@@ -1592,19 +1638,20 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                               ),
                                             );
                                           }
-                                          List<ViewPostsPollRow>
-                                              pollsViewPostsPollRowList =
+                                          List<ViewPostsPollClientRow>
+                                              pollsViewPostsPollClientRowList =
                                               snapshot.data!;
                                           return ListView.builder(
                                             padding: EdgeInsets.zero,
                                             primary: false,
                                             shrinkWrap: true,
                                             scrollDirection: Axis.vertical,
-                                            itemCount: pollsViewPostsPollRowList
-                                                .length,
+                                            itemCount:
+                                                pollsViewPostsPollClientRowList
+                                                    .length,
                                             itemBuilder: (context, pollsIndex) {
-                                              final pollsViewPostsPollRow =
-                                                  pollsViewPostsPollRowList[
+                                              final pollsViewPostsPollClientRow =
+                                                  pollsViewPostsPollClientRowList[
                                                       pollsIndex];
                                               return Column(
                                                 mainAxisSize: MainAxisSize.max,
@@ -1680,7 +1727,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                             Text(
                                                                           dateTimeFormat(
                                                                               'yMMMd',
-                                                                              pollsViewPostsPollRow.createdAt!),
+                                                                              pollsViewPostsPollClientRow.createdAt!),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
@@ -1691,9 +1738,9 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                               ),
                                                                         ),
                                                                       ),
-                                                                      if (pollsViewPostsPollRow.title !=
+                                                                      if (pollsViewPostsPollClientRow.title !=
                                                                               null &&
-                                                                          pollsViewPostsPollRow.title !=
+                                                                          pollsViewPostsPollClientRow.title !=
                                                                               '')
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
@@ -1706,7 +1753,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                             key:
                                                                                 ValueKey('fsafsaf'),
                                                                             valueOrDefault<String>(
-                                                                              pollsViewPostsPollRow.title,
+                                                                              pollsViewPostsPollClientRow.title,
                                                                               'This is a title',
                                                                             ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1717,9 +1764,9 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                                 ),
                                                                           ),
                                                                         ),
-                                                                      if (pollsViewPostsPollRow.desc !=
+                                                                      if (pollsViewPostsPollClientRow.desc !=
                                                                               null &&
-                                                                          pollsViewPostsPollRow.desc !=
+                                                                          pollsViewPostsPollClientRow.desc !=
                                                                               '')
                                                                         Padding(
                                                                           padding: EdgeInsetsDirectional.fromSTEB(
@@ -1743,7 +1790,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                                   children: [
                                                                                     Text(
                                                                                       valueOrDefault<String>(
-                                                                                        pollsViewPostsPollRow.desc,
+                                                                                        pollsViewPostsPollClientRow.desc,
                                                                                         'desc',
                                                                                       ),
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1791,7 +1838,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                       (context) {
                                                                     final options = functions
                                                                         .convertPollOptions(
-                                                                            pollsViewPostsPollRow.optionsInfo!)
+                                                                            pollsViewPostsPollClientRow.optionsInfo!)
                                                                         .toList();
                                                                     return Column(
                                                                       mainAxisSize:
@@ -1819,47 +1866,57 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                                 Colors.transparent,
                                                                             onTap:
                                                                                 () async {
-                                                                              if (functions.clientVoted(pollsViewPostsPollRow.optionsInfo!, widget.idClient!, pollsViewPostsPollRow.pointExpiration!).toString() == '0') {
-                                                                                if (animationsMap['containerOnActionTriggerAnimation'] != null) {
-                                                                                  await animationsMap['containerOnActionTriggerAnimation']!.controller.forward(from: 0.0).whenComplete(animationsMap['containerOnActionTriggerAnimation']!.controller.reverse);
-                                                                                }
-                                                                                _model.pointsPoll = await actions.votePoll(
-                                                                                  pollsViewPostsPollRow,
-                                                                                  widget.idClient!,
-                                                                                  companyViewViewCompanyViewRow!.idReference!,
-                                                                                  optionsItem.idOption,
-                                                                                );
-                                                                                if (_model.pointsPoll! > 0) {
-                                                                                  await showDialog(
-                                                                                    context: context,
-                                                                                    builder: (dialogContext) {
-                                                                                      return Dialog(
-                                                                                        elevation: 0,
-                                                                                        insetPadding: EdgeInsets.zero,
-                                                                                        backgroundColor: Colors.transparent,
-                                                                                        alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                        child: WebViewAware(
-                                                                                          child: GestureDetector(
-                                                                                            onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                            child: PointsReceivedWidget(
-                                                                                              points: _model.pointsPoll!,
-                                                                                              pointType: 'voting on a poll',
-                                                                                              nameCompany: companyViewViewCompanyViewRow!.name!,
+                                                                              if (!_model.isClick) {
+                                                                                setState(() {
+                                                                                  _model.isClick = true;
+                                                                                });
+                                                                                if (!pollsViewPostsPollClientRow.clientVotedAny! && !functions.dateExpired(pollsViewPostsPollClientRow.pointExpiration!)) {
+                                                                                  if (animationsMap['containerOnActionTriggerAnimation'] != null) {
+                                                                                    animationsMap['containerOnActionTriggerAnimation']!.controller.forward(from: 0.0).whenComplete(animationsMap['containerOnActionTriggerAnimation']!.controller.reverse);
+                                                                                  }
+                                                                                  _model.pointsPoll = await actions.votePoll(
+                                                                                    pollsViewPostsPollClientRow,
+                                                                                    widget.idClient!,
+                                                                                    companyViewViewCompanyViewRow!.idReference!,
+                                                                                    optionsItem.idOption,
+                                                                                  );
+                                                                                  if (_model.pointsPoll! > 0) {
+                                                                                    await showDialog(
+                                                                                      context: context,
+                                                                                      builder: (dialogContext) {
+                                                                                        return Dialog(
+                                                                                          elevation: 0,
+                                                                                          insetPadding: EdgeInsets.zero,
+                                                                                          backgroundColor: Colors.transparent,
+                                                                                          alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                          child: WebViewAware(
+                                                                                            child: GestureDetector(
+                                                                                              onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                              child: PointsReceivedWidget(
+                                                                                                points: _model.pointsPoll!,
+                                                                                                pointType: 'voting on a poll',
+                                                                                                nameCompany: companyViewViewCompanyViewRow!.name!,
+                                                                                                multiplier: _model.planInfo![0].multiplier!,
+                                                                                                planName: _model.planInfo![0].namePlan!,
+                                                                                              ),
                                                                                             ),
                                                                                           ),
-                                                                                        ),
-                                                                                      );
-                                                                                    },
-                                                                                  ).then((value) => setState(() {}));
+                                                                                        );
+                                                                                      },
+                                                                                    ).then((value) => setState(() {}));
 
-                                                                                  setState(() {
-                                                                                    _model.clearPollsCache();
-                                                                                    _model.requestCompleted2 = false;
-                                                                                  });
-                                                                                  await _model.waitForRequestCompleted2();
-                                                                                  setState(() => _model.requestCompleter4 = null);
-                                                                                  await _model.waitForRequestCompleted4();
+                                                                                    setState(() {
+                                                                                      _model.clearPollsCache();
+                                                                                      _model.requestCompleted2 = false;
+                                                                                    });
+                                                                                    await _model.waitForRequestCompleted2();
+                                                                                    setState(() => _model.requestCompleter4 = null);
+                                                                                    await _model.waitForRequestCompleted4();
+                                                                                  }
                                                                                 }
+                                                                                setState(() {
+                                                                                  _model.isClick = false;
+                                                                                });
                                                                               }
 
                                                                               setState(() {});
@@ -1870,7 +1927,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                                 color: FlutterFlowTheme.of(context).primaryBackground,
                                                                                 borderRadius: BorderRadius.circular(6.0),
                                                                                 border: Border.all(
-                                                                                  color: optionsItem.ids.contains(widget.idClient) ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).accent1,
+                                                                                  color: optionsItem.clientVoted ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).accent1,
                                                                                   width: 2.0,
                                                                                 ),
                                                                               ),
@@ -1887,21 +1944,21 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                                             optionsItem.text,
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                   fontFamily: 'Poppins',
-                                                                                                  color: optionsItem.ids.contains(widget.idClient) ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondaryText,
-                                                                                                  fontSize: optionsItem.ids.contains(widget.idClient) ? 13.0 : 12.0,
+                                                                                                  color: optionsItem.clientVoted ? FlutterFlowTheme.of(context).primary : FlutterFlowTheme.of(context).secondaryText,
+                                                                                                  fontSize: optionsItem.clientVoted ? 13.0 : 12.0,
                                                                                                   letterSpacing: 0.0,
                                                                                                   fontWeight: FontWeight.w600,
                                                                                                 ),
                                                                                           ),
                                                                                         ),
-                                                                                        if (functions.clientVoted(pollsViewPostsPollRow.optionsInfo!, widget.idClient!, pollsViewPostsPollRow.pointExpiration!).toString() != '0')
+                                                                                        if (pollsViewPostsPollClientRow.clientVotedAny! || functions.dateExpired(pollsViewPostsPollClientRow.pointExpiration!))
                                                                                           Align(
                                                                                             alignment: AlignmentDirectional(1.0, 0.0),
                                                                                             child: Padding(
                                                                                               padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
                                                                                               child: Text(
                                                                                                 formatNumber(
-                                                                                                  functions.calcVotes(pollsViewPostsPollRow.optionsInfo!, optionsItem.votes),
+                                                                                                  functions.calcVotes(pollsViewPostsPollClientRow.optionsInfo!, optionsItem.votes),
                                                                                                   formatType: FormatType.percent,
                                                                                                 ),
                                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1914,11 +1971,11 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                                               ),
                                                                                             ),
                                                                                           ),
-                                                                                        if (functions.clientVoted(pollsViewPostsPollRow.optionsInfo!, widget.idClient!, pollsViewPostsPollRow.pointExpiration!).toString() != '0')
+                                                                                        if (pollsViewPostsPollClientRow.clientVotedAny! || functions.dateExpired(pollsViewPostsPollClientRow.pointExpiration!))
                                                                                           Opacity(
                                                                                             opacity: 0.15,
                                                                                             child: LinearPercentIndicator(
-                                                                                              percent: functions.calcVotes(pollsViewPostsPollRow.optionsInfo!, optionsItem.votes),
+                                                                                              percent: functions.calcVotes(pollsViewPostsPollClientRow.optionsInfo!, optionsItem.votes),
                                                                                               lineHeight: 42.0,
                                                                                               animation: true,
                                                                                               animateFromLastPercent: true,
@@ -1945,16 +2002,11 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                 ),
                                                               ),
                                                             ),
-                                                            if (functions
-                                                                    .clientVoted(
-                                                                        pollsViewPostsPollRow
-                                                                            .optionsInfo!,
-                                                                        widget
-                                                                            .idClient!,
-                                                                        pollsViewPostsPollRow
-                                                                            .pointExpiration!)
-                                                                    .toString() ==
-                                                                '0')
+                                                            if (!pollsViewPostsPollClientRow
+                                                                    .clientVotedAny! &&
+                                                                !functions.dateExpired(
+                                                                    pollsViewPostsPollClientRow
+                                                                        .pointExpiration!))
                                                               Padding(
                                                                 padding:
                                                                     EdgeInsetsDirectional
@@ -1978,7 +2030,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                         children: [
                                                                           Text(
                                                                             'Points available: ${formatNumber(
-                                                                              pollsViewPostsPollRow.actionPoints,
+                                                                              pollsViewPostsPollClientRow.actionPoints,
                                                                               formatType: FormatType.custom,
                                                                               format: '##,###',
                                                                               locale: '',
@@ -2003,7 +2055,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                             CrossAxisAlignment.end,
                                                                         children: [
                                                                           Text(
-                                                                            'Expires in: ${dateTimeFormat('d/M/y', pollsViewPostsPollRow.pointExpiration)}',
+                                                                            'Expires in: ${dateTimeFormat('d/M/y', pollsViewPostsPollClientRow.pointExpiration)}',
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Poppins',
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
@@ -2018,16 +2070,11 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                   ],
                                                                 ),
                                                               ),
-                                                            if (functions
-                                                                    .clientVoted(
-                                                                        pollsViewPostsPollRow
-                                                                            .optionsInfo!,
-                                                                        widget
-                                                                            .idClient!,
-                                                                        pollsViewPostsPollRow
-                                                                            .pointExpiration!)
-                                                                    .toString() !=
-                                                                '0')
+                                                            if (pollsViewPostsPollClientRow
+                                                                    .clientVotedAny! ||
+                                                                functions.dateExpired(
+                                                                    pollsViewPostsPollClientRow
+                                                                        .pointExpiration!))
                                                               Padding(
                                                                 padding:
                                                                     EdgeInsetsDirectional
@@ -2051,7 +2098,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                           Text(
                                                                         'Votes: ${formatNumber(
                                                                           functions
-                                                                              .countVotes(pollsViewPostsPollRow.optionsInfo!),
+                                                                              .countVotes(pollsViewPostsPollClientRow.optionsInfo!),
                                                                           formatType:
                                                                               FormatType.custom,
                                                                           format:
@@ -2313,124 +2360,162 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                           ],
                                                         ),
                                                       ),
-                                                      Builder(
-                                                        builder: (context) =>
-                                                            Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      3.0,
-                                                                      0.0,
-                                                                      7.0),
-                                                          child: InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              unawaited(
-                                                                () async {
-                                                                  await launchURL(
-                                                                      'https://${functions.replaceString('https://', '', socialViewPostsViewRow.link!)}');
-                                                                }(),
-                                                              );
-                                                              _model.actionPointsSocial =
-                                                                  await actions
-                                                                      .postInteraction(
-                                                                socialViewPostsViewRow,
-                                                                companyViewViewCompanyViewRow!
-                                                                    .idReference!,
-                                                              );
-                                                              setState(() {
-                                                                _model
-                                                                    .clearSocialCache();
-                                                                _model.requestCompleted1 =
-                                                                    false;
-                                                              });
-                                                              await _model
-                                                                  .waitForRequestCompleted1();
-                                                              if (_model
-                                                                      .actionPointsSocial! >
-                                                                  0) {
-                                                                setState(() =>
-                                                                    _model.requestCompleter4 =
-                                                                        null);
-                                                                await _model
-                                                                    .waitForRequestCompleted4();
-                                                                await showDialog(
-                                                                  context:
-                                                                      context,
-                                                                  builder:
-                                                                      (dialogContext) {
-                                                                    return Dialog(
-                                                                      elevation:
-                                                                          0,
-                                                                      insetPadding:
-                                                                          EdgeInsets
-                                                                              .zero,
-                                                                      backgroundColor:
-                                                                          Colors
-                                                                              .transparent,
-                                                                      alignment: AlignmentDirectional(
-                                                                              0.0,
-                                                                              0.0)
-                                                                          .resolve(
-                                                                              Directionality.of(context)),
-                                                                      child:
-                                                                          WebViewAware(
-                                                                        child:
-                                                                            GestureDetector(
-                                                                          onTap: () => _model.unfocusNode.canRequestFocus
-                                                                              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-                                                                              : FocusScope.of(context).unfocus(),
-                                                                          child:
-                                                                              PointsReceivedWidget(
-                                                                            points:
-                                                                                _model.actionPointsSocial!,
-                                                                            pointType:
-                                                                                'clicking on a social post',
-                                                                            nameCompany:
-                                                                                companyViewViewCompanyViewRow!.name!,
-                                                                          ),
-                                                                        ),
-                                                                      ),
-                                                                    );
-                                                                  },
-                                                                ).then((value) =>
-                                                                    setState(
-                                                                        () {}));
-                                                              }
-
-                                                              setState(() {});
-                                                            },
-                                                            child: ClipRRect(
-                                                              key: ValueKey(
-                                                                  'postExample'),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          0.0),
-                                                              child:
-                                                                  Image.network(
-                                                                key: ValueKey(
-                                                                    'postExample'),
-                                                                socialViewPostsViewRow
-                                                                    .imageUrl!,
-                                                                width: MediaQuery.sizeOf(
-                                                                            context)
-                                                                        .width *
-                                                                    1.0,
-                                                                fit:
-                                                                    BoxFit.fill,
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    3.0,
+                                                                    0.0,
+                                                                    7.0),
+                                                        child: Stack(
+                                                          children: [
+                                                            Container(
+                                                              width: MediaQuery
+                                                                          .sizeOf(
+                                                                              context)
+                                                                      .width *
+                                                                  1.0,
+                                                              height: functions.changeDouble(
+                                                                  MediaQuery.sizeOf(
+                                                                          context)
+                                                                      .width,
+                                                                  socialViewPostsViewRow
+                                                                      .imagePropotion!,
+                                                                  '/'),
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .tertiary,
                                                               ),
                                                             ),
-                                                          ),
+                                                            Builder(
+                                                              builder:
+                                                                  (context) =>
+                                                                      InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  if (!_model
+                                                                      .isClick) {
+                                                                    setState(
+                                                                        () {
+                                                                      _model.isClick =
+                                                                          true;
+                                                                    });
+                                                                    unawaited(
+                                                                      () async {
+                                                                        await launchURL(
+                                                                            'https://${functions.replaceString('https://', '', socialViewPostsViewRow.link!)}');
+                                                                      }(),
+                                                                    );
+                                                                    _model.actionPointsSocial =
+                                                                        await actions
+                                                                            .postInteraction(
+                                                                      socialViewPostsViewRow,
+                                                                      companyViewViewCompanyViewRow!
+                                                                          .idReference!,
+                                                                      widget
+                                                                          .idClient!,
+                                                                    );
+                                                                    setState(
+                                                                        () {
+                                                                      _model
+                                                                          .clearSocialCache();
+                                                                      _model.requestCompleted1 =
+                                                                          false;
+                                                                    });
+                                                                    await _model
+                                                                        .waitForRequestCompleted1();
+                                                                    if (_model
+                                                                            .actionPointsSocial! >
+                                                                        0) {
+                                                                      setState(() =>
+                                                                          _model.requestCompleter4 =
+                                                                              null);
+                                                                      await _model
+                                                                          .waitForRequestCompleted4();
+                                                                      await showDialog(
+                                                                        context:
+                                                                            context,
+                                                                        builder:
+                                                                            (dialogContext) {
+                                                                          return Dialog(
+                                                                            elevation:
+                                                                                0,
+                                                                            insetPadding:
+                                                                                EdgeInsets.zero,
+                                                                            backgroundColor:
+                                                                                Colors.transparent,
+                                                                            alignment:
+                                                                                AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                            child:
+                                                                                WebViewAware(
+                                                                              child: GestureDetector(
+                                                                                onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                child: PointsReceivedWidget(
+                                                                                  points: _model.actionPointsSocial!,
+                                                                                  pointType: 'clicking on a social post',
+                                                                                  nameCompany: companyViewViewCompanyViewRow!.name!,
+                                                                                  multiplier: _model.planInfo![0].multiplier!,
+                                                                                  planName: _model.planInfo![0].namePlan!,
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          );
+                                                                        },
+                                                                      ).then((value) =>
+                                                                          setState(
+                                                                              () {}));
+                                                                    }
+                                                                    setState(
+                                                                        () {
+                                                                      _model.isClick =
+                                                                          false;
+                                                                    });
+                                                                  }
+
+                                                                  setState(
+                                                                      () {});
+                                                                },
+                                                                child:
+                                                                    ClipRRect(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              0.0),
+                                                                  child:
+                                                                      CachedNetworkImage(
+                                                                    fadeInDuration:
+                                                                        Duration(
+                                                                            milliseconds:
+                                                                                0),
+                                                                    fadeOutDuration:
+                                                                        Duration(
+                                                                            milliseconds:
+                                                                                0),
+                                                                    imageUrl:
+                                                                        socialViewPostsViewRow
+                                                                            .imageUrl!,
+                                                                    width: MediaQuery.sizeOf(context)
+                                                                            .width *
+                                                                        1.0,
+                                                                    fit: BoxFit
+                                                                        .fill,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ],
                                                         ),
                                                       ),
                                                       if (socialViewPostsViewRow

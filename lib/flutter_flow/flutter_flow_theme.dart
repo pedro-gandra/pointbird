@@ -141,7 +141,7 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color accent3 = const Color(0xFF000000);
   late Color accent4 = const Color(0xFF762EC2);
   late Color success = const Color(0xFF00FF00);
-  late Color warning = const Color(0xFFFFA500);
+  late Color warning = const Color(0xFFC88200);
   late Color error = const Color(0xFFFF0000);
   late Color info = const Color(0xFF8049C4);
 
@@ -315,7 +315,7 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color accent3 = const Color(0xFF000000);
   late Color accent4 = const Color(0xFF8049C4);
   late Color success = const Color(0xFF00CC00);
-  late Color warning = const Color(0xFFD49100);
+  late Color warning = const Color(0xFFDA8E02);
   late Color error = const Color(0xFFCC0000);
   late Color info = const Color(0xFF8049C4);
 

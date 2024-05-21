@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 Future<int> postInteraction(
   ViewPostsViewRow postInfo,
   int idReference,
+  int idClient,
 ) async {
   // Add your function code here!
   final supabase = SupaFlow.client;
@@ -29,5 +30,27 @@ Future<int> postInteraction(
     'id_post': idPost,
   });
 
-  return postInfo.actionPoints!;
+  String action;
+
+  if (postInfo.postType == 'Social') {
+    action = 'clicking on social';
+  } else {
+    action = 'clicking on offer';
+  }
+
+  final planRes = await supabase
+      .from('view_clients_plans')
+      .select('*')
+      .eq('id_client', idClient);
+
+  int finalPoints =
+      ((postInfo.actionPoints!) * planRes[0]["multiplier"]).toInt();
+
+  final response2 = await supabase.from('pointUpdates').insert({
+    'id_reference': idReference,
+    'pointChange': finalPoints,
+    'event': action
+  });
+
+  return finalPoints;
 }

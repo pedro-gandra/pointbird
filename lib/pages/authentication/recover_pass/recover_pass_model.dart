@@ -40,6 +40,8 @@ class RecoverPassModel extends FlutterFlowModel<RecoverPassWidget> {
   bool? isEmail;
   // Stores action output result for [Custom Action - getUserType] action in Button widget.
   UsersRow? userInfo;
+  // Stores action output result for [Custom Action - getUserId] action in Button widget.
+  int? userId;
 
   @override
   void initState(BuildContext context) {

@@ -61,7 +61,7 @@ class _TutorialPopWidgetState extends State<TutorialPopWidget> {
                 ],
                 borderRadius: BorderRadius.circular(24.0),
                 border: Border.all(
-                  color: FlutterFlowTheme.of(context).primaryBackground,
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
                   width: 1.0,
                 ),
               ),
@@ -84,25 +84,28 @@ class _TutorialPopWidgetState extends State<TutorialPopWidget> {
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  'Let\'s get started!',
-                                  textAlign: TextAlign.start,
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        fontSize: 18.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w500,
-                                      ),
+                                Align(
+                                  alignment: AlignmentDirectional(-1.0, 0.0),
+                                  child: Text(
+                                    'Let\'s get started!',
+                                    textAlign: TextAlign.start,
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          fontSize: 18.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                  ),
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 12.0, 0.0, 0.0),
                                   child: Text(
-                                    'To make sure you learn how our app works and how your business can extract the most out of it, you must complete a quick tutorial first.\n\nAfter the tutorial, all the features will be available and you will be ready to make a lot of sales!',
+                                    'To learn how our app works and how your business can extract the most out of it, you must complete a quick tutorial first.\n\nAfter the tutorial, all the features will be available!',
                                     textAlign: TextAlign.start,
                                     style: FlutterFlowTheme.of(context)
                                         .labelMedium
@@ -128,6 +131,9 @@ class _TutorialPopWidgetState extends State<TutorialPopWidget> {
                                       },
                                       text: 'See tutorial',
                                       options: FFButtonOptions(
+                                        width:
+                                            MediaQuery.sizeOf(context).width *
+                                                0.5,
                                         height: 40.0,
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             40.0, 0.0, 40.0, 0.0),

@@ -65,6 +65,7 @@ class _HelpClientWidgetState extends State<HelpClientWidget> {
                               fontFamily: 'Poppins',
                               fontSize: 13.0,
                               letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
                             ),
                       ),
                     ),

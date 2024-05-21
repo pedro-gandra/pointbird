@@ -51,23 +51,11 @@ String replaceString(
   return str.replaceAll(remove, replace);
 }
 
-int clientVoted(
-  dynamic pollOptions,
-  int idClient,
-  DateTime expiration,
+int getHeight(
+  int width,
+  double proportion,
 ) {
-  for (int i = 0; i < pollOptions.length; i++) {
-    if (pollOptions[i]["ids"] != null) {
-      for (int j = 0; j < pollOptions[i]["ids"].length; j++) {
-        if (idClient == pollOptions[i]["ids"][j]) return i + 1;
-      }
-    }
-  }
-
-  final now = DateTime.now().toUtc();
-  if (now.compareTo(expiration) > 0) return 10;
-
-  return 0;
+  return width ~/ proportion;
 }
 
 List<PollOptionStruct> convertPollOptions(dynamic pollOptions) {
@@ -76,16 +64,12 @@ List<PollOptionStruct> convertPollOptions(dynamic pollOptions) {
     PollOptionStruct item = new PollOptionStruct();
     item.text = pollOptions[i]["text"];
     item.idOption = pollOptions[i]["id_option"];
-    List<int> clients = [];
     if (pollOptions[i]["count"] != null) {
       item.votes = pollOptions[i]["count"];
-      for (int j = 0; j < pollOptions[i]["ids"].length; j++) {
-        clients.add(pollOptions[i]["ids"][j]);
-      }
     } else {
       item.votes = 0;
     }
-    item.ids = clients;
+    item.clientVoted = pollOptions[i]["client_voted"];
     list.add(item);
   }
 
@@ -183,4 +167,9 @@ double changeDouble(
   if (op == "*") return n1 * n2;
   if (op == "/") return n1 / n2;
   return 0;
+}
+
+bool dateExpired(DateTime date) {
+  final now = DateTime.now().toUtc();
+  return now.compareTo(date) > 0;
 }

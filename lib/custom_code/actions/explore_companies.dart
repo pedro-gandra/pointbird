@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
 Future<List<ViewExploreRow>> exploreCompanies(
-    String category, String country) async {
+    String category, String country, int idClient) async {
   // Add your function code here!
   final supabase = SupaFlow.client;
   final response = await supabase
@@ -18,6 +18,8 @@ Future<List<ViewExploreRow>> exploreCompanies(
       .select('*')
       .eq('name_country', country)
       .eq('name_category', category)
+      .eq('shipping', true)
+      .not('clients', 'cs', '{' + idClient.toString() + '}')
       .order('followers', ascending: false);
   ;
   List<ViewExploreRow> list = [];

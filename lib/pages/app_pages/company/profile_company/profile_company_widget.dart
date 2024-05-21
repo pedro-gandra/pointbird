@@ -4,6 +4,7 @@ import '/components/company_nav_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -123,11 +124,12 @@ class _ProfileCompanyWidgetState extends State<ProfileCompanyWidget> {
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                     ),
-                                    child: Image.network(
-                                      valueOrDefault<String>(
-                                        profileCompanyCompaniesRow?.imageUrl,
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/my-goals-base-project-0wt9gy/assets/msyzg7m733p5/cutf.png',
-                                      ),
+                                    child: CachedNetworkImage(
+                                      fadeInDuration: Duration(milliseconds: 0),
+                                      fadeOutDuration:
+                                          Duration(milliseconds: 0),
+                                      imageUrl:
+                                          profileCompanyCompaniesRow!.imageUrl!,
                                       fit: BoxFit.cover,
                                     ),
                                   ),

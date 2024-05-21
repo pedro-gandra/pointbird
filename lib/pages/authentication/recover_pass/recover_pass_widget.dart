@@ -246,11 +246,15 @@ class _RecoverPassWidgetState extends State<RecoverPassWidget> {
                                             await actions.getUserType(
                                           _model.emailTextController.text,
                                         );
+                                        _model.userId = await actions.getUserId(
+                                          _model.userInfo!.type,
+                                          _model.userInfo!.email,
+                                        );
                                         setState(() {
                                           FFAppState().updateUserStruct(
                                             (e) => e
                                               ..type = _model.userInfo?.type
-                                              ..id = _model.userInfo?.id,
+                                              ..id = _model.userId,
                                           );
                                         });
                                         await showDialog(

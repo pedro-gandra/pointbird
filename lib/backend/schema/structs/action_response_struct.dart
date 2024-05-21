@@ -12,11 +12,15 @@ class ActionResponseStruct extends BaseStruct {
     int? points,
     String? actionDesc,
     String? color,
+    String? failDesc,
+    int? idPlan,
   })  : _message = message,
         _name = name,
         _points = points,
         _actionDesc = actionDesc,
-        _color = color;
+        _color = color,
+        _failDesc = failDesc,
+        _idPlan = idPlan;
 
   // "message" field.
   String? _message;
@@ -49,6 +53,19 @@ class ActionResponseStruct extends BaseStruct {
   set color(String? val) => _color = val;
   bool hasColor() => _color != null;
 
+  // "failDesc" field.
+  String? _failDesc;
+  String get failDesc => _failDesc ?? '';
+  set failDesc(String? val) => _failDesc = val;
+  bool hasFailDesc() => _failDesc != null;
+
+  // "idPlan" field.
+  int? _idPlan;
+  int get idPlan => _idPlan ?? 0;
+  set idPlan(int? val) => _idPlan = val;
+  void incrementIdPlan(int amount) => _idPlan = idPlan + amount;
+  bool hasIdPlan() => _idPlan != null;
+
   static ActionResponseStruct fromMap(Map<String, dynamic> data) =>
       ActionResponseStruct(
         message: data['message'] as String?,
@@ -56,6 +73,8 @@ class ActionResponseStruct extends BaseStruct {
         points: castToType<int>(data['points']),
         actionDesc: data['actionDesc'] as String?,
         color: data['color'] as String?,
+        failDesc: data['failDesc'] as String?,
+        idPlan: castToType<int>(data['idPlan']),
       );
 
   static ActionResponseStruct? maybeFromMap(dynamic data) => data is Map
@@ -68,6 +87,8 @@ class ActionResponseStruct extends BaseStruct {
         'points': _points,
         'actionDesc': _actionDesc,
         'color': _color,
+        'failDesc': _failDesc,
+        'idPlan': _idPlan,
       }.withoutNulls;
 
   @override
@@ -91,6 +112,14 @@ class ActionResponseStruct extends BaseStruct {
         'color': serializeParam(
           _color,
           ParamType.String,
+        ),
+        'failDesc': serializeParam(
+          _failDesc,
+          ParamType.String,
+        ),
+        'idPlan': serializeParam(
+          _idPlan,
+          ParamType.int,
         ),
       }.withoutNulls;
 
@@ -121,6 +150,16 @@ class ActionResponseStruct extends BaseStruct {
           ParamType.String,
           false,
         ),
+        failDesc: deserializeParam(
+          data['failDesc'],
+          ParamType.String,
+          false,
+        ),
+        idPlan: deserializeParam(
+          data['idPlan'],
+          ParamType.int,
+          false,
+        ),
       );
 
   @override
@@ -133,12 +172,14 @@ class ActionResponseStruct extends BaseStruct {
         name == other.name &&
         points == other.points &&
         actionDesc == other.actionDesc &&
-        color == other.color;
+        color == other.color &&
+        failDesc == other.failDesc &&
+        idPlan == other.idPlan;
   }
 
   @override
-  int get hashCode =>
-      const ListEquality().hash([message, name, points, actionDesc, color]);
+  int get hashCode => const ListEquality()
+      .hash([message, name, points, actionDesc, color, failDesc, idPlan]);
 }
 
 ActionResponseStruct createActionResponseStruct({
@@ -147,6 +188,8 @@ ActionResponseStruct createActionResponseStruct({
   int? points,
   String? actionDesc,
   String? color,
+  String? failDesc,
+  int? idPlan,
 }) =>
     ActionResponseStruct(
       message: message,
@@ -154,4 +197,6 @@ ActionResponseStruct createActionResponseStruct({
       points: points,
       actionDesc: actionDesc,
       color: color,
+      failDesc: failDesc,
+      idPlan: idPlan,
     );

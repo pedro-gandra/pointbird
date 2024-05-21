@@ -3,6 +3,7 @@ import '/backend/supabase/supabase.dart';
 import '/components/client_nav_widget.dart';
 import '/components/points_received/points_received_widget.dart';
 import '/components/simple_header_widget.dart';
+import '/components/upgrade_error/upgrade_error_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -12,6 +13,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/request_manager.dart';
 
 import 'explore_company_widget.dart' show ExploreCompanyWidget;
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -30,8 +32,10 @@ class ExploreCompanyModel extends FlutterFlowModel<ExploreCompanyWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // Stores action output result for [Custom Action - followCompany] action in Column widget.
+  // Stores action output result for [Custom Action - followCompany] action in Button widget.
   ActionResponseStruct? followResult;
+  // Stores action output result for [Backend Call - Query Rows] action in Button widget.
+  List<ViewClientsPlansRow>? planInfo;
   // Model for simpleHeader component.
   late SimpleHeaderModel simpleHeaderModel;
   // Model for clientNav component.

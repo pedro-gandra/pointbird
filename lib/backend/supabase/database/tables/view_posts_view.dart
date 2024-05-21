@@ -42,6 +42,13 @@ class ViewPostsViewRow extends SupabaseDataRow {
   String? get imageUrl => getField<String>('imageUrl');
   set imageUrl(String? value) => setField<String>('imageUrl', value);
 
+  double? get imagePropotion => getField<double>('imagePropotion');
+  set imagePropotion(double? value) =>
+      setField<double>('imagePropotion', value);
+
+  int? get imageWidth => getField<int>('imageWidth');
+  set imageWidth(int? value) => setField<int>('imageWidth', value);
+
   DateTime? get pointExpiration => getField<DateTime>('pointExpiration');
   set pointExpiration(DateTime? value) =>
       setField<DateTime>('pointExpiration', value);

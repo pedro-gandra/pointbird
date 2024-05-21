@@ -70,7 +70,7 @@ class _InformationWidgetState extends State<InformationWidget> {
                 ],
                 borderRadius: BorderRadius.circular(24.0),
                 border: Border.all(
-                  color: FlutterFlowTheme.of(context).primaryBackground,
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
                   width: 1.0,
                 ),
               ),
@@ -170,30 +170,6 @@ class _InformationWidgetState extends State<InformationWidget> {
                             ),
                           ),
                         ],
-                      ),
-                    ),
-                  ),
-                  Opacity(
-                    opacity: 0.9,
-                    child: Align(
-                      alignment: AlignmentDirectional(1.0, -1.0),
-                      child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            0.0, 15.0, 20.0, 0.0),
-                        child: InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            Navigator.pop(context);
-                          },
-                          child: Icon(
-                            Icons.close,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            size: 24.0,
-                          ),
-                        ),
                       ),
                     ),
                   ),

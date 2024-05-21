@@ -11,16 +11,24 @@ import 'package:flutter/material.dart';
 
 Future<ClientCompaniesRow> doCheckin(ViewCompanyViewRow infoRow) async {
   // Add your function code here!
+  final supabase = SupaFlow.client;
   final checkinArray = infoRow.checkIn;
   final last = infoRow.lastCheckIn;
   int streak = infoRow.checkInStreak!;
   final idReference = infoRow.idReference;
+  final idClient = infoRow.idClient;
   final now = DateTime.now().toUtc();
 
+  final planRes = await supabase
+      .from('view_clients_plans')
+      .select('*')
+      .eq('id_client', idClient);
+
   if (last != null) {
-    if (last.year == now.year &&
-        last.month == now.month &&
-        last.day + 1 == now.day) {
+    if ((last.year == now.year &&
+            last.month == now.month &&
+            last.day + 1 == now.day) ||
+        planRes[0]["everStreak"]) {
       if (streak < checkinArray.length)
         streak = streak + 1;
       else
@@ -34,11 +42,9 @@ Future<ClientCompaniesRow> doCheckin(ViewCompanyViewRow infoRow) async {
 
   final pointValue = checkinArray[streak - 1];
 
-  final supabase = SupaFlow.client;
-
   final response1 = await supabase.from('pointUpdates').insert({
     'id_reference': idReference,
-    'pointChange': pointValue,
+    'pointChange': pointValue * planRes[0]["multiplier"],
     'event': 'check in'
   });
 

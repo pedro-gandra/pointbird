@@ -24,8 +24,8 @@ class ViewPointsHubRow extends SupabaseDataRow {
   int? get currentPoints => getField<int>('current_points');
   set currentPoints(int? value) => setField<int>('current_points', value);
 
-  int? get points7days => getField<int>('points_7days');
-  set points7days(int? value) => setField<int>('points_7days', value);
+  int? get points30days => getField<int>('points_30days');
+  set points30days(int? value) => setField<int>('points_30days', value);
 
   int? get activeCoupons => getField<int>('active_coupons');
   set activeCoupons(int? value) => setField<int>('active_coupons', value);

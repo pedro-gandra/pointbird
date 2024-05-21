@@ -1,6 +1,8 @@
+import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/coupon_gen/coupon_gen_widget.dart';
 import '/components/simple_header_widget.dart';
+import '/components/upgrade_error/upgrade_error_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -44,7 +46,7 @@ class ExchangePointsModel extends FlutterFlowModel<ExchangePointsWidget> {
   // Stores action output result for [Custom Action - checkMinimum] action in pointAmount widget.
   double? min;
   // Stores action output result for [Custom Action - generateCoupon] action in Button widget.
-  bool? gen;
+  ActionResponseStruct? genResult;
   Completer<List<ViewHomeClientRow>>? requestCompleter;
   // Model for simpleHeader component.
   late SimpleHeaderModel simpleHeaderModel;

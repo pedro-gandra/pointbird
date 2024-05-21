@@ -94,118 +94,133 @@ class _CouponGenWidgetState extends State<CouponGenWidget> {
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  'Coupon generated!',
-                                  textAlign: TextAlign.start,
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        fontSize: 18.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 12.0, 0.0, 0.0),
+                                Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Text(
-                                    'You just generated a ${formatNumber(
-                                      widget.value,
-                                      formatType: FormatType.decimal,
-                                      decimalType: DecimalType.automatic,
-                                      currency: '\$',
-                                    )} coupon for ${widget.name}.',
+                                    'Coupon generated!',
                                     textAlign: TextAlign.start,
                                     style: FlutterFlowTheme.of(context)
-                                        .labelMedium
+                                        .headlineMedium
                                         .override(
                                           fontFamily: 'Poppins',
                                           color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          fontSize: 14.0,
+                                              .primaryText,
+                                          fontSize: 18.0,
                                           letterSpacing: 0.0,
-                                          fontWeight: FontWeight.normal,
-                                          lineHeight: 1.6,
+                                          fontWeight: FontWeight.w500,
                                         ),
                                   ),
                                 ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 8.0, 0.0, 0.0),
-                                  child: Text(
-                                    'To see all your coupons, click below:',
-                                    textAlign: TextAlign.start,
-                                    style: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          fontSize: 14.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.normal,
-                                          lineHeight: 1.6,
-                                        ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 20.0, 0.0, 0.0),
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      _model.passView =
-                                          await ViewPointsHubTable().queryRows(
-                                        queryFn: (q) => q.eq(
-                                          'client_id',
-                                          widget.idClient,
-                                        ),
-                                      );
-
-                                      context.pushNamed(
-                                        'couponList',
-                                        queryParameters: {
-                                          'generalInfo': serializeParam(
-                                            _model.passView?[0],
-                                            ParamType.SupabaseRow,
-                                          ),
-                                          'idClient': serializeParam(
-                                            widget.idClient,
-                                            ParamType.int,
-                                          ),
-                                        }.withoutNulls,
-                                      );
-
-                                      setState(() {});
-                                    },
-                                    text: 'My coupons',
-                                    options: FFButtonOptions(
-                                      height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          40.0, 0.0, 40.0, 0.0),
-                                      iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .bodyLarge
+                                Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 12.0, 0.0, 0.0),
+                                    child: Text(
+                                      'You just generated a ${formatNumber(
+                                        widget.value,
+                                        formatType: FormatType.decimal,
+                                        decimalType: DecimalType.automatic,
+                                        currency: '\$',
+                                      )} coupon for ${widget.name}.',
+                                      textAlign: TextAlign.start,
+                                      style: FlutterFlowTheme.of(context)
+                                          .labelMedium
                                           .override(
                                             fontFamily: 'Poppins',
                                             color: FlutterFlowTheme.of(context)
-                                                .alternate,
+                                                .secondaryText,
                                             fontSize: 14.0,
                                             letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
+                                            fontWeight: FontWeight.normal,
+                                            lineHeight: 1.6,
                                           ),
-                                      elevation: 0.0,
-                                      borderSide: BorderSide(
+                                    ),
+                                  ),
+                                ),
+                                Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 8.0, 0.0, 0.0),
+                                    child: Text(
+                                      'To see all your coupons, click below:',
+                                      textAlign: TextAlign.start,
+                                      style: FlutterFlowTheme.of(context)
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            fontSize: 14.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.normal,
+                                            lineHeight: 1.6,
+                                          ),
+                                    ),
+                                  ),
+                                ),
+                                Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 20.0, 0.0, 0.0),
+                                    child: FFButtonWidget(
+                                      onPressed: () async {
+                                        _model.passView =
+                                            await ViewPointsHubTable()
+                                                .queryRows(
+                                          queryFn: (q) => q.eq(
+                                            'client_id',
+                                            widget.idClient,
+                                          ),
+                                        );
+
+                                        context.pushNamed(
+                                          'couponList',
+                                          queryParameters: {
+                                            'generalInfo': serializeParam(
+                                              _model.passView?[0],
+                                              ParamType.SupabaseRow,
+                                            ),
+                                            'idClient': serializeParam(
+                                              widget.idClient,
+                                              ParamType.int,
+                                            ),
+                                          }.withoutNulls,
+                                        );
+
+                                        setState(() {});
+                                      },
+                                      text: 'My coupons',
+                                      options: FFButtonOptions(
+                                        height: 40.0,
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            40.0, 0.0, 40.0, 0.0),
+                                        iconPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .bodyLarge
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                              fontSize: 14.0,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                        elevation: 0.0,
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(10.0),
                                       ),
-                                      borderRadius: BorderRadius.circular(10.0),
                                     ),
                                   ),
                                 ),
@@ -213,30 +228,6 @@ class _CouponGenWidgetState extends State<CouponGenWidget> {
                             ),
                           ),
                         ],
-                      ),
-                    ),
-                  ),
-                  Opacity(
-                    opacity: 0.9,
-                    child: Align(
-                      alignment: AlignmentDirectional(1.0, -1.0),
-                      child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            0.0, 15.0, 25.0, 0.0),
-                        child: InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            Navigator.pop(context);
-                          },
-                          child: Icon(
-                            Icons.close,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            size: 24.0,
-                          ),
-                        ),
                       ),
                     ),
                   ),

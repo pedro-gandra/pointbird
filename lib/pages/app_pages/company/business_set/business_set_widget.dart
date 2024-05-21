@@ -1,6 +1,7 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/lil_explanation/lil_explanation_widget.dart';
 import '/components/simple_header_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -9,11 +10,14 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'business_set_model.dart';
 export 'business_set_model.dart';
 
@@ -144,7 +148,7 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                       Container(
                                         width:
                                             MediaQuery.sizeOf(context).width *
-                                                0.35,
+                                                0.3,
                                         child: TextFormField(
                                           controller:
                                               _model.initialTextController ??=
@@ -227,7 +231,7 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                             ),
                                             contentPadding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    15.0, 14.0, 15.0, 14.0),
+                                                    15.0, 11.0, 15.0, 11.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -236,7 +240,7 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
-                                                fontSize: 14.0,
+                                                fontSize: 15.0,
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -301,25 +305,97 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                       ),
                                     ),
                                   ),
-                                  Align(
-                                    alignment: AlignmentDirectional(-1.0, 0.0),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          4.0, 15.0, 0.0, 0.0),
-                                      child: Text(
-                                        'Check in rewards',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 15.0, 0.0, 3.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(-1.0, 0.0),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    4.0, 0.0, 0.0, 0.0),
+                                            child: Text(
+                                              'Check in rewards',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    fontSize: 14.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                            ),
+                                          ),
+                                        ),
+                                        Builder(
+                                          builder: (context) => InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
+                                            onTap: () async {
+                                              await showAlignedDialog(
+                                                context: context,
+                                                isGlobal: false,
+                                                avoidOverflow: true,
+                                                targetAnchor:
+                                                    AlignmentDirectional(
+                                                            0.0, 0.0)
+                                                        .resolve(
+                                                            Directionality.of(
+                                                                context)),
+                                                followerAnchor:
+                                                    AlignmentDirectional(
+                                                            0.0, 0.0)
+                                                        .resolve(
+                                                            Directionality.of(
+                                                                context)),
+                                                builder: (dialogContext) {
+                                                  return Material(
+                                                    color: Colors.transparent,
+                                                    child: WebViewAware(
+                                                      child: GestureDetector(
+                                                        onTap: () => _model
+                                                                .unfocusNode
+                                                                .canRequestFocus
+                                                            ? FocusScope.of(
+                                                                    context)
+                                                                .requestFocus(_model
+                                                                    .unfocusNode)
+                                                            : FocusScope.of(
+                                                                    context)
+                                                                .unfocus(),
+                                                        child:
+                                                            LilExplanationWidget(
+                                                          text:
+                                                              'We recommend you make the rewards for later days bigger, with day 1 < day 2 < day 3, etc.',
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  );
+                                                },
+                                              ).then(
+                                                  (value) => setState(() {}));
+                                            },
+                                            child: FaIcon(
+                                              FontAwesomeIcons
+                                                  .exclamationCircle,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryText,
-                                              fontSize: 14.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
+                                                      .warning,
+                                              size: 16.0,
                                             ),
-                                      ),
+                                          ),
+                                        ),
+                                      ].divide(SizedBox(width: 12.0)),
                                     ),
                                   ),
                                   Align(
@@ -1563,7 +1639,7 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                         Container(
                                           width:
                                               MediaQuery.sizeOf(context).width *
-                                                  0.35,
+                                                  0.3,
                                           child: TextFormField(
                                             controller: _model
                                                     .discountTextController ??=
@@ -1648,8 +1724,8 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                               ),
                                               contentPadding:
                                                   EdgeInsetsDirectional
-                                                      .fromSTEB(10.0, 14.0,
-                                                          10.0, 14.0),
+                                                      .fromSTEB(10.0, 11.0,
+                                                          10.0, 11.0),
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -1658,9 +1734,9 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryText,
-                                                  fontSize: 14.0,
+                                                  fontSize: 15.0,
                                                   letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.normal,
+                                                  fontWeight: FontWeight.w500,
                                                 ),
                                             textAlign: TextAlign.center,
                                             keyboardType: TextInputType.number,
@@ -1686,10 +1762,77 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryText,
-                                                  fontSize: 24.0,
+                                                  fontSize: 20.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w600,
                                                 ),
+                                          ),
+                                        ),
+                                        Builder(
+                                          builder: (context) => Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    15.0, 0.0, 0.0, 0.0),
+                                            child: InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await showAlignedDialog(
+                                                  context: context,
+                                                  isGlobal: false,
+                                                  avoidOverflow: true,
+                                                  targetAnchor:
+                                                      AlignmentDirectional(
+                                                              0.0, 0.0)
+                                                          .resolve(
+                                                              Directionality.of(
+                                                                  context)),
+                                                  followerAnchor:
+                                                      AlignmentDirectional(
+                                                              0.0, 0.0)
+                                                          .resolve(
+                                                              Directionality.of(
+                                                                  context)),
+                                                  builder: (dialogContext) {
+                                                    return Material(
+                                                      color: Colors.transparent,
+                                                      child: WebViewAware(
+                                                        child: GestureDetector(
+                                                          onTap: () => _model
+                                                                  .unfocusNode
+                                                                  .canRequestFocus
+                                                              ? FocusScope.of(
+                                                                      context)
+                                                                  .requestFocus(
+                                                                      _model
+                                                                          .unfocusNode)
+                                                              : FocusScope.of(
+                                                                      context)
+                                                                  .unfocus(),
+                                                          child:
+                                                              LilExplanationWidget(
+                                                            text:
+                                                                'We recommend you give as much discount as possible considering your margins, since this will attract much more customers.',
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    );
+                                                  },
+                                                ).then(
+                                                    (value) => setState(() {}));
+                                              },
+                                              child: FaIcon(
+                                                FontAwesomeIcons
+                                                    .exclamationCircle,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .warning,
+                                                size: 16.0,
+                                              ),
+                                            ),
                                           ),
                                         ),
                                       ],

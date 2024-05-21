@@ -11,12 +11,14 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
+import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/request_manager.dart';
 
 import 'company_view_widget.dart' show CompanyViewWidget;
 import 'dart:async';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -36,16 +38,20 @@ class CompanyViewModel extends FlutterFlowModel<CompanyViewWidget> {
 
   int tabSelected = 1;
 
+  bool isClick = false;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
   // Stores action output result for [Backend Call - Query Rows] action in companyView widget.
   List<ClientCompaniesRow>? ccInfo;
+  // Stores action output result for [Backend Call - Query Rows] action in companyView widget.
+  List<ViewClientsPlansRow>? planInfo;
   Completer<List<ViewCompanyViewRow>>? requestCompleter4;
   // Stores action output result for [Custom Action - doCheckin] action in Button widget.
   ClientCompaniesRow? ccUpdated;
   // Stores action output result for [Custom Action - postInteraction] action in Image widget.
-  int? actionPoints;
+  int? actionPointsCopy;
   bool requestCompleted3 = false;
   String? requestLastUniqueKey3;
   // Stores action output result for [Custom Action - votePoll] action in votebox widget.
@@ -93,11 +99,11 @@ class CompanyViewModel extends FlutterFlowModel<CompanyViewWidget> {
   void clearSocialCacheKey(String? uniqueKey) =>
       _socialManager.clearRequest(uniqueKey);
 
-  final _pollsManager = FutureRequestManager<List<ViewPostsPollRow>>();
-  Future<List<ViewPostsPollRow>> polls({
+  final _pollsManager = FutureRequestManager<List<ViewPostsPollClientRow>>();
+  Future<List<ViewPostsPollClientRow>> polls({
     String? uniqueQueryKey,
     bool? overrideCache,
-    required Future<List<ViewPostsPollRow>> Function() requestFn,
+    required Future<List<ViewPostsPollClientRow>> Function() requestFn,
   }) =>
       _pollsManager.performRequest(
         uniqueQueryKey: uniqueQueryKey,

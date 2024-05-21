@@ -3,12 +3,14 @@ import '/backend/supabase/supabase.dart';
 import '/components/client_nav_widget.dart';
 import '/components/points_received/points_received_widget.dart';
 import '/components/simple_header_widget.dart';
+import '/components/upgrade_error/upgrade_error_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -83,8 +85,10 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
-                            child: Image.network(
-                              widget.companyInfo!.imageUrl!,
+                            child: CachedNetworkImage(
+                              fadeInDuration: Duration(milliseconds: 0),
+                              fadeOutDuration: Duration(milliseconds: 0),
+                              imageUrl: widget.companyInfo!.imageUrl!,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -380,89 +384,155 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                             ),
                           ),
                           Expanded(
-                            child: Builder(
-                              builder: (context) => InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  _model.followResult =
-                                      await actions.followCompany(
-                                    widget.companyInfo!.code!,
-                                    FFAppState().user.id,
-                                  );
-                                  await showDialog(
-                                    context: context,
-                                    builder: (dialogContext) {
-                                      return Dialog(
-                                        elevation: 0,
-                                        insetPadding: EdgeInsets.zero,
-                                        backgroundColor: Colors.transparent,
-                                        alignment:
-                                            AlignmentDirectional(0.0, 0.0)
-                                                .resolve(
-                                                    Directionality.of(context)),
-                                        child: WebViewAware(
-                                          child: GestureDetector(
-                                            onTap: () => _model
-                                                    .unfocusNode.canRequestFocus
-                                                ? FocusScope.of(context)
-                                                    .requestFocus(
-                                                        _model.unfocusNode)
-                                                : FocusScope.of(context)
-                                                    .unfocus(),
-                                            child: PointsReceivedWidget(
-                                              points:
-                                                  _model.followResult!.points,
-                                              pointType: _model
-                                                  .followResult!.actionDesc,
-                                              nameCompany:
-                                                  _model.followResult!.name,
-                                            ),
-                                          ),
-                                        ),
-                                      );
-                                    },
-                                  ).then((value) => setState(() {}));
-
-                                  context.goNamed(
-                                    'companyView',
-                                    queryParameters: {
-                                      'idCompany': serializeParam(
-                                        widget.companyInfo?.id,
-                                        ParamType.int,
-                                      ),
-                                      'idClient': serializeParam(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Builder(
+                                  builder: (context) => FFButtonWidget(
+                                    onPressed: () async {
+                                      _model.followResult =
+                                          await actions.followCompany(
+                                        widget.companyInfo!.code!,
                                         FFAppState().user.id,
-                                        ParamType.int,
-                                      ),
-                                    }.withoutNulls,
-                                  );
+                                      );
+                                      if (_model.followResult?.failDesc ==
+                                          'following limit') {
+                                        await showDialog(
+                                          context: context,
+                                          builder: (dialogContext) {
+                                            return Dialog(
+                                              elevation: 0,
+                                              insetPadding: EdgeInsets.zero,
+                                              backgroundColor:
+                                                  Colors.transparent,
+                                              alignment:
+                                                  AlignmentDirectional(0.0, 0.0)
+                                                      .resolve(
+                                                          Directionality.of(
+                                                              context)),
+                                              child: WebViewAware(
+                                                child: GestureDetector(
+                                                  onTap: () => _model
+                                                          .unfocusNode
+                                                          .canRequestFocus
+                                                      ? FocusScope.of(context)
+                                                          .requestFocus(_model
+                                                              .unfocusNode)
+                                                      : FocusScope.of(context)
+                                                          .unfocus(),
+                                                  child: UpgradeErrorWidget(
+                                                    message: _model
+                                                        .followResult!.message,
+                                                    idPlan: _model
+                                                        .followResult!.idPlan,
+                                                  ),
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                        ).then((value) => setState(() {}));
+                                      } else {
+                                        _model.planInfo =
+                                            await ViewClientsPlansTable()
+                                                .queryRows(
+                                          queryFn: (q) => q.eq(
+                                            'id_client',
+                                            FFAppState().user.id,
+                                          ),
+                                        );
+                                        await showDialog(
+                                          context: context,
+                                          builder: (dialogContext) {
+                                            return Dialog(
+                                              elevation: 0,
+                                              insetPadding: EdgeInsets.zero,
+                                              backgroundColor:
+                                                  Colors.transparent,
+                                              alignment:
+                                                  AlignmentDirectional(0.0, 0.0)
+                                                      .resolve(
+                                                          Directionality.of(
+                                                              context)),
+                                              child: WebViewAware(
+                                                child: GestureDetector(
+                                                  onTap: () => _model
+                                                          .unfocusNode
+                                                          .canRequestFocus
+                                                      ? FocusScope.of(context)
+                                                          .requestFocus(_model
+                                                              .unfocusNode)
+                                                      : FocusScope.of(context)
+                                                          .unfocus(),
+                                                  child: PointsReceivedWidget(
+                                                    points: _model
+                                                        .followResult!.points,
+                                                    pointType: _model
+                                                        .followResult!
+                                                        .actionDesc,
+                                                    nameCompany: _model
+                                                        .followResult!.name,
+                                                    multiplier: _model
+                                                        .planInfo![0]
+                                                        .multiplier!,
+                                                    planName: _model
+                                                        .planInfo![0].namePlan!,
+                                                  ),
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                        ).then((value) => setState(() {}));
 
-                                  setState(() {});
-                                },
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'Follow',
-                                      textAlign: TextAlign.start,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
+                                        context.goNamed(
+                                          'companyView',
+                                          queryParameters: {
+                                            'idCompany': serializeParam(
+                                              widget.companyInfo?.id,
+                                              ParamType.int,
+                                            ),
+                                            'idClient': serializeParam(
+                                              FFAppState().user.id,
+                                              ParamType.int,
+                                            ),
+                                          }.withoutNulls,
+                                        );
+                                      }
+
+                                      setState(() {});
+                                    },
+                                    text: 'Follow',
+                                    options: FFButtonOptions(
+                                      width: MediaQuery.sizeOf(context).width *
+                                          0.3,
+                                      height: 26.0,
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          24.0, 0.0, 24.0, 0.0),
+                                      iconPadding:
+                                          EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 0.0, 0.0, 0.0),
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
                                           .override(
                                             fontFamily: 'Poppins',
                                             color: FlutterFlowTheme.of(context)
-                                                .accent4,
-                                            fontSize: 14.0,
+                                                .primaryButtonText,
+                                            fontSize: 11.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                           ),
+                                      elevation: 3.0,
+                                      borderSide: BorderSide(
+                                        color: Colors.transparent,
+                                        width: 1.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(4.0),
                                     ),
-                                  ],
+                                  ),
                                 ),
-                              ),
+                              ],
                             ),
                           ),
                         ],
@@ -753,42 +823,74 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 3.0, 0.0, 7.0),
-                                                  child: InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      unawaited(
-                                                        () async {
-                                                          await launchURL(
-                                                              'https://${functions.replaceString('https://', '', offersPostsRow.link!)}');
-                                                        }(),
-                                                      );
-                                                    },
-                                                    child: ClipRRect(
-                                                      key: ValueKey(
-                                                          'postExample'),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              0.0),
-                                                      child: Image.network(
-                                                        key: ValueKey(
-                                                            'postExample'),
-                                                        offersPostsRow
-                                                            .imageUrl!,
+                                                  child: Stack(
+                                                    children: [
+                                                      Container(
                                                         width:
                                                             MediaQuery.sizeOf(
                                                                         context)
                                                                     .width *
                                                                 1.0,
-                                                        fit: BoxFit.fill,
+                                                        height: functions
+                                                            .changeDouble(
+                                                                MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .width,
+                                                                offersPostsRow
+                                                                    .imagePropotion!,
+                                                                '/'),
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .tertiary,
+                                                        ),
                                                       ),
-                                                    ),
+                                                      InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          unawaited(
+                                                            () async {
+                                                              await launchURL(
+                                                                  'https://${functions.replaceString('https://', '', offersPostsRow.link!)}');
+                                                            }(),
+                                                          );
+                                                        },
+                                                        child: ClipRRect(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      0.0),
+                                                          child:
+                                                              CachedNetworkImage(
+                                                            fadeInDuration:
+                                                                Duration(
+                                                                    milliseconds:
+                                                                        0),
+                                                            fadeOutDuration:
+                                                                Duration(
+                                                                    milliseconds:
+                                                                        0),
+                                                            imageUrl:
+                                                                offersPostsRow
+                                                                    .imageUrl!,
+                                                            width: MediaQuery
+                                                                        .sizeOf(
+                                                                            context)
+                                                                    .width *
+                                                                1.0,
+                                                            fit: BoxFit.fill,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
                                                   ),
                                                 ),
                                                 if (offersPostsRow.desc !=
@@ -1027,42 +1129,74 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 3.0, 0.0, 7.0),
-                                                  child: InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      unawaited(
-                                                        () async {
-                                                          await launchURL(
-                                                              'https://${functions.replaceString('https://', '', socialPostsRow.link!)}');
-                                                        }(),
-                                                      );
-                                                    },
-                                                    child: ClipRRect(
-                                                      key: ValueKey(
-                                                          'postExample'),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              0.0),
-                                                      child: Image.network(
-                                                        key: ValueKey(
-                                                            'postExample'),
-                                                        socialPostsRow
-                                                            .imageUrl!,
+                                                  child: Stack(
+                                                    children: [
+                                                      Container(
                                                         width:
                                                             MediaQuery.sizeOf(
                                                                         context)
                                                                     .width *
                                                                 1.0,
-                                                        fit: BoxFit.fill,
+                                                        height: functions
+                                                            .changeDouble(
+                                                                MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .width,
+                                                                socialPostsRow
+                                                                    .imagePropotion!,
+                                                                '/'),
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .tertiary,
+                                                        ),
                                                       ),
-                                                    ),
+                                                      InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          unawaited(
+                                                            () async {
+                                                              await launchURL(
+                                                                  'https://${functions.replaceString('https://', '', socialPostsRow.link!)}');
+                                                            }(),
+                                                          );
+                                                        },
+                                                        child: ClipRRect(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      0.0),
+                                                          child:
+                                                              CachedNetworkImage(
+                                                            fadeInDuration:
+                                                                Duration(
+                                                                    milliseconds:
+                                                                        0),
+                                                            fadeOutDuration:
+                                                                Duration(
+                                                                    milliseconds:
+                                                                        0),
+                                                            imageUrl:
+                                                                socialPostsRow
+                                                                    .imageUrl!,
+                                                            width: MediaQuery
+                                                                        .sizeOf(
+                                                                            context)
+                                                                    .width *
+                                                                1.0,
+                                                            fit: BoxFit.fill,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
                                                   ),
                                                 ),
                                                 if (socialPostsRow.desc !=

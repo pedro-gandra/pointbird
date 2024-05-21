@@ -19,6 +19,10 @@ class AccountTypeModel extends FlutterFlowModel<AccountTypeWidget> {
   final unfocusNode = FocusNode();
   // Stores action output result for [Backend Call - Insert Row] action in Button widget.
   UsersRow? userInfo;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  ClientsRow? client;
+  // Stores action output result for [Backend Call - Insert Row] action in Button widget.
+  CompaniesRow? business;
 
   @override
   void initState(BuildContext context) {}

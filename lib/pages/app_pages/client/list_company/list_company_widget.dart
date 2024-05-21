@@ -4,6 +4,7 @@ import '/components/simple_header_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -152,8 +153,13 @@ class _ListCompanyWidgetState extends State<ListCompanyWidget> {
                                           decoration: BoxDecoration(
                                             shape: BoxShape.circle,
                                           ),
-                                          child: Image.network(
-                                            listViewViewHomeClientRow.imageUrl!,
+                                          child: CachedNetworkImage(
+                                            fadeInDuration:
+                                                Duration(milliseconds: 0),
+                                            fadeOutDuration:
+                                                Duration(milliseconds: 0),
+                                            imageUrl: listViewViewHomeClientRow
+                                                .imageUrl!,
                                             fit: BoxFit.cover,
                                           ),
                                         ),

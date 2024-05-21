@@ -35,4 +35,7 @@ class ViewHomeClient2Row extends SupabaseDataRow {
 
   int? get companies => getField<int>('companies');
   set companies(int? value) => setField<int>('companies', value);
+
+  int? get idPlan => getField<int>('id_plan');
+  set idPlan(int? value) => setField<int>('id_plan', value);
 }

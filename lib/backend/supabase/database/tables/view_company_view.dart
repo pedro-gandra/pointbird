@@ -45,8 +45,14 @@ class ViewCompanyViewRow extends SupabaseDataRow {
   String? get nameCountry => getField<String>('name_country');
   set nameCountry(String? value) => setField<String>('name_country', value);
 
+  String? get nameCategory => getField<String>('name_category');
+  set nameCategory(String? value) => setField<String>('name_category', value);
+
   double? get discount => getField<double>('discount');
   set discount(double? value) => setField<double>('discount', value);
+
+  int? get percentageLimit => getField<int>('percentageLimit');
+  set percentageLimit(int? value) => setField<int>('percentageLimit', value);
 
   int? get followers => getField<int>('followers');
   set followers(int? value) => setField<int>('followers', value);

@@ -2,6 +2,7 @@ import '/components/delete_post/delete_post_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'dart:math';
 import 'change_post_widget.dart' show ChangePostWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';

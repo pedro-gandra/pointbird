@@ -10,6 +10,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -132,7 +133,10 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                       onRefresh: () async {
                         setState(() => _model.requestCompleter4 = null);
                         await _model.waitForRequestCompleted4();
-                        setState(() => _model.requestCompleter3 = null);
+                        setState(() {
+                          FFAppState().clearOffersHomeCompanyCache();
+                          _model.requestCompleted3 = false;
+                        });
                         await _model.waitForRequestCompleted3();
                         setState(() {
                           _model.tabSelected = 1;
@@ -228,11 +232,12 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                     ),
-                                    child: Image.network(
-                                      valueOrDefault<String>(
-                                        homeCompanyViewHomeCompanyRow?.imageUrl,
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/my-goals-base-project-0wt9gy/assets/msyzg7m733p5/cutf.png',
-                                      ),
+                                    child: CachedNetworkImage(
+                                      fadeInDuration: Duration(milliseconds: 0),
+                                      fadeOutDuration:
+                                          Duration(milliseconds: 0),
+                                      imageUrl: homeCompanyViewHomeCompanyRow!
+                                          .imageUrl!,
                                       fit: BoxFit.cover,
                                     ),
                                   ),
@@ -745,25 +750,27 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         FutureBuilder<List<ViewPostsViewRow>>(
-                                          future: (_model.requestCompleter3 ??=
-                                                  Completer<
-                                                      List<ViewPostsViewRow>>()
-                                                    ..complete(
-                                                        ViewPostsViewTable()
-                                                            .queryRows(
-                                                      queryFn: (q) => q
-                                                          .eq(
-                                                            'postType',
-                                                            'Offer',
-                                                          )
-                                                          .eq(
-                                                            'id_company',
-                                                            homeCompanyViewHomeCompanyRow
-                                                                ?.id,
-                                                          )
-                                                          .order('created_at'),
-                                                    )))
-                                              .future,
+                                          future: FFAppState()
+                                              .offersHomeCompany(
+                                            requestFn: () =>
+                                                ViewPostsViewTable().queryRows(
+                                              queryFn: (q) => q
+                                                  .eq(
+                                                    'postType',
+                                                    'Offer',
+                                                  )
+                                                  .eq(
+                                                    'id_company',
+                                                    homeCompanyViewHomeCompanyRow
+                                                        ?.id,
+                                                  )
+                                                  .order('created_at'),
+                                            ),
+                                          )
+                                              .then((result) {
+                                            _model.requestCompleted3 = true;
+                                            return result;
+                                          }),
                                           builder: (context, snapshot) {
                                             // Customize what your widget looks like when it's loading.
                                             if (!snapshot.hasData) {
@@ -982,9 +989,13 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                                                           setState(
                                                                               () {}));
 
-                                                                      setState(() =>
-                                                                          _model.requestCompleter3 =
-                                                                              null);
+                                                                      setState(
+                                                                          () {
+                                                                        FFAppState()
+                                                                            .clearOffersHomeCompanyCache();
+                                                                        _model.requestCompleted3 =
+                                                                            false;
+                                                                      });
                                                                       await _model
                                                                           .waitForRequestCompleted3();
                                                                     },
@@ -1011,45 +1022,74 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                                                       3.0,
                                                                       0.0,
                                                                       8.0),
-                                                          child: InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              unawaited(
-                                                                () async {
-                                                                  await launchURL(
-                                                                      'https://${functions.replaceString('https://', '', offersViewPostsViewRow.link!)}');
-                                                                }(),
-                                                              );
-                                                            },
-                                                            child: ClipRRect(
-                                                              key: ValueKey(
-                                                                  'postExample'),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          0.0),
-                                                              child:
-                                                                  Image.network(
-                                                                key: ValueKey(
-                                                                    'postExample'),
-                                                                offersViewPostsViewRow
-                                                                    .imageUrl!,
+                                                          child: Stack(
+                                                            children: [
+                                                              Container(
                                                                 width: MediaQuery.sizeOf(
                                                                             context)
                                                                         .width *
                                                                     1.0,
-                                                                fit:
-                                                                    BoxFit.fill,
+                                                                height: functions.changeDouble(
+                                                                    MediaQuery.sizeOf(
+                                                                            context)
+                                                                        .width,
+                                                                    offersViewPostsViewRow
+                                                                        .imagePropotion!,
+                                                                    '/'),
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .tertiary,
+                                                                ),
                                                               ),
-                                                            ),
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  unawaited(
+                                                                    () async {
+                                                                      await launchURL(
+                                                                          'https://${functions.replaceString('https://', '', offersViewPostsViewRow.link!)}');
+                                                                    }(),
+                                                                  );
+                                                                },
+                                                                child:
+                                                                    ClipRRect(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              0.0),
+                                                                  child:
+                                                                      CachedNetworkImage(
+                                                                    fadeInDuration:
+                                                                        Duration(
+                                                                            milliseconds:
+                                                                                0),
+                                                                    fadeOutDuration:
+                                                                        Duration(
+                                                                            milliseconds:
+                                                                                0),
+                                                                    imageUrl:
+                                                                        offersViewPostsViewRow
+                                                                            .imageUrl!,
+                                                                    width: MediaQuery.sizeOf(context)
+                                                                            .width *
+                                                                        1.0,
+                                                                    fit: BoxFit
+                                                                        .fill,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ],
                                                           ),
                                                         ),
                                                         if (offersViewPostsViewRow
@@ -1836,46 +1876,75 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                                                       0.0,
                                                                       3.0,
                                                                       0.0,
-                                                                      10.0),
-                                                          child: InkWell(
-                                                            splashColor: Colors
-                                                                .transparent,
-                                                            focusColor: Colors
-                                                                .transparent,
-                                                            hoverColor: Colors
-                                                                .transparent,
-                                                            highlightColor:
-                                                                Colors
-                                                                    .transparent,
-                                                            onTap: () async {
-                                                              unawaited(
-                                                                () async {
-                                                                  await launchURL(
-                                                                      'https://${functions.replaceString('https://', '', socialViewPostsViewRow.link!)}');
-                                                                }(),
-                                                              );
-                                                            },
-                                                            child: ClipRRect(
-                                                              key: ValueKey(
-                                                                  'postExample'),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          0.0),
-                                                              child:
-                                                                  Image.network(
-                                                                key: ValueKey(
-                                                                    'postExample'),
-                                                                socialViewPostsViewRow
-                                                                    .imageUrl!,
+                                                                      8.0),
+                                                          child: Stack(
+                                                            children: [
+                                                              Container(
                                                                 width: MediaQuery.sizeOf(
                                                                             context)
                                                                         .width *
                                                                     1.0,
-                                                                fit:
-                                                                    BoxFit.fill,
+                                                                height: functions.changeDouble(
+                                                                    MediaQuery.sizeOf(
+                                                                            context)
+                                                                        .width,
+                                                                    socialViewPostsViewRow
+                                                                        .imagePropotion!,
+                                                                    '/'),
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .tertiary,
+                                                                ),
                                                               ),
-                                                            ),
+                                                              InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  unawaited(
+                                                                    () async {
+                                                                      await launchURL(
+                                                                          'https://${functions.replaceString('https://', '', socialViewPostsViewRow.link!)}');
+                                                                    }(),
+                                                                  );
+                                                                },
+                                                                child:
+                                                                    ClipRRect(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              0.0),
+                                                                  child:
+                                                                      CachedNetworkImage(
+                                                                    fadeInDuration:
+                                                                        Duration(
+                                                                            milliseconds:
+                                                                                0),
+                                                                    fadeOutDuration:
+                                                                        Duration(
+                                                                            milliseconds:
+                                                                                0),
+                                                                    imageUrl:
+                                                                        socialViewPostsViewRow
+                                                                            .imageUrl!,
+                                                                    width: MediaQuery.sizeOf(context)
+                                                                            .width *
+                                                                        1.0,
+                                                                    fit: BoxFit
+                                                                        .fill,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ],
                                                           ),
                                                         ),
                                                         if (socialViewPostsViewRow

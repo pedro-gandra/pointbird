@@ -85,6 +85,8 @@ class _OnboardingCompanyWidgetState extends State<OnboardingCompanyWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Builder(
       builder: (context) => GestureDetector(
         onTap: () => _model.unfocusNode.canRequestFocus
@@ -890,7 +892,7 @@ class _OnboardingCompanyWidgetState extends State<OnboardingCompanyWidget> {
                                                             selectedFilesFromUploadedFiles(
                                                           selectedUploadedFiles,
                                                           storageFolderPath:
-                                                              'profilePictures/companies',
+                                                              'userUploads/${FFAppState().user.type}/${currentUserUid}/profilePics',
                                                         );
                                                         downloadUrls =
                                                             await uploadSupabaseStorageFiles(

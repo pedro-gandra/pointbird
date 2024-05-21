@@ -1,6 +1,7 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/lil_explanation/lil_explanation_widget.dart';
 import '/components/simple_header_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -10,11 +11,14 @@ import '/flutter_flow/form_field_controller.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'business_set_widget.dart' show BusinessSetWidget;
+import 'package:aligned_dialog/aligned_dialog.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 
 class BusinessSetModel extends FlutterFlowModel<BusinessSetWidget> {
   ///  Local state fields for this page.
@@ -220,6 +224,9 @@ class BusinessSetModel extends FlutterFlowModel<BusinessSetWidget> {
       return 'Minimum is 3 characters';
     }
 
+    if (!RegExp('^[a-zA-Z0-9._]+\$').hasMatch(val)) {
+      return 'Use only letters, numbers, \'.\' and \'_\'';
+    }
     return null;
   }
 

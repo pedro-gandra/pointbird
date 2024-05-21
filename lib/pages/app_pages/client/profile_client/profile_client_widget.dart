@@ -1,12 +1,15 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/client_nav_widget.dart';
+import '/components/plans/plans_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 import 'profile_client_model.dart';
 export 'profile_client_model.dart';
 
@@ -122,11 +125,12 @@ class _ProfileClientWidgetState extends State<ProfileClientWidget> {
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                     ),
-                                    child: Image.network(
-                                      valueOrDefault<String>(
-                                        profileClientClientsRow?.imageUrl,
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/my-goals-base-project-0wt9gy/assets/msyzg7m733p5/cutf.png',
-                                      ),
+                                    child: CachedNetworkImage(
+                                      fadeInDuration: Duration(milliseconds: 0),
+                                      fadeOutDuration:
+                                          Duration(milliseconds: 0),
+                                      imageUrl:
+                                          profileClientClientsRow!.imageUrl!,
                                       fit: BoxFit.cover,
                                     ),
                                   ),
@@ -525,6 +529,115 @@ class _ProfileClientWidgetState extends State<ProfileClientWidget> {
                                 ),
                               ],
                             ),
+                          ),
+                        ),
+                      ),
+                      Builder(
+                        builder: (context) => Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              16.0, 25.0, 16.0, 0.0),
+                          child: FutureBuilder<List<ViewClientsPlansRow>>(
+                            future: ViewClientsPlansTable().querySingleRow(
+                              queryFn: (q) => q.eq(
+                                'email',
+                                currentUserEmail,
+                              ),
+                            ),
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 15.0,
+                                    height: 15.0,
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        FlutterFlowTheme.of(context).primary,
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+                              List<ViewClientsPlansRow>
+                                  rowViewClientsPlansRowList = snapshot.data!;
+                              final rowViewClientsPlansRow =
+                                  rowViewClientsPlansRowList.isNotEmpty
+                                      ? rowViewClientsPlansRowList.first
+                                      : null;
+                              return InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                onTap: () async {
+                                  await showDialog(
+                                    context: context,
+                                    builder: (dialogContext) {
+                                      return Dialog(
+                                        elevation: 0,
+                                        insetPadding: EdgeInsets.zero,
+                                        backgroundColor: Colors.transparent,
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0)
+                                                .resolve(
+                                                    Directionality.of(context)),
+                                        child: WebViewAware(
+                                          child: GestureDetector(
+                                            onTap: () => _model
+                                                    .unfocusNode.canRequestFocus
+                                                ? FocusScope.of(context)
+                                                    .requestFocus(
+                                                        _model.unfocusNode)
+                                                : FocusScope.of(context)
+                                                    .unfocus(),
+                                            child: PlansWidget(
+                                              idPlan: rowViewClientsPlansRow!
+                                                  .idPlan!,
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  ).then((value) => setState(() {}));
+                                },
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                      child: CachedNetworkImage(
+                                        fadeInDuration:
+                                            Duration(milliseconds: 0),
+                                        fadeOutDuration:
+                                            Duration(milliseconds: 0),
+                                        imageUrl:
+                                            rowViewClientsPlansRow!.imageUrl!,
+                                        width: 30.0,
+                                        fit: BoxFit.cover,
+                                        memCacheWidth: 500,
+                                        memCacheHeight: 500,
+                                      ),
+                                    ),
+                                    Text(
+                                      rowViewClientsPlansRow?.idPlan != 3
+                                          ? 'You are a ${rowViewClientsPlansRow?.namePlan}, upgrade now!'
+                                          : 'You are an ${rowViewClientsPlansRow?.namePlan}, keep it up!',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .accent4,
+                                            fontSize: 13.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                    ),
+                                  ].divide(SizedBox(width: 13.0)),
+                                ),
+                              );
+                            },
                           ),
                         ),
                       ),

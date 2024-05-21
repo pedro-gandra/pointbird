@@ -2,13 +2,20 @@ import '/auth/supabase_auth/auth_util.dart';
 import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/client_nav_widget.dart';
+import '/components/plans/plans_widget.dart';
 import '/components/points_received/points_received_widget.dart';
+import '/components/upgrade_error/upgrade_error_widget.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
 import 'dart:async';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
@@ -22,10 +29,13 @@ class HomeClientWidget extends StatefulWidget {
   State<HomeClientWidget> createState() => _HomeClientWidgetState();
 }
 
-class _HomeClientWidgetState extends State<HomeClientWidget> {
+class _HomeClientWidgetState extends State<HomeClientWidget>
+    with TickerProviderStateMixin {
   late HomeClientModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
@@ -34,6 +44,23 @@ class _HomeClientWidgetState extends State<HomeClientWidget> {
 
     _model.codeTextController ??= TextEditingController();
     _model.codeFocusNode ??= FocusNode();
+
+    animationsMap.addAll({
+      'textOnPageLoadAnimation': AnimationInfo(
+        loop: true,
+        reverse: true,
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          ShimmerEffect(
+            curve: Curves.linear,
+            delay: 500.0.ms,
+            duration: 1200.0.ms,
+            color: Color(0xA4FFA500),
+            angle: 0.524,
+          ),
+        ],
+      ),
+    });
   }
 
   @override
@@ -161,11 +188,11 @@ class _HomeClientWidgetState extends State<HomeClientWidget> {
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
                                   ),
-                                  child: Image.network(
-                                    valueOrDefault<String>(
-                                      homeClientViewHomeClient2Row?.imageUrl,
-                                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/my-goals-base-project-0wt9gy/assets/msyzg7m733p5/cutf.png',
-                                    ),
+                                  child: CachedNetworkImage(
+                                    fadeInDuration: Duration(milliseconds: 0),
+                                    fadeOutDuration: Duration(milliseconds: 0),
+                                    imageUrl:
+                                        homeClientViewHomeClient2Row!.imageUrl!,
                                     fit: BoxFit.cover,
                                   ),
                                 ),
@@ -233,38 +260,71 @@ class _HomeClientWidgetState extends State<HomeClientWidget> {
                                         fontFamily: 'Poppins',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
-                                        fontSize: 15.0,
+                                        fontSize: 14.0,
                                         letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w500,
                                       ),
                                 ),
                               ],
                             ),
                           ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 4.0, 0.0, 0.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  valueOrDefault<String>(
-                                    homeClientViewHomeClient2Row?.email,
-                                    'email',
+                          if (homeClientViewHomeClient2Row?.idPlan == 1)
+                            Builder(
+                              builder: (context) => Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 12.0, 0.0, 0.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    await showDialog(
+                                      context: context,
+                                      builder: (dialogContext) {
+                                        return Dialog(
+                                          elevation: 0,
+                                          insetPadding: EdgeInsets.zero,
+                                          backgroundColor: Colors.transparent,
+                                          alignment: AlignmentDirectional(
+                                                  0.0, 0.0)
+                                              .resolve(
+                                                  Directionality.of(context)),
+                                          child: WebViewAware(
+                                            child: GestureDetector(
+                                              onTap: () => _model.unfocusNode
+                                                      .canRequestFocus
+                                                  ? FocusScope.of(context)
+                                                      .requestFocus(
+                                                          _model.unfocusNode)
+                                                  : FocusScope.of(context)
+                                                      .unfocus(),
+                                              child: PlansWidget(
+                                                idPlan: 1,
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    ).then((value) => setState(() {}));
+                                  },
+                                  child: Text(
+                                    'Save up to 3x more money without ads',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Poppins',
+                                          color: FlutterFlowTheme.of(context)
+                                              .accent4,
+                                          fontSize: 12.0,
+                                          letterSpacing: 0.0,
+                                          fontWeight: FontWeight.w600,
+                                        ),
                                   ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .override(
-                                        fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        fontSize: 11.0,
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                              ],
+                                ).animateOnPageLoad(
+                                    animationsMap['textOnPageLoadAnimation']!),
+                              ),
                             ),
-                          ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 0.0),
@@ -295,6 +355,7 @@ class _HomeClientWidgetState extends State<HomeClientWidget> {
                                                 .alternate,
                                             fontSize: 14.0,
                                             letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w500,
                                           ),
                                     ),
                                   ),
@@ -471,9 +532,19 @@ class _HomeClientWidgetState extends State<HomeClientWidget> {
                                                             shape:
                                                                 BoxShape.circle,
                                                           ),
-                                                          child: Image.network(
-                                                            valueOrDefault<
-                                                                String>(
+                                                          child:
+                                                              CachedNetworkImage(
+                                                            fadeInDuration:
+                                                                Duration(
+                                                                    milliseconds:
+                                                                        0),
+                                                            fadeOutDuration:
+                                                                Duration(
+                                                                    milliseconds:
+                                                                        0),
+                                                            imageUrl:
+                                                                valueOrDefault<
+                                                                    String>(
                                                               listViewViewHomeClientRow
                                                                   .imageUrl,
                                                               'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/my-goals-base-project-0wt9gy/assets/1hmstttjndib/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg',
@@ -1005,22 +1076,13 @@ class _HomeClientWidgetState extends State<HomeClientWidget> {
                                                                     _model
                                                                         .codeTextController
                                                                         .text,
-                                                                    homeClientViewHomeClient2Row
-                                                                        ?.id,
+                                                                    homeClientViewHomeClient2Row!
+                                                                        .id!,
                                                                   );
-                                                                  setState(() {
-                                                                    _model.errorMessageInsert = _model
-                                                                        .followResult!
-                                                                        .message;
-                                                                  });
-                                                                  setState(() {
-                                                                    _model
-                                                                        .codeTextController
-                                                                        ?.clear();
-                                                                  });
                                                                   if (_model
-                                                                      .followResult!
-                                                                      .hasPoints()) {
+                                                                          .followResult
+                                                                          ?.failDesc ==
+                                                                      'following limit') {
                                                                     await showDialog(
                                                                       context:
                                                                           context,
@@ -1040,10 +1102,9 @@ class _HomeClientWidgetState extends State<HomeClientWidget> {
                                                                             child:
                                                                                 GestureDetector(
                                                                               onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                              child: PointsReceivedWidget(
-                                                                                points: _model.followResult!.points,
-                                                                                pointType: _model.followResult!.actionDesc,
-                                                                                nameCompany: _model.followResult!.name,
+                                                                              child: UpgradeErrorWidget(
+                                                                                message: _model.followResult!.message,
+                                                                                idPlan: _model.followResult!.idPlan,
                                                                               ),
                                                                             ),
                                                                           ),
@@ -1052,17 +1113,77 @@ class _HomeClientWidgetState extends State<HomeClientWidget> {
                                                                     ).then((value) =>
                                                                         setState(
                                                                             () {}));
+                                                                  } else {
+                                                                    setState(
+                                                                        () {
+                                                                      _model.errorMessageInsert = _model
+                                                                          .followResult!
+                                                                          .message;
+                                                                    });
+                                                                    setState(
+                                                                        () {
+                                                                      _model
+                                                                          .codeTextController
+                                                                          ?.clear();
+                                                                    });
+                                                                    if (_model
+                                                                        .followResult!
+                                                                        .hasPoints()) {
+                                                                      _model.planInfo =
+                                                                          await ViewClientsPlansTable()
+                                                                              .queryRows(
+                                                                        queryFn:
+                                                                            (q) =>
+                                                                                q.eq(
+                                                                          'id_client',
+                                                                          homeClientViewHomeClient2Row
+                                                                              ?.id,
+                                                                        ),
+                                                                      );
+                                                                      await showDialog(
+                                                                        context:
+                                                                            context,
+                                                                        builder:
+                                                                            (dialogContext) {
+                                                                          return Dialog(
+                                                                            elevation:
+                                                                                0,
+                                                                            insetPadding:
+                                                                                EdgeInsets.zero,
+                                                                            backgroundColor:
+                                                                                Colors.transparent,
+                                                                            alignment:
+                                                                                AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                            child:
+                                                                                WebViewAware(
+                                                                              child: GestureDetector(
+                                                                                onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                child: PointsReceivedWidget(
+                                                                                  points: _model.followResult!.points,
+                                                                                  pointType: _model.followResult!.actionDesc,
+                                                                                  nameCompany: _model.followResult!.name,
+                                                                                  multiplier: _model.planInfo![0].multiplier!,
+                                                                                  planName: _model.planInfo![0].namePlan!,
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          );
+                                                                        },
+                                                                      ).then((value) =>
+                                                                          setState(
+                                                                              () {}));
 
-                                                                    setState(() =>
-                                                                        _model.requestCompleter2 =
-                                                                            null);
-                                                                    await _model
-                                                                        .waitForRequestCompleted2();
-                                                                    setState(() =>
-                                                                        _model.requestCompleter1 =
-                                                                            null);
-                                                                    await _model
-                                                                        .waitForRequestCompleted1();
+                                                                      setState(() =>
+                                                                          _model.requestCompleter2 =
+                                                                              null);
+                                                                      await _model
+                                                                          .waitForRequestCompleted2();
+                                                                      setState(() =>
+                                                                          _model.requestCompleter1 =
+                                                                              null);
+                                                                      await _model
+                                                                          .waitForRequestCompleted1();
+                                                                    }
                                                                   }
 
                                                                   setState(

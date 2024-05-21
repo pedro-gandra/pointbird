@@ -1,3 +1,4 @@
+import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/company_nav_widget.dart';
 import '/components/simple_header_widget.dart';
@@ -129,7 +130,7 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                   ),
                               hintText: 'Post type',
                               fillColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
+                                  .primaryBackground,
                               elevation: 2.0,
                               borderColor: FlutterFlowTheme.of(context).accent1,
                               borderWidth: 2.0,
@@ -796,6 +797,7 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                         maxHeight: 1000.00,
                                                         imageQuality: 85,
                                                         allowPhoto: true,
+                                                        includeDimensions: true,
                                                         pickerFontFamily:
                                                             'Poppins',
                                                       );
@@ -1096,16 +1098,19 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                                       .bytes
                                                                       ?.isEmpty ??
                                                                   true))
-                                                            ClipRRect(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          8.0),
-                                                              child:
-                                                                  Image.asset(
-                                                                'assets/images/Choose_image.png',
-                                                                fit: BoxFit
-                                                                    .cover,
+                                                            Opacity(
+                                                              opacity: 0.6,
+                                                              child: ClipRRect(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8.0),
+                                                                child:
+                                                                    Image.asset(
+                                                                  'assets/images/Choose_image.png',
+                                                                  fit: BoxFit
+                                                                      .cover,
+                                                                ),
                                                               ),
                                                             ),
                                                         ],
@@ -1216,7 +1221,7 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                           selectedFilesFromUploadedFiles(
                                                         selectedUploadedFiles,
                                                         storageFolderPath:
-                                                            'posts/${FFAppState().user.id.toString()}',
+                                                            'userUploads/${FFAppState().user.type}/${currentUserUid}/posts',
                                                       );
                                                       downloadUrls =
                                                           await uploadSupabaseStorageFiles(
@@ -1274,6 +1279,15 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                             functions.changeDate(
                                                                 getCurrentTimestamp,
                                                                 7)),
+                                                    'imagePropotion':
+                                                        functions.changeDouble(
+                                                            _model
+                                                                .uploadedLocalFile1
+                                                                .width!,
+                                                            _model
+                                                                .uploadedLocalFile1
+                                                                .height!,
+                                                            '/'),
                                                   });
 
                                                   context

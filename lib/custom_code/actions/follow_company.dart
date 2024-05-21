@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 
 Future<ActionResponseStruct> followCompany(
   String code,
-  int? idClient,
+  int idClient,
 ) async {
   // Add your function code here!
   final supabase = SupaFlow.client;
@@ -40,13 +40,27 @@ Future<ActionResponseStruct> followCompany(
     return actionResponse;
   }
 
+  final planRes = await supabase
+      .from('view_clients_plans')
+      .select('*')
+      .eq('id_client', idClient);
+
+  if (planRes[0]["following"] >= planRes[0]["limit_following"]) {
+    actionResponse.idPlan = planRes[0]["id_plan"];
+    actionResponse.failDesc = "following limit";
+    actionResponse.message = "You can only follow " +
+        planRes[0]["limit_following"].toString() +
+        " companies in your current plan. Upgrade your plan to perform this action.";
+    return actionResponse;
+  }
+
   final response3 = await supabase
       .from('client_companies')
       .insert({'id_client': idClient, 'id_company': idCompany}).select();
 
   final idReference = response3[0]["id"];
 
-  final initialPoints = response[0]["initialPoints"];
+  final initialPoints = response[0]["initialPoints"] * planRes[0]["multiplier"];
 
   if (initialPoints != null) {
     if (initialPoints > 0) {

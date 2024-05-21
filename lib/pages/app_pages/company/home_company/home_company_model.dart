@@ -11,6 +11,7 @@ import 'dart:async';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
 import 'home_company_widget.dart' show HomeCompanyWidget;
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -31,7 +32,8 @@ class HomeCompanyModel extends FlutterFlowModel<HomeCompanyWidget> {
   // Stores action output result for [Backend Call - Query Rows] action in homeCompany widget.
   List<CompaniesRow>? cc;
   Completer<List<ViewHomeCompanyRow>>? requestCompleter4;
-  Completer<List<ViewPostsViewRow>>? requestCompleter3;
+  bool requestCompleted3 = false;
+  String? requestLastUniqueKey3;
   Completer<List<ViewPostsPollRow>>? requestCompleter2;
   Completer<List<ViewPostsViewRow>>? requestCompleter1;
   // Model for companyNav component.
@@ -72,7 +74,7 @@ class HomeCompanyModel extends FlutterFlowModel<HomeCompanyWidget> {
     while (true) {
       await Future.delayed(Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleter3?.isCompleted ?? false;
+      final requestComplete = requestCompleted3;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
         break;
       }

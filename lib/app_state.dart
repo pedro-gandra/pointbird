@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'flutter_flow/request_manager.dart';
 import '/backend/schema/structs/index.dart';
 import 'backend/api_requests/api_manager.dart';
 import 'backend/supabase/supabase.dart';
@@ -63,6 +64,22 @@ class FFAppState extends ChangeNotifier {
   set refresh(int _value) {
     _refresh = _value;
   }
+
+  final _offersHomeCompanyManager =
+      FutureRequestManager<List<ViewPostsViewRow>>();
+  Future<List<ViewPostsViewRow>> offersHomeCompany({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Future<List<ViewPostsViewRow>> Function() requestFn,
+  }) =>
+      _offersHomeCompanyManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearOffersHomeCompanyCache() => _offersHomeCompanyManager.clear();
+  void clearOffersHomeCompanyCacheKey(String? uniqueKey) =>
+      _offersHomeCompanyManager.clearRequest(uniqueKey);
 }
 
 void _safeInit(Function() initializeField) {

@@ -181,7 +181,7 @@ class _PointsHubWidgetState extends State<PointsHubWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'In the last 7 days:',
+                                    'In the last 30 days:',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -193,7 +193,7 @@ class _PointsHubWidgetState extends State<PointsHubWidget> {
                                   Text(
                                     valueOrDefault<String>(
                                       formatNumber(
-                                        pointsHubViewPointsHubRow?.points7days,
+                                        pointsHubViewPointsHubRow?.points30days,
                                         formatType: FormatType.decimal,
                                         decimalType: DecimalType.automatic,
                                       ),
@@ -217,7 +217,7 @@ class _PointsHubWidgetState extends State<PointsHubWidget> {
                                     formatNumber(
                                       functions
                                           .convertPoints(valueOrDefault<int>(
-                                        pointsHubViewPointsHubRow?.points7days,
+                                        pointsHubViewPointsHubRow?.points30days,
                                         0,
                                       )),
                                       formatType: FormatType.custom,

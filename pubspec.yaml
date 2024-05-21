@@ -28,7 +28,9 @@ dependencies:
   aligned_dialog: 0.0.6
   app_links: 3.4.1
   auto_size_text: 3.0.0
+  blurhash_dart: ^1.2.1
   cached_network_image: 3.3.1
+  carousel_slider: 4.2.1
   collection: 1.18.0
   csv: 5.0.1
   dropdown_button2: 2.3.9
@@ -41,6 +43,11 @@ dependencies:
   flutter_plugin_android_lifecycle: 2.0.17
   flutter_rating_bar: 4.0.1
   flutter_secure_storage: 8.0.0
+  flutter_secure_storage_linux: 1.2.0
+  flutter_secure_storage_macos: 3.0.1
+  flutter_secure_storage_platform_interface: 1.0.2
+  flutter_secure_storage_web: 1.1.2
+  flutter_secure_storage_windows: 2.1.1
   font_awesome_flutter: 10.6.0
   from_css_color: 2.0.0
   functions_client: 1.3.2
@@ -49,6 +56,7 @@ dependencies:
   gotrue: 1.12.6
   hive: 2.2.3
   http: 1.2.0
+  image: ^4.0.15
   image_picker: 1.0.4
   image_picker_android: 0.8.8
   image_picker_for_web: 3.0.1
@@ -77,6 +85,7 @@ dependencies:
   sign_in_with_apple: 4.3.0
   sign_in_with_apple_platform_interface: 1.0.0
   sign_in_with_apple_web: 1.0.1
+  smooth_page_indicator: 1.1.0
   sqflite: 2.2.6
   storage_client: 1.5.4
   supabase: 1.11.11
@@ -119,7 +128,6 @@ dependency_overrides:
 dev_dependencies:
   flutter_launcher_icons: 0.13.1
   flutter_lints: 3.0.0
-  image: 4.0.17
   lints: 3.0.0
 
   flutter_test:

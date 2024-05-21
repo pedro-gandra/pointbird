@@ -300,11 +300,23 @@ class _HelpCompanyWidgetState extends State<HelpCompanyWidget> {
                                       'fullInfo',
                                       queryParameters: {
                                         'title': serializeParam(
-                                          'Currency is not US dollars',
+                                          'Accepting coupons',
                                           ParamType.String,
                                         ),
                                         'par1': serializeParam(
-                                          'All the money saved is registered in US dollars, but your coupon will be generated in the currency used by the store you are buying from, with values being converted accordingly.',
+                                          'Physical purchase: In this case, you can accept the coupon in the moment of the purchase. Use the coupon section to verify and deactivate the coupon.',
+                                          ParamType.String,
+                                        ),
+                                        'par2': serializeParam(
+                                          'Online purchase (not automatic): If you sell through social media or direct messaging, this applies to you. All you need to do is ask for the coupon code in a message and apply the discount on the spot.',
+                                          ParamType.String,
+                                        ),
+                                        'par3': serializeParam(
+                                          'Online purchase (automatic): Create a field called \"Pointbird coupon\" in your checkout, you must get 2 pieces of information, the coupon code and the discount value. When the user inserts the discount value, apply the discount automatically to his purchase amount. Once the sale is finalized, use the coupon code to verify if the value provided is correct and if the minimum purchase is matched. Otherwise, inform your client of the issue.',
+                                          ParamType.String,
+                                        ),
+                                        'par4': serializeParam(
+                                          'Make sure to include a disclaimer saying that the information of the coupon will be verified to avoid issues. Also, don\'t forget to deactivate coupons afterwards.',
                                           ParamType.String,
                                         ),
                                       }.withoutNulls,
@@ -329,7 +341,7 @@ class _HelpCompanyWidgetState extends State<HelpCompanyWidget> {
                                         size: 22.0,
                                       ),
                                       Text(
-                                        'My currency is not US dollars?',
+                                        'How can I accept Pointbird coupons?',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -361,15 +373,19 @@ class _HelpCompanyWidgetState extends State<HelpCompanyWidget> {
                                       'fullInfo',
                                       queryParameters: {
                                         'title': serializeParam(
-                                          'How to use coupon',
+                                          'Reach new customers',
                                           ParamType.String,
                                         ),
                                         'par1': serializeParam(
-                                          'Physical purchase: If you are looking to buy a product in a physical store, you can simply provide the coupon code in the moment of the purchase and the company will verify it in their own system.',
+                                          'Your business will be available on the \"explore\" page for every customer from the same country (as long as you provide countrywide shipping).',
                                           ParamType.String,
                                         ),
                                         'par2': serializeParam(
-                                          'Online purchase: When making an online purchase, you can check if the company provides, in the checkout, a field for \"Pointbird coupon\". If they do, all you have to do is insert your coupon and the discount value it grants. If there isn\'t an automatic feature implemented for you to use your coupon, try contacting the store directly on social media.',
+                                          'Your business will be filtered by its category and it will be ranked based on relevancy inside the app, so make sure to stay active and bring as many followers from your already existing customer base as possible.',
+                                          ParamType.String,
+                                        ),
+                                        'par3': serializeParam(
+                                          'If you want to see how it looks, you can create a customer account under a different email and check it out.',
                                           ParamType.String,
                                         ),
                                       }.withoutNulls,
@@ -394,7 +410,7 @@ class _HelpCompanyWidgetState extends State<HelpCompanyWidget> {
                                         size: 22.0,
                                       ),
                                       Text(
-                                        'How can I use my coupons?',
+                                        'How can I reach new customers?',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -426,11 +442,15 @@ class _HelpCompanyWidgetState extends State<HelpCompanyWidget> {
                                       'fullInfo',
                                       queryParameters: {
                                         'title': serializeParam(
-                                          'Coupon minimum purchase',
+                                          'Grow your profile',
                                           ParamType.String,
                                         ),
                                         'par1': serializeParam(
-                                          'The minimum purchase amount is determined by the company based on the value of the coupon generated, it exists to make sure companies keep control of their margins and don\'t lose money when you make a purchase.',
+                                          'Make sure you announce your Pointbird profile on your social media accounts and encourage people to download and follow you on the app. Without doing that it is extremely unlikely that your profile will be recommended to customers.',
+                                          ParamType.String,
+                                        ),
+                                        'par2': serializeParam(
+                                          'Use the ability to earn big discounts as a motivator to get your current customers to engage and participate on the app, increasing your relevancy in the platform.',
                                           ParamType.String,
                                         ),
                                       }.withoutNulls,
@@ -462,7 +482,7 @@ class _HelpCompanyWidgetState extends State<HelpCompanyWidget> {
                                               alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Text(
-                                                'Why is there a minimum purchase on coupons?',
+                                                'How to grow my profile?',
                                                 textAlign: TextAlign.start,
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -505,11 +525,19 @@ class _HelpCompanyWidgetState extends State<HelpCompanyWidget> {
                                           ParamType.String,
                                         ),
                                         'par1': serializeParam(
-                                          'You can only use one Pointbird coupon per purchase on any store, respecting the minimum purchase amount written in the coupon.',
+                                          'Make posts that engage your followers, encourages them to buy and give good point rewards.',
                                           ParamType.String,
                                         ),
                                         'par2': serializeParam(
-                                          'You can, however, generate as many coupons as you want and use them in different purchases at any moment.',
+                                          'On the offers page you can display some of the products that you believe are going to be a success amongst customers and boost sales.',
+                                          ParamType.String,
+                                        ),
+                                        'par3': serializeParam(
+                                          'Using the polls you can get important feedback and use it to plan your next posts and campaigns on the app.',
+                                          ParamType.String,
+                                        ),
+                                        'par4': serializeParam(
+                                          'On the social page you can post everything else related to your business, like calls to follow you on your other socials, to read an article or to check out a partner, for example. ',
                                           ParamType.String,
                                         ),
                                       }.withoutNulls,
@@ -541,7 +569,7 @@ class _HelpCompanyWidgetState extends State<HelpCompanyWidget> {
                                               alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Text(
-                                                'Can I use more than one coupon per purchase?',
+                                                'What should I post?',
                                                 textAlign: TextAlign.start,
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -580,90 +608,15 @@ class _HelpCompanyWidgetState extends State<HelpCompanyWidget> {
                                       'fullInfo',
                                       queryParameters: {
                                         'title': serializeParam(
-                                          'Point expiration',
+                                          'Different currencies',
                                           ParamType.String,
                                         ),
                                         'par1': serializeParam(
-                                          'No, points don\'t expire, you can collect as many points as you want and you have no time limit to exchange them.',
-                                          ParamType.String,
-                                        ),
-                                      }.withoutNulls,
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.rightToLeft,
-                                          duration: Duration(milliseconds: 200),
-                                        ),
-                                      },
-                                    );
-                                  },
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Icon(
-                                        Icons.arrow_right,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 22.0,
-                                      ),
-                                      Expanded(
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Align(
-                                              alignment: AlignmentDirectional(
-                                                  -1.0, 0.0),
-                                              child: Text(
-                                                'Do points expire?',
-                                                textAlign: TextAlign.start,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          fontSize: 13.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ].divide(SizedBox(width: 5.0)),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          if (functions.checkSearch(_model.textController.text,
-                              'My coupon expired, now what?'))
-                            Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 15.0, 0.0, 0.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed(
-                                      'fullInfo',
-                                      queryParameters: {
-                                        'title': serializeParam(
-                                          'My coupon expired',
-                                          ParamType.String,
-                                        ),
-                                        'par1': serializeParam(
-                                          'All coupons expire 7 days after their creation, so it\'s important to only generate a coupon when you are planning to make a purchase.',
+                                          'To make the app more comprehensive, 1 point equals \$0,01 USD, therefore, the money saved is always calculated in USD.',
                                           ParamType.String,
                                         ),
                                         'par2': serializeParam(
-                                          ' However, companies can still accept expired coupons if they wish, to see if that\'s the case, talk to the company directly.',
+                                          'However, if you sell on a different currency, you can select a currency in your business settings and the conversion from USD to that currency will be made when the customer generates a coupon.',
                                           ParamType.String,
                                         ),
                                       }.withoutNulls,
@@ -695,7 +648,7 @@ class _HelpCompanyWidgetState extends State<HelpCompanyWidget> {
                                               alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Text(
-                                                'My coupon expired, now what?',
+                                                'My currency is not US dollars?',
                                                 textAlign: TextAlign.start,
                                                 style:
                                                     FlutterFlowTheme.of(context)

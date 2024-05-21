@@ -94,20 +94,49 @@ class _NavHelpWidgetState extends State<NavHelpWidget> {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      FaIcon(
-                        FontAwesomeIcons.youtube,
-                        color: FlutterFlowTheme.of(context).secondaryText,
-                        size: 34.0,
+                      InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          await launchURL(
+                              'https://www.youtube.com/@pointbird-io');
+                        },
+                        child: FaIcon(
+                          FontAwesomeIcons.youtube,
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          size: 34.0,
+                        ),
                       ),
-                      FaIcon(
-                        FontAwesomeIcons.instagram,
-                        color: FlutterFlowTheme.of(context).secondaryText,
-                        size: 34.0,
+                      InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          await launchURL(
+                              'https://www.instagram.com/pointbird.io');
+                        },
+                        child: FaIcon(
+                          FontAwesomeIcons.instagram,
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          size: 34.0,
+                        ),
                       ),
-                      FaIcon(
-                        FontAwesomeIcons.twitter,
-                        color: FlutterFlowTheme.of(context).secondaryText,
-                        size: 34.0,
+                      InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          await launchURL('https://www.tiktok.com/@pointbird');
+                        },
+                        child: Icon(
+                          Icons.tiktok,
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          size: 34.0,
+                        ),
                       ),
                     ].divide(SizedBox(width: 22.0)),
                   ),

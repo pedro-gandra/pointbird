@@ -53,6 +53,9 @@ class ViewExploreRow extends SupabaseDataRow {
   String? get nameCategory => getField<String>('name_category');
   set nameCategory(String? value) => setField<String>('name_category', value);
 
+  bool? get shipping => getField<bool>('shipping');
+  set shipping(bool? value) => setField<bool>('shipping', value);
+
   int? get followers => getField<int>('followers');
   set followers(int? value) => setField<int>('followers', value);
 

@@ -20,11 +20,9 @@ Future<ActionResponseStruct> signUp(
     final supabase = SupaFlow.client;
 
     final AuthResponse res = await supabase.auth.signUp(
-      email: email,
-      password: pass,
-    );
-    print('Supabase auth created for ' + email);
-
+        email: email,
+        password: pass,
+        emailRedirectTo: "https://pointbird.io/confirm-email");
     actionResponse.message = "Verify your email to continue";
     actionResponse.color = "success";
     return actionResponse;

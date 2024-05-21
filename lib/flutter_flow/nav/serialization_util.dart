@@ -227,6 +227,8 @@ dynamic deserializeParam<T>(
             return ClientCompaniesRow(data);
           case CompaniesRow:
             return CompaniesRow(data);
+          case ViewPostsPollClientRow:
+            return ViewPostsPollClientRow(data);
           case ViewCouponsCompanyRow:
             return ViewCouponsCompanyRow(data);
           case ViewCouponsClientRow:
@@ -237,6 +239,8 @@ dynamic deserializeParam<T>(
             return PostsRow(data);
           case ClientsRow:
             return ClientsRow(data);
+          case ClientsPlansRow:
+            return ClientsPlansRow(data);
           case PointUpdatesRow:
             return PointUpdatesRow(data);
           case ViewPointsHubRow:
@@ -247,6 +251,8 @@ dynamic deserializeParam<T>(
             return PollOptionsRow(data);
           case ViewExploreRow:
             return ViewExploreRow(data);
+          case PlansRow:
+            return PlansRow(data);
           case CountriesRow:
             return CountriesRow(data);
           case UsersRow:
@@ -261,6 +267,8 @@ dynamic deserializeParam<T>(
             return CouponsRow(data);
           case FeedbackRow:
             return FeedbackRow(data);
+          case ViewClientsPlansRow:
+            return ViewClientsPlansRow(data);
           case ViewCompanyViewRow:
             return ViewCompanyViewRow(data);
           default:

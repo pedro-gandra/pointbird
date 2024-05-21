@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
 Future<int> votePoll(
-  ViewPostsPollRow pollInfo,
+  ViewPostsPollClientRow pollInfo,
   int idClient,
   int idReference,
   int idOption,
@@ -28,11 +28,19 @@ Future<int> votePoll(
     'id_client': idClient,
   });
 
+  final planRes = await supabase
+      .from('view_clients_plans')
+      .select('*')
+      .eq('id_client', idClient);
+
+  int finalPoints =
+      ((pollInfo.actionPoints!) * planRes[0]["multiplier"]).toInt();
+
   final response2 = await supabase.from('pointUpdates').insert({
     'id_reference': idReference,
-    'pointChange': pollInfo.actionPoints,
+    'pointChange': finalPoints,
     'event': 'voting on poll'
   });
 
-  return pollInfo.actionPoints!;
+  return finalPoints;
 }

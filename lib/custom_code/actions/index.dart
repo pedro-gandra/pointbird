@@ -14,3 +14,5 @@ export 'explore_companies.dart' show exploreCompanies;
 export 'is_email_registered.dart' show isEmailRegistered;
 export 'sign_up.dart' show signUp;
 export 'reset_pass.dart' show resetPass;
+export 'hash_generator.dart' show hashGenerator;
+export 'delete_account.dart' show deleteAccount;

@@ -10,11 +10,11 @@ class PollOptionStruct extends BaseStruct {
     int? idOption,
     String? text,
     int? votes,
-    List<int>? ids,
+    bool? clientVoted,
   })  : _idOption = idOption,
         _text = text,
         _votes = votes,
-        _ids = ids;
+        _clientVoted = clientVoted;
 
   // "idOption" field.
   int? _idOption;
@@ -36,19 +36,18 @@ class PollOptionStruct extends BaseStruct {
   void incrementVotes(int amount) => _votes = votes + amount;
   bool hasVotes() => _votes != null;
 
-  // "ids" field.
-  List<int>? _ids;
-  List<int> get ids => _ids ?? const [];
-  set ids(List<int>? val) => _ids = val;
-  void updateIds(Function(List<int>) updateFn) => updateFn(_ids ??= []);
-  bool hasIds() => _ids != null;
+  // "clientVoted" field.
+  bool? _clientVoted;
+  bool get clientVoted => _clientVoted ?? false;
+  set clientVoted(bool? val) => _clientVoted = val;
+  bool hasClientVoted() => _clientVoted != null;
 
   static PollOptionStruct fromMap(Map<String, dynamic> data) =>
       PollOptionStruct(
         idOption: castToType<int>(data['idOption']),
         text: data['text'] as String?,
         votes: castToType<int>(data['votes']),
-        ids: getDataList(data['ids']),
+        clientVoted: data['clientVoted'] as bool?,
       );
 
   static PollOptionStruct? maybeFromMap(dynamic data) => data is Map
@@ -59,7 +58,7 @@ class PollOptionStruct extends BaseStruct {
         'idOption': _idOption,
         'text': _text,
         'votes': _votes,
-        'ids': _ids,
+        'clientVoted': _clientVoted,
       }.withoutNulls;
 
   @override
@@ -76,10 +75,9 @@ class PollOptionStruct extends BaseStruct {
           _votes,
           ParamType.int,
         ),
-        'ids': serializeParam(
-          _ids,
-          ParamType.int,
-          true,
+        'clientVoted': serializeParam(
+          _clientVoted,
+          ParamType.bool,
         ),
       }.withoutNulls;
 
@@ -100,10 +98,10 @@ class PollOptionStruct extends BaseStruct {
           ParamType.int,
           false,
         ),
-        ids: deserializeParam<int>(
-          data['ids'],
-          ParamType.int,
-          true,
+        clientVoted: deserializeParam(
+          data['clientVoted'],
+          ParamType.bool,
+          false,
         ),
       );
 
@@ -112,25 +110,27 @@ class PollOptionStruct extends BaseStruct {
 
   @override
   bool operator ==(Object other) {
-    const listEquality = ListEquality();
     return other is PollOptionStruct &&
         idOption == other.idOption &&
         text == other.text &&
         votes == other.votes &&
-        listEquality.equals(ids, other.ids);
+        clientVoted == other.clientVoted;
   }
 
   @override
-  int get hashCode => const ListEquality().hash([idOption, text, votes, ids]);
+  int get hashCode =>
+      const ListEquality().hash([idOption, text, votes, clientVoted]);
 }
 
 PollOptionStruct createPollOptionStruct({
   int? idOption,
   String? text,
   int? votes,
+  bool? clientVoted,
 }) =>
     PollOptionStruct(
       idOption: idOption,
       text: text,
       votes: votes,
+      clientVoted: clientVoted,
     );

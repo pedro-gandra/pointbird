@@ -73,18 +73,18 @@ class _VerifyEmailWidgetState extends State<VerifyEmailWidget> {
               child: Stack(
                 children: [
                   Align(
-                    alignment: AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 25.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 30.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                25.0, 0.0, 25.0, 0.0),
+                                30.0, 0.0, 30.0, 0.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -126,7 +126,7 @@ class _VerifyEmailWidgetState extends State<VerifyEmailWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 18.0, 0.0, 0.0),
                                   child: Text(
-                                    'If you didn\'t receive, check your spam inbox. After confirming your email, you can log in to your account.',
+                                    'Make sure to check the spam inbox.',
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .labelMedium

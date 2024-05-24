@@ -694,26 +694,20 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        if (companyViewViewCompanyViewRow
-                                                ?.currentPoints !=
-                                            null)
+                                    if (companyViewViewCompanyViewRow
+                                            ?.currentPoints !=
+                                        null)
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 10.0),
                                             child: Text(
-                                              'Your points: ${formatNumber(
-                                                companyViewViewCompanyViewRow
-                                                    ?.currentPoints,
-                                                formatType: FormatType.decimal,
-                                                decimalType:
-                                                    DecimalType.automatic,
-                                              )}',
+                                              'Your points:',
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -728,15 +722,38 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                   ),
                                             ),
                                           ),
-                                        Icon(
-                                          Icons.arrow_right_alt_rounded,
-                                          color: FlutterFlowTheme.of(context)
-                                              .alternate,
-                                          size: 32.0,
-                                        ),
-                                        if (companyViewViewCompanyViewRow
-                                                ?.currentPoints !=
-                                            null)
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 10.0, 0.0, 10.0),
+                                            child: Text(
+                                              formatNumber(
+                                                companyViewViewCompanyViewRow!
+                                                    .currentPoints!,
+                                                formatType: FormatType.decimal,
+                                                decimalType:
+                                                    DecimalType.automatic,
+                                              ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .alternate,
+                                                    fontSize: 16.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
+                                            ),
+                                          ),
+                                          Icon(
+                                            Icons.arrow_right_alt_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .alternate,
+                                            size: 32.0,
+                                          ),
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
@@ -759,14 +776,14 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .alternate,
-                                                    fontSize: 15.0,
+                                                    fontSize: 16.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                             ),
                                           ),
-                                      ].divide(SizedBox(width: 8.0)),
-                                    ),
+                                        ].divide(SizedBox(width: 10.0)),
+                                      ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 8.0),
@@ -863,7 +880,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                   size: 15.0,
                                                 ),
                                                 options: FFButtonOptions(
-                                                  width: 140.0,
+                                                  width: 144.0,
                                                   height: 40.0,
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
@@ -926,7 +943,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                               size: 15.0,
                                             ),
                                             options: FFButtonOptions(
-                                              width: 140.0,
+                                              width: 144.0,
                                               height: 40.0,
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),

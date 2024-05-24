@@ -921,7 +921,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                                               text: 'Upgrade now',
                                               options: FFButtonOptions(
                                                 width: double.infinity,
-                                                height: 40.0,
+                                                height: 44.0,
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 0.0, 0.0),
@@ -1490,7 +1490,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                                             text: 'Upgrade now',
                                             options: FFButtonOptions(
                                               width: double.infinity,
-                                              height: 40.0,
+                                              height: 44.0,
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               iconPadding: EdgeInsetsDirectional

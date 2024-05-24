@@ -381,7 +381,7 @@ class _HelpCompanyWidgetState extends State<HelpCompanyWidget> {
                                           ParamType.String,
                                         ),
                                         'par2': serializeParam(
-                                          'Your business will be filtered by its category and it will be ranked based on relevancy inside the app, so make sure to stay active and bring as many followers from your already existing customer base as possible.',
+                                          'Your business will be filtered by its category and ranked based on relevancy inside the app, so make sure to stay active and bring as many followers from your already existing customer base as possible.',
                                           ParamType.String,
                                         ),
                                         'par3': serializeParam(
@@ -446,7 +446,7 @@ class _HelpCompanyWidgetState extends State<HelpCompanyWidget> {
                                           ParamType.String,
                                         ),
                                         'par1': serializeParam(
-                                          'Make sure you announce your Pointbird profile on your social media accounts and encourage people to download and follow you on the app. Without doing that it is extremely unlikely that your profile will be recommended to customers.',
+                                          'Make sure you announce your Pointbird profile on your social media accounts and encourage people to download and follow you on the app. Without doing that, it is extremely unlikely that your profile will be recommended to customers.',
                                           ParamType.String,
                                         ),
                                         'par2': serializeParam(

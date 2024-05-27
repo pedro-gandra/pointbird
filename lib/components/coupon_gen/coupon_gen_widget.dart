@@ -81,7 +81,7 @@ class _CouponGenWidgetState extends State<CouponGenWidget> {
                     alignment: AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 20.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 25.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -98,7 +98,7 @@ class _CouponGenWidgetState extends State<CouponGenWidget> {
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Text(
                                     'Coupon generated!',
-                                    textAlign: TextAlign.start,
+                                    textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .headlineMedium
                                         .override(
@@ -123,7 +123,7 @@ class _CouponGenWidgetState extends State<CouponGenWidget> {
                                         decimalType: DecimalType.automatic,
                                         currency: '\$',
                                       )} coupon for ${widget.name}.',
-                                      textAlign: TextAlign.start,
+                                      textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
@@ -145,7 +145,7 @@ class _CouponGenWidgetState extends State<CouponGenWidget> {
                                         0.0, 8.0, 0.0, 0.0),
                                     child: Text(
                                       'To see all your coupons, click below:',
-                                      textAlign: TextAlign.start,
+                                      textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(

@@ -278,9 +278,10 @@ class _CheckinModalWidgetState extends State<CheckinModalWidget> {
                               },
                               text: 'Back',
                               options: FFButtonOptions(
+                                width: 150.0,
                                 height: 40.0,
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    30.0, 0.0, 30.0, 0.0),
+                                    0.0, 0.0, 0.0, 0.0),
                                 iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,

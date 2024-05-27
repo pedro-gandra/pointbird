@@ -63,3 +63,5 @@ export '/pages/app_pages/client/explore_company/explore_company_widget.dart'
 export '/pages/app_pages/start/account_type/account_type_widget.dart'
     show AccountTypeWidget;
 export '/pages/authentication/new_pass/new_pass_widget.dart' show NewPassWidget;
+export '/pages/app_pages/company/notifications_company/notifications_company_widget.dart'
+    show NotificationsCompanyWidget;

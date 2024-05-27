@@ -367,6 +367,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'newPass',
           path: '/newPass',
           builder: (context, params) => NewPassWidget(),
+        ),
+        FFRoute(
+          name: 'notificationsCompany',
+          path: '/notificationsCompany',
+          builder: (context, params) => NotificationsCompanyWidget(
+            idManager: params.getParam(
+              'idManager',
+              ParamType.int,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],

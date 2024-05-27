@@ -173,3 +173,7 @@ bool dateExpired(DateTime date) {
   final now = DateTime.now().toUtc();
   return now.compareTo(date) > 0;
 }
+
+DateTime dateToUtc(DateTime date) {
+  return date.toUtc();
+}

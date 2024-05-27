@@ -56,4 +56,10 @@ class ViewHomeCompanyRow extends SupabaseDataRow {
 
   int? get reviews => getField<int>('reviews');
   set reviews(int? value) => setField<int>('reviews', value);
+
+  int? get newNotifications => getField<int>('new_notifications');
+  set newNotifications(int? value) => setField<int>('new_notifications', value);
+
+  int? get idManaher => getField<int>('id_manaher');
+  set idManaher(int? value) => setField<int>('id_manaher', value);
 }

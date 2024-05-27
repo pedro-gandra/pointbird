@@ -233,6 +233,8 @@ dynamic deserializeParam<T>(
             return ViewCouponsCompanyRow(data);
           case ViewCouponsClientRow:
             return ViewCouponsClientRow(data);
+          case NotificationsRow:
+            return NotificationsRow(data);
           case PostsClientsRow:
             return PostsClientsRow(data);
           case PostsRow:
@@ -271,6 +273,8 @@ dynamic deserializeParam<T>(
             return ViewClientsPlansRow(data);
           case ViewCompanyViewRow:
             return ViewCompanyViewRow(data);
+          case NotificationManagerRow:
+            return NotificationManagerRow(data);
           default:
             return null;
         }

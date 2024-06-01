@@ -329,14 +329,13 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         _model.userInfo!.type,
                                         currentUserEmail,
                                       );
-                                      setState(() {
-                                        FFAppState().updateUserStruct(
-                                          (e) => e
-                                            ..type = _model.userInfo?.type
-                                            ..id = _model.userId
-                                            ..filledData = true,
-                                        );
-                                      });
+                                      FFAppState().updateUserStruct(
+                                        (e) => e
+                                          ..type = _model.userInfo?.type
+                                          ..id = _model.userId
+                                          ..filledData = true,
+                                      );
+                                      setState(() {});
                                       if (FFAppState().user.type ==
                                           'Business') {
                                         context.pushNamedAuth(

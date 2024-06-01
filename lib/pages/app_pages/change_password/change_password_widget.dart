@@ -594,11 +594,10 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                                                   0.0, 20.0, 0.0, 0.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
-                                              setState(() {
-                                                _model.passDifferent = false;
-                                                _model.wrongPass = false;
-                                                _model.success = false;
-                                              });
+                                              _model.passDifferent = false;
+                                              _model.wrongPass = false;
+                                              _model.success = false;
+                                              setState(() {});
                                               if (_model.formKey.currentState ==
                                                       null ||
                                                   !_model.formKey.currentState!
@@ -620,9 +619,8 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                                                     _model.newpassTextController
                                                         .text,
                                                   );
-                                                  setState(() {
-                                                    _model.success = true;
-                                                  });
+                                                  _model.success = true;
+                                                  setState(() {});
                                                   setState(() {
                                                     _model.pass1TextController
                                                         ?.clear();
@@ -633,14 +631,12 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                                                         ?.clear();
                                                   });
                                                 } else {
-                                                  setState(() {
-                                                    _model.wrongPass = true;
-                                                  });
+                                                  _model.wrongPass = true;
+                                                  setState(() {});
                                                 }
                                               } else {
-                                                setState(() {
-                                                  _model.passDifferent = true;
-                                                });
+                                                _model.passDifferent = true;
+                                                setState(() {});
                                               }
 
                                               setState(() {});

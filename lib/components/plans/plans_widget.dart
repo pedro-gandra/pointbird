@@ -39,9 +39,8 @@ class _PlansWidgetState extends State<PlansWidget> {
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      setState(() {
-        _model.index = functions.changeInt(widget.idPlan!, '-', 1);
-      });
+      _model.index = functions.changeInt(widget.idPlan!, '-', 1);
+      setState(() {});
     });
   }
 
@@ -770,9 +769,8 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                 highlightColor:
                                                     Colors.transparent,
                                                 onTap: () async {
-                                                  setState(() {
-                                                    _model.annual = true;
-                                                  });
+                                                  _model.annual = true;
+                                                  setState(() {});
                                                 },
                                                 child: Container(
                                                   width: 110.0,
@@ -841,9 +839,8 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                 highlightColor:
                                                     Colors.transparent,
                                                 onTap: () async {
-                                                  setState(() {
-                                                    _model.annual = false;
-                                                  });
+                                                  _model.annual = false;
+                                                  setState(() {});
                                                 },
                                                 child: Container(
                                                   width: 110.0,
@@ -1351,9 +1348,8 @@ class _PlansWidgetState extends State<PlansWidget> {
                                               highlightColor:
                                                   Colors.transparent,
                                               onTap: () async {
-                                                setState(() {
-                                                  _model.annual = true;
-                                                });
+                                                _model.annual = true;
+                                                setState(() {});
                                               },
                                               child: Container(
                                                 width: 110.0,
@@ -1416,9 +1412,8 @@ class _PlansWidgetState extends State<PlansWidget> {
                                               highlightColor:
                                                   Colors.transparent,
                                               onTap: () async {
-                                                setState(() {
-                                                  _model.annual = false;
-                                                });
+                                                _model.annual = false;
+                                                setState(() {});
                                               },
                                               child: Container(
                                                 width: 110.0,
@@ -1561,9 +1556,8 @@ class _PlansWidgetState extends State<PlansWidget> {
                         autoPlay: false,
                         onPageChanged: (index, _) async {
                           _model.carouselCurrentIndex = index;
-                          setState(() {
-                            _model.index = _model.carouselCurrentIndex;
-                          });
+                          _model.index = _model.carouselCurrentIndex;
+                          setState(() {});
                         },
                       ),
                     ),

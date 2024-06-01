@@ -271,16 +271,14 @@ class _EditPostWidgetState extends State<EditPostWidget> {
                                                           widget.postId,
                                                         ),
                                                       );
-                                                      setState(() {
-                                                        _model.changes = true;
-                                                      });
+                                                      _model.changes = true;
+                                                      setState(() {});
                                                       await Future.delayed(
                                                           const Duration(
                                                               milliseconds:
                                                                   2500));
-                                                      setState(() {
-                                                        _model.changes = false;
-                                                      });
+                                                      _model.changes = false;
+                                                      setState(() {});
                                                     }
                                                   },
                                                   child: Icon(
@@ -464,17 +462,14 @@ class _EditPostWidgetState extends State<EditPostWidget> {
                                                             widget.postId,
                                                           ),
                                                         );
-                                                        setState(() {
-                                                          _model.changes = true;
-                                                        });
+                                                        _model.changes = true;
+                                                        setState(() {});
                                                         await Future.delayed(
                                                             const Duration(
                                                                 milliseconds:
                                                                     2500));
-                                                        setState(() {
-                                                          _model.changes =
-                                                              false;
-                                                        });
+                                                        _model.changes = false;
+                                                        setState(() {});
                                                       }
                                                     },
                                                     child: Icon(
@@ -675,18 +670,15 @@ class _EditPostWidgetState extends State<EditPostWidget> {
                                                               widget.postId,
                                                             ),
                                                           );
-                                                          setState(() {
-                                                            _model.changes =
-                                                                true;
-                                                          });
+                                                          _model.changes = true;
+                                                          setState(() {});
                                                           await Future.delayed(
                                                               const Duration(
                                                                   milliseconds:
                                                                       2500));
-                                                          setState(() {
-                                                            _model.changes =
-                                                                false;
-                                                          });
+                                                          _model.changes =
+                                                              false;
+                                                          setState(() {});
                                                         }
                                                       },
                                                       child: Icon(

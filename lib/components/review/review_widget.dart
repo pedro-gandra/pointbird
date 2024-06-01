@@ -197,9 +197,8 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                               widget.idReference,
                             ),
                           );
-                          setState(() {
-                            _model.response = true;
-                          });
+                          _model.response = true;
+                          setState(() {});
                           await Future.delayed(
                               const Duration(milliseconds: 1200));
                           Navigator.pop(context);

@@ -135,9 +135,8 @@ class _HelpClientWidgetState extends State<HelpClientWidget> {
                           () => setState(() {}),
                         ),
                         onFieldSubmitted: (_) async {
-                          setState(() {
-                            _model.search = _model.textController.text;
-                          });
+                          _model.search = _model.textController.text;
+                          setState(() {});
                         },
                         obscureText: false,
                         decoration: InputDecoration(

@@ -24,7 +24,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'company_view_model.dart';
 export 'company_view_model.dart';
 
@@ -74,10 +73,9 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
           widget.idClient,
         ),
       );
-      setState(() {
-        _model.checkInMessage =
-            functions.checkinMessage(_model.ccInfo?[0]?.lastCheckIn);
-      });
+      _model.checkInMessage =
+          functions.checkinMessage(_model.ccInfo?[0]?.lastCheckIn);
+      setState(() {});
     });
 
     animationsMap.addAll({
@@ -512,27 +510,25 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                         0.0, 0.0)
                                                     .resolve(Directionality.of(
                                                         context)),
-                                                child: WebViewAware(
-                                                  child: GestureDetector(
-                                                    onTap: () => _model
-                                                            .unfocusNode
-                                                            .canRequestFocus
-                                                        ? FocusScope.of(context)
-                                                            .requestFocus(_model
-                                                                .unfocusNode)
-                                                        : FocusScope.of(context)
-                                                            .unfocus(),
-                                                    child: ReviewWidget(
-                                                      idReference:
-                                                          companyViewViewCompanyViewRow!
-                                                              .idReference!,
-                                                      name:
-                                                          companyViewViewCompanyViewRow!
-                                                              .name!,
-                                                      rating:
-                                                          companyViewViewCompanyViewRow
-                                                              ?.clientRating,
-                                                    ),
+                                                child: GestureDetector(
+                                                  onTap: () => _model
+                                                          .unfocusNode
+                                                          .canRequestFocus
+                                                      ? FocusScope.of(context)
+                                                          .requestFocus(_model
+                                                              .unfocusNode)
+                                                      : FocusScope.of(context)
+                                                          .unfocus(),
+                                                  child: ReviewWidget(
+                                                    idReference:
+                                                        companyViewViewCompanyViewRow!
+                                                            .idReference!,
+                                                    name:
+                                                        companyViewViewCompanyViewRow!
+                                                            .name!,
+                                                    rating:
+                                                        companyViewViewCompanyViewRow
+                                                            ?.clientRating,
                                                   ),
                                                 ),
                                               );
@@ -626,20 +622,17 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                       .resolve(
                                                           Directionality.of(
                                                               context)),
-                                              child: WebViewAware(
-                                                child: GestureDetector(
-                                                  onTap: () => _model
-                                                          .unfocusNode
-                                                          .canRequestFocus
-                                                      ? FocusScope.of(context)
-                                                          .requestFocus(_model
-                                                              .unfocusNode)
-                                                      : FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: UnfollowWidget(
-                                                    companyInfo:
-                                                        companyViewViewCompanyViewRow!,
-                                                  ),
+                                              child: GestureDetector(
+                                                onTap: () => _model.unfocusNode
+                                                        .canRequestFocus
+                                                    ? FocusScope.of(context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode)
+                                                    : FocusScope.of(context)
+                                                        .unfocus(),
+                                                child: UnfollowWidget(
+                                                  companyInfo:
+                                                      companyViewViewCompanyViewRow!,
                                                 ),
                                               ),
                                             );
@@ -831,27 +824,24 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                       Directionality.of(
                                                                           context)),
                                                               child:
-                                                                  WebViewAware(
+                                                                  GestureDetector(
+                                                                onTap: () => _model
+                                                                        .unfocusNode
+                                                                        .canRequestFocus
+                                                                    ? FocusScope.of(
+                                                                            context)
+                                                                        .requestFocus(_model
+                                                                            .unfocusNode)
+                                                                    : FocusScope.of(
+                                                                            context)
+                                                                        .unfocus(),
                                                                 child:
-                                                                    GestureDetector(
-                                                                  onTap: () => _model
-                                                                          .unfocusNode
-                                                                          .canRequestFocus
-                                                                      ? FocusScope.of(
-                                                                              context)
-                                                                          .requestFocus(_model
-                                                                              .unfocusNode)
-                                                                      : FocusScope.of(
-                                                                              context)
-                                                                          .unfocus(),
-                                                                  child:
-                                                                      CheckinModalWidget(
-                                                                    companyInfo:
-                                                                        companyViewViewCompanyViewRow!,
-                                                                    streak: _model
-                                                                        .ccUpdated!
-                                                                        .checkInStreak,
-                                                                  ),
+                                                                    CheckinModalWidget(
+                                                                  companyInfo:
+                                                                      companyViewViewCompanyViewRow!,
+                                                                  streak: _model
+                                                                      .ccUpdated!
+                                                                      .checkInStreak,
                                                                 ),
                                                               ),
                                                             );
@@ -859,13 +849,11 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                         ).then((value) =>
                                                             setState(() {}));
 
-                                                        setState(() {
-                                                          _model.checkInMessage =
-                                                              functions.checkinMessage(
-                                                                  _model
-                                                                      .ccUpdated
-                                                                      ?.lastCheckIn);
-                                                        });
+                                                        _model.checkInMessage =
+                                                            functions.checkinMessage(
+                                                                _model.ccUpdated
+                                                                    ?.lastCheckIn);
+                                                        setState(() {});
                                                         setState(() => _model
                                                                 .requestCompleter4 =
                                                             null);
@@ -1022,9 +1010,8 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      setState(() {
-                                        _model.tabSelected = 1;
-                                      });
+                                      _model.tabSelected = 1;
+                                      setState(() {});
                                     },
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -1066,9 +1053,8 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      setState(() {
-                                        _model.tabSelected = 2;
-                                      });
+                                      _model.tabSelected = 2;
+                                      setState(() {});
                                     },
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -1110,9 +1096,8 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      setState(() {
-                                        _model.tabSelected = 3;
-                                      });
+                                      _model.tabSelected = 3;
+                                      setState(() {});
                                     },
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -1175,6 +1160,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                   'Offer',
                                                 )
                                                 .order('created_at'),
+                                            limit: 50,
                                           ),
                                         )
                                             .then((result) {
@@ -1419,11 +1405,10 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                     () async {
                                                                   if (!_model
                                                                       .isClick) {
+                                                                    _model.isClick =
+                                                                        true;
                                                                     setState(
-                                                                        () {
-                                                                      _model.isClick =
-                                                                          true;
-                                                                    });
+                                                                        () {});
                                                                     unawaited(
                                                                       () async {
                                                                         await launchURL(
@@ -1471,16 +1456,14 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                             alignment:
                                                                                 AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                             child:
-                                                                                WebViewAware(
-                                                                              child: GestureDetector(
-                                                                                onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                child: PointsReceivedWidget(
-                                                                                  points: _model.actionPointsCopy!,
-                                                                                  pointType: 'clicking on an offer post',
-                                                                                  nameCompany: companyViewViewCompanyViewRow!.name!,
-                                                                                  multiplier: _model.planInfo![0].multiplier!,
-                                                                                  planName: _model.planInfo![0].namePlan!,
-                                                                                ),
+                                                                                GestureDetector(
+                                                                              onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                              child: PointsReceivedWidget(
+                                                                                points: _model.actionPointsCopy!,
+                                                                                pointType: 'clicking on an offer post',
+                                                                                nameCompany: companyViewViewCompanyViewRow!.name!,
+                                                                                multiplier: _model.planInfo![0].multiplier!,
+                                                                                planName: _model.planInfo![0].namePlan!,
                                                                               ),
                                                                             ),
                                                                           );
@@ -1489,11 +1472,10 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                           setState(
                                                                               () {}));
                                                                     }
+                                                                    _model.isClick =
+                                                                        false;
                                                                     setState(
-                                                                        () {
-                                                                      _model.isClick =
-                                                                          false;
-                                                                    });
+                                                                        () {});
                                                                   }
 
                                                                   setState(
@@ -1624,6 +1606,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                   widget.idClient,
                                                 )
                                                 .order('created_at'),
+                                            limit: 50,
                                           ),
                                         )
                                             .then((result) {
@@ -1884,9 +1867,8 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                             onTap:
                                                                                 () async {
                                                                               if (!_model.isClick) {
-                                                                                setState(() {
-                                                                                  _model.isClick = true;
-                                                                                });
+                                                                                _model.isClick = true;
+                                                                                setState(() {});
                                                                                 if (!pollsViewPostsPollClientRow.clientVotedAny! && !functions.dateExpired(pollsViewPostsPollClientRow.pointExpiration!)) {
                                                                                   if (animationsMap['containerOnActionTriggerAnimation'] != null) {
                                                                                     animationsMap['containerOnActionTriggerAnimation']!.controller.forward(from: 0.0).whenComplete(animationsMap['containerOnActionTriggerAnimation']!.controller.reverse);
@@ -1906,16 +1888,14 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                                           insetPadding: EdgeInsets.zero,
                                                                                           backgroundColor: Colors.transparent,
                                                                                           alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
-                                                                                          child: WebViewAware(
-                                                                                            child: GestureDetector(
-                                                                                              onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                              child: PointsReceivedWidget(
-                                                                                                points: _model.pointsPoll!,
-                                                                                                pointType: 'voting on a poll',
-                                                                                                nameCompany: companyViewViewCompanyViewRow!.name!,
-                                                                                                multiplier: _model.planInfo![0].multiplier!,
-                                                                                                planName: _model.planInfo![0].namePlan!,
-                                                                                              ),
+                                                                                          child: GestureDetector(
+                                                                                            onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                            child: PointsReceivedWidget(
+                                                                                              points: _model.pointsPoll!,
+                                                                                              pointType: 'voting on a poll',
+                                                                                              nameCompany: companyViewViewCompanyViewRow!.name!,
+                                                                                              multiplier: _model.planInfo![0].multiplier!,
+                                                                                              planName: _model.planInfo![0].namePlan!,
                                                                                             ),
                                                                                           ),
                                                                                         );
@@ -1931,9 +1911,8 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                                     await _model.waitForRequestCompleted4();
                                                                                   }
                                                                                 }
-                                                                                setState(() {
-                                                                                  _model.isClick = false;
-                                                                                });
+                                                                                _model.isClick = false;
+                                                                                setState(() {});
                                                                               }
 
                                                                               setState(() {});
@@ -2170,6 +2149,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                   'Social',
                                                 )
                                                 .order('created_at'),
+                                            limit: 50,
                                           ),
                                         )
                                             .then((result) {
@@ -2424,11 +2404,10 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                     () async {
                                                                   if (!_model
                                                                       .isClick) {
+                                                                    _model.isClick =
+                                                                        true;
                                                                     setState(
-                                                                        () {
-                                                                      _model.isClick =
-                                                                          true;
-                                                                    });
+                                                                        () {});
                                                                     unawaited(
                                                                       () async {
                                                                         await launchURL(
@@ -2476,16 +2455,14 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                             alignment:
                                                                                 AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                             child:
-                                                                                WebViewAware(
-                                                                              child: GestureDetector(
-                                                                                onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                child: PointsReceivedWidget(
-                                                                                  points: _model.actionPointsSocial!,
-                                                                                  pointType: 'clicking on a social post',
-                                                                                  nameCompany: companyViewViewCompanyViewRow!.name!,
-                                                                                  multiplier: _model.planInfo![0].multiplier!,
-                                                                                  planName: _model.planInfo![0].namePlan!,
-                                                                                ),
+                                                                                GestureDetector(
+                                                                              onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                              child: PointsReceivedWidget(
+                                                                                points: _model.actionPointsSocial!,
+                                                                                pointType: 'clicking on a social post',
+                                                                                nameCompany: companyViewViewCompanyViewRow!.name!,
+                                                                                multiplier: _model.planInfo![0].multiplier!,
+                                                                                planName: _model.planInfo![0].namePlan!,
                                                                               ),
                                                                             ),
                                                                           );
@@ -2494,11 +2471,10 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                           setState(
                                                                               () {}));
                                                                     }
+                                                                    _model.isClick =
+                                                                        false;
                                                                     setState(
-                                                                        () {
-                                                                      _model.isClick =
-                                                                          false;
-                                                                    });
+                                                                        () {});
                                                                   }
 
                                                                   setState(

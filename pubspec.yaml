@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.2+11
+version: 1.0.3+1
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
@@ -65,6 +65,7 @@ dependencies:
   intl: 0.18.1
   json_path: 0.6.2
   mime_type: 1.0.0
+  onesignal_flutter: ^5.2.0
   page_transition: 2.1.0
   path_provider: 2.0.14
   path_provider_android: 2.0.25
@@ -72,7 +73,6 @@ dependencies:
   path_provider_platform_interface: 2.0.6
   percent_indicator: 4.2.2
   plugin_platform_interface: 2.1.8
-  pointer_interceptor: 0.10.1
   postgrest: 1.5.2
   provider: 6.0.5
   realtime_client: 1.4.0
@@ -97,7 +97,6 @@ dependencies:
   url_launcher_android: 6.3.0
   url_launcher_ios: 6.2.5
   url_launcher_platform_interface: 2.3.2
-  uuid: ^4.0.0
   video_player: 2.8.1
   video_player_android: 2.4.10
   video_player_avfoundation: 2.5.1
@@ -107,12 +106,7 @@ dependencies:
   webview_flutter_android: 3.15.0
   webview_flutter_platform_interface: 2.10.0
   webview_flutter_wkwebview: 3.12.0
-  webviewx_plus: 0.5.0
   xml: 6.3.0
-  youtube_player_iframe: 
-    git:
-      url: https://github.com/FlutterFlow/youtube_player_flutter.git
-      path: packages/youtube_player_iframe
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -121,7 +115,6 @@ dependencies:
 
 dependency_overrides:
   http: 1.2.0
-  pointer_interceptor: 0.10.1
   rxdart: 0.27.7
   uuid: ^4.0.0
 

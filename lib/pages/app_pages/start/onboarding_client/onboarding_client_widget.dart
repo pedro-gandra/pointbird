@@ -13,7 +13,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'onboarding_client_model.dart';
 export 'onboarding_client_model.dart';
 
@@ -45,17 +44,15 @@ class _OnboardingClientWidgetState extends State<OnboardingClientWidget> {
             backgroundColor: Colors.transparent,
             alignment: AlignmentDirectional(0.0, 0.0)
                 .resolve(Directionality.of(context)),
-            child: WebViewAware(
-              child: GestureDetector(
-                onTap: () => _model.unfocusNode.canRequestFocus
-                    ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-                    : FocusScope.of(context).unfocus(),
-                child: InformationWidget(
-                  title: 'Welcome to pointbird!',
-                  desc:
-                      'Before you can get started, you need to finish setting up your profile.',
-                  button: 'Let\'s go',
-                ),
+            child: GestureDetector(
+              onTap: () => _model.unfocusNode.canRequestFocus
+                  ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+                  : FocusScope.of(context).unfocus(),
+              child: InformationWidget(
+                title: 'Welcome to pointbird!',
+                desc:
+                    'Before you can get started, you need to finish setting up your profile.',
+                button: 'Let\'s go',
               ),
             ),
           );
@@ -512,10 +509,8 @@ class _OnboardingClientWidgetState extends State<OnboardingClientWidget> {
                                                           );
                                                         });
                                                       }
-                                                      setState(() {
-                                                        _model.dataChoosen =
-                                                            true;
-                                                      });
+                                                      _model.dataChoosen = true;
+                                                      setState(() {});
                                                     },
                                                     child: Container(
                                                       width: double.infinity,
@@ -903,13 +898,12 @@ class _OnboardingClientWidgetState extends State<OnboardingClientWidget> {
                                                           ),
                                                         );
                                                       }
-                                                      setState(() {
-                                                        FFAppState()
-                                                            .updateUserStruct(
-                                                          (e) => e
-                                                            ..filledData = true,
-                                                        );
-                                                      });
+                                                      FFAppState()
+                                                          .updateUserStruct(
+                                                        (e) => e
+                                                          ..filledData = true,
+                                                      );
+                                                      setState(() {});
 
                                                       context.goNamed(
                                                           'homeClient');

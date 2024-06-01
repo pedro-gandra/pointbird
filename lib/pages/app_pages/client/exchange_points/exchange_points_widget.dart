@@ -14,7 +14,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'exchange_points_model.dart';
 export 'exchange_points_model.dart';
 
@@ -292,13 +291,11 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
                                                             .text) >
                                                         exchangePointsViewHomeClientRow!
                                                             .currentPoints!) {
-                                                      setState(() {
-                                                        _model.enoughPoints =
-                                                            true;
-                                                        _model.minimum = 0.0;
-                                                        _model.couponValue =
-                                                            0.0;
-                                                      });
+                                                      _model.enoughPoints =
+                                                          true;
+                                                      _model.minimum = 0.0;
+                                                      _model.couponValue = 0.0;
+                                                      setState(() {});
                                                     } else {
                                                       _model.min = await actions
                                                           .checkMinimum(
@@ -308,18 +305,16 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
                                                         exchangePointsViewHomeClientRow!
                                                             .percentageLimit!,
                                                       );
-                                                      setState(() {
-                                                        _model.enoughPoints =
-                                                            false;
-                                                        _model.minimum =
-                                                            _model.min!;
-                                                        _model.couponValue =
-                                                            functions.convertPoints(
-                                                                functions.toInt(
-                                                                    _model
-                                                                        .pointAmountTextController
-                                                                        .text));
-                                                      });
+                                                      _model.enoughPoints =
+                                                          false;
+                                                      _model.minimum =
+                                                          _model.min!;
+                                                      _model.couponValue =
+                                                          functions.convertPoints(
+                                                              functions.toInt(_model
+                                                                  .pointAmountTextController
+                                                                  .text));
+                                                      setState(() {});
                                                     }
 
                                                     setState(() {});
@@ -675,10 +670,9 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
                                                             .text) >
                                                         exchangePointsViewHomeClientRow!
                                                             .currentPoints!) {
-                                                      setState(() {
-                                                        _model.enoughPoints =
-                                                            true;
-                                                      });
+                                                      _model.enoughPoints =
+                                                          true;
+                                                      setState(() {});
                                                     } else {
                                                       _model.genResult =
                                                           await actions
@@ -719,29 +713,27 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
                                                                       Directionality.of(
                                                                           context)),
                                                               child:
-                                                                  WebViewAware(
+                                                                  GestureDetector(
+                                                                onTap: () => _model
+                                                                        .unfocusNode
+                                                                        .canRequestFocus
+                                                                    ? FocusScope.of(
+                                                                            context)
+                                                                        .requestFocus(_model
+                                                                            .unfocusNode)
+                                                                    : FocusScope.of(
+                                                                            context)
+                                                                        .unfocus(),
                                                                 child:
-                                                                    GestureDetector(
-                                                                  onTap: () => _model
-                                                                          .unfocusNode
-                                                                          .canRequestFocus
-                                                                      ? FocusScope.of(
-                                                                              context)
-                                                                          .requestFocus(_model
-                                                                              .unfocusNode)
-                                                                      : FocusScope.of(
-                                                                              context)
-                                                                          .unfocus(),
-                                                                  child:
-                                                                      CouponGenWidget(
-                                                                    value: _model
-                                                                        .couponValue,
-                                                                    name: exchangePointsViewHomeClientRow!
-                                                                        .name!,
-                                                                    idClient:
-                                                                        exchangePointsViewHomeClientRow!
-                                                                            .idClient!,
-                                                                  ),
+                                                                    CouponGenWidget(
+                                                                  value: _model
+                                                                      .couponValue,
+                                                                  name:
+                                                                      exchangePointsViewHomeClientRow!
+                                                                          .name!,
+                                                                  idClient:
+                                                                      exchangePointsViewHomeClientRow!
+                                                                          .idClient!,
                                                                 ),
                                                               ),
                                                             );
@@ -749,11 +741,10 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
                                                         ).then((value) =>
                                                             setState(() {}));
 
-                                                        setState(() {
-                                                          _model.minimum = 0.0;
-                                                          _model.couponValue =
-                                                              0.0;
-                                                        });
+                                                        _model.minimum = 0.0;
+                                                        _model.couponValue =
+                                                            0.0;
+                                                        setState(() {});
                                                         setState(() => _model
                                                                 .requestCompleter =
                                                             null);
@@ -778,28 +769,25 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
                                                                       Directionality.of(
                                                                           context)),
                                                               child:
-                                                                  WebViewAware(
+                                                                  GestureDetector(
+                                                                onTap: () => _model
+                                                                        .unfocusNode
+                                                                        .canRequestFocus
+                                                                    ? FocusScope.of(
+                                                                            context)
+                                                                        .requestFocus(_model
+                                                                            .unfocusNode)
+                                                                    : FocusScope.of(
+                                                                            context)
+                                                                        .unfocus(),
                                                                 child:
-                                                                    GestureDetector(
-                                                                  onTap: () => _model
-                                                                          .unfocusNode
-                                                                          .canRequestFocus
-                                                                      ? FocusScope.of(
-                                                                              context)
-                                                                          .requestFocus(_model
-                                                                              .unfocusNode)
-                                                                      : FocusScope.of(
-                                                                              context)
-                                                                          .unfocus(),
-                                                                  child:
-                                                                      UpgradeErrorWidget(
-                                                                    message: _model
-                                                                        .genResult!
-                                                                        .message,
-                                                                    idPlan: _model
-                                                                        .genResult!
-                                                                        .idPlan,
-                                                                  ),
+                                                                    UpgradeErrorWidget(
+                                                                  message: _model
+                                                                      .genResult!
+                                                                      .message,
+                                                                  idPlan: _model
+                                                                      .genResult!
+                                                                      .idPlan,
                                                                 ),
                                                               ),
                                                             );

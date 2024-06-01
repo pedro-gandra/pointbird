@@ -11,7 +11,6 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'company_coupons_model.dart';
 export 'company_coupons_model.dart';
 
@@ -88,9 +87,8 @@ class _CompanyCouponsWidgetState extends State<CompanyCouponsWidget> {
                             '_model.textController',
                             Duration(milliseconds: 100),
                             () async {
-                              setState(() {
-                                _model.search = _model.textController.text;
-                              });
+                              _model.search = _model.textController.text;
+                              setState(() {});
                             },
                           ),
                           obscureText: false,
@@ -159,10 +157,9 @@ class _CompanyCouponsWidgetState extends State<CompanyCouponsWidget> {
                                 ? InkWell(
                                     onTap: () async {
                                       _model.textController?.clear();
-                                      setState(() {
-                                        _model.search =
-                                            _model.textController.text;
-                                      });
+                                      _model.search =
+                                          _model.textController.text;
+                                      setState(() {});
                                       setState(() {});
                                     },
                                     child: Icon(
@@ -219,6 +216,7 @@ class _CompanyCouponsWidgetState extends State<CompanyCouponsWidget> {
                                       )
                                       .order('active_status')
                                       .order('expiration'),
+                                  limit: 200,
                                 )))
                               .future,
                           builder: (context, snapshot) {
@@ -289,26 +287,23 @@ class _CompanyCouponsWidgetState extends State<CompanyCouponsWidget> {
                                                                 .resolve(
                                                                     Directionality.of(
                                                                         context)),
-                                                        child: WebViewAware(
+                                                        child: GestureDetector(
+                                                          onTap: () => _model
+                                                                  .unfocusNode
+                                                                  .canRequestFocus
+                                                              ? FocusScope.of(
+                                                                      context)
+                                                                  .requestFocus(
+                                                                      _model
+                                                                          .unfocusNode)
+                                                              : FocusScope.of(
+                                                                      context)
+                                                                  .unfocus(),
                                                           child:
-                                                              GestureDetector(
-                                                            onTap: () => _model
-                                                                    .unfocusNode
-                                                                    .canRequestFocus
-                                                                ? FocusScope.of(
-                                                                        context)
-                                                                    .requestFocus(
-                                                                        _model
-                                                                            .unfocusNode)
-                                                                : FocusScope.of(
-                                                                        context)
-                                                                    .unfocus(),
-                                                            child:
-                                                                DeactivateCouponWidget(
-                                                              idCoupon:
-                                                                  listViewViewCouponsCompanyRow
-                                                                      .idCoupon!,
-                                                            ),
+                                                              DeactivateCouponWidget(
+                                                            idCoupon:
+                                                                listViewViewCouponsCompanyRow
+                                                                    .idCoupon!,
                                                           ),
                                                         ),
                                                       );

@@ -67,4 +67,7 @@ class ViewExploreRow extends SupabaseDataRow {
 
   List<int> get clients => getListField<int>('clients');
   set clients(List<int>? value) => setListField<int>('clients', value);
+
+  double? get relevancy => getField<double>('relevancy');
+  set relevancy(double? value) => setField<double>('relevancy', value);
 }

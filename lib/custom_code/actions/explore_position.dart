@@ -9,22 +9,26 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-Future<List<ViewExploreRow>> exploreCompanies(
-    String category, String country, int idClient) async {
+Future<int> explorePosition(
+  int idCompany,
+) async {
   // Add your function code here!
   final supabase = SupaFlow.client;
-  final response = await supabase
+
+  final response1 =
+      await supabase.from('view_explore').select('*').eq('id', idCompany);
+
+  final country = response1[0]['name_country'];
+  final category = response1[0]['name_category'];
+
+  final relevancy = response1[0]['relevancy'];
+
+  final response2 = await supabase
       .from('view_explore')
       .select('*')
       .eq('name_country', country)
       .eq('name_category', category)
-      .eq('shipping', true)
-      .not('clients', 'cs', '{' + idClient.toString() + '}')
-      .limit(100)
-      .order('relevancy', ascending: false);
-  List<ViewExploreRow> list = [];
-  for (int i = 0; i < response.length; i++) {
-    list.add(ViewExploreRow(response[i]));
-  }
-  return list;
+      .gte('relevancy', relevancy);
+
+  return response2.length + 1;
 }

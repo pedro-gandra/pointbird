@@ -17,7 +17,6 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'business_set_model.dart';
 export 'business_set_model.dart';
 
@@ -361,23 +360,21 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                                 builder: (dialogContext) {
                                                   return Material(
                                                     color: Colors.transparent,
-                                                    child: WebViewAware(
-                                                      child: GestureDetector(
-                                                        onTap: () => _model
-                                                                .unfocusNode
-                                                                .canRequestFocus
-                                                            ? FocusScope.of(
-                                                                    context)
-                                                                .requestFocus(_model
-                                                                    .unfocusNode)
-                                                            : FocusScope.of(
-                                                                    context)
-                                                                .unfocus(),
-                                                        child:
-                                                            LilExplanationWidget(
-                                                          text:
-                                                              'We recommend you make the rewards for later days bigger, with day 1 < day 2 < day 3, etc.',
-                                                        ),
+                                                    child: GestureDetector(
+                                                      onTap: () => _model
+                                                              .unfocusNode
+                                                              .canRequestFocus
+                                                          ? FocusScope.of(
+                                                                  context)
+                                                              .requestFocus(_model
+                                                                  .unfocusNode)
+                                                          : FocusScope.of(
+                                                                  context)
+                                                              .unfocus(),
+                                                      child:
+                                                          LilExplanationWidget(
+                                                        text:
+                                                            'We recommend you make the rewards for later days bigger, with day 1 < day 2 < day 3, etc.',
                                                       ),
                                                     ),
                                                   );
@@ -1799,24 +1796,21 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                                   builder: (dialogContext) {
                                                     return Material(
                                                       color: Colors.transparent,
-                                                      child: WebViewAware(
-                                                        child: GestureDetector(
-                                                          onTap: () => _model
-                                                                  .unfocusNode
-                                                                  .canRequestFocus
-                                                              ? FocusScope.of(
-                                                                      context)
-                                                                  .requestFocus(
-                                                                      _model
-                                                                          .unfocusNode)
-                                                              : FocusScope.of(
-                                                                      context)
-                                                                  .unfocus(),
-                                                          child:
-                                                              LilExplanationWidget(
-                                                            text:
-                                                                'We recommend you give as much discount as possible considering your margins, since this will attract much more customers.',
-                                                          ),
+                                                      child: GestureDetector(
+                                                        onTap: () => _model
+                                                                .unfocusNode
+                                                                .canRequestFocus
+                                                            ? FocusScope.of(
+                                                                    context)
+                                                                .requestFocus(_model
+                                                                    .unfocusNode)
+                                                            : FocusScope.of(
+                                                                    context)
+                                                                .unfocus(),
+                                                        child:
+                                                            LilExplanationWidget(
+                                                          text:
+                                                              'We recommend you give as much discount as possible considering your margins, since this will attract much more customers.',
                                                         ),
                                                       ),
                                                     );
@@ -2221,17 +2215,15 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                           functions.toInt(
                                               _model.d10TextController.text),
                                         );
-                                        setState(() {
-                                          _model.resMessage =
-                                              _model.configResponse?.message;
-                                          _model.resColor =
-                                              _model.configResponse?.color ==
-                                                      'erro'
-                                                  ? FlutterFlowTheme.of(context)
-                                                      .error
-                                                  : FlutterFlowTheme.of(context)
-                                                      .accent4;
-                                        });
+                                        _model.resMessage =
+                                            _model.configResponse?.message;
+                                        _model.resColor = _model
+                                                    .configResponse?.color ==
+                                                'erro'
+                                            ? FlutterFlowTheme.of(context).error
+                                            : FlutterFlowTheme.of(context)
+                                                .accent4;
+                                        setState(() {});
                                         if (_model.configResponse?.color !=
                                             'erro') {
                                           await CompaniesTable().update(

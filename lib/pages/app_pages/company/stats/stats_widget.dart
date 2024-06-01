@@ -19,7 +19,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'stats_model.dart';
 export 'stats_model.dart';
 
@@ -54,11 +53,10 @@ class _StatsWidgetState extends State<StatsWidget>
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      setState(() {
-        _model.startDate = widget.start;
-        _model.endDate = widget.end;
-        _model.stats = widget.stats;
-      });
+      _model.startDate = widget.start;
+      _model.endDate = widget.end;
+      _model.stats = widget.stats;
+      setState(() {});
     });
 
     animationsMap.addAll({
@@ -176,9 +174,8 @@ class _StatsWidgetState extends State<StatsWidget>
                                   });
                                 }
                                 if (_model.datePicked1 != null) {
-                                  setState(() {
-                                    _model.startDate = _model.datePicked1;
-                                  });
+                                  _model.startDate = _model.datePicked1;
+                                  setState(() {});
                                 }
                               },
                               child: Container(
@@ -299,9 +296,8 @@ class _StatsWidgetState extends State<StatsWidget>
                                   });
                                 }
                                 if (_model.datePicked2 != null) {
-                                  setState(() {
-                                    _model.endDate = _model.datePicked2;
-                                  });
+                                  _model.endDate = _model.datePicked2;
+                                  setState(() {});
                                 }
                               },
                               child: Container(
@@ -372,17 +368,16 @@ class _StatsWidgetState extends State<StatsWidget>
                                 authEmail: currentUserEmail,
                               );
                               if ((_model.apiStatsResult?.succeeded ?? true)) {
-                                setState(() {
-                                  _model.stats =
-                                      ((_model.apiStatsResult?.jsonBody ?? '')
-                                                  .toList()
-                                                  .map<CompanyStatsStruct?>(
-                                                      CompanyStatsStruct
-                                                          .maybeFromMap)
-                                                  .toList()
-                                              as Iterable<CompanyStatsStruct?>)
-                                          .withoutNulls?[0];
-                                });
+                                _model.stats = ((_model
+                                                    .apiStatsResult?.jsonBody ??
+                                                '')
+                                            .toList()
+                                            .map<CompanyStatsStruct?>(
+                                                CompanyStatsStruct.maybeFromMap)
+                                            .toList()
+                                        as Iterable<CompanyStatsStruct?>)
+                                    .withoutNulls?[0];
+                                setState(() {});
                               }
 
                               setState(() {});
@@ -721,23 +716,18 @@ class _StatsWidgetState extends State<StatsWidget>
                                               builder: (dialogContext) {
                                                 return Material(
                                                   color: Colors.transparent,
-                                                  child: WebViewAware(
-                                                    child: GestureDetector(
-                                                      onTap: () => _model
-                                                              .unfocusNode
-                                                              .canRequestFocus
-                                                          ? FocusScope.of(
-                                                                  context)
-                                                              .requestFocus(_model
-                                                                  .unfocusNode)
-                                                          : FocusScope.of(
-                                                                  context)
-                                                              .unfocus(),
-                                                      child:
-                                                          LilExplanationWidget(
-                                                        text:
-                                                            'Number of users that exchanged points at least once',
-                                                      ),
+                                                  child: GestureDetector(
+                                                    onTap: () => _model
+                                                            .unfocusNode
+                                                            .canRequestFocus
+                                                        ? FocusScope.of(context)
+                                                            .requestFocus(_model
+                                                                .unfocusNode)
+                                                        : FocusScope.of(context)
+                                                            .unfocus(),
+                                                    child: LilExplanationWidget(
+                                                      text:
+                                                          'Number of users that exchanged points at least once',
                                                     ),
                                                   ),
                                                 );
@@ -974,23 +964,18 @@ class _StatsWidgetState extends State<StatsWidget>
                                               builder: (dialogContext) {
                                                 return Material(
                                                   color: Colors.transparent,
-                                                  child: WebViewAware(
-                                                    child: GestureDetector(
-                                                      onTap: () => _model
-                                                              .unfocusNode
-                                                              .canRequestFocus
-                                                          ? FocusScope.of(
-                                                                  context)
-                                                              .requestFocus(_model
-                                                                  .unfocusNode)
-                                                          : FocusScope.of(
-                                                                  context)
-                                                              .unfocus(),
-                                                      child:
-                                                          LilExplanationWidget(
-                                                        text:
-                                                            'Number of users that checked in at least once',
-                                                      ),
+                                                  child: GestureDetector(
+                                                    onTap: () => _model
+                                                            .unfocusNode
+                                                            .canRequestFocus
+                                                        ? FocusScope.of(context)
+                                                            .requestFocus(_model
+                                                                .unfocusNode)
+                                                        : FocusScope.of(context)
+                                                            .unfocus(),
+                                                    child: LilExplanationWidget(
+                                                      text:
+                                                          'Number of users that checked in at least once',
                                                     ),
                                                   ),
                                                 );
@@ -1106,23 +1091,18 @@ class _StatsWidgetState extends State<StatsWidget>
                                               builder: (dialogContext) {
                                                 return Material(
                                                   color: Colors.transparent,
-                                                  child: WebViewAware(
-                                                    child: GestureDetector(
-                                                      onTap: () => _model
-                                                              .unfocusNode
-                                                              .canRequestFocus
-                                                          ? FocusScope.of(
-                                                                  context)
-                                                              .requestFocus(_model
-                                                                  .unfocusNode)
-                                                          : FocusScope.of(
-                                                                  context)
-                                                              .unfocus(),
-                                                      child:
-                                                          LilExplanationWidget(
-                                                        text:
-                                                            'Average points granted per check in',
-                                                      ),
+                                                  child: GestureDetector(
+                                                    onTap: () => _model
+                                                            .unfocusNode
+                                                            .canRequestFocus
+                                                        ? FocusScope.of(context)
+                                                            .requestFocus(_model
+                                                                .unfocusNode)
+                                                        : FocusScope.of(context)
+                                                            .unfocus(),
+                                                    child: LilExplanationWidget(
+                                                      text:
+                                                          'Average points granted per check in',
                                                     ),
                                                   ),
                                                 );
@@ -1236,23 +1216,18 @@ class _StatsWidgetState extends State<StatsWidget>
                                               builder: (dialogContext) {
                                                 return Material(
                                                   color: Colors.transparent,
-                                                  child: WebViewAware(
-                                                    child: GestureDetector(
-                                                      onTap: () => _model
-                                                              .unfocusNode
-                                                              .canRequestFocus
-                                                          ? FocusScope.of(
-                                                                  context)
-                                                              .requestFocus(_model
-                                                                  .unfocusNode)
-                                                          : FocusScope.of(
-                                                                  context)
-                                                              .unfocus(),
-                                                      child:
-                                                          LilExplanationWidget(
-                                                        text:
-                                                            'How many times on average did an user check in (amongst users with at least one)',
-                                                      ),
+                                                  child: GestureDetector(
+                                                    onTap: () => _model
+                                                            .unfocusNode
+                                                            .canRequestFocus
+                                                        ? FocusScope.of(context)
+                                                            .requestFocus(_model
+                                                                .unfocusNode)
+                                                        : FocusScope.of(context)
+                                                            .unfocus(),
+                                                    child: LilExplanationWidget(
+                                                      text:
+                                                          'How many times on average did an user check in (amongst users with at least one)',
                                                     ),
                                                   ),
                                                 );
@@ -1425,23 +1400,18 @@ class _StatsWidgetState extends State<StatsWidget>
                                               builder: (dialogContext) {
                                                 return Material(
                                                   color: Colors.transparent,
-                                                  child: WebViewAware(
-                                                    child: GestureDetector(
-                                                      onTap: () => _model
-                                                              .unfocusNode
-                                                              .canRequestFocus
-                                                          ? FocusScope.of(
-                                                                  context)
-                                                              .requestFocus(_model
-                                                                  .unfocusNode)
-                                                          : FocusScope.of(
-                                                                  context)
-                                                              .unfocus(),
-                                                      child:
-                                                          LilExplanationWidget(
-                                                        text:
-                                                            'Number of social and offer posts created',
-                                                      ),
+                                                  child: GestureDetector(
+                                                    onTap: () => _model
+                                                            .unfocusNode
+                                                            .canRequestFocus
+                                                        ? FocusScope.of(context)
+                                                            .requestFocus(_model
+                                                                .unfocusNode)
+                                                        : FocusScope.of(context)
+                                                            .unfocus(),
+                                                    child: LilExplanationWidget(
+                                                      text:
+                                                          'Number of social and offer posts created',
                                                     ),
                                                   ),
                                                 );
@@ -1628,23 +1598,18 @@ class _StatsWidgetState extends State<StatsWidget>
                                               builder: (dialogContext) {
                                                 return Material(
                                                   color: Colors.transparent,
-                                                  child: WebViewAware(
-                                                    child: GestureDetector(
-                                                      onTap: () => _model
-                                                              .unfocusNode
-                                                              .canRequestFocus
-                                                          ? FocusScope.of(
-                                                                  context)
-                                                              .requestFocus(_model
-                                                                  .unfocusNode)
-                                                          : FocusScope.of(
-                                                                  context)
-                                                              .unfocus(),
-                                                      child:
-                                                          LilExplanationWidget(
-                                                        text:
-                                                            'Clicks on link between all offer and social posts',
-                                                      ),
+                                                  child: GestureDetector(
+                                                    onTap: () => _model
+                                                            .unfocusNode
+                                                            .canRequestFocus
+                                                        ? FocusScope.of(context)
+                                                            .requestFocus(_model
+                                                                .unfocusNode)
+                                                        : FocusScope.of(context)
+                                                            .unfocus(),
+                                                    child: LilExplanationWidget(
+                                                      text:
+                                                          'Clicks on link between all offer and social posts',
                                                     ),
                                                   ),
                                                 );
@@ -1828,23 +1793,18 @@ class _StatsWidgetState extends State<StatsWidget>
                                               builder: (dialogContext) {
                                                 return Material(
                                                   color: Colors.transparent,
-                                                  child: WebViewAware(
-                                                    child: GestureDetector(
-                                                      onTap: () => _model
-                                                              .unfocusNode
-                                                              .canRequestFocus
-                                                          ? FocusScope.of(
-                                                                  context)
-                                                              .requestFocus(_model
-                                                                  .unfocusNode)
-                                                          : FocusScope.of(
-                                                                  context)
-                                                              .unfocus(),
-                                                      child:
-                                                          LilExplanationWidget(
-                                                        text:
-                                                            'Average points granted per interaction',
-                                                      ),
+                                                  child: GestureDetector(
+                                                    onTap: () => _model
+                                                            .unfocusNode
+                                                            .canRequestFocus
+                                                        ? FocusScope.of(context)
+                                                            .requestFocus(_model
+                                                                .unfocusNode)
+                                                        : FocusScope.of(context)
+                                                            .unfocus(),
+                                                    child: LilExplanationWidget(
+                                                      text:
+                                                          'Average points granted per interaction',
                                                     ),
                                                   ),
                                                 );
@@ -1958,23 +1918,18 @@ class _StatsWidgetState extends State<StatsWidget>
                                               builder: (dialogContext) {
                                                 return Material(
                                                   color: Colors.transparent,
-                                                  child: WebViewAware(
-                                                    child: GestureDetector(
-                                                      onTap: () => _model
-                                                              .unfocusNode
-                                                              .canRequestFocus
-                                                          ? FocusScope.of(
-                                                                  context)
-                                                              .requestFocus(_model
-                                                                  .unfocusNode)
-                                                          : FocusScope.of(
-                                                                  context)
-                                                              .unfocus(),
-                                                      child:
-                                                          LilExplanationWidget(
-                                                        text:
-                                                            'Average points granted per vote',
-                                                      ),
+                                                  child: GestureDetector(
+                                                    onTap: () => _model
+                                                            .unfocusNode
+                                                            .canRequestFocus
+                                                        ? FocusScope.of(context)
+                                                            .requestFocus(_model
+                                                                .unfocusNode)
+                                                        : FocusScope.of(context)
+                                                            .unfocus(),
+                                                    child: LilExplanationWidget(
+                                                      text:
+                                                          'Average points granted per vote',
                                                     ),
                                                   ),
                                                 );
@@ -2095,23 +2050,18 @@ class _StatsWidgetState extends State<StatsWidget>
                                               builder: (dialogContext) {
                                                 return Material(
                                                   color: Colors.transparent,
-                                                  child: WebViewAware(
-                                                    child: GestureDetector(
-                                                      onTap: () => _model
-                                                              .unfocusNode
-                                                              .canRequestFocus
-                                                          ? FocusScope.of(
-                                                                  context)
-                                                              .requestFocus(_model
-                                                                  .unfocusNode)
-                                                          : FocusScope.of(
-                                                                  context)
-                                                              .unfocus(),
-                                                      child:
-                                                          LilExplanationWidget(
-                                                        text:
-                                                            'Number of users that interacted with a post at least once',
-                                                      ),
+                                                  child: GestureDetector(
+                                                    onTap: () => _model
+                                                            .unfocusNode
+                                                            .canRequestFocus
+                                                        ? FocusScope.of(context)
+                                                            .requestFocus(_model
+                                                                .unfocusNode)
+                                                        : FocusScope.of(context)
+                                                            .unfocus(),
+                                                    child: LilExplanationWidget(
+                                                      text:
+                                                          'Number of users that interacted with a post at least once',
                                                     ),
                                                   ),
                                                 );
@@ -2219,23 +2169,18 @@ class _StatsWidgetState extends State<StatsWidget>
                                               builder: (dialogContext) {
                                                 return Material(
                                                   color: Colors.transparent,
-                                                  child: WebViewAware(
-                                                    child: GestureDetector(
-                                                      onTap: () => _model
-                                                              .unfocusNode
-                                                              .canRequestFocus
-                                                          ? FocusScope.of(
-                                                                  context)
-                                                              .requestFocus(_model
-                                                                  .unfocusNode)
-                                                          : FocusScope.of(
-                                                                  context)
-                                                              .unfocus(),
-                                                      child:
-                                                          LilExplanationWidget(
-                                                        text:
-                                                            'Number of users that voted on a poll at least once',
-                                                      ),
+                                                  child: GestureDetector(
+                                                    onTap: () => _model
+                                                            .unfocusNode
+                                                            .canRequestFocus
+                                                        ? FocusScope.of(context)
+                                                            .requestFocus(_model
+                                                                .unfocusNode)
+                                                        : FocusScope.of(context)
+                                                            .unfocus(),
+                                                    child: LilExplanationWidget(
+                                                      text:
+                                                          'Number of users that voted on a poll at least once',
                                                     ),
                                                   ),
                                                 );
@@ -2559,23 +2504,18 @@ class _StatsWidgetState extends State<StatsWidget>
                                               builder: (dialogContext) {
                                                 return Material(
                                                   color: Colors.transparent,
-                                                  child: WebViewAware(
-                                                    child: GestureDetector(
-                                                      onTap: () => _model
-                                                              .unfocusNode
-                                                              .canRequestFocus
-                                                          ? FocusScope.of(
-                                                                  context)
-                                                              .requestFocus(_model
-                                                                  .unfocusNode)
-                                                          : FocusScope.of(
-                                                                  context)
-                                                              .unfocus(),
-                                                      child:
-                                                          LilExplanationWidget(
-                                                        text:
-                                                            'Sum of the minimum purchase required for the coupons generated',
-                                                      ),
+                                                  child: GestureDetector(
+                                                    onTap: () => _model
+                                                            .unfocusNode
+                                                            .canRequestFocus
+                                                        ? FocusScope.of(context)
+                                                            .requestFocus(_model
+                                                                .unfocusNode)
+                                                        : FocusScope.of(context)
+                                                            .unfocus(),
+                                                    child: LilExplanationWidget(
+                                                      text:
+                                                          'Sum of the minimum purchase required for the coupons generated',
                                                     ),
                                                   ),
                                                 );
@@ -2684,23 +2624,18 @@ class _StatsWidgetState extends State<StatsWidget>
                                               builder: (dialogContext) {
                                                 return Material(
                                                   color: Colors.transparent,
-                                                  child: WebViewAware(
-                                                    child: GestureDetector(
-                                                      onTap: () => _model
-                                                              .unfocusNode
-                                                              .canRequestFocus
-                                                          ? FocusScope.of(
-                                                                  context)
-                                                              .requestFocus(_model
-                                                                  .unfocusNode)
-                                                          : FocusScope.of(
-                                                                  context)
-                                                              .unfocus(),
-                                                      child:
-                                                          LilExplanationWidget(
-                                                        text:
-                                                            'Number of coupons created on average by an user (amongst those with at least one)',
-                                                      ),
+                                                  child: GestureDetector(
+                                                    onTap: () => _model
+                                                            .unfocusNode
+                                                            .canRequestFocus
+                                                        ? FocusScope.of(context)
+                                                            .requestFocus(_model
+                                                                .unfocusNode)
+                                                        : FocusScope.of(context)
+                                                            .unfocus(),
+                                                    child: LilExplanationWidget(
+                                                      text:
+                                                          'Number of coupons created on average by an user (amongst those with at least one)',
                                                     ),
                                                   ),
                                                 );

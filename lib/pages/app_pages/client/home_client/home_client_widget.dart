@@ -18,7 +18,6 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'home_client_model.dart';
 export 'home_client_model.dart';
 
@@ -290,18 +289,16 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                                   0.0, 0.0)
                                               .resolve(
                                                   Directionality.of(context)),
-                                          child: WebViewAware(
-                                            child: GestureDetector(
-                                              onTap: () => _model.unfocusNode
-                                                      .canRequestFocus
-                                                  ? FocusScope.of(context)
-                                                      .requestFocus(
-                                                          _model.unfocusNode)
-                                                  : FocusScope.of(context)
-                                                      .unfocus(),
-                                              child: PlansWidget(
-                                                idPlan: 1,
-                                              ),
+                                          child: GestureDetector(
+                                            onTap: () => _model
+                                                    .unfocusNode.canRequestFocus
+                                                ? FocusScope.of(context)
+                                                    .requestFocus(
+                                                        _model.unfocusNode)
+                                                : FocusScope.of(context)
+                                                    .unfocus(),
+                                            child: PlansWidget(
+                                              idPlan: 1,
                                             ),
                                           ),
                                         );
@@ -1098,14 +1095,14 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                                                           alignment:
                                                                               AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                           child:
-                                                                              WebViewAware(
+                                                                              GestureDetector(
+                                                                            onTap: () => _model.unfocusNode.canRequestFocus
+                                                                                ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+                                                                                : FocusScope.of(context).unfocus(),
                                                                             child:
-                                                                                GestureDetector(
-                                                                              onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                              child: UpgradeErrorWidget(
-                                                                                message: _model.followResult!.message,
-                                                                                idPlan: _model.followResult!.idPlan,
-                                                                              ),
+                                                                                UpgradeErrorWidget(
+                                                                              message: _model.followResult!.message,
+                                                                              idPlan: _model.followResult!.idPlan,
                                                                             ),
                                                                           ),
                                                                         );
@@ -1114,12 +1111,11 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                                                         setState(
                                                                             () {}));
                                                                   } else {
+                                                                    _model.errorMessageInsert = _model
+                                                                        .followResult!
+                                                                        .message;
                                                                     setState(
-                                                                        () {
-                                                                      _model.errorMessageInsert = _model
-                                                                          .followResult!
-                                                                          .message;
-                                                                    });
+                                                                        () {});
                                                                     setState(
                                                                         () {
                                                                       _model
@@ -1155,16 +1151,14 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                                                             alignment:
                                                                                 AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
                                                                             child:
-                                                                                WebViewAware(
-                                                                              child: GestureDetector(
-                                                                                onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                child: PointsReceivedWidget(
-                                                                                  points: _model.followResult!.points,
-                                                                                  pointType: _model.followResult!.actionDesc,
-                                                                                  nameCompany: _model.followResult!.name,
-                                                                                  multiplier: _model.planInfo![0].multiplier!,
-                                                                                  planName: _model.planInfo![0].namePlan!,
-                                                                                ),
+                                                                                GestureDetector(
+                                                                              onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                              child: PointsReceivedWidget(
+                                                                                points: _model.followResult!.points,
+                                                                                pointType: _model.followResult!.actionDesc,
+                                                                                nameCompany: _model.followResult!.name,
+                                                                                multiplier: _model.planInfo![0].multiplier!,
+                                                                                planName: _model.planInfo![0].namePlan!,
                                                                               ),
                                                                             ),
                                                                           );

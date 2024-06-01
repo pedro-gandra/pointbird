@@ -181,9 +181,8 @@ class _HelpCompanyWidgetState extends State<HelpCompanyWidget> {
                           () => setState(() {}),
                         ),
                         onFieldSubmitted: (_) async {
-                          setState(() {
-                            _model.search = _model.textController.text;
-                          });
+                          _model.search = _model.textController.text;
+                          setState(() {});
                         },
                         obscureText: false,
                         decoration: InputDecoration(

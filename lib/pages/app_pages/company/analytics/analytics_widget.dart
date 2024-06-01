@@ -1,14 +1,19 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/schema/structs/index.dart';
+import '/backend/supabase/supabase.dart';
 import '/components/company_nav_widget.dart';
+import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import '/backend/schema/structs/index.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -22,10 +27,13 @@ class AnalyticsWidget extends StatefulWidget {
   State<AnalyticsWidget> createState() => _AnalyticsWidgetState();
 }
 
-class _AnalyticsWidgetState extends State<AnalyticsWidget> {
+class _AnalyticsWidgetState extends State<AnalyticsWidget>
+    with TickerProviderStateMixin {
   late AnalyticsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
@@ -41,14 +49,33 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
         authEmail: currentUserEmail,
       );
       if ((_model.apiStatsResult?.succeeded ?? true)) {
-        setState(() {
-          _model.stats = ((_model.apiStatsResult?.jsonBody ?? '')
-                  .toList()
-                  .map<CompanyStatsStruct?>(CompanyStatsStruct.maybeFromMap)
-                  .toList() as Iterable<CompanyStatsStruct?>)
-              .withoutNulls?[0];
-        });
+        _model.pos = await actions.explorePosition(
+          FFAppState().user.id,
+        );
+        _model.stats = ((_model.apiStatsResult?.jsonBody ?? '')
+                .toList()
+                .map<CompanyStatsStruct?>(CompanyStatsStruct.maybeFromMap)
+                .toList() as Iterable<CompanyStatsStruct?>)
+            .withoutNulls?[0];
+        _model.position = _model.pos;
+        setState(() {});
       }
+    });
+
+    animationsMap.addAll({
+      'iconOnPageLoadAnimation': AnimationInfo(
+        loop: true,
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          RotateEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+        ],
+      ),
     });
   }
 
@@ -61,6 +88,8 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -82,15 +111,14 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                     authEmail: currentUserEmail,
                   );
                   if ((_model.apiStatsResultReload?.succeeded ?? true)) {
-                    setState(() {
-                      _model.stats =
-                          ((_model.apiStatsResultReload?.jsonBody ?? '')
-                                  .toList()
-                                  .map<CompanyStatsStruct?>(
-                                      CompanyStatsStruct.maybeFromMap)
-                                  .toList() as Iterable<CompanyStatsStruct?>)
-                              .withoutNulls?[0];
-                    });
+                    _model.stats =
+                        ((_model.apiStatsResultReload?.jsonBody ?? '')
+                                .toList()
+                                .map<CompanyStatsStruct?>(
+                                    CompanyStatsStruct.maybeFromMap)
+                                .toList() as Iterable<CompanyStatsStruct?>)
+                            .withoutNulls?[0];
+                    setState(() {});
                   }
                 },
                 child: SingleChildScrollView(
@@ -979,6 +1007,194 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget> {
                                     ),
                                   ],
                                 ),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 20.0, 0.0, 0.0),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 0.0, 0.0, 0.0),
+                                    child: Text(
+                                      'Your ranking (relevancy)',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            fontSize: 16.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 5.0, 0.0, 0.0),
+                                    child: FutureBuilder<List<CompaniesRow>>(
+                                      future: CompaniesTable().querySingleRow(
+                                        queryFn: (q) => q.eq(
+                                          'email',
+                                          currentUserEmail,
+                                        ),
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        List<CompaniesRow>
+                                            textCompaniesRowList =
+                                            snapshot.data!;
+                                        final textCompaniesRow =
+                                            textCompaniesRowList.isNotEmpty
+                                                ? textCompaniesRowList.first
+                                                : null;
+                                        return Text(
+                                          'Category: ${textCompaniesRow?.nameCategory}',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                fontSize: 11.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.normal,
+                                              ),
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 3.0, 0.0, 0.0),
+                                    child: FutureBuilder<List<CompaniesRow>>(
+                                      future: CompaniesTable().querySingleRow(
+                                        queryFn: (q) => q.eq(
+                                          'email',
+                                          currentUserEmail,
+                                        ),
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        List<CompaniesRow>
+                                            textCompaniesRowList =
+                                            snapshot.data!;
+                                        final textCompaniesRow =
+                                            textCompaniesRowList.isNotEmpty
+                                                ? textCompaniesRowList.first
+                                                : null;
+                                        return Text(
+                                          'Country:  ${textCompaniesRow?.nameCountry}',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                fontSize: 11.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.normal,
+                                              ),
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 19.0, 0.0, 0.0),
+                                    child: Stack(
+                                      children: [
+                                        if (_model.position != null)
+                                          Text(
+                                            '#${formatNumber(
+                                              _model.position,
+                                              formatType: FormatType.decimal,
+                                              decimalType:
+                                                  DecimalType.automatic,
+                                            )}',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                  fontSize: 20.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                          ),
+                                        if (_model.position == null)
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    10.0, 0.0, 0.0, 0.0),
+                                            child: FaIcon(
+                                              FontAwesomeIcons.circleNotch,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              size: 28.0,
+                                            ).animateOnPageLoad(animationsMap[
+                                                'iconOnPageLoadAnimation']!),
+                                          ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        5.0, 20.0, 0.0, 0.0),
+                                    child: Text(
+                                      'Your relevancy affects how you are ranked in the explore page. To increase your relevancy you must increase your profile\'s engagement.',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryText,
+                                            fontSize: 11.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ],

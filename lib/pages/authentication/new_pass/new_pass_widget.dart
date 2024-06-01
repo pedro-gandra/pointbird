@@ -7,7 +7,6 @@ import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'new_pass_model.dart';
 export 'new_pass_model.dart';
 
@@ -347,9 +346,8 @@ class _NewPassWidgetState extends State<NewPassWidget> {
                                       if (_model.passTextController.text ==
                                           _model
                                               .confirmPassTextController.text) {
-                                        setState(() {
-                                          _model.isPassMiss = false;
-                                        });
+                                        _model.isPassMiss = false;
+                                        setState(() {});
                                         await actions.updatePassword(
                                           _model.passTextController.text,
                                         );
@@ -377,26 +375,22 @@ class _NewPassWidgetState extends State<NewPassWidget> {
                                                       .resolve(
                                                           Directionality.of(
                                                               context)),
-                                              child: WebViewAware(
-                                                child: GestureDetector(
-                                                  onTap: () => _model
-                                                          .unfocusNode
-                                                          .canRequestFocus
-                                                      ? FocusScope.of(context)
-                                                          .requestFocus(_model
-                                                              .unfocusNode)
-                                                      : FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: ResetPass2Widget(),
-                                                ),
+                                              child: GestureDetector(
+                                                onTap: () => _model.unfocusNode
+                                                        .canRequestFocus
+                                                    ? FocusScope.of(context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode)
+                                                    : FocusScope.of(context)
+                                                        .unfocus(),
+                                                child: ResetPass2Widget(),
                                               ),
                                             );
                                           },
                                         ).then((value) => setState(() {}));
                                       } else {
-                                        setState(() {
-                                          _model.isPassMiss = true;
-                                        });
+                                        _model.isPassMiss = true;
+                                        setState(() {});
                                       }
                                     },
                                     text: 'Reset password',

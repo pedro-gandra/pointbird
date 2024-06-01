@@ -11,7 +11,6 @@ import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'edit_profile_company_model.dart';
 export 'edit_profile_company_model.dart';
 
@@ -717,10 +716,9 @@ class _EditProfileCompanyWidgetState extends State<EditProfileCompanyWidget> {
                                         ),
                                       );
                                     }
-                                    setState(() {
-                                      _model.resMessage =
-                                          'The changes were made succesfully!';
-                                    });
+                                    _model.resMessage =
+                                        'The changes were made succesfully!';
+                                    setState(() {});
                                   },
                                   text: 'Save',
                                   options: FFButtonOptions(
@@ -774,17 +772,14 @@ class _EditProfileCompanyWidgetState extends State<EditProfileCompanyWidget> {
                                     backgroundColor: Colors.transparent,
                                     alignment: AlignmentDirectional(0.0, 0.0)
                                         .resolve(Directionality.of(context)),
-                                    child: WebViewAware(
-                                      child: GestureDetector(
-                                        onTap: () => _model
-                                                .unfocusNode.canRequestFocus
-                                            ? FocusScope.of(context)
-                                                .requestFocus(
-                                                    _model.unfocusNode)
-                                            : FocusScope.of(context).unfocus(),
-                                        child: DeleteAccWidget(
-                                          userId: currentUserUid,
-                                        ),
+                                    child: GestureDetector(
+                                      onTap: () => _model
+                                              .unfocusNode.canRequestFocus
+                                          ? FocusScope.of(context)
+                                              .requestFocus(_model.unfocusNode)
+                                          : FocusScope.of(context).unfocus(),
+                                      child: DeleteAccWidget(
+                                        userId: currentUserUid,
                                       ),
                                     ),
                                   );

@@ -2538,24 +2538,21 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                       onPressed: () async {
                                                         if (_model.noptions <
                                                             4) {
-                                                          setState(() {
-                                                            _model.noptions =
-                                                                _model.noptions +
-                                                                    1;
-                                                          });
+                                                          _model.noptions =
+                                                              _model.noptions +
+                                                                  1;
+                                                          setState(() {});
                                                         } else {
-                                                          setState(() {
-                                                            _model.errorOptions =
-                                                                true;
-                                                          });
+                                                          _model.errorOptions =
+                                                              true;
+                                                          setState(() {});
                                                           await Future.delayed(
                                                               const Duration(
                                                                   milliseconds:
                                                                       2500));
-                                                          setState(() {
-                                                            _model.errorOptions =
-                                                                false;
-                                                          });
+                                                          _model.errorOptions =
+                                                              false;
+                                                          setState(() {});
                                                         }
                                                       },
                                                     ),
@@ -2577,24 +2574,21 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                       onPressed: () async {
                                                         if (_model.noptions >
                                                             2) {
-                                                          setState(() {
-                                                            _model.noptions =
-                                                                _model.noptions +
-                                                                    -1;
-                                                          });
+                                                          _model.noptions =
+                                                              _model.noptions +
+                                                                  -1;
+                                                          setState(() {});
                                                         } else {
-                                                          setState(() {
-                                                            _model.errorOptions =
-                                                                true;
-                                                          });
+                                                          _model.errorOptions =
+                                                              true;
+                                                          setState(() {});
                                                           await Future.delayed(
                                                               const Duration(
                                                                   milliseconds:
                                                                       2500));
-                                                          setState(() {
-                                                            _model.errorOptions =
-                                                                false;
-                                                          });
+                                                          _model.errorOptions =
+                                                              false;
+                                                          setState(() {});
                                                         }
                                                       },
                                                     ),

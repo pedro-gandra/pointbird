@@ -108,9 +108,8 @@ class _AccountTypeWidgetState extends State<AccountTypeWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    setState(() {
-                                      _model.selected = 1;
-                                    });
+                                    _model.selected = 1;
+                                    setState(() {});
                                   },
                                   child: Container(
                                     decoration: BoxDecoration(
@@ -196,9 +195,8 @@ class _AccountTypeWidgetState extends State<AccountTypeWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    setState(() {
-                                      _model.selected = 2;
-                                    });
+                                    _model.selected = 2;
+                                    setState(() {});
                                   },
                                   child: Container(
                                     decoration: BoxDecoration(
@@ -295,25 +293,23 @@ class _AccountTypeWidgetState extends State<AccountTypeWidget> {
                                                   ? 'Customer'
                                                   : 'Business',
                                             });
-                                            setState(() {
-                                              FFAppState().updateUserStruct(
-                                                (e) => e
-                                                  ..type = _model.userInfo?.type
-                                                  ..filledData = false,
-                                              );
-                                            });
+                                            FFAppState().updateUserStruct(
+                                              (e) => e
+                                                ..type = _model.userInfo?.type
+                                                ..filledData = false,
+                                            );
+                                            setState(() {});
                                             if (_model.userInfo?.type ==
                                                 'Customer') {
                                               _model.client =
                                                   await ClientsTable().insert({
                                                 'email': currentUserEmail,
                                               });
-                                              setState(() {
-                                                FFAppState().updateUserStruct(
-                                                  (e) =>
-                                                      e..id = _model.client?.id,
-                                                );
-                                              });
+                                              FFAppState().updateUserStruct(
+                                                (e) =>
+                                                    e..id = _model.client?.id,
+                                              );
+                                              setState(() {});
 
                                               context
                                                   .goNamed('OnboardingClient');
@@ -323,12 +319,11 @@ class _AccountTypeWidgetState extends State<AccountTypeWidget> {
                                                       .insert({
                                                 'email': currentUserEmail,
                                               });
-                                              setState(() {
-                                                FFAppState().updateUserStruct(
-                                                  (e) => e
-                                                    ..id = _model.business?.id,
-                                                );
-                                              });
+                                              FFAppState().updateUserStruct(
+                                                (e) =>
+                                                    e..id = _model.business?.id,
+                                              );
+                                              setState(() {});
 
                                               context
                                                   .goNamed('OnboardingCompany');

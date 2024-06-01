@@ -9,7 +9,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'recover_pass_model.dart';
 export 'recover_pass_model.dart';
 
@@ -233,9 +232,8 @@ class _RecoverPassWidgetState extends State<RecoverPassWidget> {
                                         _model.emailTextController.text,
                                       );
                                       if (_model.isEmail!) {
-                                        setState(() {
-                                          _model.noEmail = false;
-                                        });
+                                        _model.noEmail = false;
+                                        setState(() {});
                                         await actions.resetPass(
                                           _model.emailTextController.text,
                                         );
@@ -250,13 +248,12 @@ class _RecoverPassWidgetState extends State<RecoverPassWidget> {
                                           _model.userInfo!.type,
                                           _model.userInfo!.email,
                                         );
-                                        setState(() {
-                                          FFAppState().updateUserStruct(
-                                            (e) => e
-                                              ..type = _model.userInfo?.type
-                                              ..id = _model.userId,
-                                          );
-                                        });
+                                        FFAppState().updateUserStruct(
+                                          (e) => e
+                                            ..type = _model.userInfo?.type
+                                            ..id = _model.userId,
+                                        );
+                                        setState(() {});
                                         await showDialog(
                                           context: context,
                                           builder: (dialogContext) {
@@ -270,30 +267,25 @@ class _RecoverPassWidgetState extends State<RecoverPassWidget> {
                                                       .resolve(
                                                           Directionality.of(
                                                               context)),
-                                              child: WebViewAware(
-                                                child: GestureDetector(
-                                                  onTap: () => _model
-                                                          .unfocusNode
-                                                          .canRequestFocus
-                                                      ? FocusScope.of(context)
-                                                          .requestFocus(_model
-                                                              .unfocusNode)
-                                                      : FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: ResetPassWidget(
-                                                    email: _model
-                                                        .emailTextController
-                                                        .text,
-                                                  ),
+                                              child: GestureDetector(
+                                                onTap: () => _model.unfocusNode
+                                                        .canRequestFocus
+                                                    ? FocusScope.of(context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode)
+                                                    : FocusScope.of(context)
+                                                        .unfocus(),
+                                                child: ResetPassWidget(
+                                                  email: _model
+                                                      .emailTextController.text,
                                                 ),
                                               ),
                                             );
                                           },
                                         ).then((value) => setState(() {}));
                                       } else {
-                                        setState(() {
-                                          _model.noEmail = true;
-                                        });
+                                        _model.noEmail = true;
+                                        setState(() {});
                                       }
 
                                       setState(() {});

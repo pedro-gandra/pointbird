@@ -17,7 +17,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'explore_company_model.dart';
 export 'explore_company_model.dart';
 
@@ -411,22 +410,19 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                                       .resolve(
                                                           Directionality.of(
                                                               context)),
-                                              child: WebViewAware(
-                                                child: GestureDetector(
-                                                  onTap: () => _model
-                                                          .unfocusNode
-                                                          .canRequestFocus
-                                                      ? FocusScope.of(context)
-                                                          .requestFocus(_model
-                                                              .unfocusNode)
-                                                      : FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: UpgradeErrorWidget(
-                                                    message: _model
-                                                        .followResult!.message,
-                                                    idPlan: _model
-                                                        .followResult!.idPlan,
-                                                  ),
+                                              child: GestureDetector(
+                                                onTap: () => _model.unfocusNode
+                                                        .canRequestFocus
+                                                    ? FocusScope.of(context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode)
+                                                    : FocusScope.of(context)
+                                                        .unfocus(),
+                                                child: UpgradeErrorWidget(
+                                                  message: _model
+                                                      .followResult!.message,
+                                                  idPlan: _model
+                                                      .followResult!.idPlan,
                                                 ),
                                               ),
                                             );
@@ -454,30 +450,25 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                                       .resolve(
                                                           Directionality.of(
                                                               context)),
-                                              child: WebViewAware(
-                                                child: GestureDetector(
-                                                  onTap: () => _model
-                                                          .unfocusNode
-                                                          .canRequestFocus
-                                                      ? FocusScope.of(context)
-                                                          .requestFocus(_model
-                                                              .unfocusNode)
-                                                      : FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: PointsReceivedWidget(
-                                                    points: _model
-                                                        .followResult!.points,
-                                                    pointType: _model
-                                                        .followResult!
-                                                        .actionDesc,
-                                                    nameCompany: _model
-                                                        .followResult!.name,
-                                                    multiplier: _model
-                                                        .planInfo![0]
-                                                        .multiplier!,
-                                                    planName: _model
-                                                        .planInfo![0].namePlan!,
-                                                  ),
+                                              child: GestureDetector(
+                                                onTap: () => _model.unfocusNode
+                                                        .canRequestFocus
+                                                    ? FocusScope.of(context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode)
+                                                    : FocusScope.of(context)
+                                                        .unfocus(),
+                                                child: PointsReceivedWidget(
+                                                  points: _model
+                                                      .followResult!.points,
+                                                  pointType: _model
+                                                      .followResult!.actionDesc,
+                                                  nameCompany:
+                                                      _model.followResult!.name,
+                                                  multiplier: _model
+                                                      .planInfo![0].multiplier!,
+                                                  planName: _model
+                                                      .planInfo![0].namePlan!,
                                                 ),
                                               ),
                                             );
@@ -551,9 +542,8 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                setState(() {
-                                  _model.tabSelected = 1;
-                                });
+                                _model.tabSelected = 1;
+                                setState(() {});
                               },
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -591,9 +581,8 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                setState(() {
-                                  _model.tabSelected = 2;
-                                });
+                                _model.tabSelected = 2;
+                                setState(() {});
                               },
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -631,9 +620,8 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                setState(() {
-                                  _model.tabSelected = 3;
-                                });
+                                _model.tabSelected = 3;
+                                setState(() {});
                               },
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -689,6 +677,7 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                             'Offer',
                                           )
                                           .order('created_at'),
+                                      limit: 25,
                                     ),
                                   ),
                                   builder: (context, snapshot) {
@@ -978,6 +967,7 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                             'Social',
                                           )
                                           .order('created_at'),
+                                      limit: 25,
                                     ),
                                   ),
                                   builder: (context, snapshot) {
@@ -1281,6 +1271,7 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                             widget.companyInfo?.id,
                                           )
                                           .order('created_at'),
+                                      limit: 25,
                                     ),
                                   ),
                                   builder: (context, snapshot) {

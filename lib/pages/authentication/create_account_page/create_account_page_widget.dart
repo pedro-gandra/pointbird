@@ -8,7 +8,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'create_account_page_model.dart';
 export 'create_account_page_model.dart';
 
@@ -492,25 +491,22 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                       if (_model.passTextController.text ==
                                           _model
                                               .confirmPassTextController.text) {
-                                        setState(() {
-                                          _model.isPassMiss = false;
-                                        });
+                                        _model.isPassMiss = false;
+                                        setState(() {});
                                         _model.isEmail =
                                             await actions.isEmailRegistered(
                                           _model.emailTextController.text,
                                         );
-                                        setState(() {
-                                          _model.isEmailRegistered =
-                                              _model.isEmail!;
-                                        });
+                                        _model.isEmailRegistered =
+                                            _model.isEmail!;
+                                        setState(() {});
                                         if (!_model.isEmailRegistered) {
                                           _model.signUp = await actions.signUp(
                                             _model.emailTextController.text,
                                             _model.passTextController.text,
                                           );
-                                          setState(() {
-                                            _model.signUpRes = true;
-                                          });
+                                          _model.signUpRes = true;
+                                          setState(() {});
                                           await Future.delayed(const Duration(
                                               milliseconds: 500));
                                           if (_model.signUp?.color ==
@@ -529,23 +525,19 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                                           .resolve(
                                                               Directionality.of(
                                                                   context)),
-                                                  child: WebViewAware(
-                                                    child: GestureDetector(
-                                                      onTap: () => _model
-                                                              .unfocusNode
-                                                              .canRequestFocus
-                                                          ? FocusScope.of(
-                                                                  context)
-                                                              .requestFocus(_model
-                                                                  .unfocusNode)
-                                                          : FocusScope.of(
-                                                                  context)
-                                                              .unfocus(),
-                                                      child: VerifyEmailWidget(
-                                                        email: _model
-                                                            .emailTextController
-                                                            .text,
-                                                      ),
+                                                  child: GestureDetector(
+                                                    onTap: () => _model
+                                                            .unfocusNode
+                                                            .canRequestFocus
+                                                        ? FocusScope.of(context)
+                                                            .requestFocus(_model
+                                                                .unfocusNode)
+                                                        : FocusScope.of(context)
+                                                            .unfocus(),
+                                                    child: VerifyEmailWidget(
+                                                      email: _model
+                                                          .emailTextController
+                                                          .text,
                                                     ),
                                                   ),
                                                 );
@@ -554,9 +546,8 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                           }
                                         }
                                       } else {
-                                        setState(() {
-                                          _model.isPassMiss = true;
-                                        });
+                                        _model.isPassMiss = true;
+                                        setState(() {});
                                       }
 
                                       setState(() {});

@@ -284,14 +284,12 @@ class _SendMessageWidgetState extends State<SendMessageWidget> {
                                       setState(() {
                                         _model.messageTextController?.clear();
                                       });
-                                      setState(() {
-                                        _model.success = true;
-                                      });
+                                      _model.success = true;
+                                      setState(() {});
                                       await Future.delayed(
                                           const Duration(milliseconds: 4000));
-                                      setState(() {
-                                        _model.success = false;
-                                      });
+                                      _model.success = false;
+                                      setState(() {});
                                     },
                                     text: 'Send message',
                                     options: FFButtonOptions(

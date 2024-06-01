@@ -18,7 +18,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'home_company_model.dart';
 export 'home_company_model.dart';
 
@@ -58,13 +57,11 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
               backgroundColor: Colors.transparent,
               alignment: AlignmentDirectional(0.0, 0.0)
                   .resolve(Directionality.of(context)),
-              child: WebViewAware(
-                child: GestureDetector(
-                  onTap: () => _model.unfocusNode.canRequestFocus
-                      ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-                      : FocusScope.of(context).unfocus(),
-                  child: TutorialPopWidget(),
-                ),
+              child: GestureDetector(
+                onTap: () => _model.unfocusNode.canRequestFocus
+                    ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+                    : FocusScope.of(context).unfocus(),
+                child: TutorialPopWidget(),
               ),
             );
           },
@@ -138,9 +135,8 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                           _model.requestCompleted3 = false;
                         });
                         await _model.waitForRequestCompleted3();
-                        setState(() {
-                          _model.tabSelected = 1;
-                        });
+                        _model.tabSelected = 1;
+                        setState(() {});
                       },
                       child: SingleChildScrollView(
                         physics: const AlwaysScrollableScrollPhysics(),
@@ -737,9 +733,8 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        setState(() {
-                                          _model.tabSelected = 1;
-                                        });
+                                        _model.tabSelected = 1;
+                                        setState(() {});
                                       },
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -781,9 +776,8 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        setState(() {
-                                          _model.tabSelected = 2;
-                                        });
+                                        _model.tabSelected = 2;
+                                        setState(() {});
                                       },
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -825,9 +819,8 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        setState(() {
-                                          _model.tabSelected = 3;
-                                        });
+                                        _model.tabSelected = 3;
+                                        setState(() {});
                                       },
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -1100,12 +1093,10 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                                                             alignment:
                                                                                 AlignmentDirectional(0.0, 1.0).resolve(Directionality.of(context)),
                                                                             child:
-                                                                                WebViewAware(
-                                                                              child: GestureDetector(
-                                                                                onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                child: ChangePostWidget(
-                                                                                  idPost: offersViewPostsViewRow.id!,
-                                                                                ),
+                                                                                GestureDetector(
+                                                                              onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                              child: ChangePostWidget(
+                                                                                idPost: offersViewPostsViewRow.id!,
                                                                               ),
                                                                             ),
                                                                           );
@@ -1533,12 +1524,10 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                                                                 insetPadding: EdgeInsets.zero,
                                                                                 backgroundColor: Colors.transparent,
                                                                                 alignment: AlignmentDirectional(0.0, 1.0).resolve(Directionality.of(context)),
-                                                                                child: WebViewAware(
-                                                                                  child: GestureDetector(
-                                                                                    onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                    child: ChangePostWidget(
-                                                                                      idPost: pollsViewPostsPollRow.postId!,
-                                                                                    ),
+                                                                                child: GestureDetector(
+                                                                                  onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                  child: ChangePostWidget(
+                                                                                    idPost: pollsViewPostsPollRow.postId!,
                                                                                   ),
                                                                                 ),
                                                                               );
@@ -1959,12 +1948,10 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                                                             alignment:
                                                                                 AlignmentDirectional(0.0, 1.0).resolve(Directionality.of(context)),
                                                                             child:
-                                                                                WebViewAware(
-                                                                              child: GestureDetector(
-                                                                                onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                child: ChangePostWidget(
-                                                                                  idPost: socialViewPostsViewRow.id!,
-                                                                                ),
+                                                                                GestureDetector(
+                                                                              onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                              child: ChangePostWidget(
+                                                                                idPost: socialViewPostsViewRow.id!,
                                                                               ),
                                                                             ),
                                                                           );

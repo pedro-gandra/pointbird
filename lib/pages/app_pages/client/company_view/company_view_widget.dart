@@ -215,7 +215,14 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 9.0),
                                             child: Text(
-                                              'Joined in: ${dateTimeFormat('yMMMd', companyViewViewCompanyViewRow?.createdAt)}',
+                                              'Joined in: ${dateTimeFormat(
+                                                'yMMMd',
+                                                companyViewViewCompanyViewRow
+                                                    ?.createdAt,
+                                                locale:
+                                                    FFLocalizations.of(context)
+                                                        .languageCode,
+                                              )}',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -244,7 +251,11 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 3.0),
                                                     child: Text(
-                                                      'followers',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'zijty8xw' /* followers */,
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -302,7 +313,11 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                   0.0,
                                                                   3.0),
                                                       child: Text(
-                                                        'total saved',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'phyd6gwl' /* total saved */,
+                                                        ),
                                                         style: FlutterFlowTheme
                                                                 .of(context)
                                                             .bodyMedium
@@ -645,7 +660,9 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                             CrossAxisAlignment.center,
                                         children: [
                                           Text(
-                                            'Unfollow',
+                                            FFLocalizations.of(context).getText(
+                                              '3jz0y62g' /* Unfollow */,
+                                            ),
                                             textAlign: TextAlign.start,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -700,7 +717,10 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 10.0),
                                             child: Text(
-                                              'Your points:',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '63i5c89n' /* Your points: */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -862,7 +882,11 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
 
                                                         setState(() {});
                                                       },
-                                                text: 'Check In',
+                                                text:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  '7vtew1ew' /* Check In */,
+                                                ),
                                                 icon: Icon(
                                                   Icons.check_circle,
                                                   size: 15.0,
@@ -925,7 +949,10 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                 }.withoutNulls,
                                               );
                                             },
-                                            text: 'Exchange',
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              '9n4ljym9' /* Exchange */,
+                                            ),
                                             icon: Icon(
                                               Icons.monetization_on_sharp,
                                               size: 15.0,
@@ -1017,7 +1044,9 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Text(
-                                          'Offers',
+                                          FFLocalizations.of(context).getText(
+                                            'a4m2cein' /* Offers */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
@@ -1060,7 +1089,9 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Text(
-                                          'Polls',
+                                          FFLocalizations.of(context).getText(
+                                            'g00pufj5' /* Polls */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
@@ -1103,7 +1134,9 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Text(
-                                          'Social',
+                                          FFLocalizations.of(context).getText(
+                                            '7t69eynr' /* Social */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
@@ -1257,9 +1290,13 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                 children: [
                                                                   Text(
                                                                     dateTimeFormat(
-                                                                        'yMMMd',
-                                                                        offersViewPostsViewRow
-                                                                            .createdAt!),
+                                                                      'yMMMd',
+                                                                      offersViewPostsViewRow
+                                                                          .createdAt!,
+                                                                      locale: FFLocalizations.of(
+                                                                              context)
+                                                                          .languageCode,
+                                                                    ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
@@ -1338,7 +1375,11 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                               CrossAxisAlignment.end,
                                                                           children: [
                                                                             Text(
-                                                                              'Expires in: ${dateTimeFormat('d/M/y', offersViewPostsViewRow.pointExpiration)}',
+                                                                              'Expires in: ${dateTimeFormat(
+                                                                                'd/M/y',
+                                                                                offersViewPostsViewRow.pointExpiration,
+                                                                                locale: FFLocalizations.of(context).languageCode,
+                                                                              )}',
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: 'Poppins',
                                                                                     color: FlutterFlowTheme.of(context).secondaryText,
@@ -1726,8 +1767,11 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                         child:
                                                                             Text(
                                                                           dateTimeFormat(
-                                                                              'yMMMd',
-                                                                              pollsViewPostsPollClientRow.createdAt!),
+                                                                            'yMMMd',
+                                                                            pollsViewPostsPollClientRow.createdAt!,
+                                                                            locale:
+                                                                                FFLocalizations.of(context).languageCode,
+                                                                          ),
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodyMedium
                                                                               .override(
@@ -2051,7 +2095,11 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                             CrossAxisAlignment.end,
                                                                         children: [
                                                                           Text(
-                                                                            'Expires in: ${dateTimeFormat('d/M/y', pollsViewPostsPollClientRow.pointExpiration)}',
+                                                                            'Expires in: ${dateTimeFormat(
+                                                                              'd/M/y',
+                                                                              pollsViewPostsPollClientRow.pointExpiration,
+                                                                              locale: FFLocalizations.of(context).languageCode,
+                                                                            )}',
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Poppins',
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
@@ -2253,9 +2301,12 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                             1.0),
                                                                     child: Text(
                                                                       dateTimeFormat(
-                                                                          'yMMMd',
-                                                                          socialViewPostsViewRow
-                                                                              .createdAt!),
+                                                                        'yMMMd',
+                                                                        socialViewPostsViewRow
+                                                                            .createdAt!,
+                                                                        locale:
+                                                                            FFLocalizations.of(context).languageCode,
+                                                                      ),
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
                                                                           .bodyMedium
@@ -2338,7 +2389,11 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                               CrossAxisAlignment.end,
                                                                           children: [
                                                                             Text(
-                                                                              'Expires in: ${dateTimeFormat('d/M/y', socialViewPostsViewRow.pointExpiration)}',
+                                                                              'Expires in: ${dateTimeFormat(
+                                                                                'd/M/y',
+                                                                                socialViewPostsViewRow.pointExpiration,
+                                                                                locale: FFLocalizations.of(context).languageCode,
+                                                                              )}',
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: 'Poppins',
                                                                                     color: FlutterFlowTheme.of(context).secondaryText,

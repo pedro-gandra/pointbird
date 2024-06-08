@@ -90,7 +90,9 @@ class _VerifyEmailWidgetState extends State<VerifyEmailWidget> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Confirm your email',
+                                  FFLocalizations.of(context).getText(
+                                    '3ih62gt6' /* Confirm your email */,
+                                  ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .headlineMedium
@@ -126,7 +128,9 @@ class _VerifyEmailWidgetState extends State<VerifyEmailWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 18.0, 0.0, 0.0),
                                   child: Text(
-                                    'Make sure to check the spam inbox.',
+                                    FFLocalizations.of(context).getText(
+                                      'nhrt6h15' /* Make sure to check the spam in... */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .labelMedium
@@ -148,7 +152,9 @@ class _VerifyEmailWidgetState extends State<VerifyEmailWidget> {
                                     onPressed: () async {
                                       context.goNamed('LoginPage');
                                     },
-                                    text: 'Log in',
+                                    text: FFLocalizations.of(context).getText(
+                                      'hvp9c4q8' /* Log in */,
+                                    ),
                                     options: FFButtonOptions(
                                       height: 38.0,
                                       padding: EdgeInsetsDirectional.fromSTEB(

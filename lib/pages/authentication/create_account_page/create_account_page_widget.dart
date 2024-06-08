@@ -96,7 +96,9 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                'Create account',
+                                FFLocalizations.of(context).getText(
+                                  '7r29j81w' /* Create account */,
+                                ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .headlineMedium
@@ -111,7 +113,9 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 8.0),
                                 child: Text(
-                                  'Use your email and create your account in 5 minutes!',
+                                  FFLocalizations.of(context).getText(
+                                    'afz27x2v' /* Use your email and create your... */,
+                                  ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -132,7 +136,10 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     isDense: true,
-                                    labelText: 'Email',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'c0z08401' /* Email */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -212,7 +219,10 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                   obscureText: !_model.passVisibility,
                                   decoration: InputDecoration(
                                     isDense: true,
-                                    labelText: 'Password',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'kf42qi8v' /* Password */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -305,7 +315,10 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                   obscureText: !_model.confirmPassVisibility,
                                   decoration: InputDecoration(
                                     isDense: true,
-                                    labelText: 'Confirm password',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'mlzj8ndz' /* Confirm password */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -401,7 +414,9 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 16.0, 0.0, 0.0),
                                         child: Text(
-                                          'Passwords do not match',
+                                          FFLocalizations.of(context).getText(
+                                            'gj1rb68y' /* Passwords do not match */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -428,7 +443,9 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 16.0, 0.0, 0.0),
                                         child: Text(
-                                          'This email is already in use',
+                                          FFLocalizations.of(context).getText(
+                                            'ku5cm97v' /* This email is already in use */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -552,7 +569,9 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
 
                                       setState(() {});
                                     },
-                                    text: 'Create Account',
+                                    text: FFLocalizations.of(context).getText(
+                                      'nq9t73t5' /* Create Account */,
+                                    ),
                                     options: FFButtonOptions(
                                       width: double.infinity,
                                       height: 47.0,
@@ -583,55 +602,61 @@ class _CreateAccountPageWidgetState extends State<CreateAccountPageWidget> {
                                   ),
                                 ),
                               ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 22.0, 0.0, 0.0),
-                                child: RichText(
-                                  textScaler: MediaQuery.of(context).textScaler,
-                                  text: TextSpan(
-                                    children: [
-                                      TextSpan(
-                                        text: 'Already have an account?\n',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              fontSize: 14.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                      ),
-                                      TextSpan(
-                                        text: 'Log in here',
-                                        style: TextStyle(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 14.0,
-                                        ),
-                                        mouseCursor: SystemMouseCursors.click,
-                                        recognizer: TapGestureRecognizer()
-                                          ..onTap = () async {
-                                            context.pushNamed('LoginPage');
-                                          },
-                                      )
-                                    ],
+                              Align(
+                                alignment: AlignmentDirectional(0.0, 0.0),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 16.0, 0.0, 0.0),
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      'v0jfnz63' /* Already have an account? */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
+                                        .bodySmall
                                         .override(
                                           fontFamily: 'Poppins',
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                           fontSize: 14.0,
                                           letterSpacing: 0.0,
-                                          fontWeight: FontWeight.normal,
+                                          fontWeight: FontWeight.w500,
                                         ),
                                   ),
-                                  textAlign: TextAlign.center,
                                 ),
+                              ),
+                              RichText(
+                                textScaler: MediaQuery.of(context).textScaler,
+                                text: TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: FFLocalizations.of(context).getText(
+                                        '1diekuh2' /* Log in here */,
+                                      ),
+                                      style: TextStyle(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 14.0,
+                                      ),
+                                      mouseCursor: SystemMouseCursors.click,
+                                      recognizer: TapGestureRecognizer()
+                                        ..onTap = () async {
+                                          context.pushNamed('LoginPage');
+                                        },
+                                    )
+                                  ],
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontSize: 14.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                ),
+                                textAlign: TextAlign.center,
                               ),
                             ],
                           ),

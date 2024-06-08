@@ -124,7 +124,9 @@ class _ChangePostWidgetState extends State<ChangePostWidget>
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 8.0, 0.0, 8.0),
                           child: Text(
-                            'Edit post',
+                            FFLocalizations.of(context).getText(
+                              'q7c4fi2i' /* Edit post */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -184,7 +186,9 @@ class _ChangePostWidgetState extends State<ChangePostWidget>
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 8.0, 0.0, 8.0),
                             child: Text(
-                              'Delete',
+                              FFLocalizations.of(context).getText(
+                                '7je6chpx' /* Delete */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(

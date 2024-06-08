@@ -217,6 +217,8 @@ dynamic deserializeParam<T>(
         switch (T) {
           case ViewHomeClient2Row:
             return ViewHomeClient2Row(data);
+          case AdminsRow:
+            return AdminsRow(data);
           case ViewPostsViewRow:
             return ViewPostsViewRow(data);
           case ViewPostsPollRow:
@@ -225,6 +227,8 @@ dynamic deserializeParam<T>(
             return VotesRow(data);
           case ClientCompaniesRow:
             return ClientCompaniesRow(data);
+          case CurrenciesRow:
+            return CurrenciesRow(data);
           case CompaniesRow:
             return CompaniesRow(data);
           case ViewPostsPollClientRow:

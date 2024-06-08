@@ -204,7 +204,9 @@ class _EditProfileCompanyWidgetState extends State<EditProfileCompanyWidget> {
                                       }
                                     },
                                     child: Text(
-                                      'Change profile picture',
+                                      FFLocalizations.of(context).getText(
+                                        'eev52eth' /* Change profile picture */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
@@ -229,7 +231,10 @@ class _EditProfileCompanyWidgetState extends State<EditProfileCompanyWidget> {
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     isDense: true,
-                                    labelText: 'Company name',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'l2n1sihg' /* Company name */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -308,7 +313,10 @@ class _EditProfileCompanyWidgetState extends State<EditProfileCompanyWidget> {
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     isDense: false,
-                                    labelText: 'Bio',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'c7d7psrt' /* Bio */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -389,7 +397,10 @@ class _EditProfileCompanyWidgetState extends State<EditProfileCompanyWidget> {
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     isDense: true,
-                                    labelText: 'Link (website or other)',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'qq4jy7uv' /* Link (website or other) */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -400,7 +411,10 @@ class _EditProfileCompanyWidgetState extends State<EditProfileCompanyWidget> {
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
                                         ),
-                                    hintText: 'https://',
+                                    hintText:
+                                        FFLocalizations.of(context).getText(
+                                      'ansuficc' /* https:// */,
+                                    ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -469,7 +483,10 @@ class _EditProfileCompanyWidgetState extends State<EditProfileCompanyWidget> {
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     isDense: true,
-                                    labelText: 'Instagram',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'trk24q0v' /* Instagram */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -480,7 +497,10 @@ class _EditProfileCompanyWidgetState extends State<EditProfileCompanyWidget> {
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.normal,
                                         ),
-                                    hintText: '@username',
+                                    hintText:
+                                        FFLocalizations.of(context).getText(
+                                      'zh3v42uj' /* @username */,
+                                    ),
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -594,7 +614,10 @@ class _EditProfileCompanyWidgetState extends State<EditProfileCompanyWidget> {
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
                                           ),
-                                      hintText: 'Business category',
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        'f2v44tgw' /* Business category */,
+                                      ),
                                       fillColor: FlutterFlowTheme.of(context)
                                           .primaryBackground,
                                       elevation: 2.0,
@@ -720,7 +743,9 @@ class _EditProfileCompanyWidgetState extends State<EditProfileCompanyWidget> {
                                         'The changes were made succesfully!';
                                     setState(() {});
                                   },
-                                  text: 'Save',
+                                  text: FFLocalizations.of(context).getText(
+                                    '5q8kj8sr' /* Save */,
+                                  ),
                                   options: FFButtonOptions(
                                     width:
                                         MediaQuery.sizeOf(context).width * 1.0,
@@ -787,7 +812,9 @@ class _EditProfileCompanyWidgetState extends State<EditProfileCompanyWidget> {
                               ).then((value) => setState(() {}));
                             },
                             child: Text(
-                              'Delete my account',
+                              FFLocalizations.of(context).getText(
+                                'saw71wxc' /* Delete my account */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(

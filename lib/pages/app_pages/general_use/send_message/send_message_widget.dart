@@ -91,7 +91,9 @@ class _SendMessageWidgetState extends State<SendMessageWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 20.0),
                                   child: Text(
-                                    'Send a message to our team!',
+                                    FFLocalizations.of(context).getText(
+                                      'z0w3spw4' /* Send a message to our team! */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -108,9 +110,15 @@ class _SendMessageWidgetState extends State<SendMessageWidget> {
                                   controller: _model.subjectValueController ??=
                                       FormFieldController<String>(null),
                                   options: [
-                                    'App suggestion',
-                                    'Bug report',
-                                    'Other'
+                                    FFLocalizations.of(context).getText(
+                                      'nm6o51qu' /* App suggestion */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'u1thf5td' /* Bug report */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      '0hj694n9' /* Other */,
+                                    )
                                   ],
                                   onChanged: (val) =>
                                       setState(() => _model.subjectValue = val),
@@ -125,7 +133,9 @@ class _SendMessageWidgetState extends State<SendMessageWidget> {
                                         fontSize: 13.0,
                                         letterSpacing: 0.0,
                                       ),
-                                  hintText: 'Choose subject',
+                                  hintText: FFLocalizations.of(context).getText(
+                                    'd9hdskky' /* Choose subject */,
+                                  ),
                                   icon: Icon(
                                     Icons.keyboard_arrow_down_rounded,
                                     color: FlutterFlowTheme.of(context)
@@ -165,7 +175,10 @@ class _SendMessageWidgetState extends State<SendMessageWidget> {
                                             fontWeight: FontWeight.normal,
                                           ),
                                       alignLabelWithHint: true,
-                                      hintText: 'Your message here...',
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        'y4ey73gc' /* Your message here... */,
+                                      ),
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
@@ -245,7 +258,9 @@ class _SendMessageWidgetState extends State<SendMessageWidget> {
                                           alignment:
                                               AlignmentDirectional(-1.0, 0.0),
                                           child: Text(
-                                            'Your message was sent!',
+                                            FFLocalizations.of(context).getText(
+                                              'c2tdqdjd' /* Your message was sent! */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodySmall
                                                 .override(
@@ -291,7 +306,9 @@ class _SendMessageWidgetState extends State<SendMessageWidget> {
                                       _model.success = false;
                                       setState(() {});
                                     },
-                                    text: 'Send message',
+                                    text: FFLocalizations.of(context).getText(
+                                      'h1ku756y' /* Send message */,
+                                    ),
                                     options: FFButtonOptions(
                                       width: double.infinity,
                                       height: 45.0,

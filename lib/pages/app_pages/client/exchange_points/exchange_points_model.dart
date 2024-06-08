@@ -36,7 +36,9 @@ class ExchangePointsModel extends FlutterFlowModel<ExchangePointsWidget> {
   String? _pointAmountTextControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        '5w8ynkv7' /* Field is required */,
+      );
     }
 
     return null;

@@ -32,14 +32,20 @@ class EditProfileClientModel extends FlutterFlowModel<EditProfileClientWidget> {
   String? Function(BuildContext, String?)? textControllerValidator;
   String? _textControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        '6vl1x0jh' /* Field is required */,
+      );
     }
 
     if (val.length < 3) {
-      return 'Minimum of 3 characters';
+      return FFLocalizations.of(context).getText(
+        'iqhnf64h' /* Minimum of 3 characters */,
+      );
     }
     if (val.length > 30) {
-      return 'Maximum of 30 characters';
+      return FFLocalizations.of(context).getText(
+        'atjdtdiy' /* Maximum of 30 characters */,
+      );
     }
 
     return null;

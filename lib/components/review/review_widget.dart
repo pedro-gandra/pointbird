@@ -163,7 +163,9 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 15.0, 0.0, 0.0),
                                 child: Text(
-                                  'Rating updated!',
+                                  FFLocalizations.of(context).getText(
+                                    'dvqcpd4g' /* Rating updated! */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -204,7 +206,9 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                           Navigator.pop(context);
                         },
                         child: Text(
-                          'Update rating',
+                          FFLocalizations.of(context).getText(
+                            '02llv0ti' /* Update rating */,
+                          ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
@@ -235,7 +239,9 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                           Navigator.pop(context);
                         },
                         child: Text(
-                          'Cancel',
+                          FFLocalizations.of(context).getText(
+                            'aphd8d65' /* Cancel */,
+                          ),
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(

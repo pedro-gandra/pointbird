@@ -2,6 +2,7 @@ import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/components/client_nav_widget.dart';
 import '/components/plans/plans_widget.dart';
+import '/flutter_flow/flutter_flow_language_selector.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -178,7 +179,9 @@ class _ProfileClientWidgetState extends State<ProfileClientWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
                         child: Text(
-                          'Your Account',
+                          FFLocalizations.of(context).getText(
+                            '953dvj3q' /* Your Account */,
+                          ),
                           style:
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Poppins',
@@ -247,7 +250,9 @@ class _ProfileClientWidgetState extends State<ProfileClientWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Text(
-                                      'Edit Profile',
+                                      FFLocalizations.of(context).getText(
+                                        'x67mmfsb' /* Edit Profile */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelLarge
                                           .override(
@@ -328,7 +333,9 @@ class _ProfileClientWidgetState extends State<ProfileClientWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 0.0, 0.0),
                                     child: Text(
-                                      'Change password',
+                                      FFLocalizations.of(context).getText(
+                                        'w6cfj6v6' /* Change password */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelLarge
                                           .override(
@@ -358,7 +365,9 @@ class _ProfileClientWidgetState extends State<ProfileClientWidget> {
                         padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 16.0, 0.0, 0.0),
                         child: Text(
-                          'App Settings',
+                          FFLocalizations.of(context).getText(
+                            'mosk2r55' /* App Settings */,
+                          ),
                           style:
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Poppins',
@@ -403,7 +412,9 @@ class _ProfileClientWidgetState extends State<ProfileClientWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Text(
-                                    'Dark mode',
+                                    FFLocalizations.of(context).getText(
+                                      'ua0p4h99' /* Dark mode */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .override(
@@ -528,6 +539,48 @@ class _ProfileClientWidgetState extends State<ProfileClientWidget> {
                                 ),
                               ],
                             ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 15.0, 16.0, 0.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                blurRadius: 3.0,
+                                color: Color(0x33000000),
+                                offset: Offset(
+                                  0.0,
+                                  1.0,
+                                ),
+                              )
+                            ],
+                          ),
+                          child: FlutterFlowLanguageSelector(
+                            width: double.infinity,
+                            height: 60.0,
+                            backgroundColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            borderColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            dropdownIconColor:
+                                FlutterFlowTheme.of(context).secondaryText,
+                            borderRadius: 8.0,
+                            textStyle: GoogleFonts.getFont(
+                              'Poppins',
+                              color: FlutterFlowTheme.of(context).primaryText,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 14.0,
+                            ),
+                            hideFlags: false,
+                            flagSize: 20.0,
+                            flagTextGap: 12.0,
+                            currentLanguage:
+                                FFLocalizations.of(context).languageCode,
+                            languages: FFLocalizations.languages(),
+                            onChanged: (lang) => setAppLanguage(context, lang),
                           ),
                         ),
                       ),
@@ -656,7 +709,9 @@ class _ProfileClientWidgetState extends State<ProfileClientWidget> {
                               context.goNamedAuth('LoginPage', context.mounted);
                             },
                             child: Text(
-                              'Log out',
+                              FFLocalizations.of(context).getText(
+                                'p6ni9yck' /* Log out */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(

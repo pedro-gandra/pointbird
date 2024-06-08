@@ -144,7 +144,9 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 3.0),
                                         child: Text(
-                                          'following',
+                                          FFLocalizations.of(context).getText(
+                                            '33azr0ed' /* following */,
+                                          ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -204,7 +206,9 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 3.0),
                                         child: Text(
-                                          'money saved',
+                                          FFLocalizations.of(context).getText(
+                                            'dl5ayhz8' /* money saved */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -306,7 +310,10 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                     ).then((value) => setState(() {}));
                                   },
                                   child: Text(
-                                    'Save up to 3x more money without ads',
+                                    FFLocalizations.of(context).getText(
+                                      't7ziz5g6' /* Save up to 3x more money witho... */,
+                                    ),
+                                    textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -343,7 +350,9 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 10.0),
                                     child: Text(
-                                      'Companies you follow',
+                                      FFLocalizations.of(context).getText(
+                                        'b6hatqqz' /* Companies you follow */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -377,7 +386,9 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                           MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          'Click to visit',
+                                          FFLocalizations.of(context).getText(
+                                            'tudijynb' /* Click to visit */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -623,7 +634,13 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                                                           16.0,
                                                                     ),
                                                                     Text(
-                                                                      'Last check in: ${dateTimeFormat('yMMMd', listViewViewHomeClientRow.lastCheckIn)}',
+                                                                      'Last check in: ${dateTimeFormat(
+                                                                        'd/M/y',
+                                                                        listViewViewHomeClientRow
+                                                                            .lastCheckIn,
+                                                                        locale:
+                                                                            FFLocalizations.of(context).languageCode,
+                                                                      )}',
                                                                       textAlign:
                                                                           TextAlign
                                                                               .start,
@@ -885,7 +902,11 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                                                 InputDecoration(
                                                               isDense: true,
                                                               labelText:
-                                                                  'Company code',
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                'hmqx6c30' /* Company code */,
+                                                              ),
                                                               labelStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
@@ -1183,15 +1204,20 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                                                   setState(
                                                                       () {});
                                                                 },
-                                                                text: 'Follow',
+                                                                text: FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                                  'a4jpsdcm' /* Follow */,
+                                                                ),
                                                                 options:
                                                                     FFButtonOptions(
+                                                                  width: 150.0,
                                                                   height: 40.0,
                                                                   padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
-                                                                          35.0,
                                                                           0.0,
-                                                                          35.0,
+                                                                          0.0,
+                                                                          0.0,
                                                                           0.0),
                                                                   iconPadding: EdgeInsetsDirectional
                                                                       .fromSTEB(
@@ -1267,7 +1293,10 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                             alignment:
                                                 AlignmentDirectional(0.0, 0.0),
                                             child: Text(
-                                              'Want to discover new companies?',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'ghue0ltd' /* Want to discover new companies... */,
+                                              ),
                                               textAlign: TextAlign.start,
                                               style: FlutterFlowTheme.of(
                                                       context)
@@ -1377,7 +1406,11 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                                                       0.0,
                                                                       0.0),
                                                           child: Text(
-                                                            'Explore companies',
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              'ii4e4olg' /* Explore companies */,
+                                                            ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .labelLarge

@@ -60,7 +60,9 @@ class _HelpClientWidgetState extends State<HelpClientWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(25.0, 65.0, 25.0, 0.0),
                       child: Text(
-                        'Found a bug or have a suggestion?',
+                        FFLocalizations.of(context).getText(
+                          'j4tsfmdq' /* Found a bug or have a suggesti... */,
+                        ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 13.0,
@@ -90,7 +92,9 @@ class _HelpClientWidgetState extends State<HelpClientWidget> {
                           );
                         },
                         child: Text(
-                          'Send us a message!',
+                          FFLocalizations.of(context).getText(
+                            'qztrfjfr' /* Send us a message! */,
+                          ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
@@ -110,7 +114,9 @@ class _HelpClientWidgetState extends State<HelpClientWidget> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Frequently asked questions',
+                            FFLocalizations.of(context).getText(
+                              '1l3mrsi8' /* Frequently asked questions */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -151,7 +157,9 @@ class _HelpClientWidgetState extends State<HelpClientWidget> {
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.normal,
                               ),
-                          hintText: 'Search',
+                          hintText: FFLocalizations.of(context).getText(
+                            'kfu7ad0i' /* Search */,
+                          ),
                           hintStyle: FlutterFlowTheme.of(context)
                               .labelMedium
                               .override(
@@ -257,133 +265,15 @@ class _HelpClientWidgetState extends State<HelpClientWidget> {
                                           ParamType.String,
                                         ),
                                         'par1': serializeParam(
-                                          'All the money saved is registered in US dollars, but your coupon will be generated in the currency used by the store you are buying from, with values being converted accordingly.',
-                                          ParamType.String,
-                                        ),
-                                      }.withoutNulls,
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.rightToLeft,
-                                          duration: Duration(milliseconds: 200),
-                                        ),
-                                      },
-                                    );
-                                  },
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Icon(
-                                        Icons.arrow_right,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 22.0,
-                                      ),
-                                      Text(
-                                        'My currency is not US dollars?',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              fontSize: 13.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                      ),
-                                    ].divide(SizedBox(width: 5.0)),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          if (functions.checkSearch(_model.textController.text,
-                              'How can I use my coupons?'))
-                            Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 15.0, 0.0, 0.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed(
-                                      'fullInfo',
-                                      queryParameters: {
-                                        'title': serializeParam(
-                                          'How to use coupon',
-                                          ParamType.String,
-                                        ),
-                                        'par1': serializeParam(
-                                          'Physical purchase: If you are looking to buy a product in a physical store, you can simply provide the coupon code in the moment of the purchase and the company will verify it in their own system.',
+                                          FFLocalizations.of(context).getText(
+                                            'vdkadr2j' /* To make the app more comprehen... */,
+                                          ),
                                           ParamType.String,
                                         ),
                                         'par2': serializeParam(
-                                          'Online purchase: When making an online purchase, you can check if the company provides, in the checkout, a field for \"Pointbird coupon\". If they do, all you have to do is insert your coupon and the discount value it grants. If there isn\'t an automatic feature implemented for you to use your coupon, try contacting the store directly on social media.',
-                                          ParamType.String,
-                                        ),
-                                      }.withoutNulls,
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.rightToLeft,
-                                          duration: Duration(milliseconds: 200),
-                                        ),
-                                      },
-                                    );
-                                  },
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Icon(
-                                        Icons.arrow_right,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 22.0,
-                                      ),
-                                      Text(
-                                        'How can I use my coupons?',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              fontSize: 13.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                      ),
-                                    ].divide(SizedBox(width: 5.0)),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          if (functions.checkSearch(_model.textController.text,
-                              'Why is there a minimum purchase on coupons?'))
-                            Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 15.0, 0.0, 0.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed(
-                                      'fullInfo',
-                                      queryParameters: {
-                                        'title': serializeParam(
-                                          'Coupon minimum purchase',
-                                          ParamType.String,
-                                        ),
-                                        'par1': serializeParam(
-                                          'The minimum purchase amount is determined by the company based on the value of the coupon generated, it exists to make sure companies keep control of their margins and don\'t lose money when you make a purchase.',
+                                          FFLocalizations.of(context).getText(
+                                            '03cg64xn' /* However, when generating a cou... */,
+                                          ),
                                           ParamType.String,
                                         ),
                                       }.withoutNulls,
@@ -415,7 +305,174 @@ class _HelpClientWidgetState extends State<HelpClientWidget> {
                                               alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Text(
-                                                'Why is there a minimum purchase on coupons?',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'n1nnckjp' /* My currency is not US dollars? */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          fontSize: 13.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ].divide(SizedBox(width: 5.0)),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          if (functions.checkSearch(_model.textController.text,
+                              'How can I use my coupons?'))
+                            Align(
+                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 15.0, 0.0, 0.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed(
+                                      'fullInfo',
+                                      queryParameters: {
+                                        'title': serializeParam(
+                                          'How to use coupon',
+                                          ParamType.String,
+                                        ),
+                                        'par1': serializeParam(
+                                          FFLocalizations.of(context).getText(
+                                            'cqkpso3c' /* Physical purchase: If you are ... */,
+                                          ),
+                                          ParamType.String,
+                                        ),
+                                        'par2': serializeParam(
+                                          FFLocalizations.of(context).getText(
+                                            't0lusivj' /* Online purchase: When making a... */,
+                                          ),
+                                          ParamType.String,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.rightToLeft,
+                                          duration: Duration(milliseconds: 200),
+                                        ),
+                                      },
+                                    );
+                                  },
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Icon(
+                                        Icons.arrow_right,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        size: 22.0,
+                                      ),
+                                      Expanded(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'lkv8w1k5' /* How can I use my coupons? */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          fontSize: 13.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ].divide(SizedBox(width: 5.0)),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          if (functions.checkSearch(_model.textController.text,
+                              'Why is there a minimum purchase on coupons?'))
+                            Align(
+                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 15.0, 0.0, 0.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed(
+                                      'fullInfo',
+                                      queryParameters: {
+                                        'title': serializeParam(
+                                          'Coupon minimum purchase',
+                                          ParamType.String,
+                                        ),
+                                        'par1': serializeParam(
+                                          FFLocalizations.of(context).getText(
+                                            'ug3mh75j' /* The minimum purchase amount is... */,
+                                          ),
+                                          ParamType.String,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.rightToLeft,
+                                          duration: Duration(milliseconds: 200),
+                                        ),
+                                      },
+                                    );
+                                  },
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Icon(
+                                        Icons.arrow_right,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        size: 22.0,
+                                      ),
+                                      Expanded(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'r2dckhm8' /* Why is there a minimum purchas... */,
+                                                ),
                                                 textAlign: TextAlign.start,
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -458,11 +515,15 @@ class _HelpClientWidgetState extends State<HelpClientWidget> {
                                           ParamType.String,
                                         ),
                                         'par1': serializeParam(
-                                          'You can only use one Pointbird coupon per purchase on any store, respecting the minimum purchase amount written in the coupon.',
+                                          FFLocalizations.of(context).getText(
+                                            'gw92bt7n' /* You can only use one Pointbird... */,
+                                          ),
                                           ParamType.String,
                                         ),
                                         'par2': serializeParam(
-                                          'You can, however, generate as many coupons as you want and use them in different purchases at any moment.',
+                                          FFLocalizations.of(context).getText(
+                                            'r9m5h5o3' /* You can, however, generate as ... */,
+                                          ),
                                           ParamType.String,
                                         ),
                                       }.withoutNulls,
@@ -494,7 +555,10 @@ class _HelpClientWidgetState extends State<HelpClientWidget> {
                                               alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Text(
-                                                'Can I use more than one coupon per purchase?',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'kmr27ijn' /* Can I use more than one coupon... */,
+                                                ),
                                                 textAlign: TextAlign.start,
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -537,7 +601,9 @@ class _HelpClientWidgetState extends State<HelpClientWidget> {
                                           ParamType.String,
                                         ),
                                         'par1': serializeParam(
-                                          'No, points don\'t expire, you can collect as many points as you want and you have no time limit to exchange them.',
+                                          FFLocalizations.of(context).getText(
+                                            'owwp0vyz' /* No, points don't expire, you c... */,
+                                          ),
                                           ParamType.String,
                                         ),
                                       }.withoutNulls,
@@ -569,7 +635,10 @@ class _HelpClientWidgetState extends State<HelpClientWidget> {
                                               alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Text(
-                                                'Do points expire?',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'i6t5esyg' /* Do points expire? */,
+                                                ),
                                                 textAlign: TextAlign.start,
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -612,11 +681,15 @@ class _HelpClientWidgetState extends State<HelpClientWidget> {
                                           ParamType.String,
                                         ),
                                         'par1': serializeParam(
-                                          'All coupons expire 7 days after their creation, so it\'s important to only generate a coupon when you are planning to make a purchase.',
+                                          FFLocalizations.of(context).getText(
+                                            'tg2zboh5' /* All coupons expire 7 days afte... */,
+                                          ),
                                           ParamType.String,
                                         ),
                                         'par2': serializeParam(
-                                          'However, companies can still accept expired coupons if they wish, to see if that\'s the case, talk to the company directly.',
+                                          FFLocalizations.of(context).getText(
+                                            'tmaht4d3' /* However, companies can still a... */,
+                                          ),
                                           ParamType.String,
                                         ),
                                       }.withoutNulls,
@@ -648,7 +721,10 @@ class _HelpClientWidgetState extends State<HelpClientWidget> {
                                               alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Text(
-                                                'My coupon expired, now what?',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '25uu7wp8' /* My coupon expired, now what? */,
+                                                ),
                                                 textAlign: TextAlign.start,
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -713,7 +789,9 @@ class _HelpClientWidgetState extends State<HelpClientWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 3.0, 0.0, 2.0),
                               child: Text(
-                                'Help & Support',
+                                FFLocalizations.of(context).getText(
+                                  '3lyihukg' /* Help & Support */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(

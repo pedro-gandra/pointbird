@@ -33,11 +33,15 @@ class EditProfileCompanyModel
   String? Function(BuildContext, String?)? nameTextControllerValidator;
   String? _nameTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'vs5wn9ld' /* Field is required */,
+      );
     }
 
     if (val.length < 3) {
-      return 'Minimum of 3 characters';
+      return FFLocalizations.of(context).getText(
+        'xxb5xu78' /* Minimum of 3 characters */,
+      );
     }
 
     return null;
@@ -49,14 +53,20 @@ class EditProfileCompanyModel
   String? Function(BuildContext, String?)? bioTextControllerValidator;
   String? _bioTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'spqzuvyi' /* Field is required */,
+      );
     }
 
     if (val.length < 50) {
-      return 'Minimum of 50 characters';
+      return FFLocalizations.of(context).getText(
+        '5hnh2n9p' /* Minimum of 50 characters */,
+      );
     }
     if (val.length > 150) {
-      return 'Maximum of 150 characters';
+      return FFLocalizations.of(context).getText(
+        '3qvqlgcj' /* Maximum of 150 characters */,
+      );
     }
 
     return null;

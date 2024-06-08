@@ -34,6 +34,10 @@ class FFAppState extends ChangeNotifier {
         }
       }
     });
+    await _safeInitAsync(() async {
+      _languageSet =
+          await secureStorage.getBool('ff_languageSet') ?? _languageSet;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -63,6 +67,17 @@ class FFAppState extends ChangeNotifier {
   int get refresh => _refresh;
   set refresh(int _value) {
     _refresh = _value;
+  }
+
+  bool _languageSet = false;
+  bool get languageSet => _languageSet;
+  set languageSet(bool _value) {
+    _languageSet = _value;
+    secureStorage.setBool('ff_languageSet', _value);
+  }
+
+  void deleteLanguageSet() {
+    secureStorage.delete(key: 'ff_languageSet');
   }
 
   final _offersHomeCompanyManager =

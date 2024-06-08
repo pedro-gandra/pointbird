@@ -70,7 +70,9 @@ class _PlansWidgetState extends State<PlansWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Upgrade your plan!',
+                    FFLocalizations.of(context).getText(
+                      '2rmkof1a' /* Upgrade your plan! */,
+                    ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Poppins',
                           color: FlutterFlowTheme.of(context).primaryText,
@@ -119,7 +121,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                           MainAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Our free plan',
+                                          FFLocalizations.of(context).getText(
+                                            '5mta1hj2' /* Our free plan */,
+                                          ),
+                                          textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -151,7 +156,9 @@ class _PlansWidgetState extends State<PlansWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 12.0, 0.0, 0.0),
                                           child: Text(
-                                            'Pigeon',
+                                            FFLocalizations.of(context).getText(
+                                              'ho4q9qxc' /* Pigeon */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -182,7 +189,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                 size: 22.0,
                                               ),
                                               Text(
-                                                'No ads',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '9eleatoz' /* No ads */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -216,21 +226,29 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                         .error,
                                                 size: 22.0,
                                               ),
-                                              Text(
-                                                '1X point multiplier',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                          fontSize: 13.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    0.0, 0.0),
+                                                child: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'mwjfkjyv' /* 1X point multiplier */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        fontSize: 13.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                ),
                                               ),
                                             ].divide(SizedBox(width: 8.0)),
                                           ),
@@ -250,7 +268,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                 size: 22.0,
                                               ),
                                               Text(
-                                                'Follow a max of 5 companies',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'ra00w9dp' /* Follow a max of 5 companies */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -285,7 +306,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                 size: 20.0,
                                               ),
                                               Text(
-                                                'Max of 3 coupons a month',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'tiuxdiz8' /* Max of 3 coupons a month */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -320,7 +344,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                 size: 22.0,
                                               ),
                                               Text(
-                                                'Never lose check in streak',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'jnqdh1i9' /* Never lose check in streak */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -398,7 +425,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                           MainAxisAlignment.start,
                                       children: [
                                         Text(
-                                          '2x more points',
+                                          FFLocalizations.of(context).getText(
+                                            '0kd4y4os' /* 2x more points */,
+                                          ),
+                                          textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -430,7 +460,9 @@ class _PlansWidgetState extends State<PlansWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 12.0, 0.0, 0.0),
                                           child: Text(
-                                            'Crow',
+                                            FFLocalizations.of(context).getText(
+                                              'no55ssza' /* Crow */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -459,7 +491,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                 size: 22.0,
                                               ),
                                               Text(
-                                                'No ads',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '4txfe5ow' /* No ads */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -492,7 +527,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                 size: 22.0,
                                               ),
                                               Text(
-                                                '2X point multiplier',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'nxp0slhj' /* 2X point multiplier */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -525,7 +563,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                 size: 22.0,
                                               ),
                                               Text(
-                                                'Follow up to 15 companies',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '577vxwt1' /* Follow up to 15 companies */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -560,7 +601,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                 size: 20.0,
                                               ),
                                               Text(
-                                                'Up to 9 coupons a month',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'uga5hqbk' /* Up to 9 coupons a month */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -595,7 +639,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                 size: 22.0,
                                               ),
                                               Text(
-                                                'Never lose check in streak',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'p2pixmd9' /* Never lose check in streak */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -636,7 +683,11 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        '\$2.99',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'vdu9i1x2' /* $2.99 */,
+                                                        ),
                                                         style: FlutterFlowTheme
                                                                 .of(context)
                                                             .bodyMedium
@@ -653,7 +704,11 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                       ),
                                                     ),
                                                     Text(
-                                                      '/month',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'wk81iiw6' /* /month */,
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -670,7 +725,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                       SizedBox(width: 0.0)),
                                                 ),
                                                 Text(
-                                                  'billed annually',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'oap8xe81' /* billed annually */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -702,7 +760,11 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                       MainAxisAlignment.center,
                                                   children: [
                                                     Text(
-                                                      '\$4.99',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '7azgqyup' /* $4.99 */,
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -719,7 +781,11 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                           ),
                                                     ),
                                                     Text(
-                                                      '/month',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'a5vchgoo' /* /month */,
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -736,7 +802,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                       SizedBox(width: 0.0)),
                                                 ),
                                                 Text(
-                                                  'billed monthly',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'frwc3d2n' /* billed monthly */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -805,7 +874,11 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                                   0.0,
                                                                   6.0),
                                                       child: Text(
-                                                        'Annual',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'zjoksffy' /* Annual */,
+                                                        ),
                                                         style: FlutterFlowTheme
                                                                 .of(context)
                                                             .bodyMedium
@@ -875,7 +948,11 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                                   0.0,
                                                                   6.0),
                                                       child: Text(
-                                                        'Monthly',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'o23kp2s5' /* Monthly */,
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -915,7 +992,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                               onPressed: () {
                                                 print('Button pressed ...');
                                               },
-                                              text: 'Upgrade now',
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                'novc42lg' /* Upgrade now */,
+                                              ),
                                               options: FFButtonOptions(
                                                 width: double.infinity,
                                                 height: 44.0,
@@ -953,7 +1033,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 30.0, 0.0, 0.0),
                                             child: Text(
-                                              'This is your plan',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'lsw3knnk' /* This is your plan */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -1006,7 +1089,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Everything you need',
+                                        FFLocalizations.of(context).getText(
+                                          '37th05b8' /* Everything you need */,
+                                        ),
+                                        textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -1036,7 +1122,9 @@ class _PlansWidgetState extends State<PlansWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 12.0, 0.0, 0.0),
                                         child: Text(
-                                          'Eagle',
+                                          FFLocalizations.of(context).getText(
+                                            'hmeq0t0n' /* Eagle */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -1064,7 +1152,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                               size: 22.0,
                                             ),
                                             Text(
-                                              'No ads',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '2t9kk8ft' /* No ads */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -1095,7 +1186,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                               size: 22.0,
                                             ),
                                             Text(
-                                              '3X point multiplier',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'nfpul3rl' /* 3X point multiplier */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -1126,7 +1220,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                               size: 22.0,
                                             ),
                                             Text(
-                                              'Follow unlimited companies',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '48nb71f5' /* Follow unlimited companies */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -1159,7 +1256,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                               size: 20.0,
                                             ),
                                             Text(
-                                              'Unlimited coupons',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'eugfxjjo' /* Unlimited coupons */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -1190,7 +1290,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                               size: 22.0,
                                             ),
                                             Text(
-                                              'Never lose check in streak',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'a7io72kz' /* Never lose check in streak */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -1226,7 +1329,11 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                             .fromSTEB(8.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      '\$5.99',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'aubz3x8w' /* $5.99 */,
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -1241,7 +1348,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                     ),
                                                   ),
                                                   Text(
-                                                    '/month',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '2waf5aj9' /* /month */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -1256,7 +1366,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                 ].divide(SizedBox(width: 0.0)),
                                               ),
                                               Text(
-                                                'billed annually',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'ipu5mels' /* billed annually */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -1286,7 +1399,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                     MainAxisAlignment.center,
                                                 children: [
                                                   Text(
-                                                    '\$9.99',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'gzuhzq2v' /* $9.99 */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -1302,7 +1418,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                         ),
                                                   ),
                                                   Text(
-                                                    '/month',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '6e9kthan' /* /month */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -1317,7 +1436,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                 ].divide(SizedBox(width: 0.0)),
                                               ),
                                               Text(
-                                                'billed monthly',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '6n84xtkj' /* billed monthly */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -1381,7 +1503,11 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                             .fromSTEB(0.0, 6.0,
                                                                 0.0, 6.0),
                                                     child: Text(
-                                                      'Annual',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '8b9aod8g' /* Annual */,
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -1445,7 +1571,11 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                             .fromSTEB(0.0, 6.0,
                                                                 0.0, 6.0),
                                                     child: Text(
-                                                      'Monthly',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'q1lvogrp' /* Monthly */,
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -1482,7 +1612,10 @@ class _PlansWidgetState extends State<PlansWidget> {
                                             onPressed: () {
                                               print('Button pressed ...');
                                             },
-                                            text: 'Upgrade now',
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              'lzxmiq72' /* Upgrade now */,
+                                            ),
                                             options: FFButtonOptions(
                                               width: double.infinity,
                                               height: 44.0,
@@ -1517,7 +1650,9 @@ class _PlansWidgetState extends State<PlansWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 30.0, 0.0, 0.0),
                                           child: Text(
-                                            'This is your plan',
+                                            FFLocalizations.of(context).getText(
+                                              '26pb8cx7' /* This is your plan */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(

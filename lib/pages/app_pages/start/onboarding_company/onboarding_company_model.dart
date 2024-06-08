@@ -33,7 +33,9 @@ class OnboardingCompanyModel extends FlutterFlowModel<OnboardingCompanyWidget> {
   String? Function(BuildContext, String?)? nameTextControllerValidator;
   String? _nameTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'fgl2bhzv' /* Field is required */,
+      );
     }
 
     if (val.length < 3) {
@@ -52,14 +54,20 @@ class OnboardingCompanyModel extends FlutterFlowModel<OnboardingCompanyWidget> {
   String? Function(BuildContext, String?)? bioTextControllerValidator;
   String? _bioTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'uo8ajgke' /* Field is required */,
+      );
     }
 
     if (val.length < 50) {
-      return 'Bio must be at least 50 characters long';
+      return FFLocalizations.of(context).getText(
+        'w8d87gko' /* Bio must be at least 50 charac... */,
+      );
     }
     if (val.length > 150) {
-      return 'Bio can\'t be more than 150 characters long';
+      return FFLocalizations.of(context).getText(
+        'd9d35k54' /* Bio can't be more than 150 cha... */,
+      );
     }
 
     return null;

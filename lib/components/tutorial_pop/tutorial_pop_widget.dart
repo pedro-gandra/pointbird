@@ -87,7 +87,9 @@ class _TutorialPopWidgetState extends State<TutorialPopWidget> {
                                 Align(
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Text(
-                                    'Let\'s get started!',
+                                    FFLocalizations.of(context).getText(
+                                      '08v8jsio' /* Let's get started! */,
+                                    ),
                                     textAlign: TextAlign.start,
                                     style: FlutterFlowTheme.of(context)
                                         .headlineMedium
@@ -107,7 +109,9 @@ class _TutorialPopWidgetState extends State<TutorialPopWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 0.0, 0.0),
                                     child: Text(
-                                      'To learn how our app works, you must complete a quick tutorial first.\n\nAfter the tutorial, all the features will be available!',
+                                      FFLocalizations.of(context).getText(
+                                        'w4j6wols' /* To learn how our app works, yo... */,
+                                      ),
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -132,7 +136,9 @@ class _TutorialPopWidgetState extends State<TutorialPopWidget> {
                                       onPressed: () async {
                                         context.goNamed('tutorial');
                                       },
-                                      text: 'See tutorial',
+                                      text: FFLocalizations.of(context).getText(
+                                        'ndftlqiy' /* See tutorial */,
+                                      ),
                                       options: FFButtonOptions(
                                         width:
                                             MediaQuery.sizeOf(context).width *

@@ -88,7 +88,9 @@ class _UpgradeErrorWidgetState extends State<UpgradeErrorWidget> {
                           Align(
                             alignment: AlignmentDirectional(0.0, 0.0),
                             child: Text(
-                              'You can\'t do that',
+                              FFLocalizations.of(context).getText(
+                                '6vh88n2l' /* You can't do that */,
+                              ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .headlineMedium
@@ -155,7 +157,9 @@ class _UpgradeErrorWidgetState extends State<UpgradeErrorWidget> {
                             ).then((value) => setState(() {}));
                           },
                           child: Text(
-                            'Upgrade',
+                            FFLocalizations.of(context).getText(
+                              'nar84189' /* Upgrade */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -188,7 +192,9 @@ class _UpgradeErrorWidgetState extends State<UpgradeErrorWidget> {
                           Navigator.pop(context);
                         },
                         child: Text(
-                          'Cancel',
+                          FFLocalizations.of(context).getText(
+                            'gvhvk0xr' /* Cancel */,
+                          ),
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(

@@ -377,6 +377,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.int,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'admBoard',
+          path: '/admBoard',
+          builder: (context, params) => AdmBoardWidget(),
+        ),
+        FFRoute(
+          name: 'chooseLanguage',
+          path: '/chooseLanguage',
+          builder: (context, params) => ChooseLanguageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

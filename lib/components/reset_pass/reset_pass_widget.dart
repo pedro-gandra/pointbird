@@ -91,7 +91,9 @@ class _ResetPassWidgetState extends State<ResetPassWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    'Check your email',
+                                    FFLocalizations.of(context).getText(
+                                      '63adrdwn' /* Check your email */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .headlineMedium
@@ -127,7 +129,9 @@ class _ResetPassWidgetState extends State<ResetPassWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 18.0, 0.0, 0.0),
                                     child: Text(
-                                      'Click on the link sent to set a new password. If you didn\'t receive, check your spam inbox.',
+                                      FFLocalizations.of(context).getText(
+                                        'e4frfzs6' /* Click on the link sent to set ... */,
+                                      ),
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium

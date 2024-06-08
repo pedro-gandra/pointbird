@@ -30,7 +30,9 @@ class SendMessageModel extends FlutterFlowModel<SendMessageWidget> {
   String? Function(BuildContext, String?)? messageTextControllerValidator;
   String? _messageTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'h1j2rafg' /* Field is required */,
+      );
     }
 
     if (val.length < 10) {

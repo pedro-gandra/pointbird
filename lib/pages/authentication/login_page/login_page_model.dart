@@ -8,6 +8,7 @@ import '/custom_code/actions/index.dart' as actions;
 import 'login_page_widget.dart' show LoginPageWidget;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -22,7 +23,9 @@ class LoginPageModel extends FlutterFlowModel<LoginPageWidget> {
   String? Function(BuildContext, String?)? emailTextControllerValidator;
   String? _emailTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'otiw2auq' /* Field is required */,
+      );
     }
 
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
@@ -38,11 +41,15 @@ class LoginPageModel extends FlutterFlowModel<LoginPageWidget> {
   String? Function(BuildContext, String?)? passTextControllerValidator;
   String? _passTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'c2p7jvpr' /* Field is required */,
+      );
     }
 
     if (val.length < 6) {
-      return 'Password must be 6 or more characters';
+      return FFLocalizations.of(context).getText(
+        '3uuyh0m8' /* Password must be 6 or more cha... */,
+      );
     }
 
     return null;

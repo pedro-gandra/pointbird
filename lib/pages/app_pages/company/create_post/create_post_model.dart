@@ -48,11 +48,15 @@ class CreatePostModel extends FlutterFlowModel<CreatePostWidget> {
   String? Function(BuildContext, String?)? linkTextControllerValidator;
   String? _linkTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'fyejmpzc' /* Field is required */,
+      );
     }
 
     if (!RegExp(kTextValidatorWebsiteRegex).hasMatch(val)) {
-      return 'This must be a valid link';
+      return FFLocalizations.of(context).getText(
+        'a0zuppgl' /* This must be a valid link */,
+      );
     }
     return null;
   }
@@ -63,11 +67,15 @@ class CreatePostModel extends FlutterFlowModel<CreatePostWidget> {
   String? Function(BuildContext, String?)? pointsTextController1Validator;
   String? _pointsTextController1Validator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'dufm2u4j' /* Field is required */,
+      );
     }
 
     if (!RegExp('^(?!0+\$).*').hasMatch(val)) {
-      return 'Can\'t be 0';
+      return FFLocalizations.of(context).getText(
+        'oq0l6xl1' /* Can't be 0 */,
+      );
     }
     return null;
   }
@@ -87,7 +95,9 @@ class CreatePostModel extends FlutterFlowModel<CreatePostWidget> {
   String? Function(BuildContext, String?)? titleTextController2Validator;
   String? _titleTextController2Validator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'u0f14ds4' /* Field is required */,
+      );
     }
 
     if (val.length < 3) {
@@ -107,11 +117,15 @@ class CreatePostModel extends FlutterFlowModel<CreatePostWidget> {
   String? Function(BuildContext, String?)? pointsTextController2Validator;
   String? _pointsTextController2Validator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'j9622u96' /* Field is required */,
+      );
     }
 
     if (!RegExp('^(?!0+\$).*').hasMatch(val)) {
-      return 'Can\'t be 0';
+      return FFLocalizations.of(context).getText(
+        'je56cawb' /* Can't be 0 */,
+      );
     }
     return null;
   }
@@ -122,7 +136,9 @@ class CreatePostModel extends FlutterFlowModel<CreatePostWidget> {
   String? Function(BuildContext, String?)? op1TextControllerValidator;
   String? _op1TextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'q37gcgk1' /* Field is required */,
+      );
     }
 
     if (val.length < 1) {
@@ -138,7 +154,9 @@ class CreatePostModel extends FlutterFlowModel<CreatePostWidget> {
   String? Function(BuildContext, String?)? op2TextControllerValidator;
   String? _op2TextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'tbz1p7xz' /* Field is required */,
+      );
     }
 
     if (val.length < 1) {

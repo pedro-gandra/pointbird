@@ -201,7 +201,12 @@ class _StatsWidgetState extends State<StatsWidget>
                                           valueOrDefault<String>(
                                             _model.startDate != null
                                                 ? dateTimeFormat(
-                                                    'yMMMd', _model.startDate)
+                                                    'd/M/y',
+                                                    _model.startDate,
+                                                    locale: FFLocalizations.of(
+                                                            context)
+                                                        .languageCode,
+                                                  )
                                                 : 'Start date',
                                             'Start date',
                                           ),
@@ -225,7 +230,9 @@ class _StatsWidgetState extends State<StatsWidget>
                             ),
                           ),
                           Text(
-                            'to',
+                            FFLocalizations.of(context).getText(
+                              'wqg1jvhb' /* to */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -323,7 +330,12 @@ class _StatsWidgetState extends State<StatsWidget>
                                           valueOrDefault<String>(
                                             _model.endDate != null
                                                 ? dateTimeFormat(
-                                                    'yMMMd', _model.endDate)
+                                                    'd/M/y',
+                                                    _model.endDate,
+                                                    locale: FFLocalizations.of(
+                                                            context)
+                                                        .languageCode,
+                                                  )
                                                 : 'End date',
                                             'End date',
                                           ),
@@ -393,28 +405,27 @@ class _StatsWidgetState extends State<StatsWidget>
                         ].divide(SizedBox(width: 15.0)),
                       ),
                     ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(25.0, 15.0, 25.0, 0.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Click on the boxes for more information (if available).',
-                            textAlign: TextAlign.start,
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Poppins',
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  fontSize: 10.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                    Align(
+                      alignment: AlignmentDirectional(-1.0, 0.0),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            25.0, 15.0, 25.0, 0.0),
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            '33ti7d5g' /* Click on the boxes for more in... */,
                           ),
-                        ].divide(SizedBox(width: 8.0)),
+                          textAlign: TextAlign.start,
+                          style: FlutterFlowTheme.of(context)
+                              .bodyMedium
+                              .override(
+                                fontFamily: 'Poppins',
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                fontSize: 10.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w500,
+                              ),
+                        ),
                       ),
                     ),
                     Align(
@@ -444,7 +455,9 @@ class _StatsWidgetState extends State<StatsWidget>
                                       size: 21.0,
                                     ),
                                     Text(
-                                      'General activity',
+                                      FFLocalizations.of(context).getText(
+                                        '9f5owsa1' /* General activity */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
@@ -500,7 +513,10 @@ class _StatsWidgetState extends State<StatsWidget>
                                                 CrossAxisAlignment.center,
                                             children: [
                                               Text(
-                                                'new followers',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '088ybw32' /* new followers */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -568,7 +584,10 @@ class _StatsWidgetState extends State<StatsWidget>
                                                 MainAxisAlignment.center,
                                             children: [
                                               Text(
-                                                'pts. rewarded',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'hi9holbe' /* pts. rewarded */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -649,7 +668,10 @@ class _StatsWidgetState extends State<StatsWidget>
                                                 CrossAxisAlignment.center,
                                             children: [
                                               Text(
-                                                'pts. exchanged',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'a7q75hj1' /* pts. exchanged */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -762,7 +784,10 @@ class _StatsWidgetState extends State<StatsWidget>
                                                     MainAxisAlignment.center,
                                                 children: [
                                                   Text(
-                                                    'users - exch',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'x4nrf84b' /* users - exch */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -842,7 +867,9 @@ class _StatsWidgetState extends State<StatsWidget>
                                       size: 21.0,
                                     ),
                                     Text(
-                                      'Check ins',
+                                      FFLocalizations.of(context).getText(
+                                        '3ti191wa' /* Check ins */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
@@ -898,7 +925,10 @@ class _StatsWidgetState extends State<StatsWidget>
                                                 CrossAxisAlignment.center,
                                             children: [
                                               Text(
-                                                'check ins',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'eschdcs9' /* check ins */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -1010,7 +1040,10 @@ class _StatsWidgetState extends State<StatsWidget>
                                                     MainAxisAlignment.center,
                                                 children: [
                                                   Text(
-                                                    'unique users',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'wmlhmimv' /* unique users */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -1139,7 +1172,10 @@ class _StatsWidgetState extends State<StatsWidget>
                                                     CrossAxisAlignment.center,
                                                 children: [
                                                   Text(
-                                                    'avg. check in',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'ihs4d3x0' /* avg. check in */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -1262,7 +1298,10 @@ class _StatsWidgetState extends State<StatsWidget>
                                                     MainAxisAlignment.center,
                                                 children: [
                                                   Text(
-                                                    'per user',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '4k7xq93v' /* per user */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -1348,7 +1387,9 @@ class _StatsWidgetState extends State<StatsWidget>
                                       size: 21.0,
                                     ),
                                     Text(
-                                      'Posts',
+                                      FFLocalizations.of(context).getText(
+                                        'm5jyrkpk' /* Posts */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
@@ -1448,7 +1489,10 @@ class _StatsWidgetState extends State<StatsWidget>
                                                     CrossAxisAlignment.center,
                                                 children: [
                                                   Text(
-                                                    'posts',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '64z6hm4n' /* posts */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -1520,7 +1564,10 @@ class _StatsWidgetState extends State<StatsWidget>
                                                 MainAxisAlignment.center,
                                             children: [
                                               Text(
-                                                'polls',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'obafdl4f' /* polls */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -1646,7 +1693,10 @@ class _StatsWidgetState extends State<StatsWidget>
                                                     CrossAxisAlignment.center,
                                                 children: [
                                                   Text(
-                                                    'post interactions',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'w72x9fzw' /* post interactions */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -1717,7 +1767,10 @@ class _StatsWidgetState extends State<StatsWidget>
                                                 MainAxisAlignment.center,
                                             children: [
                                               Text(
-                                                'total votes',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'an62ytkx' /* total votes */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -1841,7 +1894,10 @@ class _StatsWidgetState extends State<StatsWidget>
                                                     CrossAxisAlignment.center,
                                                 children: [
                                                   Text(
-                                                    'avg. interaction',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'hu9jn313' /* avg. interaction */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -1964,7 +2020,10 @@ class _StatsWidgetState extends State<StatsWidget>
                                                     MainAxisAlignment.center,
                                                 children: [
                                                   Text(
-                                                    'avg. vote',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'vc4oomyc' /* avg. vote */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -2098,7 +2157,10 @@ class _StatsWidgetState extends State<StatsWidget>
                                                     CrossAxisAlignment.center,
                                                 children: [
                                                   Text(
-                                                    'users - int.',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'cpyb9fwz' /* users - int. */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -2215,7 +2277,10 @@ class _StatsWidgetState extends State<StatsWidget>
                                                     MainAxisAlignment.center,
                                                 children: [
                                                   Text(
-                                                    'users  - votes',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'qdgtwady' /* users  - votes */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -2294,7 +2359,9 @@ class _StatsWidgetState extends State<StatsWidget>
                                       size: 20.0,
                                     ),
                                     Text(
-                                      'Coupons',
+                                      FFLocalizations.of(context).getText(
+                                        'yog08qdu' /* Coupons */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
@@ -2350,7 +2417,10 @@ class _StatsWidgetState extends State<StatsWidget>
                                                 CrossAxisAlignment.center,
                                             children: [
                                               Text(
-                                                'new coupons',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '89c4hwaq' /* new coupons */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -2420,7 +2490,10 @@ class _StatsWidgetState extends State<StatsWidget>
                                                 MainAxisAlignment.center,
                                             children: [
                                               Text(
-                                                'avg. coupon',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'uf6x91em' /* avg. coupon */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -2552,7 +2625,10 @@ class _StatsWidgetState extends State<StatsWidget>
                                                     CrossAxisAlignment.center,
                                                 children: [
                                                   Text(
-                                                    'estimated sales',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '1iv4981e' /* estimated sales */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -2670,7 +2746,10 @@ class _StatsWidgetState extends State<StatsWidget>
                                                     MainAxisAlignment.center,
                                                 children: [
                                                   Text(
-                                                    'per user',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'fvema5li' /* per user */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium

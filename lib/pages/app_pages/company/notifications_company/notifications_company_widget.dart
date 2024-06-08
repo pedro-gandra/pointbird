@@ -161,9 +161,16 @@ class _NotificationsCompanyWidgetState
                                                   -1.0, 1.0),
                                               child: Text(
                                                 dateTimeFormat(
-                                                    'relative',
-                                                    listViewNotificationsRow
-                                                        .createdAt),
+                                                  'relative',
+                                                  listViewNotificationsRow
+                                                      .createdAt,
+                                                  locale: FFLocalizations.of(
+                                                              context)
+                                                          .languageShortCode ??
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .languageCode,
+                                                ),
                                                 textAlign: TextAlign.start,
                                                 style:
                                                     FlutterFlowTheme.of(context)

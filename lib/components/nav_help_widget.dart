@@ -72,21 +72,21 @@ class _NavHelpWidgetState extends State<NavHelpWidget> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'We are a brand new app, follow our journey!',
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Poppins',
-                            color: FlutterFlowTheme.of(context).secondaryText,
-                            fontSize: 13.0,
-                            letterSpacing: 0.0,
-                            fontWeight: FontWeight.w500,
-                          ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(35.0, 0.0, 35.0, 0.0),
+                  child: Text(
+                    FFLocalizations.of(context).getText(
+                      'v57ti1cu' /* We are a brand new app, follow... */,
                     ),
-                  ],
+                    textAlign: TextAlign.center,
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Poppins',
+                          color: FlutterFlowTheme.of(context).secondaryText,
+                          fontSize: 13.0,
+                          letterSpacing: 0.0,
+                          fontWeight: FontWeight.w500,
+                        ),
+                  ),
                 ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),

@@ -78,7 +78,9 @@ class _HelpCompanyWidgetState extends State<HelpCompanyWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 3.0, 0.0, 2.0),
                               child: Text(
-                                'Help & Support',
+                                FFLocalizations.of(context).getText(
+                                  'lf0fnx6j' /* Help & Support */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -107,7 +109,9 @@ class _HelpCompanyWidgetState extends State<HelpCompanyWidget> {
                       padding:
                           EdgeInsetsDirectional.fromSTEB(25.0, 10.0, 25.0, 0.0),
                       child: Text(
-                        'Found a bug or have a suggestion?',
+                        FFLocalizations.of(context).getText(
+                          'f5wrssy3' /* Found a bug or have a suggesti... */,
+                        ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Poppins',
                               fontSize: 13.0,
@@ -136,7 +140,9 @@ class _HelpCompanyWidgetState extends State<HelpCompanyWidget> {
                           );
                         },
                         child: Text(
-                          'Send us a message!',
+                          FFLocalizations.of(context).getText(
+                            'xwaa7yr8' /* Send us a message! */,
+                          ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
@@ -156,7 +162,9 @@ class _HelpCompanyWidgetState extends State<HelpCompanyWidget> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Frequently asked questions',
+                            FFLocalizations.of(context).getText(
+                              '7inenmlx' /* Frequently asked questions */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -197,7 +205,9 @@ class _HelpCompanyWidgetState extends State<HelpCompanyWidget> {
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.normal,
                               ),
-                          hintText: 'Search',
+                          hintText: FFLocalizations.of(context).getText(
+                            'f144mku4' /* Search */,
+                          ),
                           hintStyle: FlutterFlowTheme.of(context)
                               .labelMedium
                               .override(
@@ -282,8 +292,8 @@ class _HelpCompanyWidgetState extends State<HelpCompanyWidget> {
                         shrinkWrap: true,
                         scrollDirection: Axis.vertical,
                         children: [
-                          if (functions.checkSearch(_model.textController.text,
-                              'My currency is not US dollars?'))
+                          if (functions.checkSearch(
+                              _model.textController.text, 'Do points expire?'))
                             Align(
                               alignment: AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
@@ -299,157 +309,19 @@ class _HelpCompanyWidgetState extends State<HelpCompanyWidget> {
                                       'fullInfo',
                                       queryParameters: {
                                         'title': serializeParam(
-                                          'Accepting coupons',
+                                          'Different currencies',
                                           ParamType.String,
                                         ),
                                         'par1': serializeParam(
-                                          'Physical purchase: In this case, you can accept the coupon in the moment of the purchase. Use the coupon section to verify and deactivate the coupon.',
+                                          FFLocalizations.of(context).getText(
+                                            'saccua0e' /* To make the app more comprehen... */,
+                                          ),
                                           ParamType.String,
                                         ),
                                         'par2': serializeParam(
-                                          'Online purchase (not automatic): If you sell through social media or direct messaging, this applies to you. All you need to do is ask for the coupon code in a message and apply the discount on the spot.',
-                                          ParamType.String,
-                                        ),
-                                        'par3': serializeParam(
-                                          'Online purchase (automatic): Create a field called \"Pointbird coupon\" in your checkout, you must get 2 pieces of information, the coupon code and the discount value. When the user inserts the discount value, apply the discount automatically to his purchase amount. Once the sale is finalized, use the coupon code to verify if the value provided is correct and if the minimum purchase is matched. Otherwise, inform your client of the issue.',
-                                          ParamType.String,
-                                        ),
-                                        'par4': serializeParam(
-                                          'Make sure to include a disclaimer saying that the information of the coupon will be verified to avoid issues. Also, don\'t forget to deactivate coupons afterwards.',
-                                          ParamType.String,
-                                        ),
-                                      }.withoutNulls,
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.rightToLeft,
-                                          duration: Duration(milliseconds: 200),
-                                        ),
-                                      },
-                                    );
-                                  },
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Icon(
-                                        Icons.arrow_right,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 22.0,
-                                      ),
-                                      Text(
-                                        'How can I accept Pointbird coupons?',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              fontSize: 13.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                      ),
-                                    ].divide(SizedBox(width: 5.0)),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          if (functions.checkSearch(_model.textController.text,
-                              'How can I use my coupons?'))
-                            Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 15.0, 0.0, 0.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed(
-                                      'fullInfo',
-                                      queryParameters: {
-                                        'title': serializeParam(
-                                          'Reach new customers',
-                                          ParamType.String,
-                                        ),
-                                        'par1': serializeParam(
-                                          'Your business will be available on the \"explore\" page for every customer from the same country (as long as you provide countrywide shipping).',
-                                          ParamType.String,
-                                        ),
-                                        'par2': serializeParam(
-                                          'Your business will be filtered by its category and ranked based on relevancy inside the app, so make sure to stay active and bring as many followers from your already existing customer base as possible.',
-                                          ParamType.String,
-                                        ),
-                                        'par3': serializeParam(
-                                          'If you want to see how it looks, you can create a customer account under a different email and check it out.',
-                                          ParamType.String,
-                                        ),
-                                      }.withoutNulls,
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.rightToLeft,
-                                          duration: Duration(milliseconds: 200),
-                                        ),
-                                      },
-                                    );
-                                  },
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Icon(
-                                        Icons.arrow_right,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 22.0,
-                                      ),
-                                      Text(
-                                        'How can I reach new customers?',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              fontSize: 13.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                      ),
-                                    ].divide(SizedBox(width: 5.0)),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          if (functions.checkSearch(_model.textController.text,
-                              'Why is there a minimum purchase on coupons?'))
-                            Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 15.0, 0.0, 0.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed(
-                                      'fullInfo',
-                                      queryParameters: {
-                                        'title': serializeParam(
-                                          'Grow your profile',
-                                          ParamType.String,
-                                        ),
-                                        'par1': serializeParam(
-                                          'Make sure you announce your Pointbird profile on your social media accounts and encourage people to download and follow you on the app. Without doing that, it is extremely unlikely that your profile will be recommended to customers.',
-                                          ParamType.String,
-                                        ),
-                                        'par2': serializeParam(
-                                          'Use the ability to earn big discounts as a motivator to get your current customers to engage and participate on the app, increasing your relevancy in the platform.',
+                                          FFLocalizations.of(context).getText(
+                                            '52ue5b50' /* However, if you sell on a diff... */,
+                                          ),
                                           ParamType.String,
                                         ),
                                       }.withoutNulls,
@@ -481,7 +353,284 @@ class _HelpCompanyWidgetState extends State<HelpCompanyWidget> {
                                               alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Text(
-                                                'How to grow my profile?',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'jk9rngy9' /* My currency is not US dollars? */,
+                                                ),
+                                                textAlign: TextAlign.start,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          fontSize: 13.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ].divide(SizedBox(width: 5.0)),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          if (functions.checkSearch(_model.textController.text,
+                              'My currency is not US dollars?'))
+                            Align(
+                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 15.0, 0.0, 0.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed(
+                                      'fullInfo',
+                                      queryParameters: {
+                                        'title': serializeParam(
+                                          'Accepting coupons',
+                                          ParamType.String,
+                                        ),
+                                        'par1': serializeParam(
+                                          FFLocalizations.of(context).getText(
+                                            'o8t032c7' /* Physical purchase: In this cas... */,
+                                          ),
+                                          ParamType.String,
+                                        ),
+                                        'par2': serializeParam(
+                                          FFLocalizations.of(context).getText(
+                                            '69dz3apx' /* Online purchase (not automatic... */,
+                                          ),
+                                          ParamType.String,
+                                        ),
+                                        'par3': serializeParam(
+                                          FFLocalizations.of(context).getText(
+                                            '18la7yjz' /* Online purchase (automatic): C... */,
+                                          ),
+                                          ParamType.String,
+                                        ),
+                                        'par4': serializeParam(
+                                          FFLocalizations.of(context).getText(
+                                            'wpi46pgf' /* Make sure to include a disclai... */,
+                                          ),
+                                          ParamType.String,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.rightToLeft,
+                                          duration: Duration(milliseconds: 200),
+                                        ),
+                                      },
+                                    );
+                                  },
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Icon(
+                                        Icons.arrow_right,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        size: 22.0,
+                                      ),
+                                      Expanded(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '4hgeu6ko' /* How can I accept Pointbird cou... */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          fontSize: 13.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ].divide(SizedBox(width: 5.0)),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          if (functions.checkSearch(_model.textController.text,
+                              'How can I use my coupons?'))
+                            Align(
+                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 15.0, 0.0, 0.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed(
+                                      'fullInfo',
+                                      queryParameters: {
+                                        'title': serializeParam(
+                                          'Reach new customers',
+                                          ParamType.String,
+                                        ),
+                                        'par1': serializeParam(
+                                          FFLocalizations.of(context).getText(
+                                            'j1alyj6m' /* Your business will be availabl... */,
+                                          ),
+                                          ParamType.String,
+                                        ),
+                                        'par2': serializeParam(
+                                          FFLocalizations.of(context).getText(
+                                            'vi38fgi5' /* Your business will be filtered... */,
+                                          ),
+                                          ParamType.String,
+                                        ),
+                                        'par3': serializeParam(
+                                          FFLocalizations.of(context).getText(
+                                            'bbuiexo6' /* If you want to see how it look... */,
+                                          ),
+                                          ParamType.String,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.rightToLeft,
+                                          duration: Duration(milliseconds: 200),
+                                        ),
+                                      },
+                                    );
+                                  },
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Icon(
+                                        Icons.arrow_right,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        size: 22.0,
+                                      ),
+                                      Expanded(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'azywkqmn' /* How can I reach new customers? */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          fontSize: 13.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ].divide(SizedBox(width: 5.0)),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          if (functions.checkSearch(_model.textController.text,
+                              'Why is there a minimum purchase on coupons?'))
+                            Align(
+                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 15.0, 0.0, 0.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed(
+                                      'fullInfo',
+                                      queryParameters: {
+                                        'title': serializeParam(
+                                          'Grow your profile',
+                                          ParamType.String,
+                                        ),
+                                        'par1': serializeParam(
+                                          FFLocalizations.of(context).getText(
+                                            'is4bsene' /* Make sure you announce your Po... */,
+                                          ),
+                                          ParamType.String,
+                                        ),
+                                        'par2': serializeParam(
+                                          FFLocalizations.of(context).getText(
+                                            'rt67zksl' /* Use the ability to earn big di... */,
+                                          ),
+                                          ParamType.String,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.rightToLeft,
+                                          duration: Duration(milliseconds: 200),
+                                        ),
+                                      },
+                                    );
+                                  },
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Icon(
+                                        Icons.arrow_right,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryText,
+                                        size: 22.0,
+                                      ),
+                                      Expanded(
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Align(
+                                              alignment: AlignmentDirectional(
+                                                  -1.0, 0.0),
+                                              child: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'c00cjwfb' /* How to grow my profile? */,
+                                                ),
                                                 textAlign: TextAlign.start,
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -520,23 +669,31 @@ class _HelpCompanyWidgetState extends State<HelpCompanyWidget> {
                                       'fullInfo',
                                       queryParameters: {
                                         'title': serializeParam(
-                                          'Coupons per purchase',
+                                          'What should you post',
                                           ParamType.String,
                                         ),
                                         'par1': serializeParam(
-                                          'Make posts that engage your followers, encourages them to buy and give good point rewards.',
+                                          FFLocalizations.of(context).getText(
+                                            'gw7p8ux1' /* Make posts that engage your fo... */,
+                                          ),
                                           ParamType.String,
                                         ),
                                         'par2': serializeParam(
-                                          'On the offers page you can display some of the products that you believe are going to be a success amongst customers and boost sales.',
+                                          FFLocalizations.of(context).getText(
+                                            'qt8xcnjp' /* On the offers page you can dis... */,
+                                          ),
                                           ParamType.String,
                                         ),
                                         'par3': serializeParam(
-                                          'Using the polls you can get important feedback and use it to plan your next posts and campaigns on the app.',
+                                          FFLocalizations.of(context).getText(
+                                            'y6a4hkf5' /* Using the polls you can get im... */,
+                                          ),
                                           ParamType.String,
                                         ),
                                         'par4': serializeParam(
-                                          'On the social page you can post everything else related to your business, like calls to follow you on your other socials, to read an article or to check out a partner, for example. ',
+                                          FFLocalizations.of(context).getText(
+                                            's5juldom' /* On the social page you can pos... */,
+                                          ),
                                           ParamType.String,
                                         ),
                                       }.withoutNulls,
@@ -568,86 +725,10 @@ class _HelpCompanyWidgetState extends State<HelpCompanyWidget> {
                                               alignment: AlignmentDirectional(
                                                   -1.0, 0.0),
                                               child: Text(
-                                                'What should I post?',
-                                                textAlign: TextAlign.start,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          fontSize: 13.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ].divide(SizedBox(width: 5.0)),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          if (functions.checkSearch(
-                              _model.textController.text, 'Do points expire?'))
-                            Align(
-                              alignment: AlignmentDirectional(-1.0, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 15.0, 0.0, 0.0),
-                                child: InkWell(
-                                  splashColor: Colors.transparent,
-                                  focusColor: Colors.transparent,
-                                  hoverColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                  onTap: () async {
-                                    context.pushNamed(
-                                      'fullInfo',
-                                      queryParameters: {
-                                        'title': serializeParam(
-                                          'Different currencies',
-                                          ParamType.String,
-                                        ),
-                                        'par1': serializeParam(
-                                          'To make the app more comprehensive, 1 point equals \$0,01 USD, therefore, the money saved is always calculated in USD.',
-                                          ParamType.String,
-                                        ),
-                                        'par2': serializeParam(
-                                          'However, if you sell on a different currency, you can select a currency in your business settings and the conversion from USD to that currency will be made when the customer generates a coupon.',
-                                          ParamType.String,
-                                        ),
-                                      }.withoutNulls,
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.rightToLeft,
-                                          duration: Duration(milliseconds: 200),
-                                        ),
-                                      },
-                                    );
-                                  },
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Icon(
-                                        Icons.arrow_right,
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryText,
-                                        size: 22.0,
-                                      ),
-                                      Expanded(
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Align(
-                                              alignment: AlignmentDirectional(
-                                                  -1.0, 0.0),
-                                              child: Text(
-                                                'My currency is not US dollars?',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'ezbhhu2y' /* What should I post? */,
+                                                ),
                                                 textAlign: TextAlign.start,
                                                 style:
                                                     FlutterFlowTheme.of(context)

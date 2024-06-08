@@ -24,6 +24,13 @@ class ViewCouponsClientRow extends SupabaseDataRow {
   String? get companyCode => getField<String>('company_code');
   set companyCode(String? value) => setField<String>('company_code', value);
 
+  String? get currencySymbol => getField<String>('currency_symbol');
+  set currencySymbol(String? value) =>
+      setField<String>('currency_symbol', value);
+
+  double? get rateToUsd => getField<double>('rate_to_usd');
+  set rateToUsd(double? value) => setField<double>('rate_to_usd', value);
+
   int? get idReference => getField<int>('id_reference');
   set idReference(int? value) => setField<int>('id_reference', value);
 

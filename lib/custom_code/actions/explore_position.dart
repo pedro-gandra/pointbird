@@ -30,5 +30,5 @@ Future<int> explorePosition(
       .eq('name_category', category)
       .gte('relevancy', relevancy);
 
-  return response2.length + 1;
+  return response2.length;
 }

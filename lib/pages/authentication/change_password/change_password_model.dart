@@ -27,7 +27,9 @@ class ChangePasswordModel extends FlutterFlowModel<ChangePasswordWidget> {
   String? Function(BuildContext, String?)? pass1TextControllerValidator;
   String? _pass1TextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'cdq3eylv' /* Field is required */,
+      );
     }
 
     return null;
@@ -40,11 +42,15 @@ class ChangePasswordModel extends FlutterFlowModel<ChangePasswordWidget> {
   String? Function(BuildContext, String?)? newpassTextControllerValidator;
   String? _newpassTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'mr8019pa' /* Field is required */,
+      );
     }
 
     if (val.length < 6) {
-      return 'Password must be 6 or more characters';
+      return FFLocalizations.of(context).getText(
+        'wdgflwm4' /* Password must be 6 or more cha... */,
+      );
     }
 
     return null;
@@ -58,11 +64,15 @@ class ChangePasswordModel extends FlutterFlowModel<ChangePasswordWidget> {
   String? _confirmPassTextControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'ixahxeeb' /* Field is required */,
+      );
     }
 
     if (val.length < 6) {
-      return 'Password must be 6 or more characters';
+      return FFLocalizations.of(context).getText(
+        'b9irzmnr' /* Password must be 6 or more cha... */,
+      );
     }
 
     return null;

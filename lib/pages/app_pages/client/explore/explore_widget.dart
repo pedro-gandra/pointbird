@@ -130,7 +130,9 @@ class _ExploreWidgetState extends State<ExploreWidget>
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 0.0),
                                   child: Text(
-                                    'Search by:',
+                                    FFLocalizations.of(context).getText(
+                                      'nmoeer47' /* Search by: */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -190,7 +192,9 @@ class _ExploreWidgetState extends State<ExploreWidget>
                                         setState(() {});
                                       },
                                       child: Text(
-                                        'Category',
+                                        FFLocalizations.of(context).getText(
+                                          'zahyhyci' /* Category */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -244,7 +248,9 @@ class _ExploreWidgetState extends State<ExploreWidget>
                                         setState(() {});
                                       },
                                       child: Text(
-                                        'Name',
+                                        FFLocalizations.of(context).getText(
+                                          'u4lvc6x6' /* Name */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -331,7 +337,10 @@ class _ExploreWidgetState extends State<ExploreWidget>
                                                 fontSize: 13.0,
                                                 letterSpacing: 0.0,
                                               ),
-                                          hintText: 'Select a category',
+                                          hintText: FFLocalizations.of(context)
+                                              .getText(
+                                            'j95p3sf4' /* Select a category */,
+                                          ),
                                           fillColor:
                                               FlutterFlowTheme.of(context)
                                                   .secondaryBackground,
@@ -384,7 +393,11 @@ class _ExploreWidgetState extends State<ExploreWidget>
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
-                                            hintText: 'Search name or term',
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              'nf7a5ntj' /* Search name or term */,
+                                            ),
                                             hintStyle: FlutterFlowTheme.of(
                                                     context)
                                                 .labelMedium
@@ -528,7 +541,9 @@ class _ExploreWidgetState extends State<ExploreWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         20.0, 23.0, 20.0, 0.0),
                                     child: Text(
-                                      'No new companies were found for your country in this category.',
+                                      FFLocalizations.of(context).getText(
+                                        '6rmwizuq' /* No new companies were found fo... */,
+                                      ),
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -551,7 +566,9 @@ class _ExploreWidgetState extends State<ExploreWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         20.0, 23.0, 20.0, 0.0),
                                     child: Text(
-                                      'No new companies were found for your country using this search term.',
+                                      FFLocalizations.of(context).getText(
+                                        '1htlct7z' /* No new companies were found fo... */,
+                                      ),
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -579,7 +596,10 @@ class _ExploreWidgetState extends State<ExploreWidget>
                                         children: [
                                           if (_model.listCompanies.length > 0)
                                             Text(
-                                              'Results ordered by relevancy',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'riw4wnnw' /* Results ordered by relevancy */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium

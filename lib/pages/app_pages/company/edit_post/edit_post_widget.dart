@@ -131,7 +131,12 @@ class _EditPostWidgetState extends State<EditPostWidget> {
                                                       _model.titleFocusNode,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
-                                                    labelText: 'Title',
+                                                    labelText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'hwvxhs7e' /* Title */,
+                                                    ),
                                                     labelStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .bodyMedium
@@ -311,7 +316,12 @@ class _EditPostWidgetState extends State<EditPostWidget> {
                                                         _model.descFocusNode,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
-                                                      labelText: 'Description',
+                                                      labelText:
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        'gu265dq6' /* Description */,
+                                                      ),
                                                       labelStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -507,7 +517,12 @@ class _EditPostWidgetState extends State<EditPostWidget> {
                                                       obscureText: false,
                                                       decoration:
                                                           InputDecoration(
-                                                        labelText: 'Link',
+                                                        labelText:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          '2kuutyv5' /* Link */,
+                                                        ),
                                                         labelStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -526,7 +541,12 @@ class _EditPostWidgetState extends State<EditPostWidget> {
                                                                       FontWeight
                                                                           .normal,
                                                                 ),
-                                                        hintText: 'https://',
+                                                        hintText:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          'ugfvy7sb' /* https:// */,
+                                                        ),
                                                         hintStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -700,7 +720,10 @@ class _EditPostWidgetState extends State<EditPostWidget> {
                                                   .fromSTEB(
                                                       3.0, 12.0, 0.0, 0.0),
                                               child: Text(
-                                                'Changes made successfully!',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'awk0029g' /* Changes made successfully! */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium

@@ -146,7 +146,9 @@ class _UnfollowWidgetState extends State<UnfollowWidget> {
                           context.goNamed('homeClient');
                         },
                         child: Text(
-                          'Unfollow',
+                          FFLocalizations.of(context).getText(
+                            '9zua4i2f' /* Unfollow */,
+                          ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
@@ -177,7 +179,9 @@ class _UnfollowWidgetState extends State<UnfollowWidget> {
                           Navigator.pop(context);
                         },
                         child: Text(
-                          'Cancel',
+                          FFLocalizations.of(context).getText(
+                            'l56mxwtt' /* Cancel */,
+                          ),
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(

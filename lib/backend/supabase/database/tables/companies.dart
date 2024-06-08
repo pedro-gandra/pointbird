@@ -67,4 +67,7 @@ class CompaniesRow extends SupabaseDataRow {
 
   String? get nameCategory => getField<String>('name_category');
   set nameCategory(String? value) => setField<String>('name_category', value);
+
+  int? get idCurrency => getField<int>('id_currency');
+  set idCurrency(int? value) => setField<int>('id_currency', value);
 }

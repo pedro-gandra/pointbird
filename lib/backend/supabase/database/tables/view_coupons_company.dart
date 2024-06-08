@@ -51,6 +51,13 @@ class ViewCouponsCompanyRow extends SupabaseDataRow {
   double? get value => getField<double>('value');
   set value(double? value) => setField<double>('value', value);
 
+  String? get currencySymbol => getField<String>('currency_symbol');
+  set currencySymbol(String? value) =>
+      setField<String>('currency_symbol', value);
+
+  double? get rateToUsd => getField<double>('rate_to_usd');
+  set rateToUsd(double? value) => setField<double>('rate_to_usd', value);
+
   bool? get activeStatus => getField<bool>('active_status');
   set activeStatus(bool? value) => setField<bool>('active_status', value);
 }

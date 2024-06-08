@@ -86,7 +86,9 @@ class _DeletePostWidgetState extends State<DeletePostWidget> {
                           Align(
                             alignment: AlignmentDirectional(0.0, 0.0),
                             child: Text(
-                              'Delete post',
+                              FFLocalizations.of(context).getText(
+                                't9cvv2qm' /* Delete post */,
+                              ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .headlineMedium
@@ -104,7 +106,9 @@ class _DeletePostWidgetState extends State<DeletePostWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 0.0),
                               child: Text(
-                                'Are you sure you want to delete this post? You won\'t be able to restore it later.',
+                                FFLocalizations.of(context).getText(
+                                  'sb6aaus2' /* Are you sure you want to delet... */,
+                                ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
@@ -140,7 +144,9 @@ class _DeletePostWidgetState extends State<DeletePostWidget> {
                           Navigator.pop(context);
                         },
                         child: Text(
-                          'Delete',
+                          FFLocalizations.of(context).getText(
+                            'l688r8md' /* Delete */,
+                          ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
@@ -171,7 +177,9 @@ class _DeletePostWidgetState extends State<DeletePostWidget> {
                           Navigator.pop(context);
                         },
                         child: Text(
-                          'Cancel',
+                          FFLocalizations.of(context).getText(
+                            'sje4hxza' /* Cancel */,
+                          ),
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(

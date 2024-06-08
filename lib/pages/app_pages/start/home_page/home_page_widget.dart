@@ -33,17 +33,24 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         currentUserEmail,
       );
       if (_model.isEmail!) {
-        if (FFAppState().user.filledData == false) {
-          if (FFAppState().user.type == 'Business') {
-            context.goNamed('OnboardingCompany');
-          } else {
-            context.goNamed('OnboardingClient');
-          }
+        _model.adm = await actions.isAdmin(
+          currentUserEmail,
+        );
+        if (_model.adm!) {
+          context.goNamed('admBoard');
         } else {
-          if (FFAppState().user.type == 'Business') {
-            context.goNamed('homeCompany');
+          if (FFAppState().user.filledData == false) {
+            if (FFAppState().user.type == 'Business') {
+              context.goNamed('OnboardingCompany');
+            } else {
+              context.goNamed('OnboardingClient');
+            }
           } else {
-            context.goNamed('homeClient');
+            if (FFAppState().user.type == 'Business') {
+              context.goNamed('homeCompany');
+            } else {
+              context.goNamed('homeClient');
+            }
           }
         }
       } else {

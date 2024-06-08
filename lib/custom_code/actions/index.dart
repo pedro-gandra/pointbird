@@ -19,3 +19,5 @@ export 'reset_pass.dart' show resetPass;
 export 'hash_generator.dart' show hashGenerator;
 export 'delete_account.dart' show deleteAccount;
 export 'onesignal_initialise.dart' show onesignalInitialise;
+export 'is_admin.dart' show isAdmin;
+export 'update_rates.dart' show updateRates;

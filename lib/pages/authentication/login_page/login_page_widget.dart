@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'login_page_model.dart';
@@ -28,6 +29,13 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => LoginPageModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (!FFAppState().languageSet) {
+        context.goNamed('chooseLanguage');
+      }
+    });
 
     _model.emailTextController ??= TextEditingController();
     _model.emailFocusNode ??= FocusNode();
@@ -95,7 +103,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                'Welcome back',
+                                FFLocalizations.of(context).getText(
+                                  '13vxmlwh' /* Welcome back */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineMedium
                                     .override(
@@ -109,7 +119,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 10.0),
                                 child: Text(
-                                  'Log in to your Pointbird account',
+                                  FFLocalizations.of(context).getText(
+                                    '2c9xhync' /* Log in to your Pointbird accou... */,
+                                  ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -130,7 +142,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     isDense: true,
-                                    labelText: 'Email',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      '8lgsv21f' /* Email */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -210,7 +225,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                   obscureText: !_model.passVisibility,
                                   decoration: InputDecoration(
                                     isDense: true,
-                                    labelText: 'Password',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'lsf5fk7k' /* Password */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -351,7 +369,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
 
                                     setState(() {});
                                   },
-                                  text: 'Sign in',
+                                  text: FFLocalizations.of(context).getText(
+                                    'sf5lxxxc' /* Sign in */,
+                                  ),
                                   options: FFButtonOptions(
                                     width: double.infinity,
                                     height: 47.0,
@@ -391,7 +411,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                     context.pushNamed('recoverPass');
                                   },
                                   child: Text(
-                                    'Forgot your password?',
+                                    FFLocalizations.of(context).getText(
+                                      'jknolbem' /* Forgot your password? */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -409,40 +431,19 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
-                                child: RichText(
-                                  textScaler: MediaQuery.of(context).textScaler,
-                                  text: TextSpan(
-                                    children: [
-                                      TextSpan(
-                                        text: 'Don\'t have an account?\n',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              fontSize: 14.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                      ),
-                                      TextSpan(
-                                        text: 'Sign up here',
-                                        style: TextStyle(
-                                          color: FlutterFlowTheme.of(context)
-                                              .accent4,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 14.0,
-                                        ),
-                                        mouseCursor: SystemMouseCursors.click,
-                                        recognizer: TapGestureRecognizer()
-                                          ..onTap = () async {
-                                            context
-                                                .pushNamed('CreateAccountPage');
-                                          },
-                                      )
-                                    ],
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed('recoverPass');
+                                  },
+                                  child: Text(
+                                    FFLocalizations.of(context).getText(
+                                      'c1w7krdb' /* Don't have an account? */,
+                                    ),
+                                    textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -454,8 +455,42 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                           fontWeight: FontWeight.w500,
                                         ),
                                   ),
-                                  textAlign: TextAlign.center,
                                 ),
+                              ),
+                              RichText(
+                                textScaler: MediaQuery.of(context).textScaler,
+                                text: TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: FFLocalizations.of(context).getText(
+                                        '9e1f1hmk' /* Sign up here */,
+                                      ),
+                                      style: TextStyle(
+                                        color: FlutterFlowTheme.of(context)
+                                            .accent4,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 14.0,
+                                      ),
+                                      mouseCursor: SystemMouseCursors.click,
+                                      recognizer: TapGestureRecognizer()
+                                        ..onTap = () async {
+                                          context
+                                              .pushNamed('CreateAccountPage');
+                                        },
+                                    )
+                                  ],
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontSize: 14.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                ),
+                                textAlign: TextAlign.center,
                               ),
                             ],
                           ),

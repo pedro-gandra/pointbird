@@ -29,11 +29,15 @@ class NewPassModel extends FlutterFlowModel<NewPassWidget> {
   String? Function(BuildContext, String?)? passTextControllerValidator;
   String? _passTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        't4dmvds6' /* Field is required */,
+      );
     }
 
     if (val.length < 6) {
-      return 'Password must be 6 or more characters';
+      return FFLocalizations.of(context).getText(
+        'qzegvgnk' /* Password must be 6 or more cha... */,
+      );
     }
 
     return null;
@@ -47,11 +51,15 @@ class NewPassModel extends FlutterFlowModel<NewPassWidget> {
   String? _confirmPassTextControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'sv4899dx' /* Field is required */,
+      );
     }
 
     if (val.length < 6) {
-      return 'Password must be 6 or more characters';
+      return FFLocalizations.of(context).getText(
+        '5ghdpa6q' /* Password must be 6 or more cha... */,
+      );
     }
 
     return null;

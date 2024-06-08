@@ -104,7 +104,9 @@ class _CompanyCouponsWidgetState extends State<CompanyCouponsWidget> {
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.normal,
                                 ),
-                            hintText: 'Search coupon code',
+                            hintText: FFLocalizations.of(context).getText(
+                              'eze301ao' /* Search coupon code */,
+                            ),
                             hintStyle: FlutterFlowTheme.of(context)
                                 .labelMedium
                                 .override(
@@ -189,7 +191,9 @@ class _CompanyCouponsWidgetState extends State<CompanyCouponsWidget> {
                         Align(
                           alignment: AlignmentDirectional(0.0, 0.0),
                           child: Text(
-                            'Click on a coupon to deactivate',
+                            FFLocalizations.of(context).getText(
+                              'lctdqyxt' /* Click on a coupon to deactivat... */,
+                            ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
@@ -485,16 +489,19 @@ class _CompanyCouponsWidgetState extends State<CompanyCouponsWidget> {
                                                                   .spaceBetween,
                                                           children: [
                                                             Text(
-                                                              'Value: ${formatNumber(
-                                                                listViewViewCouponsCompanyRow
-                                                                    .value,
+                                                              'Value: ${listViewViewCouponsCompanyRow.currencySymbol}${formatNumber(
+                                                                functions.changeDouble(
+                                                                    listViewViewCouponsCompanyRow
+                                                                        .value!,
+                                                                    listViewViewCouponsCompanyRow
+                                                                        .rateToUsd!,
+                                                                    '*'),
                                                                 formatType:
                                                                     FormatType
-                                                                        .decimal,
-                                                                decimalType:
-                                                                    DecimalType
-                                                                        .automatic,
-                                                                currency: '',
+                                                                        .custom,
+                                                                format:
+                                                                    '#,###.##',
+                                                                locale: '',
                                                               )}',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -530,13 +537,16 @@ class _CompanyCouponsWidgetState extends State<CompanyCouponsWidget> {
                                                                   .spaceBetween,
                                                           children: [
                                                             Text(
-                                                              'Minimum purchase: ${formatNumber(
-                                                                listViewViewCouponsCompanyRow
-                                                                    .purchaseMin,
+                                                              'Minimum purchase: ${listViewViewCouponsCompanyRow.currencySymbol}${formatNumber(
+                                                                functions.changeDouble(
+                                                                    listViewViewCouponsCompanyRow
+                                                                        .purchaseMin!,
+                                                                    listViewViewCouponsCompanyRow
+                                                                        .rateToUsd!,
+                                                                    '*'),
                                                                 formatType:
                                                                     FormatType
                                                                         .custom,
-                                                                currency: '\$',
                                                                 format:
                                                                     '#,###.##',
                                                                 locale: '',
@@ -575,7 +585,14 @@ class _CompanyCouponsWidgetState extends State<CompanyCouponsWidget> {
                                                                   .spaceBetween,
                                                           children: [
                                                             Text(
-                                                              'Expires in: ${dateTimeFormat('yMMMd', listViewViewCouponsCompanyRow.expiration)}',
+                                                              'Expires in: ${dateTimeFormat(
+                                                                'yMMMd',
+                                                                listViewViewCouponsCompanyRow
+                                                                    .expiration,
+                                                                locale: FFLocalizations.of(
+                                                                        context)
+                                                                    .languageCode,
+                                                              )}',
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyMedium

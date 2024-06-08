@@ -201,7 +201,9 @@ class _EditProfileClientWidgetState extends State<EditProfileClientWidget> {
                                           }
                                         },
                                         child: Text(
-                                          'Change profile picture',
+                                          FFLocalizations.of(context).getText(
+                                            '3elbehwz' /* Change profile picture */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
                                               .override(
@@ -234,7 +236,11 @@ class _EditProfileClientWidgetState extends State<EditProfileClientWidget> {
                                             autofocus: false,
                                             obscureText: false,
                                             decoration: InputDecoration(
-                                              labelText: 'Name',
+                                              labelText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'u9pdwys1' /* Name */,
+                                              ),
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -325,7 +331,17 @@ class _EditProfileClientWidgetState extends State<EditProfileClientWidget> {
                                         _model.dropDownValue ??=
                                             widget.clientInfo?.gender,
                                       ),
-                                      options: ['Male', 'Female', 'Other'],
+                                      options: [
+                                        FFLocalizations.of(context).getText(
+                                          '527cd50u' /* Male */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'kp8r4hc2' /* Female */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'wxqlhfd2' /* Other */,
+                                        )
+                                      ],
                                       onChanged: (val) => setState(
                                           () => _model.dropDownValue = val),
                                       width: double.infinity,
@@ -336,7 +352,10 @@ class _EditProfileClientWidgetState extends State<EditProfileClientWidget> {
                                             fontFamily: 'Poppins',
                                             letterSpacing: 0.0,
                                           ),
-                                      hintText: 'Select gender',
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        'psil9crn' /* Select gender */,
+                                      ),
                                       icon: Icon(
                                         Icons.arrow_drop_down,
                                         color: FlutterFlowTheme.of(context)
@@ -430,9 +449,15 @@ class _EditProfileClientWidgetState extends State<EditProfileClientWidget> {
                                                 fontSize: 13.0,
                                                 letterSpacing: 0.0,
                                               ),
-                                          hintText: 'Country',
+                                          hintText: FFLocalizations.of(context)
+                                              .getText(
+                                            'gftkk25o' /* Country */,
+                                          ),
                                           searchHintText:
-                                              'Search for an item...',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                            'qfjb8gld' /* Search for an item... */,
+                                          ),
                                           searchCursorColor:
                                               FlutterFlowTheme.of(context)
                                                   .accent4,
@@ -567,7 +592,9 @@ class _EditProfileClientWidgetState extends State<EditProfileClientWidget> {
                                             'The changes were made successfully!';
                                         setState(() {});
                                       },
-                                      text: 'Save',
+                                      text: FFLocalizations.of(context).getText(
+                                        '3195ooz1' /* Save */,
+                                      ),
                                       options: FFButtonOptions(
                                         width:
                                             MediaQuery.sizeOf(context).width *
@@ -642,7 +669,9 @@ class _EditProfileClientWidgetState extends State<EditProfileClientWidget> {
                                   ).then((value) => setState(() {}));
                                 },
                                 child: Text(
-                                  'Delete my account',
+                                  FFLocalizations.of(context).getText(
+                                    '6t4fidqy' /* Delete my account */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(

@@ -81,7 +81,9 @@ class _TutorialWidgetState extends State<TutorialWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 3.0, 0.0, 2.0),
                                   child: Text(
-                                    'Tutorial',
+                                    FFLocalizations.of(context).getText(
+                                      'qeyv1t8u' /* Tutorial */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -136,7 +138,9 @@ class _TutorialWidgetState extends State<TutorialWidget> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'First steps to be succesfull in the app',
+                                          FFLocalizations.of(context).getText(
+                                            'riz9fv2h' /* First steps to be succesfull i... */,
+                                          ),
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -152,7 +156,9 @@ class _TutorialWidgetState extends State<TutorialWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 15.0, 0.0, 0.0),
                                           child: Text(
-                                            '1 - Configure your business settings',
+                                            FFLocalizations.of(context).getText(
+                                              '2ambp4wr' /* 1 - Configure your business se... */,
+                                            ),
                                             textAlign: TextAlign.start,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -169,7 +175,9 @@ class _TutorialWidgetState extends State<TutorialWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 15.0, 0.0, 0.0),
                                           child: Text(
-                                            '2 - Once your profile looks good, share it on your social media to start growing your audience.',
+                                            FFLocalizations.of(context).getText(
+                                              'pbbnj5c0' /* 2 - Once your profile looks go... */,
+                                            ),
                                             textAlign: TextAlign.start,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -186,7 +194,9 @@ class _TutorialWidgetState extends State<TutorialWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 15.0, 0.0, 0.0),
                                           child: Text(
-                                            '3 - After getting your first few followers, start posting to engage them. At least 3 posts per week.',
+                                            FFLocalizations.of(context).getText(
+                                              'almhyyyf' /* 3 - After getting your first f... */,
+                                            ),
                                             textAlign: TextAlign.start,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -203,7 +213,9 @@ class _TutorialWidgetState extends State<TutorialWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 15.0, 0.0, 0.0),
                                           child: Text(
-                                            '4 - Keep sharing your profile to become as relevant as possible in the platform, this will make your company show higher in the \"explore\" page.',
+                                            FFLocalizations.of(context).getText(
+                                              'e0bwuptz' /* 4 - Keep sharing your profile ... */,
+                                            ),
                                             textAlign: TextAlign.start,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -220,7 +232,9 @@ class _TutorialWidgetState extends State<TutorialWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 15.0, 0.0, 0.0),
                                           child: Text(
-                                            '5 - Many new customers will start discovering and buying from you, just make sure you stay active!',
+                                            FFLocalizations.of(context).getText(
+                                              'iyszzoxg' /* 5 - Many new customers will st... */,
+                                            ),
                                             textAlign: TextAlign.start,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -237,7 +251,9 @@ class _TutorialWidgetState extends State<TutorialWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 20.0, 0.0, 0.0),
                                           child: Text(
-                                            'Swipe left to move forward.',
+                                            FFLocalizations.of(context).getText(
+                                              '0u8c9zgi' /* Swipe left to move forward. */,
+                                            ),
                                             textAlign: TextAlign.start,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -261,7 +277,9 @@ class _TutorialWidgetState extends State<TutorialWidget> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'You are ready to use Pointbird!',
+                                          FFLocalizations.of(context).getText(
+                                            'w36wt7nn' /* You are ready to use Pointbird... */,
+                                          ),
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -277,7 +295,9 @@ class _TutorialWidgetState extends State<TutorialWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 15.0, 0.0, 0.0),
                                           child: Text(
-                                            'If you need any help you can go to the \"Help & Support\" section of the app.\n\nYou can also contact us on our social media platforms listed below.\n\nWe recommend our Youtube channel, where we post content that can help you grow your results with the app.',
+                                            FFLocalizations.of(context).getText(
+                                              'z6wnkj0n' /* If you need any help you can g... */,
+                                            ),
                                             textAlign: TextAlign.justify,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -410,7 +430,10 @@ class _TutorialWidgetState extends State<TutorialWidget> {
                                                 ),
                                               ),
                                               Text(
-                                                'I\'m ready to make money!',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'ceqs9grc' /* I'm ready to make money! */,
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -447,7 +470,10 @@ class _TutorialWidgetState extends State<TutorialWidget> {
                                                         }.withoutNulls,
                                                       );
                                                     },
-                                              text: 'Continue',
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                'oir3mp26' /* Next */,
+                                              ),
                                               options: FFButtonOptions(
                                                 width: double.infinity,
                                                 height: 45.0,

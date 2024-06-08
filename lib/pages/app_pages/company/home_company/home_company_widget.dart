@@ -380,7 +380,14 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 9.0),
                                               child: Text(
-                                                'Joined in: ${dateTimeFormat('yMMMd', homeCompanyViewHomeCompanyRow?.createdAt)}',
+                                                'Joined in: ${dateTimeFormat(
+                                                  'yMMMd',
+                                                  homeCompanyViewHomeCompanyRow
+                                                      ?.createdAt,
+                                                  locale: FFLocalizations.of(
+                                                          context)
+                                                      .languageCode,
+                                                )}',
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -412,7 +419,11 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                                                   0.0,
                                                                   3.0),
                                                       child: Text(
-                                                        'followers',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'r3jwm4em' /* followers */,
+                                                        ),
                                                         style: FlutterFlowTheme
                                                                 .of(context)
                                                             .bodyMedium
@@ -468,7 +479,11 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                                                     0.0,
                                                                     3.0),
                                                         child: Text(
-                                                          'total saved',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'jhpt5hpv' /* total saved */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium
@@ -740,7 +755,9 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Text(
-                                            'Offers',
+                                            FFLocalizations.of(context).getText(
+                                              '0ap7j1jp' /* Offers */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyLarge
                                                 .override(
@@ -783,7 +800,9 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Text(
-                                            'Polls',
+                                            FFLocalizations.of(context).getText(
+                                              'on6usnai' /* Polls */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyLarge
                                                 .override(
@@ -826,7 +845,9 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Text(
-                                            'Social',
+                                            FFLocalizations.of(context).getText(
+                                              '9vp5g14j' /* Social */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyLarge
                                                 .override(
@@ -993,8 +1014,12 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                                                       child:
                                                                           Text(
                                                                         dateTimeFormat(
-                                                                            'yMMMd',
-                                                                            offersViewPostsViewRow.createdAt!),
+                                                                          'yMMMd',
+                                                                          offersViewPostsViewRow
+                                                                              .createdAt!,
+                                                                          locale:
+                                                                              FFLocalizations.of(context).languageCode,
+                                                                        ),
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
@@ -1415,8 +1440,11 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                                                               2.0),
                                                                           child:
                                                                               Text(
-                                                                            dateTimeFormat('yMMMd',
-                                                                                pollsViewPostsPollRow.createdAt!),
+                                                                            dateTimeFormat(
+                                                                              'yMMMd',
+                                                                              pollsViewPostsPollRow.createdAt!,
+                                                                              locale: FFLocalizations.of(context).languageCode,
+                                                                            ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Poppins',
                                                                                   color: FlutterFlowTheme.of(context).secondaryText,
@@ -1848,8 +1876,12 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                                                       child:
                                                                           Text(
                                                                         dateTimeFormat(
-                                                                            'yMMMd',
-                                                                            socialViewPostsViewRow.createdAt!),
+                                                                          'yMMMd',
+                                                                          socialViewPostsViewRow
+                                                                              .createdAt!,
+                                                                          locale:
+                                                                              FFLocalizations.of(context).languageCode,
+                                                                        ),
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(

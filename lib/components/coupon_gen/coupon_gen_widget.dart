@@ -71,7 +71,6 @@ class _CouponGenWidgetState extends State<CouponGenWidget> {
                 ],
                 borderRadius: BorderRadius.circular(24.0),
                 border: Border.all(
-                  color: FlutterFlowTheme.of(context).primaryBackground,
                   width: 1.0,
                 ),
               ),
@@ -97,7 +96,9 @@ class _CouponGenWidgetState extends State<CouponGenWidget> {
                                 Align(
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Text(
-                                    'Coupon generated!',
+                                    FFLocalizations.of(context).getText(
+                                      'qlw7eu0h' /* Coupon generated! */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .headlineMedium
@@ -115,14 +116,9 @@ class _CouponGenWidgetState extends State<CouponGenWidget> {
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 12.0, 0.0, 0.0),
+                                        0.0, 16.0, 0.0, 0.0),
                                     child: Text(
-                                      'You just generated a ${formatNumber(
-                                        widget.value,
-                                        formatType: FormatType.decimal,
-                                        decimalType: DecimalType.automatic,
-                                        currency: '\$',
-                                      )} coupon for ${widget.name}.',
+                                      'You just generated a coupon for ${widget.name}.',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -142,9 +138,11 @@ class _CouponGenWidgetState extends State<CouponGenWidget> {
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 8.0, 0.0, 0.0),
+                                        0.0, 16.0, 0.0, 0.0),
                                     child: Text(
-                                      'To see all your coupons, click below:',
+                                      FFLocalizations.of(context).getText(
+                                        'ilh0ilw4' /* To see all your coupons, click... */,
+                                      ),
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -192,7 +190,9 @@ class _CouponGenWidgetState extends State<CouponGenWidget> {
 
                                         setState(() {});
                                       },
-                                      text: 'My coupons',
+                                      text: FFLocalizations.of(context).getText(
+                                        '1m7u5j09' /* My coupons */,
+                                      ),
                                       options: FFButtonOptions(
                                         height: 40.0,
                                         padding: EdgeInsetsDirectional.fromSTEB(

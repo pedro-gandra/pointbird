@@ -109,7 +109,9 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                                           alignment:
                                               AlignmentDirectional(-1.0, 0.0),
                                           child: Text(
-                                            'Change password',
+                                            FFLocalizations.of(context).getText(
+                                              'shjf5i6h' /* Change password */,
+                                            ),
                                             textAlign: TextAlign.start,
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineMedium
@@ -164,7 +166,11 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                                           focusNode: _model.pass1FocusNode,
                                           obscureText: !_model.pass1Visibility,
                                           decoration: InputDecoration(
-                                            labelText: 'Current password',
+                                            labelText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              'tzd7nndu' /* Current password */,
+                                            ),
                                             labelStyle: FlutterFlowTheme.of(
                                                     context)
                                                 .bodyMedium
@@ -273,7 +279,11 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                                             obscureText:
                                                 !_model.newpassVisibility,
                                             decoration: InputDecoration(
-                                              labelText: 'New password',
+                                              labelText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'qym9qvbu' /* New password */,
+                                              ),
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -391,7 +401,11 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                                             obscureText:
                                                 !_model.confirmPassVisibility,
                                             decoration: InputDecoration(
-                                              labelText: 'Confirm password',
+                                              labelText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'vftvli3o' /* Confirm password */,
+                                              ),
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -510,7 +524,10 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                                                       .fromSTEB(
                                                           0.0, 16.0, 0.0, 0.0),
                                                   child: Text(
-                                                    'Passwords do not match',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'z1k5iymm' /* Passwords do not match */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodySmall
@@ -540,7 +557,10 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                                                       .fromSTEB(
                                                           0.0, 16.0, 0.0, 0.0),
                                                   child: Text(
-                                                    'Current password is incorrect',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'qycpto1o' /* Current password is incorrect */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodySmall
@@ -570,7 +590,10 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                                                       .fromSTEB(
                                                           0.0, 16.0, 0.0, 0.0),
                                                   child: Text(
-                                                    'Password updated!',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'g4m13f80' /* Password updated! */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodySmall
@@ -641,7 +664,10 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
 
                                               setState(() {});
                                             },
-                                            text: 'Change password',
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                              '8ubu45tc' /* Change password */,
+                                            ),
                                             options: FFButtonOptions(
                                               width: double.infinity,
                                               height: 45.0,

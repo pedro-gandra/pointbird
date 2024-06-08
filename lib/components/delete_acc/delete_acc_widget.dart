@@ -87,7 +87,9 @@ class _DeleteAccWidgetState extends State<DeleteAccWidget> {
                           Align(
                             alignment: AlignmentDirectional(0.0, 0.0),
                             child: Text(
-                              'Delete account',
+                              FFLocalizations.of(context).getText(
+                                '6loniube' /* Delete account */,
+                              ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .headlineMedium
@@ -105,7 +107,9 @@ class _DeleteAccWidgetState extends State<DeleteAccWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 0.0),
                               child: Text(
-                                'All your information will be deleted. This action can\'t be undone. Are you sure you want to proceed?',
+                                FFLocalizations.of(context).getText(
+                                  'yqymcg0v' /* All your information will be d... */,
+                                ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
@@ -145,7 +149,9 @@ class _DeleteAccWidgetState extends State<DeleteAccWidget> {
                           setState(() {});
                         },
                         child: Text(
-                          'Delete account',
+                          FFLocalizations.of(context).getText(
+                            '82r2j2tm' /* Delete account */,
+                          ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
@@ -176,7 +182,9 @@ class _DeleteAccWidgetState extends State<DeleteAccWidget> {
                           Navigator.pop(context);
                         },
                         child: Text(
-                          'Cancel',
+                          FFLocalizations.of(context).getText(
+                            'iojwodt6' /* Cancel */,
+                          ),
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(

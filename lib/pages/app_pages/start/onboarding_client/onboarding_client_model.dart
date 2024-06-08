@@ -36,7 +36,9 @@ class OnboardingClientModel extends FlutterFlowModel<OnboardingClientWidget> {
   String? Function(BuildContext, String?)? nameTextControllerValidator;
   String? _nameTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'hkp5svm7' /* Field is required */,
+      );
     }
 
     if (val.length < 3) {

@@ -91,7 +91,9 @@ class _NewPassWidgetState extends State<NewPassWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                'New password',
+                                FFLocalizations.of(context).getText(
+                                  'ul2h17tc' /* New password */,
+                                ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .headlineMedium
@@ -106,7 +108,9 @@ class _NewPassWidgetState extends State<NewPassWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 0.0),
                                 child: Text(
-                                  'Create your new password',
+                                  FFLocalizations.of(context).getText(
+                                    'oe2vckcp' /* Create your new password */,
+                                  ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -127,7 +131,10 @@ class _NewPassWidgetState extends State<NewPassWidget> {
                                   obscureText: !_model.passVisibility,
                                   decoration: InputDecoration(
                                     isDense: true,
-                                    labelText: 'Password',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      '60hflhnm' /* Password */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -220,7 +227,10 @@ class _NewPassWidgetState extends State<NewPassWidget> {
                                   obscureText: !_model.confirmPassVisibility,
                                   decoration: InputDecoration(
                                     isDense: true,
-                                    labelText: 'Confirm password',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'gr2yadws' /* Confirm password */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -316,7 +326,9 @@ class _NewPassWidgetState extends State<NewPassWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 16.0, 0.0, 0.0),
                                         child: Text(
-                                          'Passwords do not match',
+                                          FFLocalizations.of(context).getText(
+                                            'kd7te31f' /* Passwords do not match */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall
                                               .override(
@@ -393,7 +405,9 @@ class _NewPassWidgetState extends State<NewPassWidget> {
                                         setState(() {});
                                       }
                                     },
-                                    text: 'Reset password',
+                                    text: FFLocalizations.of(context).getText(
+                                      '3g00bmrs' /* Reset password */,
+                                    ),
                                     options: FFButtonOptions(
                                       width: double.infinity,
                                       height: 47.0,

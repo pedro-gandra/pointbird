@@ -83,7 +83,9 @@ class _PointStatementWidgetState extends State<PointStatementWidget> {
                                         MainAxisAlignment.spaceEvenly,
                                     children: [
                                       Text(
-                                        'Points:',
+                                        FFLocalizations.of(context).getText(
+                                          'gez9sk9j' /* Points: */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -129,7 +131,9 @@ class _PointStatementWidgetState extends State<PointStatementWidget> {
                                         }.withoutNulls,
                                       );
                                     },
-                                    text: 'Exchange',
+                                    text: FFLocalizations.of(context).getText(
+                                      '9x7d918r' /* Exchange */,
+                                    ),
                                     icon: Icon(
                                       Icons.monetization_on_outlined,
                                       size: 18.0,
@@ -219,9 +223,11 @@ class _PointStatementWidgetState extends State<PointStatementWidget> {
                                     children: [
                                       Text(
                                         dateTimeFormat(
-                                            'yMMMd',
-                                            listViewViewPointsStatementRow
-                                                .date!),
+                                          'yMMMd',
+                                          listViewViewPointsStatementRow.date!,
+                                          locale: FFLocalizations.of(context)
+                                              .languageCode,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(

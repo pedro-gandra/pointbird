@@ -30,6 +30,19 @@ class ViewHomeClientRow extends SupabaseDataRow {
   int? get percentageLimit => getField<int>('percentageLimit');
   set percentageLimit(int? value) => setField<int>('percentageLimit', value);
 
+  String? get currencyName => getField<String>('currency_name');
+  set currencyName(String? value) => setField<String>('currency_name', value);
+
+  String? get currencyCode => getField<String>('currency_code');
+  set currencyCode(String? value) => setField<String>('currency_code', value);
+
+  String? get currencySymbol => getField<String>('currency_symbol');
+  set currencySymbol(String? value) =>
+      setField<String>('currency_symbol', value);
+
+  double? get rateToUsd => getField<double>('rate_to_usd');
+  set rateToUsd(double? value) => setField<double>('rate_to_usd', value);
+
   int? get idReference => getField<int>('id_reference');
   set idReference(int? value) => setField<int>('id_reference', value);
 

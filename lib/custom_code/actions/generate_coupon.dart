@@ -17,6 +17,7 @@ Future<ActionResponseStruct> generateCoupon(
   double minimum,
   double value,
   int idClient,
+  double rateToUsd,
 ) async {
   // Add your function code here!
   final supabase = SupaFlow.client;
@@ -60,7 +61,8 @@ Future<ActionResponseStruct> generateCoupon(
     'code': code,
     'value': value,
     'expiration': sqlExpiration,
-    'purchase_min': minimum
+    'purchase_min': minimum,
+    'rate_to_usd': rateToUsd
   });
 
   return actionResponse;

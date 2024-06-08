@@ -290,7 +290,11 @@ class _OnboardingClientWidgetState extends State<OnboardingClientWidget> {
                                                       }
                                                     },
                                                     child: Text(
-                                                      'Choose photo',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '0gq3whau' /* Choose photo */,
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -317,7 +321,11 @@ class _OnboardingClientWidgetState extends State<OnboardingClientWidget> {
                                                   decoration: InputDecoration(
                                                     isDense: true,
                                                     labelText:
-                                                        'First and last name',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'qjbtx2zp' /* First and last name */,
+                                                    ),
                                                     labelStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .bodyMedium
@@ -567,7 +575,10 @@ class _OnboardingClientWidgetState extends State<OnboardingClientWidget> {
                                                                       ? dateTimeFormat(
                                                                           'yMMMd',
                                                                           _model
-                                                                              .datePicked)
+                                                                              .datePicked,
+                                                                          locale:
+                                                                              FFLocalizations.of(context).languageCode,
+                                                                        )
                                                                       : 'Birth date',
                                                                   'Birth date',
                                                                 ),
@@ -607,9 +618,21 @@ class _OnboardingClientWidgetState extends State<OnboardingClientWidget> {
                                                         FormFieldController<
                                                             String>(null),
                                                     options: [
-                                                      'Male',
-                                                      'Female',
-                                                      'Other'
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'oe86l07o' /* Male */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'kx0icks8' /* Female */,
+                                                      ),
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'yfpfqelx' /* Other */,
+                                                      )
                                                     ],
                                                     onChanged: (val) =>
                                                         setState(() => _model
@@ -627,7 +650,12 @@ class _OnboardingClientWidgetState extends State<OnboardingClientWidget> {
                                                           fontSize: 13.0,
                                                           letterSpacing: 0.0,
                                                         ),
-                                                    hintText: 'Gender',
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'i29j4wam' /* Gender */,
+                                                    ),
                                                     fillColor: FlutterFlowTheme
                                                             .of(context)
                                                         .secondaryBackground,
@@ -740,9 +768,18 @@ class _OnboardingClientWidgetState extends State<OnboardingClientWidget> {
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
-                                                        hintText: 'Country',
+                                                        hintText:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          'puq7sb2j' /* Country */,
+                                                        ),
                                                         searchHintText:
-                                                            'Search for an item...',
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          'thltil3n' /* Search for an item... */,
+                                                        ),
                                                         searchCursorColor:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -908,7 +945,11 @@ class _OnboardingClientWidgetState extends State<OnboardingClientWidget> {
                                                       context.goNamed(
                                                           'homeClient');
                                                     },
-                                                    text: 'Finish',
+                                                    text: FFLocalizations.of(
+                                                            context)
+                                                        .getText(
+                                                      'ys26lfkz' /* Finish */,
+                                                    ),
                                                     options: FFButtonOptions(
                                                       width: double.infinity,
                                                       height: 45.0,

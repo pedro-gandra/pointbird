@@ -69,7 +69,6 @@ class _CheckinModalWidgetState extends State<CheckinModalWidget> {
                 ],
                 borderRadius: BorderRadius.circular(24.0),
                 border: Border.all(
-                  color: FlutterFlowTheme.of(context).primaryBackground,
                   width: 0.0,
                 ),
               ),
@@ -88,7 +87,9 @@ class _CheckinModalWidgetState extends State<CheckinModalWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Your check in was successful!',
+                            FFLocalizations.of(context).getText(
+                              'ywzbkdsj' /* Your check in was successful! */,
+                            ),
                             textAlign: TextAlign.start,
                             style: FlutterFlowTheme.of(context)
                                 .headlineMedium
@@ -96,14 +97,14 @@ class _CheckinModalWidgetState extends State<CheckinModalWidget> {
                                   fontFamily: 'Poppins',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
-                                  fontSize: 18.0,
+                                  fontSize: 16.0,
                                   letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w500,
+                                  fontWeight: FontWeight.w600,
                                 ),
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 25.0, 0.0, 0.0),
+                                0.0, 20.0, 0.0, 0.0),
                             child: Text(
                               'You now have a ${widget.streak?.toString()} day streak, come back again tomorrow for even more points!',
                               textAlign: TextAlign.start,
@@ -111,7 +112,7 @@ class _CheckinModalWidgetState extends State<CheckinModalWidget> {
                                   .headlineMedium
                                   .override(
                                     fontFamily: 'Poppins',
-                                    fontSize: 14.0,
+                                    fontSize: 13.0,
                                     letterSpacing: 0.0,
                                     lineHeight: 1.8,
                                   ),
@@ -128,7 +129,7 @@ class _CheckinModalWidgetState extends State<CheckinModalWidget> {
                                     fontFamily: 'Poppins',
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
-                                    fontSize: 14.0,
+                                    fontSize: 13.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
                                   ),
@@ -231,7 +232,10 @@ class _CheckinModalWidgetState extends State<CheckinModalWidget> {
                                                     ),
                                               ),
                                               Text(
-                                                'points',
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'spejjhg2' /* points */,
+                                                ),
                                                 style: FlutterFlowTheme.of(
                                                         context)
                                                     .bodyMedium
@@ -276,7 +280,9 @@ class _CheckinModalWidgetState extends State<CheckinModalWidget> {
                               onPressed: () async {
                                 Navigator.pop(context);
                               },
-                              text: 'Back',
+                              text: FFLocalizations.of(context).getText(
+                                'tepwsus8' /* Back */,
+                              ),
                               options: FFButtonOptions(
                                 width: 150.0,
                                 height: 40.0,

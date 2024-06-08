@@ -14,6 +14,8 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
 
   // Stores action output result for [Custom Action - isEmailRegistered] action in HomePage widget.
   bool? isEmail;
+  // Stores action output result for [Custom Action - isAdmin] action in HomePage widget.
+  bool? adm;
 
   @override
   void initState(BuildContext context) {}

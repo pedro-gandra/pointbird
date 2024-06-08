@@ -29,7 +29,9 @@ class CreateAccountPageModel extends FlutterFlowModel<CreateAccountPageWidget> {
   String? Function(BuildContext, String?)? emailTextControllerValidator;
   String? _emailTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        '3cgp62ih' /* Field is required */,
+      );
     }
 
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
@@ -45,11 +47,15 @@ class CreateAccountPageModel extends FlutterFlowModel<CreateAccountPageWidget> {
   String? Function(BuildContext, String?)? passTextControllerValidator;
   String? _passTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        's7r7nhyy' /* Field is required */,
+      );
     }
 
     if (val.length < 6) {
-      return 'Password must be 6 or more characters';
+      return FFLocalizations.of(context).getText(
+        '831u8bbq' /* Password must be 6 or more cha... */,
+      );
     }
 
     return null;
@@ -63,11 +69,15 @@ class CreateAccountPageModel extends FlutterFlowModel<CreateAccountPageWidget> {
   String? _confirmPassTextControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'p0uzb123' /* Field is required */,
+      );
     }
 
     if (val.length < 6) {
-      return 'Password must be 6 or more characters';
+      return FFLocalizations.of(context).getText(
+        'tkhsptup' /* Password must be 6 or more cha... */,
+      );
     }
 
     return null;

@@ -300,7 +300,9 @@ class _PointsHubWidgetState extends State<PointsHubWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Text(
-                                            'Points statement',
+                                            FFLocalizations.of(context).getText(
+                                              '9mdpp85t' /* Points statement */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .labelLarge
                                                 .override(
@@ -476,7 +478,9 @@ class _PointsHubWidgetState extends State<PointsHubWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Text(
-                                            'My coupons',
+                                            FFLocalizations.of(context).getText(
+                                              'b52hmni8' /* My coupons */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .labelLarge
                                                 .override(
@@ -511,7 +515,9 @@ class _PointsHubWidgetState extends State<PointsHubWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 20.0, 0.0, 70.0),
                               child: Text(
-                                '*This data is a sum of all the companies you follow',
+                                FFLocalizations.of(context).getText(
+                                  'wxhpb936' /* *This data is a sum of all the... */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -569,7 +575,9 @@ class _PointsHubWidgetState extends State<PointsHubWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 3.0, 0.0, 2.0),
                                     child: Text(
-                                      'Points & Coupons',
+                                      FFLocalizations.of(context).getText(
+                                        'k51kbkqr' /* Points & Coupons */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(

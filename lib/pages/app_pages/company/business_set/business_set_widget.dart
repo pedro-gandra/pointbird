@@ -166,7 +166,11 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             isDense: true,
-                                            labelText: 'Initial points',
+                                            labelText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              'hwvsosan' /* Initial points */,
+                                            ),
                                             labelStyle: FlutterFlowTheme.of(
                                                     context)
                                                 .bodyMedium
@@ -290,7 +294,9 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           4.0, 4.0, 0.0, 0.0),
                                       child: Text(
-                                        'These points will be awarded when a user follows your company for the first time.',
+                                        FFLocalizations.of(context).getText(
+                                          'wpe4rhlk' /* These points will be awarded w... */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -318,7 +324,10 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     4.0, 0.0, 0.0, 0.0),
                                             child: Text(
-                                              'Check in rewards',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'yngq8kol' /* Check in rewards */,
+                                              ),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -401,7 +410,9 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           4.0, 4.0, 0.0, 0.0),
                                       child: Text(
-                                        'This is the amount of points the user will receive for every consecutive day that he checks in on your page.',
+                                        FFLocalizations.of(context).getText(
+                                          '12uqebhm' /* This is the amount of points t... */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -438,7 +449,11 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                               focusNode: _model.d1FocusNode,
                                               obscureText: false,
                                               decoration: InputDecoration(
-                                                labelText: 'Day 1',
+                                                labelText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'mjbphelh' /* Day 1 */,
+                                                ),
                                                 labelStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -453,7 +468,11 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                                               FontWeight.normal,
                                                         ),
                                                 alignLabelWithHint: true,
-                                                hintText: 'D1',
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'hgtr734g' /* D1 */,
+                                                ),
                                                 hintStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium
@@ -557,7 +576,11 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                               focusNode: _model.d2FocusNode,
                                               obscureText: false,
                                               decoration: InputDecoration(
-                                                labelText: 'Day 2',
+                                                labelText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'zyj8oauq' /* Day 2 */,
+                                                ),
                                                 labelStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -572,7 +595,11 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                                               FontWeight.normal,
                                                         ),
                                                 alignLabelWithHint: true,
-                                                hintText: 'D2',
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  '54bok91s' /* D2 */,
+                                                ),
                                                 hintStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium
@@ -676,7 +703,11 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                               focusNode: _model.d3FocusNode,
                                               obscureText: false,
                                               decoration: InputDecoration(
-                                                labelText: 'Day 3',
+                                                labelText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'taanw86s' /* Day 3 */,
+                                                ),
                                                 labelStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -691,7 +722,11 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                                               FontWeight.normal,
                                                         ),
                                                 alignLabelWithHint: false,
-                                                hintText: 'D3',
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  '2brdf2lz' /* D3 */,
+                                                ),
                                                 hintStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium
@@ -795,7 +830,11 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                               focusNode: _model.d4FocusNode,
                                               obscureText: false,
                                               decoration: InputDecoration(
-                                                labelText: 'Day 4',
+                                                labelText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'vgcr3lnj' /* Day 4 */,
+                                                ),
                                                 labelStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -810,7 +849,11 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                                               FontWeight.normal,
                                                         ),
                                                 alignLabelWithHint: true,
-                                                hintText: 'D4',
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'ma0cg6y2' /* D4 */,
+                                                ),
                                                 hintStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium
@@ -914,7 +957,11 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                               focusNode: _model.d5FocusNode,
                                               obscureText: false,
                                               decoration: InputDecoration(
-                                                labelText: 'Day 5',
+                                                labelText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'mune2u4c' /* Day 5 */,
+                                                ),
                                                 labelStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -929,7 +976,11 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                                               FontWeight.normal,
                                                         ),
                                                 alignLabelWithHint: true,
-                                                hintText: 'D5',
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'iykfgmc4' /* D5 */,
+                                                ),
                                                 hintStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium
@@ -1044,7 +1095,11 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                               focusNode: _model.d6FocusNode,
                                               obscureText: false,
                                               decoration: InputDecoration(
-                                                labelText: 'Day 6',
+                                                labelText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'nwx8jldv' /* Day 6 */,
+                                                ),
                                                 labelStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -1059,7 +1114,11 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                                               FontWeight.normal,
                                                         ),
                                                 alignLabelWithHint: true,
-                                                hintText: 'D6',
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'jjww1egd' /* D6 */,
+                                                ),
                                                 hintStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium
@@ -1163,7 +1222,11 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                               focusNode: _model.d7FocusNode,
                                               obscureText: false,
                                               decoration: InputDecoration(
-                                                labelText: 'Day 7',
+                                                labelText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'd3jegb75' /* Day 7 */,
+                                                ),
                                                 labelStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -1178,7 +1241,11 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                                               FontWeight.normal,
                                                         ),
                                                 alignLabelWithHint: true,
-                                                hintText: 'D7',
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'y7dsh26q' /* D7 */,
+                                                ),
                                                 hintStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium
@@ -1282,7 +1349,11 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                               focusNode: _model.d8FocusNode,
                                               obscureText: false,
                                               decoration: InputDecoration(
-                                                labelText: 'Day 8',
+                                                labelText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'qky9tguo' /* Day 8 */,
+                                                ),
                                                 labelStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -1297,7 +1368,11 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                                               FontWeight.normal,
                                                         ),
                                                 alignLabelWithHint: true,
-                                                hintText: 'D8',
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'or0phq9t' /* D8 */,
+                                                ),
                                                 hintStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium
@@ -1401,7 +1476,11 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                               focusNode: _model.d9FocusNode,
                                               obscureText: false,
                                               decoration: InputDecoration(
-                                                labelText: 'Day 9',
+                                                labelText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'nf0diueu' /* Day 9 */,
+                                                ),
                                                 labelStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -1416,7 +1495,11 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                                               FontWeight.normal,
                                                         ),
                                                 alignLabelWithHint: true,
-                                                hintText: 'D9',
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'uy17azj8' /* D9 */,
+                                                ),
                                                 hintStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium
@@ -1520,7 +1603,11 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                               focusNode: _model.d10FocusNode,
                                               obscureText: false,
                                               decoration: InputDecoration(
-                                                labelText: 'Day 10',
+                                                labelText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'boqzyj5q' /* Day 10 */,
+                                                ),
                                                 labelStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -1535,7 +1622,11 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                                               FontWeight.normal,
                                                         ),
                                                 alignLabelWithHint: true,
-                                                hintText: 'D10',
+                                                hintText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  '1j8c7c2v' /* D10 */,
+                                                ),
                                                 hintStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium
@@ -1649,7 +1740,11 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               isDense: true,
-                                              labelText: 'Max discount',
+                                              labelText:
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                'wgago25f' /* Max discount */,
+                                              ),
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -1751,7 +1846,9 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Text(
-                                            '%',
+                                            FFLocalizations.of(context).getText(
+                                              '7ai0w3py' /* % */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -1838,7 +1935,9 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           3.0, 4.0, 0.0, 0.0),
                                       child: Text(
-                                        'This is the maximum percentage discount an user can get on any purchase from your company.',
+                                        FFLocalizations.of(context).getText(
+                                          '10g49ltt' /* This is the maximum percentage... */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -1872,7 +1971,10 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                         ),
                                         obscureText: false,
                                         decoration: InputDecoration(
-                                          labelText: 'Company code',
+                                          labelText: FFLocalizations.of(context)
+                                              .getText(
+                                            '4vkzejo8' /* Company code */,
+                                          ),
                                           labelStyle: FlutterFlowTheme.of(
                                                   context)
                                               .bodyMedium
@@ -1962,7 +2064,139 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           3.0, 4.0, 0.0, 0.0),
                                       child: Text(
-                                        'This is the unique code users will use to find your company. We recommend you don\'t change it very often.',
+                                        FFLocalizations.of(context).getText(
+                                          's44rkkd1' /* This is the unique code users ... */,
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              fontSize: 11.0,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 18.0, 10.0, 0.0),
+                                    child: FutureBuilder<List<CurrenciesRow>>(
+                                      future: CurrenciesTable().queryRows(
+                                        queryFn: (q) =>
+                                            q.order('name', ascending: true),
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: CircularProgressIndicator(
+                                                valueColor:
+                                                    AlwaysStoppedAnimation<
+                                                        Color>(
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                                ),
+                                              ),
+                                            ),
+                                          );
+                                        }
+                                        List<CurrenciesRow>
+                                            currencyCurrenciesRowList =
+                                            snapshot.data!;
+                                        return FlutterFlowDropDown<int>(
+                                          controller:
+                                              _model.currencyValueController ??=
+                                                  FormFieldController<int>(
+                                            _model.currencyValue ??=
+                                                businessSetCompaniesRow
+                                                    ?.idCurrency,
+                                          ),
+                                          options: List<int>.from(
+                                              currencyCurrenciesRowList
+                                                  .map((e) => e.id)
+                                                  .toList()),
+                                          optionLabels:
+                                              currencyCurrenciesRowList
+                                                  .map((e) => e.name)
+                                                  .withoutNulls
+                                                  .toList(),
+                                          onChanged: (val) => setState(
+                                              () => _model.currencyValue = val),
+                                          width: double.infinity,
+                                          height: 50.0,
+                                          maxHeight: MediaQuery.sizeOf(context)
+                                                  .height *
+                                              0.75,
+                                          searchHintTextStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .override(
+                                                    fontFamily: 'Poppins',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText,
+                                                    fontSize: 13.0,
+                                                    letterSpacing: 0.0,
+                                                    fontWeight: FontWeight.w500,
+                                                  ),
+                                          searchTextStyle: TextStyle(),
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                fontSize: 13.0,
+                                                letterSpacing: 0.0,
+                                              ),
+                                          hintText: FFLocalizations.of(context)
+                                              .getText(
+                                            'f30uoiux' /* Select your currency */,
+                                          ),
+                                          searchHintText:
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                            'j5bxckak' /* Search for an item... */,
+                                          ),
+                                          searchCursorColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .accent4,
+                                          fillColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .primaryBackground,
+                                          elevation: 2.0,
+                                          borderColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .accent1,
+                                          borderWidth: 2.0,
+                                          borderRadius: 8.0,
+                                          margin:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  15.0, 0.0, 12.0, 0.0),
+                                          hidesUnderline: true,
+                                          isSearchable: true,
+                                          isMultiSelect: false,
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                  Align(
+                                    alignment: AlignmentDirectional(-1.0, 0.0),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          3.0, 8.0, 0.0, 0.0),
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          'w8e7pabk' /* This will take effect ONLY on ... */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -2047,9 +2281,15 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                                 fontSize: 13.0,
                                                 letterSpacing: 0.0,
                                               ),
-                                          hintText: 'Select your country',
+                                          hintText: FFLocalizations.of(context)
+                                              .getText(
+                                            'g505vn7r' /* Select your country */,
+                                          ),
                                           searchHintText:
-                                              'Search for an item...',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                            'jlwk82rz' /* Search for an item... */,
+                                          ),
                                           searchCursorColor:
                                               FlutterFlowTheme.of(context)
                                                   .accent4,
@@ -2117,16 +2357,33 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                                     .alternate,
                                           ),
                                         ),
-                                        Text(
-                                          'My business ships countrywide',
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Poppins',
-                                                fontSize: 13.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w500,
+                                        Expanded(
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Align(
+                                                alignment: AlignmentDirectional(
+                                                    -1.0, 0.0),
+                                                child: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'i640yzhp' /* My business ships countrywide */,
+                                                  ),
+                                                  textAlign: TextAlign.start,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        fontSize: 13.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                ),
                                               ),
+                                            ],
+                                          ),
                                         ),
                                       ].divide(SizedBox(width: 3.0)),
                                     ),
@@ -2137,7 +2394,9 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           3.0, 8.0, 0.0, 0.0),
                                       child: Text(
-                                        'By selecting the option to ship countrywide, your business will show up to app users from the same country in the \"explore\" page.',
+                                        FFLocalizations.of(context).getText(
+                                          'ntgqvyl5' /* By selecting the option to shi... */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -2181,6 +2440,9 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                                 null ||
                                             !_model.formKey.currentState!
                                                 .validate()) {
+                                          return;
+                                        }
+                                        if (_model.currencyValue == null) {
                                           return;
                                         }
                                         if (_model.countryValue == null) {
@@ -2231,6 +2493,8 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                               'name_country':
                                                   _model.countryValue,
                                               'shipping': _model.checkboxValue,
+                                              'id_currency':
+                                                  _model.currencyValue,
                                             },
                                             matchingRows: (rows) => rows.eq(
                                               'email',
@@ -2245,7 +2509,9 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
 
                                         setState(() {});
                                       },
-                                      text: 'Save',
+                                      text: FFLocalizations.of(context).getText(
+                                        'mgryly4y' /* Save */,
+                                      ),
                                       options: FFButtonOptions(
                                         width:
                                             MediaQuery.sizeOf(context).width *

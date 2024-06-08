@@ -114,10 +114,20 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                             FlutterFlowDropDown<String>(
                               controller: _model.accountTypeValueController ??=
                                   FormFieldController<String>(null),
-                              options: ['Offer', 'Poll', 'Social'],
+                              options: [
+                                FFLocalizations.of(context).getText(
+                                  '6u0tmu0g' /* Offer */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  '4py75ott' /* Poll */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  'qb0g5upg' /* Social */,
+                                )
+                              ],
                               onChanged: (val) =>
                                   setState(() => _model.accountTypeValue = val),
-                              width: 145.0,
+                              width: 190.0,
                               height: 44.0,
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -128,7 +138,9 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                     fontSize: 13.0,
                                     letterSpacing: 0.0,
                                   ),
-                              hintText: 'Post type',
+                              hintText: FFLocalizations.of(context).getText(
+                                '02up8bji' /* Post type */,
+                              ),
                               fillColor: FlutterFlowTheme.of(context)
                                   .primaryBackground,
                               elevation: 2.0,
@@ -176,7 +188,11 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                 ),
                                                 obscureText: false,
                                                 decoration: InputDecoration(
-                                                  labelText: 'Title (optional)',
+                                                  labelText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'pk4uwcus' /* Title (optional) */,
+                                                  ),
                                                   labelStyle: FlutterFlowTheme
                                                           .of(context)
                                                       .bodyMedium
@@ -296,7 +312,11 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     labelText:
-                                                        'Description (optional)',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'qmmxf6f8' /* Description (optional) */,
+                                                    ),
                                                     labelStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .bodyMedium
@@ -416,7 +436,12 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                       _model.linkFocusNode,
                                                   obscureText: false,
                                                   decoration: InputDecoration(
-                                                    labelText: 'Link',
+                                                    labelText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'klcwy6nl' /* Link */,
+                                                    ),
                                                     labelStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .bodyMedium
@@ -430,7 +455,12 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                           fontWeight:
                                                               FontWeight.normal,
                                                         ),
-                                                    hintText: 'https://',
+                                                    hintText:
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      '0waqra3o' /* https:// */,
+                                                    ),
                                                     hintStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .labelMedium
@@ -525,7 +555,10 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                       .fromSTEB(
                                                           4.0, 4.0, 0.0, 0.0),
                                                   child: Text(
-                                                    'This link will be launched when the user clicks on the post.',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '41gq3aa4' /* This link will be launched whe... */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -571,7 +604,11 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                         decoration:
                                                             InputDecoration(
                                                           labelText:
-                                                              'Action points',
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                            'bc1sspg5' /* Action points */,
+                                                          ),
                                                           labelStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -750,7 +787,10 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                       .fromSTEB(
                                                           4.0, 4.0, 0.0, 0.0),
                                                   child: Text(
-                                                    'The amount of points that will be given when an user clicks on the link for the first time. They can be collected in the first 7 days of a post.',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'b48p4f94' /* The amount of points that will... */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -868,7 +908,11 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                           size: 24.0,
                                                         ),
                                                         Text(
-                                                          'Choose image',
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'r63arw9p' /* Choose image */,
+                                                          ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyMedium
@@ -897,7 +941,10 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                       .fromSTEB(
                                                           4.0, 4.0, 0.0, 0.0),
                                                   child: Text(
-                                                    'Square images look better and are strongly recommended.',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      '931yefkj' /* Square images look better and ... */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -917,7 +964,10 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                     .fromSTEB(
                                                         0.0, 20.0, 0.0, 0.0),
                                                 child: Text(
-                                                  'Your post will look like this',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'rqpr86c9' /* Your post will look like this */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -984,8 +1034,12 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                                           1.0),
                                                                   child: Text(
                                                                     dateTimeFormat(
-                                                                        'yMMMd',
-                                                                        getCurrentTimestamp),
+                                                                      'yMMMd',
+                                                                      getCurrentTimestamp,
+                                                                      locale: FFLocalizations.of(
+                                                                              context)
+                                                                          .languageCode,
+                                                                    ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
@@ -1293,7 +1347,11 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                   context
                                                       .goNamed('homeCompany');
                                                 },
-                                                text: 'Post',
+                                                text:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'fyg7xsu5' /* Post */,
+                                                ),
                                                 options: FFButtonOptions(
                                                   width:
                                                       MediaQuery.sizeOf(context)
@@ -1361,7 +1419,11 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                 ),
                                                 obscureText: false,
                                                 decoration: InputDecoration(
-                                                  labelText: 'Title',
+                                                  labelText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    '1skx1ofk' /* Title */,
+                                                  ),
                                                   labelStyle: FlutterFlowTheme
                                                           .of(context)
                                                       .bodyMedium
@@ -1481,7 +1543,11 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                   obscureText: false,
                                                   decoration: InputDecoration(
                                                     labelText:
-                                                        'Description (optional)',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      'ymxdvgib' /* Description (optional) */,
+                                                    ),
                                                     labelStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .bodyMedium
@@ -1621,7 +1687,11 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                         decoration:
                                                             InputDecoration(
                                                           labelText:
-                                                              'Action points',
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                            '0561svp6' /* Action points */,
+                                                          ),
                                                           labelStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -1800,7 +1870,10 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                       .fromSTEB(
                                                           4.0, 4.0, 0.0, 0.0),
                                                   child: Text(
-                                                    'The amount of points that will be given when an user votes. They can be collected in the first 7 days of a poll.',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'w6p73t5t' /* The amount of points that will... */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -1842,7 +1915,12 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                         decoration:
                                                             InputDecoration(
                                                           isDense: true,
-                                                          labelText: 'Option 1',
+                                                          labelText:
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                            '5fyojyn8' /* Option 1 */,
+                                                          ),
                                                           labelStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -2007,7 +2085,12 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                         decoration:
                                                             InputDecoration(
                                                           isDense: true,
-                                                          labelText: 'Option 2',
+                                                          labelText:
+                                                              FFLocalizations.of(
+                                                                      context)
+                                                                  .getText(
+                                                            'gg74jycw' /* Option 2 */,
+                                                          ),
                                                           labelStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -2175,7 +2258,11 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                               InputDecoration(
                                                             isDense: true,
                                                             labelText:
-                                                                'Option 3',
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                              'qao72wxv' /* Option 3 */,
+                                                            ),
                                                             labelStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -2341,7 +2428,11 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                               InputDecoration(
                                                             isDense: true,
                                                             labelText:
-                                                                'Option 4',
+                                                                FFLocalizations.of(
+                                                                        context)
+                                                                    .getText(
+                                                              'cy97ak7u' /* Option 4 */,
+                                                            ),
                                                             labelStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -2488,7 +2579,11 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                             .fromSTEB(4.0, 8.0,
                                                                 0.0, 0.0),
                                                     child: Text(
-                                                      'Polls accept between 2 and 4 options.',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'i3oack0q' /* Polls accept between 2 and 4 o... */,
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -2601,7 +2696,10 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                     .fromSTEB(
                                                         0.0, 25.0, 0.0, 0.0),
                                                 child: Text(
-                                                  'Your post will look like this',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'yqi6a6yd' /* Your post will look like this */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -2653,8 +2751,12 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                                           2.0),
                                                                   child: Text(
                                                                     dateTimeFormat(
-                                                                        'yMMMd',
-                                                                        getCurrentTimestamp),
+                                                                      'yMMMd',
+                                                                      getCurrentTimestamp,
+                                                                      locale: FFLocalizations.of(
+                                                                              context)
+                                                                          .languageCode,
+                                                                    ),
                                                                     style: FlutterFlowTheme.of(
                                                                             context)
                                                                         .bodyMedium
@@ -3051,7 +3153,11 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
 
                                                   setState(() {});
                                                 },
-                                                text: 'Post',
+                                                text:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'j3hm4d9e' /* Post */,
+                                                ),
                                                 options: FFButtonOptions(
                                                   width:
                                                       MediaQuery.sizeOf(context)

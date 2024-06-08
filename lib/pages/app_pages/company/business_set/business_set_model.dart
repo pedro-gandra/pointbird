@@ -36,11 +36,15 @@ class BusinessSetModel extends FlutterFlowModel<BusinessSetWidget> {
   String? Function(BuildContext, String?)? initialTextControllerValidator;
   String? _initialTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'z0iihj43' /* Field is required */,
+      );
     }
 
     if (!RegExp('^(?!0+\$).*').hasMatch(val)) {
-      return 'Can\'t be 0';
+      return FFLocalizations.of(context).getText(
+        'xdatcanf' /* Can't be 0 */,
+      );
     }
     return null;
   }
@@ -51,11 +55,15 @@ class BusinessSetModel extends FlutterFlowModel<BusinessSetWidget> {
   String? Function(BuildContext, String?)? d1TextControllerValidator;
   String? _d1TextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'e4pq5w5m' /* Field is required */,
+      );
     }
 
     if (!RegExp('^(?!0+\$).*').hasMatch(val)) {
-      return ' > 0';
+      return FFLocalizations.of(context).getText(
+        'uy7bg353' /*  > 0 */,
+      );
     }
     return null;
   }
@@ -66,11 +74,15 @@ class BusinessSetModel extends FlutterFlowModel<BusinessSetWidget> {
   String? Function(BuildContext, String?)? d2TextControllerValidator;
   String? _d2TextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        '95j53fcq' /* Field is required */,
+      );
     }
 
     if (!RegExp('^(?!0+\$).*').hasMatch(val)) {
-      return '> 0';
+      return FFLocalizations.of(context).getText(
+        'h7vsxbpi' /* > 0 */,
+      );
     }
     return null;
   }
@@ -81,11 +93,15 @@ class BusinessSetModel extends FlutterFlowModel<BusinessSetWidget> {
   String? Function(BuildContext, String?)? d3TextControllerValidator;
   String? _d3TextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'e0eee5ae' /* Field is required */,
+      );
     }
 
     if (!RegExp('^(?!0+\$).*').hasMatch(val)) {
-      return '> 0';
+      return FFLocalizations.of(context).getText(
+        'tivxjn0x' /* > 0 */,
+      );
     }
     return null;
   }
@@ -96,11 +112,15 @@ class BusinessSetModel extends FlutterFlowModel<BusinessSetWidget> {
   String? Function(BuildContext, String?)? d4TextControllerValidator;
   String? _d4TextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'hawl7gmg' /* Field is required */,
+      );
     }
 
     if (!RegExp('^(?!0+\$).*').hasMatch(val)) {
-      return '> 0';
+      return FFLocalizations.of(context).getText(
+        'ef5he5gm' /* > 0 */,
+      );
     }
     return null;
   }
@@ -111,11 +131,15 @@ class BusinessSetModel extends FlutterFlowModel<BusinessSetWidget> {
   String? Function(BuildContext, String?)? d5TextControllerValidator;
   String? _d5TextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        '64ef4p0r' /* Field is required */,
+      );
     }
 
     if (!RegExp('^(?!0+\$).*').hasMatch(val)) {
-      return '> 0';
+      return FFLocalizations.of(context).getText(
+        '0domczks' /* > 0 */,
+      );
     }
     return null;
   }
@@ -126,11 +150,15 @@ class BusinessSetModel extends FlutterFlowModel<BusinessSetWidget> {
   String? Function(BuildContext, String?)? d6TextControllerValidator;
   String? _d6TextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'olc97xch' /* Field is required */,
+      );
     }
 
     if (!RegExp('^(?!0+\$).*').hasMatch(val)) {
-      return '> 0';
+      return FFLocalizations.of(context).getText(
+        'a2b9ox94' /* > 0 */,
+      );
     }
     return null;
   }
@@ -141,11 +169,15 @@ class BusinessSetModel extends FlutterFlowModel<BusinessSetWidget> {
   String? Function(BuildContext, String?)? d7TextControllerValidator;
   String? _d7TextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        '8j0inrrm' /* Field is required */,
+      );
     }
 
     if (!RegExp('^(?!0+\$).*').hasMatch(val)) {
-      return '> 0';
+      return FFLocalizations.of(context).getText(
+        'cxyrj5gt' /* > 0 */,
+      );
     }
     return null;
   }
@@ -156,11 +188,15 @@ class BusinessSetModel extends FlutterFlowModel<BusinessSetWidget> {
   String? Function(BuildContext, String?)? d8TextControllerValidator;
   String? _d8TextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'kp3w2acd' /* Field is required */,
+      );
     }
 
     if (!RegExp('^(?!0+\$).*').hasMatch(val)) {
-      return '> 0';
+      return FFLocalizations.of(context).getText(
+        '2j73huya' /* > 0 */,
+      );
     }
     return null;
   }
@@ -171,11 +207,15 @@ class BusinessSetModel extends FlutterFlowModel<BusinessSetWidget> {
   String? Function(BuildContext, String?)? d9TextControllerValidator;
   String? _d9TextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'k2rc5ovr' /* Field is required */,
+      );
     }
 
     if (!RegExp('^(?!0+\$).*').hasMatch(val)) {
-      return '> 0';
+      return FFLocalizations.of(context).getText(
+        'eelv6ayu' /* > 0 */,
+      );
     }
     return null;
   }
@@ -186,11 +226,15 @@ class BusinessSetModel extends FlutterFlowModel<BusinessSetWidget> {
   String? Function(BuildContext, String?)? d10TextControllerValidator;
   String? _d10TextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'eelsbf5s' /* Field is required */,
+      );
     }
 
     if (!RegExp('^(?!0+\$).*').hasMatch(val)) {
-      return '> 0';
+      return FFLocalizations.of(context).getText(
+        'pqkkwifl' /* > 0 */,
+      );
     }
     return null;
   }
@@ -201,11 +245,15 @@ class BusinessSetModel extends FlutterFlowModel<BusinessSetWidget> {
   String? Function(BuildContext, String?)? discountTextControllerValidator;
   String? _discountTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'wsuwqy55' /* Field is required */,
+      );
     }
 
     if (!RegExp('^(?!0+\$).*').hasMatch(val)) {
-      return ' Can\'t be 0';
+      return FFLocalizations.of(context).getText(
+        'nmxa78zb' /*  Can't be 0 */,
+      );
     }
     return null;
   }
@@ -216,19 +264,28 @@ class BusinessSetModel extends FlutterFlowModel<BusinessSetWidget> {
   String? Function(BuildContext, String?)? codeTextControllerValidator;
   String? _codeTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return 'Field is required';
+      return FFLocalizations.of(context).getText(
+        'kuzb7ouf' /* Field is required */,
+      );
     }
 
     if (val.length < 3) {
-      return 'Minimum is 3 characters';
+      return FFLocalizations.of(context).getText(
+        '9i80m3mx' /* Minimum is 3 characters */,
+      );
     }
 
     if (!RegExp('^[a-zA-Z0-9._]+\$').hasMatch(val)) {
-      return 'Use only letters, numbers, \'.\' and \'_\'';
+      return FFLocalizations.of(context).getText(
+        '9ypfo864' /* Use only letters, numbers, '.'... */,
+      );
     }
     return null;
   }
 
+  // State field(s) for currency widget.
+  int? currencyValue;
+  FormFieldController<int>? currencyValueController;
   // State field(s) for country widget.
   String? countryValue;
   FormFieldController<String>? countryValueController;

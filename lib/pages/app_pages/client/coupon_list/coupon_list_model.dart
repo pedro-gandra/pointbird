@@ -4,6 +4,7 @@ import '/components/simple_header_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'coupon_list_widget.dart' show CouponListWidget;
 import 'dart:async';
 import 'package:cached_network_image/cached_network_image.dart';

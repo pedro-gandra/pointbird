@@ -156,7 +156,9 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget>
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 3.0, 0.0, 2.0),
                                       child: Text(
-                                        'Analytics & Coupons',
+                                        FFLocalizations.of(context).getText(
+                                          '0op4blom' /* Analytics & Coupons */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -197,7 +199,9 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget>
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 10.0, 0.0, 0.0),
                               child: Text(
-                                'New activity can take up to 24 hours to be registered',
+                                FFLocalizations.of(context).getText(
+                                  '8q4i47qb' /* New activity can take up to 24... */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -224,7 +228,9 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget>
                                           MainAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Active coupons:',
+                                          FFLocalizations.of(context).getText(
+                                            '7jzv5yn5' /* Active coupons: */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -329,7 +335,10 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget>
                                                     .fromSTEB(
                                                         12.0, 0.0, 0.0, 0.0),
                                                 child: Text(
-                                                  'See coupons',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '3bycfesc' /* See coupons */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .labelLarge
@@ -379,7 +388,9 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget>
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 0.0, 0.0),
                                       child: Text(
-                                        'In the last 7 days:',
+                                        FFLocalizations.of(context).getText(
+                                          'msyz2wfz' /* In the last 7 days: */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -430,7 +441,11 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget>
                                                       CrossAxisAlignment.center,
                                                   children: [
                                                     Text(
-                                                      'new followers',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '8mc0s212' /* new followers */,
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -508,7 +523,11 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget>
                                                       MainAxisAlignment.center,
                                                   children: [
                                                     Text(
-                                                      'points rewarded',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'l5shlita' /* points rewarded */,
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -596,7 +615,11 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget>
                                                       CrossAxisAlignment.center,
                                                   children: [
                                                     Text(
-                                                      'check ins',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'vnwc8trj' /* check ins */,
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -674,7 +697,11 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget>
                                                       MainAxisAlignment.center,
                                                   children: [
                                                     Text(
-                                                      'points exchanged',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'wdg39h10' /* points exchanged */,
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -760,7 +787,11 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget>
                                                       MainAxisAlignment.center,
                                                   children: [
                                                     Text(
-                                                      'new coupons',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '6etzvh7k' /* new coupons */,
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -837,7 +868,11 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget>
                                                       MainAxisAlignment.center,
                                                   children: [
                                                     Text(
-                                                      'estimated sales',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'okuzkgtq' /* estimated sales */,
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -971,7 +1006,10 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget>
                                                       .fromSTEB(
                                                           12.0, 0.0, 0.0, 0.0),
                                                   child: Text(
-                                                    'See full analytics',
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'm3yk0m9b' /* See full analytics */,
+                                                    ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .labelLarge
@@ -1020,7 +1058,9 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 0.0),
                                     child: Text(
-                                      'Your ranking (relevancy)',
+                                      FFLocalizations.of(context).getText(
+                                        's3sg9744' /* Your ranking (relevancy) */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -1181,7 +1221,9 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         5.0, 20.0, 0.0, 0.0),
                                     child: Text(
-                                      'Your relevancy affects how you are ranked in the explore page. To increase your relevancy you must increase your profile\'s engagement.',
+                                      FFLocalizations.of(context).getText(
+                                        'c52u3ys3' /* Your relevancy affects how you... */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(

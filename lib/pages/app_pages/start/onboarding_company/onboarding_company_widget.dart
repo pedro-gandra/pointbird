@@ -274,7 +274,10 @@ class _OnboardingCompanyWidgetState extends State<OnboardingCompanyWidget> {
                                                   }
                                                 },
                                                 child: Text(
-                                                  'Choose photo',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'w5foxqjy' /* Choose photo */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyMedium
@@ -299,7 +302,11 @@ class _OnboardingCompanyWidgetState extends State<OnboardingCompanyWidget> {
                                               obscureText: false,
                                               decoration: InputDecoration(
                                                 isDense: true,
-                                                labelText: 'Company name',
+                                                labelText:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  '8gmbij1j' /* Company name */,
+                                                ),
                                                 labelStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -404,7 +411,11 @@ class _OnboardingCompanyWidgetState extends State<OnboardingCompanyWidget> {
                                                 obscureText: false,
                                                 decoration: InputDecoration(
                                                   isDense: true,
-                                                  labelText: 'Bio',
+                                                  labelText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'q4i64qdm' /* Bio */,
+                                                  ),
                                                   labelStyle: FlutterFlowTheme
                                                           .of(context)
                                                       .bodyMedium
@@ -516,8 +527,11 @@ class _OnboardingCompanyWidgetState extends State<OnboardingCompanyWidget> {
                                                 obscureText: false,
                                                 decoration: InputDecoration(
                                                   isDense: true,
-                                                  labelText:
-                                                      'Link (website or other)',
+                                                  labelText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'jmhkrt8y' /* Link (website or other) */,
+                                                  ),
                                                   labelStyle: FlutterFlowTheme
                                                           .of(context)
                                                       .bodyMedium
@@ -532,7 +546,11 @@ class _OnboardingCompanyWidgetState extends State<OnboardingCompanyWidget> {
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
-                                                  hintText: 'https://',
+                                                  hintText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'apb5paxu' /* https:// */,
+                                                  ),
                                                   hintStyle: FlutterFlowTheme
                                                           .of(context)
                                                       .bodyMedium
@@ -629,7 +647,11 @@ class _OnboardingCompanyWidgetState extends State<OnboardingCompanyWidget> {
                                                 obscureText: false,
                                                 decoration: InputDecoration(
                                                   isDense: true,
-                                                  labelText: 'Instagram',
+                                                  labelText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'leqaaldg' /* Instagram */,
+                                                  ),
                                                   labelStyle: FlutterFlowTheme
                                                           .of(context)
                                                       .bodyMedium
@@ -644,7 +666,11 @@ class _OnboardingCompanyWidgetState extends State<OnboardingCompanyWidget> {
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
-                                                  hintText: '@username',
+                                                  hintText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'v037b52z' /* @username */,
+                                                  ),
                                                   hintStyle: FlutterFlowTheme
                                                           .of(context)
                                                       .bodyMedium
@@ -795,7 +821,11 @@ class _OnboardingCompanyWidgetState extends State<OnboardingCompanyWidget> {
                                                           letterSpacing: 0.0,
                                                         ),
                                                     hintText:
-                                                        'Business category',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                      '5z8r0qax' /* Business category */,
+                                                    ),
                                                     fillColor: FlutterFlowTheme
                                                             .of(context)
                                                         .secondaryBackground,
@@ -944,7 +974,11 @@ class _OnboardingCompanyWidgetState extends State<OnboardingCompanyWidget> {
                                                   context
                                                       .goNamed('homeCompany');
                                                 },
-                                                text: 'Finish',
+                                                text:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'i0n0i5er' /* Finish */,
+                                                ),
                                                 options: FFButtonOptions(
                                                   width: double.infinity,
                                                   height: 45.0,

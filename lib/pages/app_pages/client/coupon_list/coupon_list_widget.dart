@@ -4,6 +4,7 @@ import '/components/simple_header_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -348,14 +349,17 @@ class _CouponListWidgetState extends State<CouponListWidget> {
                                                           .spaceBetween,
                                                   children: [
                                                     Text(
-                                                      'Value: ${formatNumber(
-                                                        listViewViewCouponsClientRow
-                                                            .value,
+                                                      'Value: ${listViewViewCouponsClientRow.currencySymbol}${formatNumber(
+                                                        functions.changeDouble(
+                                                            listViewViewCouponsClientRow
+                                                                .value!,
+                                                            listViewViewCouponsClientRow
+                                                                .rateToUsd!,
+                                                            '*'),
                                                         formatType:
-                                                            FormatType.decimal,
-                                                        decimalType: DecimalType
-                                                            .automatic,
-                                                        currency: '',
+                                                            FormatType.custom,
+                                                        format: '#,###.##',
+                                                        locale: '',
                                                       )}',
                                                       style: FlutterFlowTheme
                                                               .of(context)
@@ -384,12 +388,15 @@ class _CouponListWidgetState extends State<CouponListWidget> {
                                                           .spaceBetween,
                                                   children: [
                                                     Text(
-                                                      'Minimum purchase: ${formatNumber(
-                                                        listViewViewCouponsClientRow
-                                                            .purchaseMin,
+                                                      'Minimum purchase: ${listViewViewCouponsClientRow.currencySymbol}${formatNumber(
+                                                        functions.changeDouble(
+                                                            listViewViewCouponsClientRow
+                                                                .purchaseMin!,
+                                                            listViewViewCouponsClientRow
+                                                                .rateToUsd!,
+                                                            '*'),
                                                         formatType:
                                                             FormatType.custom,
-                                                        currency: '\$',
                                                         format: '#,###.##',
                                                         locale: '',
                                                       )}',
@@ -423,7 +430,15 @@ class _CouponListWidgetState extends State<CouponListWidget> {
                                                           .spaceBetween,
                                                   children: [
                                                     Text(
-                                                      'Expires in: ${dateTimeFormat('yMMMd', listViewViewCouponsClientRow.expiration)}',
+                                                      'Expires in: ${dateTimeFormat(
+                                                        'yMMMd',
+                                                        listViewViewCouponsClientRow
+                                                            .expiration,
+                                                        locale:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .languageCode,
+                                                      )}',
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)

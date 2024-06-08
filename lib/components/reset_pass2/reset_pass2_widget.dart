@@ -87,7 +87,9 @@ class _ResetPass2WidgetState extends State<ResetPass2Widget> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    'Your password is set!',
+                                    FFLocalizations.of(context).getText(
+                                      'd717yoz7' /* Your password is set! */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .headlineMedium
@@ -104,7 +106,9 @@ class _ResetPass2WidgetState extends State<ResetPass2Widget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 18.0, 0.0, 0.0),
                                     child: Text(
-                                      'You changed your password successfully! Log in again to use the app.',
+                                      FFLocalizations.of(context).getText(
+                                        '4tfre361' /* You changed your password succ... */,
+                                      ),
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -126,7 +130,9 @@ class _ResetPass2WidgetState extends State<ResetPass2Widget> {
                                       onPressed: () async {
                                         context.goNamed('LoginPage');
                                       },
-                                      text: 'Log in',
+                                      text: FFLocalizations.of(context).getText(
+                                        '9sq668vg' /* Log in */,
+                                      ),
                                       options: FFButtonOptions(
                                         height: 38.0,
                                         padding: EdgeInsetsDirectional.fromSTEB(

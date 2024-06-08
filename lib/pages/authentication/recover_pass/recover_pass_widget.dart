@@ -90,7 +90,9 @@ class _RecoverPassWidgetState extends State<RecoverPassWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                'Forgot password',
+                                FFLocalizations.of(context).getText(
+                                  'nginenk6' /* Forgot password */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .headlineMedium
                                     .override(
@@ -104,7 +106,9 @@ class _RecoverPassWidgetState extends State<RecoverPassWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 10.0),
                                 child: Text(
-                                  'We will send you an email with a link to log in to your account, enter the email in the field below.',
+                                  FFLocalizations.of(context).getText(
+                                    '4q8zj56x' /* We will send you an email with... */,
+                                  ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -125,7 +129,10 @@ class _RecoverPassWidgetState extends State<RecoverPassWidget> {
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     isDense: true,
-                                    labelText: 'Email',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'jkla1lsx' /* Email */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -203,7 +210,9 @@ class _RecoverPassWidgetState extends State<RecoverPassWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 8.0, 0.0, 0.0),
                                     child: Text(
-                                      'This email is not registered',
+                                      FFLocalizations.of(context).getText(
+                                        'yaohj8nf' /* This email is not registered */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
@@ -290,7 +299,9 @@ class _RecoverPassWidgetState extends State<RecoverPassWidget> {
 
                                       setState(() {});
                                     },
-                                    text: 'Send link',
+                                    text: FFLocalizations.of(context).getText(
+                                      '5k77yh4x' /* Send link */,
+                                    ),
                                     options: FFButtonOptions(
                                       width: double.infinity,
                                       height: 47.0,
@@ -324,52 +335,55 @@ class _RecoverPassWidgetState extends State<RecoverPassWidget> {
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
-                                child: RichText(
-                                  textScaler: MediaQuery.of(context).textScaler,
-                                  text: TextSpan(
-                                    children: [
-                                      TextSpan(
-                                        text: 'Don\'t need to recover?\n',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Poppins',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              fontSize: 14.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                      ),
-                                      TextSpan(
-                                        text: 'Back to log in',
-                                        style: TextStyle(
-                                          color: FlutterFlowTheme.of(context)
-                                              .accent4,
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 14.0,
-                                        ),
-                                        mouseCursor: SystemMouseCursors.click,
-                                        recognizer: TapGestureRecognizer()
-                                          ..onTap = () async {
-                                            context.pushNamed('LoginPage');
-                                          },
-                                      )
-                                    ],
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Poppins',
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          fontSize: 14.0,
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w500,
-                                        ),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'k0dh6wwt' /* Don't need to recover? */,
                                   ),
                                   textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w500,
+                                      ),
                                 ),
+                              ),
+                              RichText(
+                                textScaler: MediaQuery.of(context).textScaler,
+                                text: TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: FFLocalizations.of(context).getText(
+                                        'th9ac4os' /* Back to log in */,
+                                      ),
+                                      style: TextStyle(
+                                        color: FlutterFlowTheme.of(context)
+                                            .accent4,
+                                        fontWeight: FontWeight.w600,
+                                        fontSize: 14.0,
+                                      ),
+                                      mouseCursor: SystemMouseCursors.click,
+                                      recognizer: TapGestureRecognizer()
+                                        ..onTap = () async {
+                                          context.pushNamed('LoginPage');
+                                        },
+                                    )
+                                  ],
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        fontSize: 14.0,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                ),
+                                textAlign: TextAlign.center,
                               ),
                             ],
                           ),

@@ -6,10 +6,12 @@ export 'row.dart';
 export 'table.dart';
 
 export 'tables/view_home_client_2.dart';
+export 'tables/admins.dart';
 export 'tables/view_posts_view.dart';
 export 'tables/view_posts_poll.dart';
 export 'tables/votes.dart';
 export 'tables/client_companies.dart';
+export 'tables/currencies.dart';
 export 'tables/companies.dart';
 export 'tables/view_posts_poll_client.dart';
 export 'tables/view_coupons_company.dart';

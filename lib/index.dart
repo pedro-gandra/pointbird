@@ -23,7 +23,7 @@ export '/pages/authentication/recover_pass/recover_pass_widget.dart'
     show RecoverPassWidget;
 export '/pages/app_pages/client/edit_profile_client/edit_profile_client_widget.dart'
     show EditProfileClientWidget;
-export '/pages/app_pages/change_password/change_password_widget.dart'
+export '/pages/authentication/change_password/change_password_widget.dart'
     show ChangePasswordWidget;
 export '/pages/app_pages/client/list_company/list_company_widget.dart'
     show ListCompanyWidget;
@@ -35,8 +35,9 @@ export '/pages/app_pages/client/exchange_points/exchange_points_widget.dart'
     show ExchangePointsWidget;
 export '/pages/app_pages/client/help_client/help_client_widget.dart'
     show HelpClientWidget;
-export '/pages/app_pages/full_info/full_info_widget.dart' show FullInfoWidget;
-export '/pages/app_pages/send_message/send_message_widget.dart'
+export '/pages/app_pages/general_use/full_info/full_info_widget.dart'
+    show FullInfoWidget;
+export '/pages/app_pages/general_use/send_message/send_message_widget.dart'
     show SendMessageWidget;
 export '/pages/app_pages/company/profile_company/profile_company_widget.dart'
     show ProfileCompanyWidget;
@@ -65,3 +66,7 @@ export '/pages/app_pages/start/account_type/account_type_widget.dart'
 export '/pages/authentication/new_pass/new_pass_widget.dart' show NewPassWidget;
 export '/pages/app_pages/company/notifications_company/notifications_company_widget.dart'
     show NotificationsCompanyWidget;
+export '/pages/authentication/adm_board/adm_board_widget.dart'
+    show AdmBoardWidget;
+export '/pages/app_pages/start/choose_language/choose_language_widget.dart'
+    show ChooseLanguageWidget;

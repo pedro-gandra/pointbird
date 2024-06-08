@@ -147,7 +147,9 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 15.0, 0.0),
                                         child: Text(
-                                          'Current points:',
+                                          FFLocalizations.of(context).getText(
+                                            'rc6124d7' /* Current points: */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -185,7 +187,9 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
-                                        'Max discount:',
+                                        FFLocalizations.of(context).getText(
+                                          'x3i4xeuv' /* Max discount: */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -215,7 +219,9 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 3.0, 0.0, 0.0),
                                     child: Text(
-                                      'The maximum discount is determined by the company',
+                                      FFLocalizations.of(context).getText(
+                                        '11osq6cj' /* The maximum discount is determ... */,
+                                      ),
                                       textAlign: TextAlign.justify,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -260,7 +266,10 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Text(
-                                              'Generate coupon',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'ih56o8ai' /* Generate coupon */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -323,7 +332,11 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
                                                 obscureText: false,
                                                 decoration: InputDecoration(
                                                   isDense: true,
-                                                  labelText: 'Point amount',
+                                                  labelText: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'ulbmzk8a' /* Point amount */,
+                                                  ),
                                                   labelStyle: FlutterFlowTheme
                                                           .of(context)
                                                       .bodyMedium
@@ -436,7 +449,10 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
                                                     .fromSTEB(
                                                         0.0, 6.0, 0.0, 0.0),
                                                 child: Text(
-                                                  'The amount of points you wish to exchange.',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'ligsh1sc' /* The amount of points you wish ... */,
+                                                  ),
                                                   textAlign: TextAlign.justify,
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -500,6 +516,78 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
                                                   ),
                                                 ],
                                               ),
+                                            if (exchangePointsViewHomeClientRow
+                                                    ?.currencyCode !=
+                                                'USD')
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 12.0, 0.0, 0.0),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              -1.0, 0.0),
+                                                      child: Text(
+                                                        'Your coupon will be generated in ${exchangePointsViewHomeClientRow?.currencyName} (${exchangePointsViewHomeClientRow?.currencyCode})',
+                                                        textAlign:
+                                                            TextAlign.justify,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                  fontSize:
+                                                                      12.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                    Align(
+                                                      alignment:
+                                                          AlignmentDirectional(
+                                                              -1.0, 0.0),
+                                                      child: Text(
+                                                        'Conversion: 100 points = 1 USD = ${formatNumber(
+                                                          exchangePointsViewHomeClientRow
+                                                              ?.rateToUsd,
+                                                          formatType:
+                                                              FormatType.custom,
+                                                          format: '#,###.##',
+                                                          locale: '',
+                                                        )} ${exchangePointsViewHomeClientRow?.currencyCode}',
+                                                        textAlign:
+                                                            TextAlign.justify,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryText,
+                                                                  fontSize:
+                                                                      10.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                  ].divide(
+                                                      SizedBox(height: 5.0)),
+                                                ),
+                                              ),
                                             Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(
@@ -511,9 +599,13 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
                                                     padding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
-                                                                15.0, 0.0),
+                                                                8.0, 0.0),
                                                     child: Text(
-                                                      'Minimum purchase:',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '955gb2gn' /* Minimum purchase: */,
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -528,14 +620,17 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
                                                     ),
                                                   ),
                                                   Text(
-                                                    formatNumber(
-                                                      _model.minimum,
+                                                    '${exchangePointsViewHomeClientRow?.currencySymbol}${formatNumber(
+                                                      functions.changeDouble(
+                                                          _model.minimum,
+                                                          exchangePointsViewHomeClientRow!
+                                                              .rateToUsd!,
+                                                          '*'),
                                                       formatType:
                                                           FormatType.custom,
-                                                      currency: '\$',
-                                                      format: '##,##0.00',
+                                                      format: '#,##0.00',
                                                       locale: '',
-                                                    ),
+                                                    )}',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -558,7 +653,10 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
                                                     .fromSTEB(
                                                         0.0, 3.0, 0.0, 0.0),
                                                 child: Text(
-                                                  'The coupon will work for purchases equal to or bigger than this amount, but not smaller.',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '49fylamd' /* The coupon will work for purch... */,
+                                                  ),
                                                   textAlign: TextAlign.justify,
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -586,9 +684,13 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
                                                     padding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
-                                                                15.0, 0.0),
+                                                                8.0, 0.0),
                                                     child: Text(
-                                                      'Coupon value:',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'wmuln0up' /* Coupon value: */,
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -603,14 +705,17 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
                                                     ),
                                                   ),
                                                   Text(
-                                                    formatNumber(
-                                                      _model.couponValue,
+                                                    '${exchangePointsViewHomeClientRow?.currencySymbol}${formatNumber(
+                                                      functions.changeDouble(
+                                                          _model.couponValue,
+                                                          exchangePointsViewHomeClientRow!
+                                                              .rateToUsd!,
+                                                          '*'),
                                                       formatType:
                                                           FormatType.custom,
-                                                      currency: '\$',
-                                                      format: '##,##0.00',
+                                                      format: '#,##0.00',
                                                       locale: '',
-                                                    ),
+                                                    )}',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium
@@ -633,7 +738,10 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
                                                     .fromSTEB(
                                                         0.0, 20.0, 0.0, 7.0),
                                                 child: Text(
-                                                  'Coupons expire in 7 days!',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'er66bk18' /* Coupons expire in 7 days! */,
+                                                  ),
                                                   textAlign: TextAlign.justify,
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -686,6 +794,8 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
                                                         _model.couponValue,
                                                         exchangePointsViewHomeClientRow!
                                                             .idClient!,
+                                                        exchangePointsViewHomeClientRow!
+                                                            .rateToUsd!,
                                                       );
                                                       if (_model.genResult
                                                               ?.failDesc !=
@@ -799,7 +909,11 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
 
                                                     setState(() {});
                                                   },
-                                                  text: 'Generate coupon',
+                                                  text: FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'kcyojwlj' /* Generate coupon */,
+                                                  ),
                                                   options: FFButtonOptions(
                                                     width: double.infinity,
                                                     height: 45.0,
@@ -851,7 +965,9 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
-                                        'Coupons left this month:',
+                                        FFLocalizations.of(context).getText(
+                                          'fd69spmk' /* Coupons left this month: */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(

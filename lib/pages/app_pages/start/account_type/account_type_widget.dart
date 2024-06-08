@@ -88,7 +88,9 @@ class _AccountTypeWidgetState extends State<AccountTypeWidget> {
                               Align(
                                 alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Text(
-                                  'I\'m looking to create a:',
+                                  FFLocalizations.of(context).getText(
+                                    'txt6lb7u' /* I'm looking to create a: */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -147,7 +149,11 @@ class _AccountTypeWidgetState extends State<AccountTypeWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: Text(
-                                              'Customer account',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '9smp019v' /* Customer account */,
+                                              ),
+                                              textAlign: TextAlign.center,
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -164,7 +170,10 @@ class _AccountTypeWidgetState extends State<AccountTypeWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: Text(
-                                              'Explore hundreds of stores and buy with huge discounts',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'y8fa7pli' /* Explore hundreds of stores and... */,
+                                              ),
                                               textAlign: TextAlign.center,
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -234,7 +243,11 @@ class _AccountTypeWidgetState extends State<AccountTypeWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: Text(
-                                              'Business account',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '2l3ydqe0' /* Business account */,
+                                              ),
+                                              textAlign: TextAlign.center,
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -251,7 +264,10 @@ class _AccountTypeWidgetState extends State<AccountTypeWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 5.0, 0.0, 0.0),
                                             child: Text(
-                                              'Grow you brand, boost your sales and reach new clients',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'vz8lgd0q' /* Grow you brand, boost your sal... */,
+                                              ),
                                               textAlign: TextAlign.center,
                                               style:
                                                   FlutterFlowTheme.of(context)
@@ -331,7 +347,9 @@ class _AccountTypeWidgetState extends State<AccountTypeWidget> {
 
                                             setState(() {});
                                           },
-                                    text: 'Next',
+                                    text: FFLocalizations.of(context).getText(
+                                      't8lnfdwh' /* Next */,
+                                    ),
                                     options: FFButtonOptions(
                                       height: 45.0,
                                       padding: EdgeInsetsDirectional.fromSTEB(

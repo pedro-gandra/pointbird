@@ -86,7 +86,9 @@ class _DeactivateCouponWidgetState extends State<DeactivateCouponWidget> {
                           Align(
                             alignment: AlignmentDirectional(0.0, 0.0),
                             child: Text(
-                              'Deactivate coupon',
+                              FFLocalizations.of(context).getText(
+                                's2br036m' /* Deactivate coupon */,
+                              ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .headlineMedium
@@ -104,7 +106,9 @@ class _DeactivateCouponWidgetState extends State<DeactivateCouponWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 0.0),
                               child: Text(
-                                'Only deactivate this coupon if the customer has already used it. You WON\'T be able to activate it again!',
+                                FFLocalizations.of(context).getText(
+                                  'p2ki9ime' /* Only deactivate this coupon if... */,
+                                ),
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
@@ -143,7 +147,9 @@ class _DeactivateCouponWidgetState extends State<DeactivateCouponWidget> {
                           Navigator.pop(context);
                         },
                         child: Text(
-                          'Deactivate',
+                          FFLocalizations.of(context).getText(
+                            'cutq8c6z' /* Deactivate */,
+                          ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Poppins',
@@ -174,7 +180,9 @@ class _DeactivateCouponWidgetState extends State<DeactivateCouponWidget> {
                           Navigator.pop(context);
                         },
                         child: Text(
-                          'Cancel',
+                          FFLocalizations.of(context).getText(
+                            'ev0qo31t' /* Cancel */,
+                          ),
                           style: FlutterFlowTheme.of(context)
                               .bodyMedium
                               .override(

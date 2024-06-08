@@ -37,4 +37,7 @@ class CouponsRow extends SupabaseDataRow {
 
   bool? get active => getField<bool>('active');
   set active(bool? value) => setField<bool>('active', value);
+
+  double? get rateToUsd => getField<double>('rate_to_usd');
+  set rateToUsd(double? value) => setField<double>('rate_to_usd', value);
 }

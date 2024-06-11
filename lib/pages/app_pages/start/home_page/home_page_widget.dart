@@ -2,7 +2,9 @@ import '/auth/supabase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/admob_util.dart' as admob;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -46,6 +48,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               context.goNamed('OnboardingClient');
             }
           } else {
+            unawaited(
+              () async {
+                admob.loadInterstitialAd(
+                  "",
+                  "ca-app-pub-9807921451745876/1855285681",
+                  false,
+                );
+              }(),
+            );
             if (FFAppState().user.type == 'Business') {
               context.goNamed('homeCompany');
             } else {

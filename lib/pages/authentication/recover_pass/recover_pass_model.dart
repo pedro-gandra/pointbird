@@ -1,5 +1,3 @@
-import '/backend/schema/structs/index.dart';
-import '/backend/supabase/supabase.dart';
 import '/components/reset_pass/reset_pass_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -39,10 +37,6 @@ class RecoverPassModel extends FlutterFlowModel<RecoverPassWidget> {
 
   // Stores action output result for [Custom Action - isEmailRegistered] action in Button widget.
   bool? isEmail;
-  // Stores action output result for [Custom Action - getUserType] action in Button widget.
-  UsersRow? userInfo;
-  // Stores action output result for [Custom Action - getUserId] action in Button widget.
-  int? userId;
 
   @override
   void initState(BuildContext context) {

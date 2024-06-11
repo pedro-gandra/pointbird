@@ -1,16 +1,19 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/after_ad/after_ad_widget.dart';
 import '/components/client_nav_widget.dart';
 import '/components/plans/plans_widget.dart';
 import '/components/points_received/points_received_widget.dart';
 import '/components/upgrade_error/upgrade_error_widget.dart';
+import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/admob_util.dart' as admob;
 import 'dart:async';
 import 'home_client_widget.dart' show HomeClientWidget;
 import 'package:cached_network_image/cached_network_image.dart';
@@ -47,6 +50,10 @@ class HomeClientModel extends FlutterFlowModel<HomeClientWidget> {
 
   // Stores action output result for [Custom Action - followCompany] action in follow widget.
   ActionResponseStruct? followResult;
+  // Stores action output result for [Custom Action - preAdFunction] action in follow widget.
+  int? preAd;
+  // Stores action output result for [AdMob - Show Interstitial Ad] action in follow widget.
+  bool? interstitialAdSuccess;
   // Stores action output result for [Backend Call - Query Rows] action in follow widget.
   List<ViewClientsPlansRow>? planInfo;
   // Model for clientNav component.

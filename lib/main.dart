@@ -15,6 +15,8 @@ import 'flutter_flow/internationalization.dart';
 import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
 
+import '/flutter_flow/admob_util.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   GoRouter.optionURLReflectsImperativeAPIs = true;
@@ -23,6 +25,8 @@ void main() async {
   await SupaFlow.initialize();
 
   await FlutterFlowTheme.initialize();
+
+  adMobUpdateRequestConfiguration();
 
   await FFLocalizations.initialize();
 

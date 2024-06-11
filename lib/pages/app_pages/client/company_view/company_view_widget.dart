@@ -1,5 +1,6 @@
 import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/after_ad/after_ad_widget.dart';
 import '/components/checkin_modal/checkin_modal_widget.dart';
 import '/components/client_nav_widget.dart';
 import '/components/points_received/points_received_widget.dart';
@@ -13,6 +14,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/admob_util.dart' as admob;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -110,6 +112,8 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return FutureBuilder<List<ViewCompanyViewRow>>(
       future:
           (_model.requestCompleter4 ??= Completer<List<ViewCompanyViewRow>>()
@@ -821,6 +825,67 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                             '')
                                                     ? null
                                                     : () async {
+                                                        _model.preAd =
+                                                            await actions
+                                                                .preAdFunction(
+                                                          FFAppState().user.id,
+                                                        );
+                                                        if (_model.preAd! >
+                                                            -1) {
+                                                          _model.interstitialAdSuccess =
+                                                              await admob
+                                                                  .showInterstitialAd();
+
+                                                          if (_model
+                                                              .interstitialAdSuccess!) {
+                                                            admob
+                                                                .loadInterstitialAd(
+                                                              "",
+                                                              "ca-app-pub-9807921451745876/1855285681",
+                                                              false,
+                                                            );
+
+                                                            await showDialog(
+                                                              context: context,
+                                                              builder:
+                                                                  (dialogContext) {
+                                                                return Dialog(
+                                                                  elevation: 0,
+                                                                  insetPadding:
+                                                                      EdgeInsets
+                                                                          .zero,
+                                                                  backgroundColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  alignment: AlignmentDirectional(
+                                                                          0.0,
+                                                                          0.0)
+                                                                      .resolve(
+                                                                          Directionality.of(
+                                                                              context)),
+                                                                  child:
+                                                                      GestureDetector(
+                                                                    onTap: () => _model
+                                                                            .unfocusNode
+                                                                            .canRequestFocus
+                                                                        ? FocusScope.of(context).requestFocus(_model
+                                                                            .unfocusNode)
+                                                                        : FocusScope.of(context)
+                                                                            .unfocus(),
+                                                                    child:
+                                                                        AfterAdWidget(
+                                                                      pointsSaved:
+                                                                          _model
+                                                                              .preAd!,
+                                                                    ),
+                                                                  ),
+                                                                );
+                                                              },
+                                                            ).then((value) =>
+                                                                setState(
+                                                                    () {}));
+                                                          }
+                                                        }
                                                         _model.ccUpdated =
                                                             await actions
                                                                 .doCheckin(
@@ -1512,6 +1577,51 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                       ).then((value) =>
                                                                           setState(
                                                                               () {}));
+
+                                                                      _model.preAdOffer =
+                                                                          await actions
+                                                                              .preAdFunction(
+                                                                        FFAppState()
+                                                                            .user
+                                                                            .id,
+                                                                      );
+                                                                      if (_model
+                                                                              .preAdOffer! >
+                                                                          -1) {
+                                                                        _model.interstitialAdSuccess2 =
+                                                                            await admob.showInterstitialAd();
+
+                                                                        if (_model
+                                                                            .interstitialAdSuccess2!) {
+                                                                          admob
+                                                                              .loadInterstitialAd(
+                                                                            "",
+                                                                            "ca-app-pub-9807921451745876/1855285681",
+                                                                            false,
+                                                                          );
+
+                                                                          await showDialog(
+                                                                            context:
+                                                                                context,
+                                                                            builder:
+                                                                                (dialogContext) {
+                                                                              return Dialog(
+                                                                                elevation: 0,
+                                                                                insetPadding: EdgeInsets.zero,
+                                                                                backgroundColor: Colors.transparent,
+                                                                                alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                child: GestureDetector(
+                                                                                  onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                  child: AfterAdWidget(
+                                                                                    pointsSaved: _model.preAd!,
+                                                                                  ),
+                                                                                ),
+                                                                              );
+                                                                            },
+                                                                          ).then((value) =>
+                                                                              setState(() {}));
+                                                                        }
+                                                                      }
                                                                     }
                                                                     _model.isClick =
                                                                         false;
@@ -1953,6 +2063,38 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                                     await _model.waitForRequestCompleted2();
                                                                                     setState(() => _model.requestCompleter4 = null);
                                                                                     await _model.waitForRequestCompleted4();
+                                                                                    _model.preAdPoll = await actions.preAdFunction(
+                                                                                      FFAppState().user.id,
+                                                                                    );
+                                                                                    if (_model.preAdPoll! > -1) {
+                                                                                      _model.interstitialAdSuccess3 = await admob.showInterstitialAd();
+
+                                                                                      if (_model.interstitialAdSuccess3!) {
+                                                                                        admob.loadInterstitialAd(
+                                                                                          "",
+                                                                                          "ca-app-pub-9807921451745876/1855285681",
+                                                                                          false,
+                                                                                        );
+
+                                                                                        await showDialog(
+                                                                                          context: context,
+                                                                                          builder: (dialogContext) {
+                                                                                            return Dialog(
+                                                                                              elevation: 0,
+                                                                                              insetPadding: EdgeInsets.zero,
+                                                                                              backgroundColor: Colors.transparent,
+                                                                                              alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                              child: GestureDetector(
+                                                                                                onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                                child: AfterAdWidget(
+                                                                                                  pointsSaved: _model.preAdPoll!,
+                                                                                                ),
+                                                                                              ),
+                                                                                            );
+                                                                                          },
+                                                                                        ).then((value) => setState(() {}));
+                                                                                      }
+                                                                                    }
                                                                                   }
                                                                                 }
                                                                                 _model.isClick = false;
@@ -2525,6 +2667,51 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                       ).then((value) =>
                                                                           setState(
                                                                               () {}));
+
+                                                                      _model.preAdSocial =
+                                                                          await actions
+                                                                              .preAdFunction(
+                                                                        FFAppState()
+                                                                            .user
+                                                                            .id,
+                                                                      );
+                                                                      if (_model
+                                                                              .preAdSocial! >
+                                                                          -1) {
+                                                                        _model.interstitialAdSuccess4 =
+                                                                            await admob.showInterstitialAd();
+
+                                                                        if (_model
+                                                                            .interstitialAdSuccess4!) {
+                                                                          admob
+                                                                              .loadInterstitialAd(
+                                                                            "",
+                                                                            "ca-app-pub-9807921451745876/1855285681",
+                                                                            false,
+                                                                          );
+
+                                                                          await showDialog(
+                                                                            context:
+                                                                                context,
+                                                                            builder:
+                                                                                (dialogContext) {
+                                                                              return Dialog(
+                                                                                elevation: 0,
+                                                                                insetPadding: EdgeInsets.zero,
+                                                                                backgroundColor: Colors.transparent,
+                                                                                alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                                child: GestureDetector(
+                                                                                  onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                  child: AfterAdWidget(
+                                                                                    pointsSaved: _model.preAdSocial!,
+                                                                                  ),
+                                                                                ),
+                                                                              );
+                                                                            },
+                                                                          ).then((value) =>
+                                                                              setState(() {}));
+                                                                        }
+                                                                      }
                                                                     }
                                                                     _model.isClick =
                                                                         false;

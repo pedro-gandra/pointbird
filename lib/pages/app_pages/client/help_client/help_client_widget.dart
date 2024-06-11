@@ -108,7 +108,7 @@ class _HelpClientWidgetState extends State<HelpClientWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(25.0, 12.0, 25.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(25.0, 20.0, 25.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,

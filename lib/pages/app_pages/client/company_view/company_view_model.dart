@@ -1,5 +1,6 @@
 import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/after_ad/after_ad_widget.dart';
 import '/components/checkin_modal/checkin_modal_widget.dart';
 import '/components/client_nav_widget.dart';
 import '/components/points_received/points_received_widget.dart';
@@ -13,6 +14,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/admob_util.dart' as admob;
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/request_manager.dart';
 
@@ -47,20 +49,36 @@ class CompanyViewModel extends FlutterFlowModel<CompanyViewWidget> {
   // Stores action output result for [Backend Call - Query Rows] action in companyView widget.
   List<ViewClientsPlansRow>? planInfo;
   Completer<List<ViewCompanyViewRow>>? requestCompleter4;
+  // Stores action output result for [Custom Action - preAdFunction] action in Button widget.
+  int? preAd;
+  // Stores action output result for [AdMob - Show Interstitial Ad] action in Button widget.
+  bool? interstitialAdSuccess;
   // Stores action output result for [Custom Action - doCheckin] action in Button widget.
   ClientCompaniesRow? ccUpdated;
   // Stores action output result for [Custom Action - postInteraction] action in Image widget.
   int? actionPointsCopy;
   bool requestCompleted3 = false;
   String? requestLastUniqueKey3;
+  // Stores action output result for [Custom Action - preAdFunction] action in Image widget.
+  int? preAdOffer;
+  // Stores action output result for [AdMob - Show Interstitial Ad] action in Image widget.
+  bool? interstitialAdSuccess2;
   // Stores action output result for [Custom Action - votePoll] action in votebox widget.
   int? pointsPoll;
   bool requestCompleted2 = false;
   String? requestLastUniqueKey2;
+  // Stores action output result for [Custom Action - preAdFunction] action in votebox widget.
+  int? preAdPoll;
+  // Stores action output result for [AdMob - Show Interstitial Ad] action in votebox widget.
+  bool? interstitialAdSuccess3;
   // Stores action output result for [Custom Action - postInteraction] action in Image widget.
   int? actionPointsSocial;
   bool requestCompleted1 = false;
   String? requestLastUniqueKey1;
+  // Stores action output result for [Custom Action - preAdFunction] action in Image widget.
+  int? preAdSocial;
+  // Stores action output result for [AdMob - Show Interstitial Ad] action in Image widget.
+  bool? interstitialAdSuccess4;
   // Model for simpleHeader component.
   late SimpleHeaderModel simpleHeaderModel;
   // Model for clientNav component.

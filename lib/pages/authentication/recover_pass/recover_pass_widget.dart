@@ -1,5 +1,3 @@
-import '/backend/schema/structs/index.dart';
-import '/backend/supabase/supabase.dart';
 import '/components/reset_pass/reset_pass_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -246,23 +244,6 @@ class _RecoverPassWidgetState extends State<RecoverPassWidget> {
                                         await actions.resetPass(
                                           _model.emailTextController.text,
                                         );
-                                        setState(() {
-                                          _model.emailTextController?.clear();
-                                        });
-                                        _model.userInfo =
-                                            await actions.getUserType(
-                                          _model.emailTextController.text,
-                                        );
-                                        _model.userId = await actions.getUserId(
-                                          _model.userInfo!.type,
-                                          _model.userInfo!.email,
-                                        );
-                                        FFAppState().updateUserStruct(
-                                          (e) => e
-                                            ..type = _model.userInfo?.type
-                                            ..id = _model.userId,
-                                        );
-                                        setState(() {});
                                         await showDialog(
                                           context: context,
                                           builder: (dialogContext) {
@@ -292,6 +273,10 @@ class _RecoverPassWidgetState extends State<RecoverPassWidget> {
                                             );
                                           },
                                         ).then((value) => setState(() {}));
+
+                                        setState(() {
+                                          _model.emailTextController?.clear();
+                                        });
                                       } else {
                                         _model.noEmail = true;
                                         setState(() {});

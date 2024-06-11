@@ -718,27 +718,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'oe86l07o': {
       'en': 'Male',
-      'de': 'Männlich',
-      'es': 'Masculino',
-      'fr': 'Mâle',
-      'it': 'Maschio',
-      'pt': 'Macho',
+      'de': 'Male',
+      'es': 'Male',
+      'fr': 'Male',
+      'it': 'Male',
+      'pt': 'Male',
     },
     'kx0icks8': {
       'en': 'Female',
-      'de': 'Weiblich',
-      'es': 'Femenino',
-      'fr': 'Femelle',
-      'it': 'Femmina',
-      'pt': 'Fêmea',
+      'de': 'Female',
+      'es': 'Female',
+      'fr': 'Female',
+      'it': 'Female',
+      'pt': 'Female',
     },
     'yfpfqelx': {
       'en': 'Other',
-      'de': 'Andere',
-      'es': 'Otro',
-      'fr': 'Autre',
-      'it': 'Altro',
-      'pt': 'Outro',
+      'de': 'Other',
+      'es': 'Other',
+      'fr': 'Other',
+      'it': 'Other',
+      'pt': 'Other',
     },
     'i29j4wam': {
       'en': 'Gender',
@@ -1306,27 +1306,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '527cd50u': {
       'en': 'Male',
-      'de': 'Männlich',
-      'es': 'Masculino',
-      'fr': 'Mâle',
-      'it': 'Maschio',
-      'pt': 'Macho',
+      'de': 'Male',
+      'es': 'Male',
+      'fr': 'Male',
+      'it': 'Male',
+      'pt': 'Male',
     },
     'kp8r4hc2': {
       'en': 'Female',
-      'de': 'Weiblich',
-      'es': 'Femenino',
-      'fr': 'Femelle',
-      'it': 'Femmina',
-      'pt': 'Fêmea',
+      'de': 'Female',
+      'es': 'Female',
+      'fr': 'Female',
+      'it': 'Female',
+      'pt': 'Female',
     },
     'wxqlhfd2': {
       'en': 'Other',
-      'de': 'Andere',
-      'es': 'Otro',
-      'fr': 'Autre',
-      'it': 'Altro',
-      'pt': 'Outro',
+      'de': 'Other',
+      'es': 'Other',
+      'fr': 'Other',
+      'it': 'Other',
+      'pt': 'Other',
     },
     'psil9crn': {
       'en': 'Select gender',
@@ -2100,27 +2100,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'nm6o51qu': {
       'en': 'App suggestion',
-      'de': 'App-Vorschlag',
-      'es': 'sugerencia de aplicación',
-      'fr': 'Suggestion d\'application',
-      'it': 'Suggerimento dell\'app',
-      'pt': 'Sugestão de aplicativo',
+      'de': 'App suggestion',
+      'es': 'App suggestion',
+      'fr': 'App suggestion',
+      'it': 'App suggestion',
+      'pt': 'App suggestion',
     },
     'u1thf5td': {
       'en': 'Bug report',
-      'de': 'Fehlerbericht',
-      'es': 'Informe de error',
-      'fr': 'Rapport d\'erreur',
-      'it': 'Riportare un errore',
-      'pt': 'Relatório de erro',
+      'de': 'Bug report',
+      'es': 'Bug report',
+      'fr': 'Bug report',
+      'it': 'Bug report',
+      'pt': 'Bug report',
     },
     '0hj694n9': {
       'en': 'Other',
-      'de': 'Andere',
-      'es': 'Otro',
-      'fr': 'Autre',
-      'it': 'Altro',
-      'pt': 'Outro',
+      'de': 'Other',
+      'es': 'Other',
+      'fr': 'Other',
+      'it': 'Other',
+      'pt': 'Other',
     },
     'd9hdskky': {
       'en': 'Choose subject',
@@ -2715,27 +2715,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '6u0tmu0g': {
       'en': 'Offer',
-      'de': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-      'pt': '',
+      'de': 'Offer',
+      'es': 'Offer',
+      'fr': 'Offer',
+      'it': 'Offer',
+      'pt': 'Offer',
     },
     '4py75ott': {
       'en': 'Poll',
-      'de': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-      'pt': '',
+      'de': 'Poll',
+      'es': 'Poll',
+      'fr': 'Poll',
+      'it': 'Poll',
+      'pt': 'Poll',
     },
     'qb0g5upg': {
       'en': 'Social',
-      'de': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-      'pt': '',
+      'de': 'Social',
+      'es': 'Social',
+      'fr': 'Social',
+      'it': 'Social',
+      'pt': 'Social',
     },
     '02up8bji': {
       'en': 'Post type',
@@ -2831,11 +2831,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'bc1sspg5': {
       'en': 'Action points',
-      'de': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-      'pt': '',
+      'de': 'Action points',
+      'es': 'Action points',
+      'fr': 'Action points',
+      'it': 'Action points',
+      'pt': 'Action points',
     },
     '82t314mh': {
       'en': '',
@@ -3026,11 +3026,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '0561svp6': {
       'en': 'Action points',
-      'de': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-      'pt': '',
+      'de': 'Action points',
+      'es': 'Action points',
+      'fr': 'Action points',
+      'it': 'Action points',
+      'pt': 'Action points',
     },
     'lrpsikx2': {
       'en': '',
@@ -4085,59 +4085,59 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'pbbnj5c0': {
       'en':
-          '2 - Once your profile looks good, share it on your social media to start growing your audience.',
+          '2 - Share your profile on your social media to start growing your audience.',
       'de':
-          '2 – Wenn Ihr Profil gut aussieht, teilen Sie es in Ihren sozialen Medien, um Ihr Publikum zu vergrößern.',
+          '2 – Teilen Sie Ihr Profil in Ihren sozialen Medien, um Ihr Publikum zu vergrößern.',
       'es':
-          '2 - Una vez que tu perfil se vea bien, compártelo en tus redes sociales para comenzar a hacer crecer tu audiencia.',
+          '2 - Comparte tu perfil en tus redes sociales para comenzar a hacer crecer tu audiencia.',
       'fr':
-          '2 - Une fois que votre profil semble bon, partagez-le sur vos réseaux sociaux pour commencer à développer votre audience.',
+          '2 - Partagez votre profil sur vos réseaux sociaux pour commencer à développer votre audience.',
       'it':
-          '2 - Una volta che il tuo profilo ha un bell\'aspetto, condividilo sui tuoi social media per iniziare a far crescere il tuo pubblico.',
+          '2 - Condividi il tuo profilo sui social media per iniziare a far crescere il tuo pubblico.',
       'pt':
-          '2 - Assim que seu perfil estiver bom, compartilhe-o em suas redes sociais para começar a aumentar seu público.',
+          '2 - Compartilhe seu perfil nas redes sociais para começar a aumentar seu público.',
     },
     'almhyyyf': {
       'en':
-          '3 - After getting your first few followers, start posting to engage them. At least 3 posts per week.',
+          '3 - Start posting to increase engagement. At least 4 posts per week.',
       'de':
-          '3 - Nachdem Sie Ihre ersten Follower gewonnen haben, beginnen Sie mit dem Posten, um sie einzubinden. Mindestens 3 Posts pro Woche.',
+          '3 - Beginnen Sie mit dem Posten, um das Engagement zu erhöhen. Mindestens 4 Posts pro Woche.',
       'es':
-          '3 - Después de conseguir tus primeros seguidores, comienza a publicar para atraerlos. Al menos 3 publicaciones por semana.',
+          '3 - Empiece a publicar para aumentar la participación. Al menos 4 publicaciones por semana.',
       'fr':
-          '3 - Après avoir obtenu vos premiers abonnés, commencez à publier pour les engager. Au moins 3 publications par semaine.',
+          '3 - Commencez à publier pour augmenter l\'engagement. Au moins 4 publications par semaine.',
       'it':
-          '3 - Dopo aver ottenuto i primi follower, inizia a pubblicare per coinvolgerli. Almeno 3 post a settimana.',
+          '3 - Inizia a pubblicare per aumentare il coinvolgimento. Almeno 4 post a settimana.',
       'pt':
-          '3 - Depois de conseguir seus primeiros seguidores, comece a postar para envolvê-los. Pelo menos 3 postagens por semana.',
+          '3 - Comece a postar para aumentar o engajamento. Pelo menos 4 postagens por semana.',
     },
     'e0bwuptz': {
       'en':
-          '4 - Keep sharing your profile to become as relevant as possible in the platform, this will make your company show higher in the \"explore\" page.',
+          '4 - Keep sharing your profile to grow more, this will make your company stand out in the \"explore\" page.',
       'de':
-          '4 – Geben Sie Ihr Profil weiterhin frei, um auf der Plattform so relevant wie möglich zu werden. Dadurch wird Ihr Unternehmen auf der „Entdecken“-Seite weiter oben angezeigt.',
+          '4 – Geben Sie Ihr Profil weiterhin frei, um weiter zu wachsen. Dadurch wird Ihr Unternehmen auf der „Entdecken“-Seite hervorstechen.',
       'es':
-          '4 - Sigue compartiendo tu perfil para ser lo más relevante posible en la plataforma, esto hará que tu empresa se muestre más arriba en la página de \"explorar\".',
+          '4 - Sigue compartiendo tu perfil para crecer más, esto hará que tu empresa se destaque en la página \"explorar\".',
       'fr':
-          '4 - Continuez à partager votre profil pour devenir le plus pertinent possible sur la plateforme, cela permettra à votre entreprise d\'apparaître plus haut dans la page « explorer ».',
+          '4 - Continuez à partager votre profil pour grandir davantage, cela permettra à votre entreprise de se démarquer dans la page « explorer ».',
       'it':
-          '4 - Continua a condividere il tuo profilo per diventare il più rilevante possibile nella piattaforma, questo farà sì che la tua azienda venga mostrata più in alto nella pagina \"esplora\".',
+          '4 - Continua a condividere il tuo profilo per crescere sempre più, questo farà risaltare la tua azienda nella pagina \"esplora\".',
       'pt':
-          '4 - Continue compartilhando seu perfil para se tornar o mais relevante possível na plataforma, isso fará com que sua empresa apareça mais acima na página “explorar”.',
+          '4 - Continue compartilhando seu perfil para crescer mais, isso fará com que sua empresa se destaque na página “explorar”.',
     },
     'iyszzoxg': {
       'en':
-          '5 - Many new customers will start discovering and buying from you, just make sure you stay active!',
+          '5 - Many new customers will start discovering and buying from you, enjoy!',
       'de':
-          '5 – Viele neue Kunden werden Sie entdecken und bei Ihnen kaufen. Bleiben Sie einfach aktiv!',
+          '5 – Viele neue Kunden werden Sie entdecken und bei Ihnen kaufen, viel Spaß!',
       'es':
-          '5 - Muchos nuevos clientes comenzarán a descubrirte y a comprarte, ¡solo asegúrate de mantenerte activo!',
+          '5 - Muchos nuevos clientes comenzarán a descubrirte y a comprarte, ¡disfrútalo!',
       'fr':
-          '5 - De nombreux nouveaux clients commenceront à vous découvrir et à acheter chez vous, assurez-vous simplement de rester actif !',
+          '5 - De nombreux nouveaux clients commenceront à vous découvrir et à acheter, profitez-en !',
       'it':
-          '5 - Molti nuovi clienti inizieranno a scoprire e ad acquistare da te, assicurati solo di rimanere attivo!',
+          '5 - Molti nuovi clienti inizieranno a scoprire e ad acquistare da te, divertiti!',
       'pt':
-          '5 - Muitos novos clientes começarão a descobrir e comprar de você, apenas certifique-se de permanecer ativo!',
+          '5 - Muitos novos clientes começarão a descobrir e comprar de você, aproveite!',
     },
     '0u8c9zgi': {
       'en': 'Swipe left to move forward.',
@@ -4157,17 +4157,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'z6wnkj0n': {
       'en':
-          'If you need any help you can go to the \"Help & Support\" section of the app.\n\nYou can also contact us on our social media platforms listed below.\n\nWe recommend our Youtube channel, where we post content that can help you grow your results with the app.',
+          'If you need any help you can go to the \"Help & Support\" section of the app.\n\nYou can also contact and follow us on our social media platforms listed below.',
       'de':
-          'Wenn Sie Hilfe benötigen, können Sie den Abschnitt „Hilfe und Support“ der App aufrufen.\n\nSie können uns auch über unsere unten aufgeführten Social-Media-Plattformen kontaktieren.\n\nWir empfehlen unseren YouTube-Kanal, auf dem wir Inhalte veröffentlichen, die Ihnen dabei helfen können, Ihre Ergebnisse mit der App zu verbessern.',
+          'Wenn Sie Hilfe benötigen, können Sie den Abschnitt „Hilfe und Support“ der App aufrufen.\n\nSie können uns auch über unsere unten aufgeführten Social-Media-Plattformen kontaktieren und uns folgen.',
       'es':
-          'Si necesita ayuda, puede ir a la sección \"Ayuda y soporte\" de la aplicación.\n\nTambién puede contactarnos en nuestras plataformas de redes sociales que se enumeran a continuación.\n\nRecomendamos nuestro canal de Youtube, donde publicamos contenido que puede ayudarte a aumentar tus resultados con la aplicación.',
+          'Si necesita ayuda, puede ir a la sección \"Ayuda y soporte\" de la aplicación.\n\nTambién puede contactarnos y seguirnos en nuestras plataformas de redes sociales que se enumeran a continuación.',
       'fr':
-          'Si vous avez besoin d\'aide, vous pouvez accéder à la section « Aide et support » de l\'application.\n\nVous pouvez également nous contacter sur nos plateformes de réseaux sociaux répertoriées ci-dessous.\n\nNous recommandons notre chaîne Youtube, où nous publions du contenu qui peut vous aider à augmenter vos résultats avec l\'application.',
+          'Si vous avez besoin d\'aide, vous pouvez accéder à la section « Aide et support » de l\'application.\n\nVous pouvez également nous contacter et nous suivre sur nos plateformes de réseaux sociaux répertoriées ci-dessous.',
       'it':
-          'Se hai bisogno di aiuto puoi andare alla sezione \"Aiuto e supporto\" dell\'app.\n\nPuoi anche contattarci sulle nostre piattaforme di social media elencate di seguito.\n\nConsigliamo il nostro canale Youtube, dove pubblichiamo contenuti che possono aiutarti a far crescere i tuoi risultati con l\'app.',
+          'Se hai bisogno di aiuto puoi andare alla sezione \"Aiuto e supporto\" dell\'app.\n\nPuoi anche contattarci e seguirci sulle nostre piattaforme di social media elencate di seguito.',
       'pt':
-          'Se precisar de ajuda, você pode ir para a seção \"Ajuda e Suporte\" do aplicativo.\n\nVocê também pode entrar em contato conosco em nossas plataformas de mídia social listadas abaixo.\n\nRecomendamos nosso canal no Youtube, onde postamos conteúdos que podem te ajudar a crescer seus resultados com o app.',
+          'Se precisar de ajuda, você pode ir para a seção \"Ajuda e Suporte\" do aplicativo.\n\nVocê também pode entrar em contato e seguir-nos em nossas plataformas de mídia social listadas abaixo.',
     },
     'ceqs9grc': {
       'en': 'I\'m ready to make money!',
@@ -5862,6 +5862,89 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Cancelar',
     },
   },
+  // afterAd
+  {
+    '8dh1ad6h': {
+      'en': 'Upgrade your plan',
+      'de': 'Upgraden Sie Ihren Plan',
+      'es': 'Actualiza tu plan',
+      'fr': 'Améliorez votre forfait',
+      'it': 'Aggiorna il tuo piano',
+      'pt': 'Atualize seu plano',
+    },
+    'off6p0xw': {
+      'en': 'No more ads',
+      'de': 'Keine Werbung mehr',
+      'es': 'No más anuncios',
+      'fr': 'Plus de publicité',
+      'it': 'Niente più pubblicità',
+      'pt': 'Não há mais anúncios',
+    },
+    '4ulciy58': {
+      'en': '2X point multiplier',
+      'de': '2X Punktemultiplikator',
+      'es': 'Multiplicador de puntos 2X',
+      'fr': 'Multiplicateur de points 2X',
+      'it': 'Moltiplicatore di punti 2X',
+      'pt': 'Multiplicador de pontos 2X',
+    },
+    'xskzak4x': {
+      'en': 'Follow more companies',
+      'de': 'Mehr Firmen folgen',
+      'es': 'Seguir más empresas',
+      'fr': 'Suivez plus d\'entreprises',
+      'it': 'Segui più aziende',
+      'pt': 'Siga mais empresas',
+    },
+    'yuxct4cl': {
+      'en': 'Only',
+      'de': 'Nur',
+      'es': 'Solo',
+      'fr': 'Seulement',
+      'it': 'Soltanto',
+      'pt': 'Apenas',
+    },
+    '51560xdf': {
+      'en': '\$2.99',
+      'de': '\$2.99',
+      'es': '\$2.99',
+      'fr': '\$2.99',
+      'it': '\$2.99',
+      'pt': '\$2.99',
+    },
+    'epqxy5pv': {
+      'en': '/month',
+      'de': '/Monat',
+      'es': '/mes',
+      'fr': '/mois',
+      'it': '/mese',
+      'pt': '/mês',
+    },
+    's9rhmkus': {
+      'en': 'You would have saved an extra',
+      'de': 'Sie hätten zusätzlich gespart',
+      'es': 'Te habrías ahorrado un extra',
+      'fr': 'Vous auriez économisé un supplément',
+      'it': 'Avresti risparmiato un extra',
+      'pt': 'Você teria economizado um extra',
+    },
+    'nkepmi97': {
+      'en': 'in the last 30 days',
+      'de': 'in den letzten 30 Tagen',
+      'es': 'en los últimos 30 días',
+      'fr': 'au cours des 30 derniers jours',
+      'it': 'negli ultimi 30 giorni',
+      'pt': 'nos últimos 30 dias',
+    },
+    'j9mnp74i': {
+      'en': 'See plans',
+      'de': 'Pläne ansehen',
+      'es': 'Ver planos',
+      'fr': 'Voir les forfaits',
+      'it': 'Vedi i piani',
+      'pt': 'Ver planos',
+    },
+  },
   // Miscellaneous
   {
     '1zb09soc': {
@@ -5955,6 +6038,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'Per caricare i dati, questa app richiede l\'autorizzazione per accedere alla libreria di foto.',
       'pt':
           'Para fazer upload de dados, este aplicativo requer permissão para acessar a biblioteca de fotos.',
+    },
+    'qzhhtgj6': {
+      'en': '',
+      'de': '',
+      'es': '',
+      'fr': '',
+      'it': '',
+      'pt': '',
     },
     'g0mno07s': {
       'en': '',

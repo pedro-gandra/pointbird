@@ -1,5 +1,6 @@
 import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/after_ad/after_ad_widget.dart';
 import '/components/client_nav_widget.dart';
 import '/components/points_received/points_received_widget.dart';
 import '/components/simple_header_widget.dart';
@@ -9,6 +10,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/admob_util.dart' as admob;
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/request_manager.dart';
 
@@ -33,6 +35,10 @@ class ExploreCompanyModel extends FlutterFlowModel<ExploreCompanyWidget> {
   final unfocusNode = FocusNode();
   // Stores action output result for [Custom Action - followCompany] action in Button widget.
   ActionResponseStruct? followResult;
+  // Stores action output result for [Custom Action - preAdFunction] action in Button widget.
+  int? preAd;
+  // Stores action output result for [AdMob - Show Interstitial Ad] action in Button widget.
+  bool? interstitialAdSuccess;
   // Stores action output result for [Backend Call - Query Rows] action in Button widget.
   List<ViewClientsPlansRow>? planInfo;
   // Model for simpleHeader component.

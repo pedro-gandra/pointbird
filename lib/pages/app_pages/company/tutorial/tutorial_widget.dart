@@ -176,7 +176,7 @@ class _TutorialWidgetState extends State<TutorialWidget> {
                                                   0.0, 15.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'pbbnj5c0' /* 2 - Once your profile looks go... */,
+                                              'pbbnj5c0' /* 2 - Share your profile on your... */,
                                             ),
                                             textAlign: TextAlign.start,
                                             style: FlutterFlowTheme.of(context)
@@ -195,7 +195,7 @@ class _TutorialWidgetState extends State<TutorialWidget> {
                                                   0.0, 15.0, 0.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'almhyyyf' /* 3 - After getting your first f... */,
+                                              'almhyyyf' /* 3 - Start posting to increase ... */,
                                             ),
                                             textAlign: TextAlign.start,
                                             style: FlutterFlowTheme.of(context)

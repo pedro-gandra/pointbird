@@ -15,9 +15,11 @@ class PlansWidget extends StatefulWidget {
   const PlansWidget({
     super.key,
     required this.idPlan,
+    required this.openAt,
   });
 
   final int? idPlan;
+  final int? openAt;
 
   @override
   State<PlansWidget> createState() => _PlansWidgetState();
@@ -1678,7 +1680,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                             0,
                             min(
                                 valueOrDefault<int>(
-                                  functions.changeInt(widget.idPlan!, '-', 1),
+                                  functions.changeInt(widget.openAt!, '-', 1),
                                   0,
                                 ),
                                 2)),

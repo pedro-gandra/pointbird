@@ -147,7 +147,7 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                       Container(
                                         width:
                                             MediaQuery.sizeOf(context).width *
-                                                0.3,
+                                                0.36,
                                         child: TextFormField(
                                           controller:
                                               _model.initialTextController ??=
@@ -1727,7 +1727,7 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                         Container(
                                           width:
                                               MediaQuery.sizeOf(context).width *
-                                                  0.3,
+                                                  0.36,
                                           child: TextFormField(
                                             controller: _model
                                                     .discountTextController ??=

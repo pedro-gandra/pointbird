@@ -176,8 +176,8 @@ class _ProfileClientWidgetState extends State<ProfileClientWidget> {
                         ),
                       ),
                       Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            24.0, 16.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
                             '953dvj3q' /* Your Account */,
@@ -643,6 +643,8 @@ class _ProfileClientWidgetState extends State<ProfileClientWidget> {
                                                   .unfocus(),
                                           child: PlansWidget(
                                             idPlan:
+                                                rowViewClientsPlansRow!.idPlan!,
+                                            openAt:
                                                 rowViewClientsPlansRow!.idPlan!,
                                           ),
                                         ),

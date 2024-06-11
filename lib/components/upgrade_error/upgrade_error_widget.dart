@@ -1,6 +1,7 @@
 import '/components/plans/plans_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -151,6 +152,8 @@ class _UpgradeErrorWidgetState extends State<UpgradeErrorWidget> {
                                       .resolve(Directionality.of(context)),
                                   child: PlansWidget(
                                     idPlan: widget.idPlan!,
+                                    openAt: functions.changeInt(
+                                        widget.idPlan!, '+', 1),
                                   ),
                                 );
                               },

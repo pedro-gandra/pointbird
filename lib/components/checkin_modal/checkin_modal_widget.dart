@@ -69,6 +69,7 @@ class _CheckinModalWidgetState extends State<CheckinModalWidget> {
                 ],
                 borderRadius: BorderRadius.circular(24.0),
                 border: Border.all(
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
                   width: 0.0,
                 ),
               ),

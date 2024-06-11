@@ -1,16 +1,19 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/after_ad/after_ad_widget.dart';
 import '/components/client_nav_widget.dart';
 import '/components/plans/plans_widget.dart';
 import '/components/points_received/points_received_widget.dart';
 import '/components/upgrade_error/upgrade_error_widget.dart';
+import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/admob_util.dart' as admob;
 import 'dart:async';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -71,6 +74,8 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return FutureBuilder<List<ViewHomeClient2Row>>(
       future:
           (_model.requestCompleter2 ??= Completer<List<ViewHomeClient2Row>>()
@@ -303,6 +308,7 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                                     .unfocus(),
                                             child: PlansWidget(
                                               idPlan: 1,
+                                              openAt: 2,
                                             ),
                                           ),
                                         );
@@ -329,6 +335,54 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                     animationsMap['textOnPageLoadAnimation']!),
                               ),
                             ),
+                          FutureBuilder<List<ViewClientsPlansRow>>(
+                            future: ViewClientsPlansTable().querySingleRow(
+                              queryFn: (q) => q.eq(
+                                'id_client',
+                                FFAppState().user.id,
+                              ),
+                            ),
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        FlutterFlowTheme.of(context).primary,
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+                              List<ViewClientsPlansRow>
+                                  containerViewClientsPlansRowList =
+                                  snapshot.data!;
+                              final containerViewClientsPlansRow =
+                                  containerViewClientsPlansRowList.isNotEmpty
+                                      ? containerViewClientsPlansRowList.first
+                                      : null;
+                              return Container(
+                                decoration: BoxDecoration(),
+                                child: Visibility(
+                                  visible:
+                                      containerViewClientsPlansRow?.ads ?? true,
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 15.0, 0.0, 0.0),
+                                    child: FlutterFlowAdBanner(
+                                      height: 50.0,
+                                      showsTestAd: false,
+                                      androidAdUnitID:
+                                          'ca-app-pub-9807921451745876/2526590712',
+                                    ),
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 16.0, 0.0, 0.0),
@@ -1143,6 +1197,51 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                                                           .codeTextController
                                                                           ?.clear();
                                                                     });
+                                                                    _model.preAd =
+                                                                        await actions
+                                                                            .preAdFunction(
+                                                                      FFAppState()
+                                                                          .user
+                                                                          .id,
+                                                                    );
+                                                                    if (_model
+                                                                            .preAd! >
+                                                                        -1) {
+                                                                      _model.interstitialAdSuccess =
+                                                                          await admob
+                                                                              .showInterstitialAd();
+
+                                                                      if (_model
+                                                                          .interstitialAdSuccess!) {
+                                                                        admob
+                                                                            .loadInterstitialAd(
+                                                                          "",
+                                                                          "ca-app-pub-9807921451745876/1855285681",
+                                                                          false,
+                                                                        );
+
+                                                                        await showDialog(
+                                                                          context:
+                                                                              context,
+                                                                          builder:
+                                                                              (dialogContext) {
+                                                                            return Dialog(
+                                                                              elevation: 0,
+                                                                              insetPadding: EdgeInsets.zero,
+                                                                              backgroundColor: Colors.transparent,
+                                                                              alignment: AlignmentDirectional(0.0, 0.0).resolve(Directionality.of(context)),
+                                                                              child: GestureDetector(
+                                                                                onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                child: AfterAdWidget(
+                                                                                  pointsSaved: _model.preAd!,
+                                                                                ),
+                                                                              ),
+                                                                            );
+                                                                          },
+                                                                        ).then((value) =>
+                                                                            setState(() {}));
+                                                                      }
+                                                                    }
                                                                     if (_model
                                                                         .followResult!
                                                                         .hasPoints()) {

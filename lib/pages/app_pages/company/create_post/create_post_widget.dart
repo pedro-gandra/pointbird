@@ -127,7 +127,7 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                               ],
                               onChanged: (val) =>
                                   setState(() => _model.accountTypeValue = val),
-                              width: 190.0,
+                              width: MediaQuery.sizeOf(context).width * 0.5,
                               height: 44.0,
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -585,7 +585,7 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                       width: MediaQuery.sizeOf(
                                                                   context)
                                                               .width *
-                                                          0.35,
+                                                          0.4,
                                                       child: TextFormField(
                                                         controller: _model
                                                             .pointsTextController1,
@@ -810,7 +810,6 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                     .fromSTEB(
                                                         0.0, 15.0, 0.0, 0.0),
                                                 child: Container(
-                                                  width: 145.0,
                                                   height: 40.0,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
@@ -895,37 +894,56 @@ class _CreatePostWidgetState extends State<CreatePostWidget> {
                                                     },
                                                     child: Row(
                                                       mainAxisSize:
-                                                          MainAxisSize.max,
+                                                          MainAxisSize.min,
                                                       mainAxisAlignment:
                                                           MainAxisAlignment
                                                               .center,
                                                       children: [
-                                                        Icon(
-                                                          Icons.image_search,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .alternate,
-                                                          size: 24.0,
-                                                        ),
-                                                        Text(
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getText(
-                                                            'r63arw9p' /* Choose image */,
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      21.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: Icon(
+                                                            Icons.image_search,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .alternate,
+                                                            size: 24.0,
                                                           ),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Poppins',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .alternate,
-                                                                fontSize: 12.0,
-                                                                letterSpacing:
-                                                                    0.0,
-                                                              ),
+                                                        ),
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      21.0,
+                                                                      0.0),
+                                                          child: Text(
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                              'r63arw9p' /* Choose image */,
+                                                            ),
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .alternate,
+                                                                  fontSize:
+                                                                      12.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                          ),
                                                         ),
                                                       ].divide(
                                                           SizedBox(width: 5.0)),

@@ -321,6 +321,10 @@ class _AccountTypeWidgetState extends State<AccountTypeWidget> {
                                                   await ClientsTable().insert({
                                                 'email': currentUserEmail,
                                               });
+                                              await NotificationManagerTable()
+                                                  .insert({
+                                                'id_client': _model.client?.id,
+                                              });
                                               FFAppState().updateUserStruct(
                                                 (e) =>
                                                     e..id = _model.client?.id,
@@ -334,6 +338,11 @@ class _AccountTypeWidgetState extends State<AccountTypeWidget> {
                                                   await CompaniesTable()
                                                       .insert({
                                                 'email': currentUserEmail,
+                                              });
+                                              await NotificationManagerTable()
+                                                  .insert({
+                                                'id_company':
+                                                    _model.business?.id,
                                               });
                                               FFAppState().updateUserStruct(
                                                 (e) =>

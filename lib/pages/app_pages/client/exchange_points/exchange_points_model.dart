@@ -1,5 +1,6 @@
 import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/after_ad/after_ad_widget.dart';
 import '/components/coupon_gen/coupon_gen_widget.dart';
 import '/components/simple_header_widget.dart';
 import '/components/upgrade_error/upgrade_error_widget.dart';
@@ -7,6 +8,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/admob_util.dart' as admob;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
 import 'exchange_points_widget.dart' show ExchangePointsWidget;
@@ -46,6 +48,10 @@ class ExchangePointsModel extends FlutterFlowModel<ExchangePointsWidget> {
 
   // Stores action output result for [Custom Action - checkMinimum] action in pointAmount widget.
   double? min;
+  // Stores action output result for [Custom Action - preAdFunction] action in Button widget.
+  int? preAd;
+  // Stores action output result for [AdMob - Show Interstitial Ad] action in Button widget.
+  bool? interstitialAdSuccess;
   // Stores action output result for [Custom Action - generateCoupon] action in Button widget.
   ActionResponseStruct? genResult;
   Completer<List<ViewHomeClientRow>>? requestCompleter;

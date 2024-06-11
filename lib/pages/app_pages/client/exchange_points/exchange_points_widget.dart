@@ -1,5 +1,6 @@
 import '/backend/schema/structs/index.dart';
 import '/backend/supabase/supabase.dart';
+import '/components/after_ad/after_ad_widget.dart';
 import '/components/coupon_gen/coupon_gen_widget.dart';
 import '/components/simple_header_widget.dart';
 import '/components/upgrade_error/upgrade_error_widget.dart';
@@ -7,6 +8,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/admob_util.dart' as admob;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -782,6 +784,68 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
                                                           true;
                                                       setState(() {});
                                                     } else {
+                                                      _model.preAd =
+                                                          await actions
+                                                              .preAdFunction(
+                                                        FFAppState().user.id,
+                                                      );
+                                                      if (_model.preAd! > -1) {
+                                                        _model.interstitialAdSuccess =
+                                                            await admob
+                                                                .showInterstitialAd();
+
+                                                        if (_model
+                                                            .interstitialAdSuccess!) {
+                                                          admob
+                                                              .loadInterstitialAd(
+                                                            "",
+                                                            "ca-app-pub-9807921451745876/1855285681",
+                                                            false,
+                                                          );
+
+                                                          await showDialog(
+                                                            context: context,
+                                                            builder:
+                                                                (dialogContext) {
+                                                              return Dialog(
+                                                                elevation: 0,
+                                                                insetPadding:
+                                                                    EdgeInsets
+                                                                        .zero,
+                                                                backgroundColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                alignment: AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0)
+                                                                    .resolve(
+                                                                        Directionality.of(
+                                                                            context)),
+                                                                child:
+                                                                    GestureDetector(
+                                                                  onTap: () => _model
+                                                                          .unfocusNode
+                                                                          .canRequestFocus
+                                                                      ? FocusScope.of(
+                                                                              context)
+                                                                          .requestFocus(_model
+                                                                              .unfocusNode)
+                                                                      : FocusScope.of(
+                                                                              context)
+                                                                          .unfocus(),
+                                                                  child:
+                                                                      AfterAdWidget(
+                                                                    pointsSaved:
+                                                                        _model
+                                                                            .preAd!,
+                                                                  ),
+                                                                ),
+                                                              );
+                                                            },
+                                                          ).then((value) =>
+                                                              setState(() {}));
+                                                        }
+                                                      }
                                                       _model.genResult =
                                                           await actions
                                                               .generateCoupon(

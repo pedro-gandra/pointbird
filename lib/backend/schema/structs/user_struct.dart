@@ -18,19 +18,23 @@ class UserStruct extends BaseStruct {
   String? _type;
   String get type => _type ?? '';
   set type(String? val) => _type = val;
+
   bool hasType() => _type != null;
 
   // "filledData" field.
   bool? _filledData;
   bool get filledData => _filledData ?? false;
   set filledData(bool? val) => _filledData = val;
+
   bool hasFilledData() => _filledData != null;
 
   // "id" field.
   int? _id;
   int get id => _id ?? 0;
   set id(int? val) => _id = val;
-  void incrementId(int amount) => _id = id + amount;
+
+  void incrementId(int amount) => id = id + amount;
+
   bool hasId() => _id != null;
 
   static UserStruct fromMap(Map<String, dynamic> data) => UserStruct(

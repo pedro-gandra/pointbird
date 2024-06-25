@@ -36,80 +36,99 @@ class PostStruct extends BaseStruct {
   int? _id;
   int get id => _id ?? 0;
   set id(int? val) => _id = val;
-  void incrementId(int amount) => _id = id + amount;
+
+  void incrementId(int amount) => id = id + amount;
+
   bool hasId() => _id != null;
 
   // "created_at" field.
   String? _createdAt;
   String get createdAt => _createdAt ?? '';
   set createdAt(String? val) => _createdAt = val;
+
   bool hasCreatedAt() => _createdAt != null;
 
   // "id_company" field.
   int? _idCompany;
   int get idCompany => _idCompany ?? 0;
   set idCompany(int? val) => _idCompany = val;
-  void incrementIdCompany(int amount) => _idCompany = idCompany + amount;
+
+  void incrementIdCompany(int amount) => idCompany = idCompany + amount;
+
   bool hasIdCompany() => _idCompany != null;
 
   // "actionPoints" field.
   int? _actionPoints;
   int get actionPoints => _actionPoints ?? 0;
   set actionPoints(int? val) => _actionPoints = val;
+
   void incrementActionPoints(int amount) =>
-      _actionPoints = actionPoints + amount;
+      actionPoints = actionPoints + amount;
+
   bool hasActionPoints() => _actionPoints != null;
 
   // "postType" field.
   String? _postType;
   String get postType => _postType ?? '';
   set postType(String? val) => _postType = val;
+
   bool hasPostType() => _postType != null;
 
   // "title" field.
   String? _title;
   String get title => _title ?? '';
   set title(String? val) => _title = val;
+
   bool hasTitle() => _title != null;
 
   // "desc" field.
   String? _desc;
   String get desc => _desc ?? '';
   set desc(String? val) => _desc = val;
+
   bool hasDesc() => _desc != null;
 
   // "link" field.
   String? _link;
   String get link => _link ?? '';
   set link(String? val) => _link = val;
+
   bool hasLink() => _link != null;
 
   // "imageUrl" field.
   String? _imageUrl;
   String get imageUrl => _imageUrl ?? '';
   set imageUrl(String? val) => _imageUrl = val;
+
   bool hasImageUrl() => _imageUrl != null;
 
   // "pointExpiration" field.
   String? _pointExpiration;
   String get pointExpiration => _pointExpiration ?? '';
   set pointExpiration(String? val) => _pointExpiration = val;
+
   bool hasPointExpiration() => _pointExpiration != null;
 
   // "id_reference" field.
   List<int>? _idReference;
   List<int> get idReference => _idReference ?? const [];
   set idReference(List<int>? val) => _idReference = val;
-  void updateIdReference(Function(List<int>) updateFn) =>
-      updateFn(_idReference ??= []);
+
+  void updateIdReference(Function(List<int>) updateFn) {
+    updateFn(idReference ??= []);
+  }
+
   bool hasIdReference() => _idReference != null;
 
   // "id_relation" field.
   List<int>? _idRelation;
   List<int> get idRelation => _idRelation ?? const [];
   set idRelation(List<int>? val) => _idRelation = val;
-  void updateIdRelation(Function(List<int>) updateFn) =>
-      updateFn(_idRelation ??= []);
+
+  void updateIdRelation(Function(List<int>) updateFn) {
+    updateFn(idRelation ??= []);
+  }
+
   bool hasIdRelation() => _idRelation != null;
 
   static PostStruct fromMap(Map<String, dynamic> data) => PostStruct(
@@ -190,12 +209,12 @@ class PostStruct extends BaseStruct {
         'id_reference': serializeParam(
           _idReference,
           ParamType.int,
-          true,
+          isList: true,
         ),
         'id_relation': serializeParam(
           _idRelation,
           ParamType.int,
-          true,
+          isList: true,
         ),
       }.withoutNulls;
 

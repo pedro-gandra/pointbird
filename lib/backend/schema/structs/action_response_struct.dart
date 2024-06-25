@@ -26,44 +26,53 @@ class ActionResponseStruct extends BaseStruct {
   String? _message;
   String get message => _message ?? '';
   set message(String? val) => _message = val;
+
   bool hasMessage() => _message != null;
 
   // "name" field.
   String? _name;
   String get name => _name ?? '';
   set name(String? val) => _name = val;
+
   bool hasName() => _name != null;
 
   // "points" field.
   int? _points;
   int get points => _points ?? 0;
   set points(int? val) => _points = val;
-  void incrementPoints(int amount) => _points = points + amount;
+
+  void incrementPoints(int amount) => points = points + amount;
+
   bool hasPoints() => _points != null;
 
   // "actionDesc" field.
   String? _actionDesc;
   String get actionDesc => _actionDesc ?? '';
   set actionDesc(String? val) => _actionDesc = val;
+
   bool hasActionDesc() => _actionDesc != null;
 
   // "color" field.
   String? _color;
   String get color => _color ?? '';
   set color(String? val) => _color = val;
+
   bool hasColor() => _color != null;
 
   // "failDesc" field.
   String? _failDesc;
   String get failDesc => _failDesc ?? '';
   set failDesc(String? val) => _failDesc = val;
+
   bool hasFailDesc() => _failDesc != null;
 
   // "idPlan" field.
   int? _idPlan;
   int get idPlan => _idPlan ?? 0;
   set idPlan(int? val) => _idPlan = val;
-  void incrementIdPlan(int amount) => _idPlan = idPlan + amount;
+
+  void incrementIdPlan(int amount) => idPlan = idPlan + amount;
+
   bool hasIdPlan() => _idPlan != null;
 
   static ActionResponseStruct fromMap(Map<String, dynamic> data) =>

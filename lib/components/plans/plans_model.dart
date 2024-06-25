@@ -21,7 +21,6 @@ class PlansModel extends FlutterFlowModel<PlansWidget> {
 
   // State field(s) for Carousel widget.
   CarouselController? carouselController;
-
   int carouselCurrentIndex = 1;
 
   @override

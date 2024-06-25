@@ -48,6 +48,7 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget>
         endDate: functions.formatDate(getCurrentTimestamp),
         authEmail: currentUserEmail,
       );
+
       if ((_model.apiStatsResult?.succeeded ?? true)) {
         _model.pos = await actions.explorePosition(
           FFAppState().user.id,
@@ -110,6 +111,7 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget>
                     endDate: functions.formatDate(getCurrentTimestamp),
                     authEmail: currentUserEmail,
                   );
+
                   if ((_model.apiStatsResultReload?.succeeded ?? true)) {
                     _model.stats =
                         ((_model.apiStatsResultReload?.jsonBody ?? '')

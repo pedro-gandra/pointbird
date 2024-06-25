@@ -29,8 +29,9 @@ class StatsModel extends FlutterFlowModel<StatsWidget> {
   DateTime? endDate;
 
   CompanyStatsStruct? stats;
-  void updateStatsStruct(Function(CompanyStatsStruct) updateFn) =>
-      updateFn(stats ??= CompanyStatsStruct());
+  void updateStatsStruct(Function(CompanyStatsStruct) updateFn) {
+    updateFn(stats ??= CompanyStatsStruct());
+  }
 
   ///  State fields for stateful widgets in this page.
 

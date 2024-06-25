@@ -23,8 +23,9 @@ class AnalyticsModel extends FlutterFlowModel<AnalyticsWidget> {
   ///  Local state fields for this page.
 
   CompanyStatsStruct? stats;
-  void updateStatsStruct(Function(CompanyStatsStruct) updateFn) =>
-      updateFn(stats ??= CompanyStatsStruct());
+  void updateStatsStruct(Function(CompanyStatsStruct) updateFn) {
+    updateFn(stats ??= CompanyStatsStruct());
+  }
 
   int? position;
 

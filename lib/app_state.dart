@@ -49,9 +49,9 @@ class FFAppState extends ChangeNotifier {
 
   UserStruct _user = UserStruct();
   UserStruct get user => _user;
-  set user(UserStruct _value) {
-    _user = _value;
-    secureStorage.setString('ff_user', _value.serialize());
+  set user(UserStruct value) {
+    _user = value;
+    secureStorage.setString('ff_user', value.serialize());
   }
 
   void deleteUser() {
@@ -65,15 +65,15 @@ class FFAppState extends ChangeNotifier {
 
   int _refresh = 0;
   int get refresh => _refresh;
-  set refresh(int _value) {
-    _refresh = _value;
+  set refresh(int value) {
+    _refresh = value;
   }
 
   bool _languageSet = false;
   bool get languageSet => _languageSet;
-  set languageSet(bool _value) {
-    _languageSet = _value;
-    secureStorage.setBool('ff_languageSet', _value);
+  set languageSet(bool value) {
+    _languageSet = value;
+    secureStorage.setBool('ff_languageSet', value);
   }
 
   void deleteLanguageSet() {

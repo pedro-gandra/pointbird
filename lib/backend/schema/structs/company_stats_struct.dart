@@ -54,156 +54,197 @@ class CompanyStatsStruct extends BaseStruct {
   int? _companyId;
   int get companyId => _companyId ?? 0;
   set companyId(int? val) => _companyId = val;
-  void incrementCompanyId(int amount) => _companyId = companyId + amount;
+
+  void incrementCompanyId(int amount) => companyId = companyId + amount;
+
   bool hasCompanyId() => _companyId != null;
 
   // "email" field.
   String? _email;
   String get email => _email ?? '';
   set email(String? val) => _email = val;
+
   bool hasEmail() => _email != null;
 
   // "followers" field.
   int? _followers;
   int get followers => _followers ?? 0;
   set followers(int? val) => _followers = val;
-  void incrementFollowers(int amount) => _followers = followers + amount;
+
+  void incrementFollowers(int amount) => followers = followers + amount;
+
   bool hasFollowers() => _followers != null;
 
   // "active_coupons" field.
   int? _activeCoupons;
   int get activeCoupons => _activeCoupons ?? 0;
   set activeCoupons(int? val) => _activeCoupons = val;
+
   void incrementActiveCoupons(int amount) =>
-      _activeCoupons = activeCoupons + amount;
+      activeCoupons = activeCoupons + amount;
+
   bool hasActiveCoupons() => _activeCoupons != null;
 
   // "coupons" field.
   int? _coupons;
   int get coupons => _coupons ?? 0;
   set coupons(int? val) => _coupons = val;
-  void incrementCoupons(int amount) => _coupons = coupons + amount;
+
+  void incrementCoupons(int amount) => coupons = coupons + amount;
+
   bool hasCoupons() => _coupons != null;
 
   // "coupon_value" field.
   double? _couponValue;
   double get couponValue => _couponValue ?? 0.0;
   set couponValue(double? val) => _couponValue = val;
+
   void incrementCouponValue(double amount) =>
-      _couponValue = couponValue + amount;
+      couponValue = couponValue + amount;
+
   bool hasCouponValue() => _couponValue != null;
 
   // "coupon_purchase" field.
   double? _couponPurchase;
   double get couponPurchase => _couponPurchase ?? 0.0;
   set couponPurchase(double? val) => _couponPurchase = val;
+
   void incrementCouponPurchase(double amount) =>
-      _couponPurchase = couponPurchase + amount;
+      couponPurchase = couponPurchase + amount;
+
   bool hasCouponPurchase() => _couponPurchase != null;
 
   // "positive_points" field.
   int? _positivePoints;
   int get positivePoints => _positivePoints ?? 0;
   set positivePoints(int? val) => _positivePoints = val;
+
   void incrementPositivePoints(int amount) =>
-      _positivePoints = positivePoints + amount;
+      positivePoints = positivePoints + amount;
+
   bool hasPositivePoints() => _positivePoints != null;
 
   // "negative_points" field.
   int? _negativePoints;
   int get negativePoints => _negativePoints ?? 0;
   set negativePoints(int? val) => _negativePoints = val;
+
   void incrementNegativePoints(int amount) =>
-      _negativePoints = negativePoints + amount;
+      negativePoints = negativePoints + amount;
+
   bool hasNegativePoints() => _negativePoints != null;
 
   // "dif_exchanges" field.
   int? _difExchanges;
   int get difExchanges => _difExchanges ?? 0;
   set difExchanges(int? val) => _difExchanges = val;
+
   void incrementDifExchanges(int amount) =>
-      _difExchanges = difExchanges + amount;
+      difExchanges = difExchanges + amount;
+
   bool hasDifExchanges() => _difExchanges != null;
 
   // "checkins" field.
   int? _checkins;
   int get checkins => _checkins ?? 0;
   set checkins(int? val) => _checkins = val;
-  void incrementCheckins(int amount) => _checkins = checkins + amount;
+
+  void incrementCheckins(int amount) => checkins = checkins + amount;
+
   bool hasCheckins() => _checkins != null;
 
   // "dif_checkins" field.
   int? _difCheckins;
   int get difCheckins => _difCheckins ?? 0;
   set difCheckins(int? val) => _difCheckins = val;
-  void incrementDifCheckins(int amount) => _difCheckins = difCheckins + amount;
+
+  void incrementDifCheckins(int amount) => difCheckins = difCheckins + amount;
+
   bool hasDifCheckins() => _difCheckins != null;
 
   // "checkins_value" field.
   int? _checkinsValue;
   int get checkinsValue => _checkinsValue ?? 0;
   set checkinsValue(int? val) => _checkinsValue = val;
+
   void incrementCheckinsValue(int amount) =>
-      _checkinsValue = checkinsValue + amount;
+      checkinsValue = checkinsValue + amount;
+
   bool hasCheckinsValue() => _checkinsValue != null;
 
   // "post_interactions" field.
   int? _postInteractions;
   int get postInteractions => _postInteractions ?? 0;
   set postInteractions(int? val) => _postInteractions = val;
+
   void incrementPostInteractions(int amount) =>
-      _postInteractions = postInteractions + amount;
+      postInteractions = postInteractions + amount;
+
   bool hasPostInteractions() => _postInteractions != null;
 
   // "dif_interactions" field.
   int? _difInteractions;
   int get difInteractions => _difInteractions ?? 0;
   set difInteractions(int? val) => _difInteractions = val;
+
   void incrementDifInteractions(int amount) =>
-      _difInteractions = difInteractions + amount;
+      difInteractions = difInteractions + amount;
+
   bool hasDifInteractions() => _difInteractions != null;
 
   // "post_interactions_value" field.
   int? _postInteractionsValue;
   int get postInteractionsValue => _postInteractionsValue ?? 0;
   set postInteractionsValue(int? val) => _postInteractionsValue = val;
+
   void incrementPostInteractionsValue(int amount) =>
-      _postInteractionsValue = postInteractionsValue + amount;
+      postInteractionsValue = postInteractionsValue + amount;
+
   bool hasPostInteractionsValue() => _postInteractionsValue != null;
 
   // "votes" field.
   int? _votes;
   int get votes => _votes ?? 0;
   set votes(int? val) => _votes = val;
-  void incrementVotes(int amount) => _votes = votes + amount;
+
+  void incrementVotes(int amount) => votes = votes + amount;
+
   bool hasVotes() => _votes != null;
 
   // "dif_votes" field.
   int? _difVotes;
   int get difVotes => _difVotes ?? 0;
   set difVotes(int? val) => _difVotes = val;
-  void incrementDifVotes(int amount) => _difVotes = difVotes + amount;
+
+  void incrementDifVotes(int amount) => difVotes = difVotes + amount;
+
   bool hasDifVotes() => _difVotes != null;
 
   // "votes_value" field.
   int? _votesValue;
   int get votesValue => _votesValue ?? 0;
   set votesValue(int? val) => _votesValue = val;
-  void incrementVotesValue(int amount) => _votesValue = votesValue + amount;
+
+  void incrementVotesValue(int amount) => votesValue = votesValue + amount;
+
   bool hasVotesValue() => _votesValue != null;
 
   // "posts" field.
   int? _posts;
   int get posts => _posts ?? 0;
   set posts(int? val) => _posts = val;
-  void incrementPosts(int amount) => _posts = posts + amount;
+
+  void incrementPosts(int amount) => posts = posts + amount;
+
   bool hasPosts() => _posts != null;
 
   // "polls" field.
   int? _polls;
   int get polls => _polls ?? 0;
   set polls(int? val) => _polls = val;
-  void incrementPolls(int amount) => _polls = polls + amount;
+
+  void incrementPolls(int amount) => polls = polls + amount;
+
   bool hasPolls() => _polls != null;
 
   static CompanyStatsStruct fromMap(Map<String, dynamic> data) =>

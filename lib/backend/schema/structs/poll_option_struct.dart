@@ -20,26 +20,32 @@ class PollOptionStruct extends BaseStruct {
   int? _idOption;
   int get idOption => _idOption ?? 0;
   set idOption(int? val) => _idOption = val;
-  void incrementIdOption(int amount) => _idOption = idOption + amount;
+
+  void incrementIdOption(int amount) => idOption = idOption + amount;
+
   bool hasIdOption() => _idOption != null;
 
   // "text" field.
   String? _text;
   String get text => _text ?? '';
   set text(String? val) => _text = val;
+
   bool hasText() => _text != null;
 
   // "votes" field.
   int? _votes;
   int get votes => _votes ?? 0;
   set votes(int? val) => _votes = val;
-  void incrementVotes(int amount) => _votes = votes + amount;
+
+  void incrementVotes(int amount) => votes = votes + amount;
+
   bool hasVotes() => _votes != null;
 
   // "clientVoted" field.
   bool? _clientVoted;
   bool get clientVoted => _clientVoted ?? false;
   set clientVoted(bool? val) => _clientVoted = val;
+
   bool hasClientVoted() => _clientVoted != null;
 
   static PollOptionStruct fromMap(Map<String, dynamic> data) =>

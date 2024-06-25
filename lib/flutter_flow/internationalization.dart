@@ -6039,8 +6039,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt':
           'Para fazer upload de dados, este aplicativo requer permissão para acessar a biblioteca de fotos.',
     },
-    'qzhhtgj6': {
-      'en': '',
+    '15yrgpmf': {
+      'en':
+          'In order to display ads, this app requires permission to access advertising id.',
+      'de':
+          'Um Anzeigen anzuzeigen, benötigt diese App die Berechtigung zum Zugriff auf die Werbe-ID.',
+      'es':
+          'Para mostrar anuncios, esta aplicación requiere permiso para acceder a la identificación de publicidad.',
+      'fr':
+          'Afin d\'afficher des publicités, cette application nécessite l\'autorisation d\'accéder à l\'identifiant publicitaire.',
+      'it':
+          'Per visualizzare gli annunci, questa app richiede l\'autorizzazione per accedere all\'ID pubblicità.',
+      'pt':
+          'Para exibir anúncios, este aplicativo requer permissão para acessar o ID de publicidade.',
+    },
+    'mm44fyhm': {
+      'en':
+          'This app requires permission to access your location ir order to provide you a personalized experience.',
       'de': '',
       'es': '',
       'fr': '',

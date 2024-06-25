@@ -379,6 +379,7 @@ class _StatsWidgetState extends State<StatsWidget>
                                 endDate: functions.formatDate(_model.endDate!),
                                 authEmail: currentUserEmail,
                               );
+
                               if ((_model.apiStatsResult?.succeeded ?? true)) {
                                 _model.stats = ((_model
                                                     .apiStatsResult?.jsonBody ??

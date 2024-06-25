@@ -6,13 +6,13 @@ import '/components/client_nav_widget.dart';
 import '/components/plans/plans_widget.dart';
 import '/components/points_received/points_received_widget.dart';
 import '/components/upgrade_error/upgrade_error_widget.dart';
-import '/flutter_flow/flutter_flow_ad_banner.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:math';
 import '/custom_code/actions/index.dart' as actions;
+import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/admob_util.dart' as admob;
 import 'dart:async';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -347,11 +347,12 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                               if (!snapshot.hasData) {
                                 return Center(
                                   child: SizedBox(
-                                    width: 50.0,
-                                    height: 50.0,
+                                    width: 1.0,
+                                    height: 1.0,
                                     child: CircularProgressIndicator(
                                       valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context).primary,
+                                        FlutterFlowTheme.of(context)
+                                            .primaryBackground,
                                       ),
                                     ),
                                   ),
@@ -371,12 +372,19 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                       containerViewClientsPlansRow?.ads ?? true,
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 15.0, 0.0, 0.0),
-                                    child: FlutterFlowAdBanner(
+                                        0.0, 15.0, 0.0, 1.0),
+                                    child: custom_widgets.DecentAdBanner(
+                                      width: double.infinity,
                                       height: 50.0,
-                                      showsTestAd: false,
-                                      androidAdUnitID:
-                                          'ca-app-pub-9807921451745876/2526590712',
+                                      androidAdUnitId:
+                                          'ca-app-pub-3940256099942544/6300978111',
+                                      iosAdUnitId:
+                                          'ca-app-pub-3940256099942544/2934735716',
+                                      loadingBackgroundColor:
+                                          FlutterFlowTheme.of(context).tertiary,
+                                      loadingText: 'Loading ad...',
+                                      textColor: FlutterFlowTheme.of(context)
+                                          .primaryText,
                                     ),
                                   ),
                                 ),
@@ -385,7 +393,7 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 16.0, 0.0, 0.0),
+                                0.0, 14.0, 0.0, 0.0),
                             child: Container(
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context).primary,
@@ -413,7 +421,7 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                             fontFamily: 'Poppins',
                                             color: FlutterFlowTheme.of(context)
                                                 .alternate,
-                                            fontSize: 14.0,
+                                            fontSize: 13.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -462,7 +470,7 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                     0)
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        12.0, 10.0, 12.0, 5.0),
+                                        15.0, 10.0, 15.0, 5.0),
                                     child:
                                         FutureBuilder<List<ViewHomeClientRow>>(
                                       future: (_model.requestCompleter1 ??=
@@ -791,7 +799,7 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                                                           15.0,
                                                                     ),
                                                                     Text(
-                                                                      'Code: \'${listViewViewHomeClientRow.code}\'',
+                                                                      '\'${listViewViewHomeClientRow.code}\'',
                                                                       textAlign:
                                                                           TextAlign
                                                                               .start,

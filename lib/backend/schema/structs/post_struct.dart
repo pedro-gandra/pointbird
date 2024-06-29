@@ -115,7 +115,7 @@ class PostStruct extends BaseStruct {
   set idReference(List<int>? val) => _idReference = val;
 
   void updateIdReference(Function(List<int>) updateFn) {
-    updateFn(idReference ??= []);
+    updateFn(_idReference ??= []);
   }
 
   bool hasIdReference() => _idReference != null;
@@ -126,7 +126,7 @@ class PostStruct extends BaseStruct {
   set idRelation(List<int>? val) => _idRelation = val;
 
   void updateIdRelation(Function(List<int>) updateFn) {
-    updateFn(idRelation ??= []);
+    updateFn(_idRelation ??= []);
   }
 
   bool hasIdRelation() => _idRelation != null;

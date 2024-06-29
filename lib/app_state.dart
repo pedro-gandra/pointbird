@@ -80,6 +80,12 @@ class FFAppState extends ChangeNotifier {
     secureStorage.delete(key: 'ff_languageSet');
   }
 
+  bool _planShow = false;
+  bool get planShow => _planShow;
+  set planShow(bool value) {
+    _planShow = value;
+  }
+
   final _offersHomeCompanyManager =
       FutureRequestManager<List<ViewPostsViewRow>>();
   Future<List<ViewPostsViewRow>> offersHomeCompany({

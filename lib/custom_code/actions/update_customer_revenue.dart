@@ -30,14 +30,12 @@ Future updateCustomerRevenue(String? idUser, int idClient) async {
         final supabase = SupaFlow.client;
 
         final data = {
-          'id_plan': planId,
-          'id_client': idClient,
-          'expiration': expiration,
+          'p_id_plan': planId,
+          'p_id_client': idClient,
+          'p_expiration': expiration,
         };
 
-        final response = await supabase
-            .from('clients_plans')
-            .upsert(data, onConflict: 'id_plan,id_client');
+        await supabase.rpc('upsert_clients_plans', params: data);
       }
     } catch (e) {
       print(e);

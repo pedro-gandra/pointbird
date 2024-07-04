@@ -24,11 +24,13 @@ Future updateCustomerRevenue(String? idUser, int idClient) async {
           planId = 2;
         else
           planId = 3;
-        final expiration = DateTime.parse(entry.value.expirationDate!);
+
+        print('plan id:' + planId.toString());
+        final expiration = entry.value.expirationDate;
         final supabase = SupaFlow.client;
 
         final data = {
-          'id_plan': planId, // unique identifier
+          'id_plan': planId,
           'id_client': idClient,
           'expiration': expiration,
         };

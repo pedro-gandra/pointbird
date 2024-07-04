@@ -37,11 +37,11 @@ Future<bool> makePurchase(
             planId = 2;
           else
             planId = 3;
-          final expiration = DateTime.parse(entry.value.expirationDate!);
+          final expiration = entry.value.expirationDate;
           final supabase = SupaFlow.client;
 
           final data = {
-            'id_plan': planId, // unique identifier
+            'id_plan': planId,
             'id_client': idClient,
             'expiration': expiration,
           };

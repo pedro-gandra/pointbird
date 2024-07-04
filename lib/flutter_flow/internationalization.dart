@@ -6147,6 +6147,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt':
           'Este aplicativo requer permissão para acessar sua localização. Isso é usado para filtrar empresas por relevância na página de exploração.',
     },
+    '8gf3czie': {
+      'en': 'This app needs permission to offer in app subscriptions.',
+      'de': '',
+      'es': '',
+      'fr': '',
+      'it': '',
+      'pt': '',
+    },
     'g0mno07s': {
       'en': '',
       'de': '',

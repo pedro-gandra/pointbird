@@ -11,21 +11,25 @@ import 'package:flutter/material.dart';
 
 import 'package:purchases_flutter/purchases_flutter.dart';
 
-Future configureCustomer(String? idUser, int idClient, bool update) async {
-  // Add your function code here!
-  if (idUser != null) {
-    try {
-      PurchasesConfiguration configuration;
-      if (isAndroid) {
-        configuration = PurchasesConfiguration('<public_google_api_key>');
-      } else {
-        configuration = PurchasesConfiguration('<public_apple_api_key>)');
-      }
-      await Purchases.configure(configuration);
+import 'package:flutter/foundation.dart';
 
-      await Purchases.logIn(idUser);
-      if (update) {
-        CustomerInfo customerInfo = await Purchases.getCustomerInfo();
+Future<bool> makePurchase(
+    String package, String plan, String offering, int idClient) async {
+  // Add your function code here!
+  // Using Offerings/Packages
+  if (kIsWeb) {
+    print('RevenueCat is not supported on web');
+    return false;
+  }
+
+  try {
+    final revenueCatPackage = (await Purchases.getOfferings())
+        .getOffering(offering)!
+        .getPackage(package);
+    CustomerInfo customerInfo =
+        await Purchases.purchasePackage(revenueCatPackage!);
+    if (customerInfo.entitlements.all[plan] != null) {
+      if (customerInfo.entitlements.all[plan]!.isActive) {
         EntitlementInfos subscriptions = customerInfo.entitlements;
         for (var entry in subscriptions.all.entries) {
           int planId;
@@ -45,10 +49,14 @@ Future configureCustomer(String? idUser, int idClient, bool update) async {
           final response = await supabase
               .from('clients_plans')
               .upsert(data, onConflict: 'id_plan,id_client');
+
+          return true;
         }
       }
-    } catch (e) {
-      print(e);
     }
+    return false;
+  } catch (e) {
+    print(e);
+    return false;
   }
 }

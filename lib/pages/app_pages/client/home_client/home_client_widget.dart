@@ -46,10 +46,9 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await actions.configureCustomer(
+      await actions.updateCustomerRevenue(
         currentUserUid,
         FFAppState().user.id,
-        true,
       );
     });
 

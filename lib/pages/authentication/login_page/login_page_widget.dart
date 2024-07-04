@@ -359,10 +359,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         context.pushNamedAuth(
                                             'homeCompany', context.mounted);
                                       } else {
-                                        await actions.configureCustomer(
+                                        await actions.updateCustomerRevenue(
                                           currentUserUid,
                                           FFAppState().user.id,
-                                          true,
                                         );
 
                                         context.pushNamedAuth(

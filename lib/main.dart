@@ -1,3 +1,4 @@
+import '/custom_code/actions/index.dart' as actions;
 import 'package:provider/provider.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,6 @@ import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
 import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
-import 'flutter_flow/revenue_cat_util.dart' as revenue_cat;
 
 import '/flutter_flow/admob_util.dart';
 
@@ -34,10 +34,9 @@ void main() async {
   final appState = FFAppState(); // Initialize FFAppState
   await appState.initializePersistedState();
 
-  await revenue_cat.initialize(
-    "appl_NTMJxzsTFrJWAaDogzBRQPkUvPO",
-    "goog_KBrKbQZiYgzfmAuOgCUKjwkLpLK",
-  );
+  // Start final custom actions code
+  await actions.initializeRevenue();
+  // End final custom actions code
 
   runApp(ChangeNotifierProvider(
     create: (context) => appState,

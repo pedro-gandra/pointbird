@@ -1,10 +1,8 @@
-import '/auth/supabase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
-import '/flutter_flow/revenue_cat_util.dart' as revenue_cat;
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -1085,21 +1083,21 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                     20.0, 20.0, 20.0, 15.0),
                                             child: FFButtonWidget(
                                               onPressed: () async {
-                                                await actions.configureCustomer(
-                                                  currentUserUid,
-                                                  FFAppState().user.id,
-                                                  false,
-                                                );
-                                                _model.crowMonthlyResult =
-                                                    await revenue_cat
-                                                        .purchasePackage(
-                                                            'crow_monthly');
-                                                if (_model.crowMonthlyResult!) {
-                                                  await actions
-                                                      .configureCustomer(
-                                                    currentUserUid,
+                                                if (_model.annual) {
+                                                  _model.crowY = await actions
+                                                      .makePurchase(
+                                                    'crow_annual',
+                                                    'Crow Plan',
+                                                    'paywall_v1',
                                                     FFAppState().user.id,
-                                                    true,
+                                                  );
+                                                } else {
+                                                  _model.crowM = await actions
+                                                      .makePurchase(
+                                                    'crow_monthly',
+                                                    'Crow Plan',
+                                                    'paywall_v1',
+                                                    FFAppState().user.id,
                                                   );
                                                 }
 

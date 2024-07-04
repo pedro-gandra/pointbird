@@ -333,10 +333,10 @@ class _AccountTypeWidgetState extends State<AccountTypeWidget> {
                                                     e..id = _model.client?.id,
                                               );
                                               setState(() {});
-                                              await actions.configureCustomer(
+                                              await actions
+                                                  .updateCustomerRevenue(
                                                 currentUserUid,
                                                 FFAppState().user.id,
-                                                true,
                                               );
 
                                               context

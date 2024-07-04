@@ -52,11 +52,11 @@
 	<true/>
 
 	<key>NSCameraUsageDescription</key>
-    <string>In order to take a picture or video, this app requires permission to access the camera.</string>
+    <string>In order to take a picture or video, this app requires permission to access the camera. This is necessary to take a picture for your profile, for example.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-    <string>In order to upload data, this app requires permission to access the photo library.</string>
+    <string>In order to upload data, this app requires permission to access the photo library. This is necessary to upload a picture for your profile, for example.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-    <string>This app requires permission to access your location ir order to provide you a personalized experience.</string>
+    <string>This app requires permission to access your location. This is used to filter companies for relevancy on the explore page.</string>
 
 
 	<key>UILaunchStoryboardName</key>

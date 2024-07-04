@@ -1,2 +1,3 @@
-NSCameraUsageDescription = "Um ein Bild oder Video aufzunehmen, benötigt diese App die Berechtigung für den Zugriff auf die Kamera.";
-NSPhotoLibraryUsageDescription = "Zum Hochladen von Daten benötigt diese App eine Berechtigung zum Zugriff auf die Fotobibliothek.";
+NSCameraUsageDescription = "Um ein Foto oder Video aufzunehmen, benötigt diese App eine Berechtigung zum Zugriff auf die Kamera. Dies ist beispielsweise erforderlich, um ein Foto für Ihr Profil aufzunehmen.";
+NSPhotoLibraryUsageDescription = "Um Daten hochladen zu können, benötigt diese App eine Berechtigung zum Zugriff auf die Fotobibliothek. Dies ist beispielsweise erforderlich, um ein Bild für Ihr Profil hochzuladen.";
+NSLocationWhenInUseUsageDescription = "Diese App erfordert die Berechtigung, auf Ihren Standort zuzugreifen. Dies wird verwendet, um Unternehmen auf der Erkundungsseite nach Relevanz zu filtern.";

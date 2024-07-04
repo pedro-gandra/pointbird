@@ -5577,13 +5577,29 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': 'Never lose check in streak',
       'pt': 'Never lose check in streak',
     },
-    'vdu9i1x2': {
-      'en': '\$2.99',
-      'de': '\$2.99',
-      'es': '\$2.99',
-      'fr': '\$2.99',
-      'it': '\$2.99',
-      'pt': '\$2.99',
+    'x977mh6k': {
+      'en': '\$11.99',
+      'de': '\$11.99',
+      'es': '\$11.99',
+      'fr': '\$11.99',
+      'it': '\$11.99',
+      'pt': '\$11.99',
+    },
+    '8g79i04n': {
+      'en': '(',
+      'de': '(',
+      'es': '(',
+      'fr': '(',
+      'it': '(',
+      'pt': '(',
+    },
+    'pa20gd2a': {
+      'en': '\$1',
+      'de': '\$1',
+      'es': '\$1',
+      'fr': '\$1',
+      'it': '\$1',
+      'pt': '\$1',
     },
     'wk81iiw6': {
       'en': '/month',
@@ -5592,6 +5608,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '/mois',
       'it': '/mese',
       'pt': '/mês',
+    },
+    'tlcyerv2': {
+      'en': ')',
+      'de': ')',
+      'es': ')',
+      'fr': ')',
+      'it': ')',
+      'pt': ')',
     },
     'oap8xe81': {
       'en': 'billed annually',
@@ -5602,12 +5626,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'cobrado anualmente',
     },
     '7azgqyup': {
-      'en': '\$4.99',
-      'de': '\$4.99',
-      'es': '\$4.99',
-      'fr': '\$4.99',
-      'it': '\$4.99',
-      'pt': '\$4.99',
+      'en': '\$2.99',
+      'de': '\$2.99',
+      'es': '\$2.99',
+      'fr': '\$2.99',
+      'it': '\$2.99',
+      'pt': '\$2.99',
     },
     'a5vchgoo': {
       'en': '/month',
@@ -5656,6 +5680,22 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'C\'est ton plan',
       'it': 'Questo è il tuo piano',
       'pt': 'Este é o seu plano',
+    },
+    'el14a3n9': {
+      'en': 'Privacy policy',
+      'de': 'Privacy policy',
+      'es': 'Privacy policy',
+      'fr': 'Privacy policy',
+      'it': 'Privacy policy',
+      'pt': 'Privacy policy',
+    },
+    'kw4wout3': {
+      'en': 'Terms of use',
+      'de': 'Terms of use',
+      'es': 'Terms of use',
+      'fr': 'Terms of use',
+      'it': 'Terms of use',
+      'pt': 'Terms of use',
     },
     '37th05b8': {
       'en': 'Everything you need',
@@ -5713,21 +5753,45 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'it': 'Never lose check in streak',
       'pt': 'Never lose check in streak',
     },
-    'aubz3x8w': {
-      'en': '\$5.99',
-      'de': '\$5.99',
-      'es': '\$5.99',
-      'fr': '\$5.99',
-      'it': '\$5.99',
-      'pt': '\$5.99',
+    'z3xwdb98': {
+      'en': '\$35.99',
+      'de': '\$35.99',
+      'es': '\$35.99',
+      'fr': '\$35.99',
+      'it': '\$35.99',
+      'pt': '\$35.99',
     },
-    '2waf5aj9': {
+    'liimptbp': {
+      'en': '(',
+      'de': '(',
+      'es': '(',
+      'fr': '(',
+      'it': '(',
+      'pt': '(',
+    },
+    '17zr1brp': {
+      'en': '\$2.99',
+      'de': '\$2.99',
+      'es': '\$2.99',
+      'fr': '\$2.99',
+      'it': '\$2.99',
+      'pt': '\$2.99',
+    },
+    'fnr6fpd2': {
       'en': '/month',
       'de': '/Monat',
       'es': '/mes',
       'fr': '/mois',
       'it': '/mese',
       'pt': '/mês',
+    },
+    'vxy1aw3i': {
+      'en': ')',
+      'de': ')',
+      'es': ')',
+      'fr': ')',
+      'it': ')',
+      'pt': ')',
     },
     'ipu5mels': {
       'en': 'billed annually',
@@ -5738,12 +5802,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'cobrado anualmente',
     },
     'gzuhzq2v': {
-      'en': '\$9.99',
-      'de': '\$9.99',
-      'es': '\$9.99',
-      'fr': '\$9.99',
-      'it': '\$9.99',
-      'pt': '\$9.99',
+      'en': '\$8.99',
+      'de': '\$8.99',
+      'es': '\$8.99',
+      'fr': '\$8.99',
+      'it': '\$8.99',
+      'pt': '\$8.99',
     },
     '6e9kthan': {
       'en': '/month',
@@ -5792,6 +5856,22 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': 'C\'est ton plan',
       'it': 'Questo è il tuo piano',
       'pt': 'Este é o seu plano',
+    },
+    'hpa46fw4': {
+      'en': 'Privacy policy',
+      'de': 'Privacy policy',
+      'es': 'Privacy policy',
+      'fr': 'Privacy policy',
+      'it': 'Privacy policy',
+      'pt': 'Privacy policy',
+    },
+    'u1qvosmh': {
+      'en': 'Terms of use',
+      'de': 'Terms of use',
+      'es': 'Terms of use',
+      'fr': 'Terms of use',
+      'it': 'Terms of use',
+      'pt': 'Terms of use',
     },
   },
   // upgradeError
@@ -5905,12 +5985,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Apenas',
     },
     '51560xdf': {
-      'en': '\$2.99',
-      'de': '\$2.99',
-      'es': '\$2.99',
-      'fr': '\$2.99',
-      'it': '\$2.99',
-      'pt': '\$2.99',
+      'en': '\$1',
+      'de': '\$1',
+      'es': '\$1',
+      'fr': '\$1',
+      'it': '\$1',
+      'pt': '\$1',
     },
     'epqxy5pv': {
       'en': '/month',
@@ -6013,31 +6093,31 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'bppglc84': {
       'en':
-          'In order to take a picture or video, this app requires permission to access the camera.',
+          'In order to take a picture or video, this app requires permission to access the camera. This is necessary to take a picture for your profile, for example.',
       'de':
-          'Um ein Bild oder Video aufzunehmen, benötigt diese App die Berechtigung für den Zugriff auf die Kamera.',
+          'Um ein Foto oder Video aufzunehmen, benötigt diese App eine Berechtigung zum Zugriff auf die Kamera. Dies ist beispielsweise erforderlich, um ein Foto für Ihr Profil aufzunehmen.',
       'es':
-          'Para tomar una foto o grabar un video, esta aplicación requiere permiso para acceder a la cámara.',
+          'Para tomar una foto o grabar un video, esta aplicación requiere permiso para acceder a la cámara. Esto es necesario para tomar una foto para su perfil, por ejemplo.',
       'fr':
-          'Afin de prendre une photo ou une vidéo, cette application nécessite une autorisation pour accéder à la caméra.',
+          'Afin de prendre une photo ou une vidéo, cette application nécessite une autorisation pour accéder à la caméra. Ceci est nécessaire pour prendre une photo pour votre profil, par exemple.',
       'it':
-          'Per poter scattare una foto o registrare un video, questa app richiede l\'autorizzazione per accedere alla fotocamera.',
+          'Per poter scattare una foto o registrare un video, questa app richiede l\'autorizzazione per accedere alla fotocamera. Ciò è necessario, ad esempio, per scattare una foto per il tuo profilo.',
       'pt':
-          'Para tirar uma foto ou gravar um vídeo, este aplicativo requer permissão para acessar a câmera.',
+          'Para tirar uma foto ou gravar um vídeo, este aplicativo requer permissão para acessar a câmera. Isso é necessário para tirar uma foto para o seu perfil, por exemplo.',
     },
     'b50133el': {
       'en':
-          'In order to upload data, this app requires permission to access the photo library.',
+          'In order to upload data, this app requires permission to access the photo library. This is necessary to upload a picture for your profile, for example.',
       'de':
-          'Zum Hochladen von Daten benötigt diese App eine Berechtigung zum Zugriff auf die Fotobibliothek.',
+          'Um Daten hochladen zu können, benötigt diese App eine Berechtigung zum Zugriff auf die Fotobibliothek. Dies ist beispielsweise erforderlich, um ein Bild für Ihr Profil hochzuladen.',
       'es':
-          'Para cargar datos, esta aplicación requiere permiso para acceder a la biblioteca de fotos.',
+          'Para cargar datos, esta aplicación requiere permiso para acceder a la biblioteca de fotos. Esto es necesario para subir una foto a su perfil, por ejemplo.',
       'fr':
-          'Afin de télécharger des données, cette application nécessite l\'autorisation d\'accéder à la photothèque.',
+          'Afin de télécharger des données, cette application nécessite l\'autorisation d\'accéder à la photothèque. Ceci est nécessaire pour télécharger une photo pour votre profil, par exemple.',
       'it':
-          'Per caricare i dati, questa app richiede l\'autorizzazione per accedere alla libreria di foto.',
+          'Per caricare i dati, questa app richiede l\'autorizzazione per accedere alla libreria di foto. Ciò è necessario, ad esempio, per caricare un\'immagine per il tuo profilo.',
       'pt':
-          'Para fazer upload de dados, este aplicativo requer permissão para acessar a biblioteca de fotos.',
+          'Para fazer upload de dados, este aplicativo requer permissão para acessar a biblioteca de fotos. Isso é necessário para fazer upload de uma foto para o seu perfil, por exemplo.',
     },
     '15yrgpmf': {
       'en':
@@ -6047,7 +6127,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'es':
           'Para mostrar anuncios, esta aplicación requiere permiso para acceder a la identificación de publicidad.',
       'fr':
-          'Afin d\'afficher des publicités, cette application nécessite l\'autorisation d\'accéder à l\'identifiant publicitaire.',
+          'Afin d\'afficher des annonces, cette application nécessite l\'autorisation d\'accéder à l\'identifiant publicitaire.',
       'it':
           'Per visualizzare gli annunci, questa app richiede l\'autorizzazione per accedere all\'ID pubblicità.',
       'pt':
@@ -6055,12 +6135,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'mm44fyhm': {
       'en':
-          'This app requires permission to access your location ir order to provide you a personalized experience.',
-      'de': '',
-      'es': '',
-      'fr': '',
-      'it': '',
-      'pt': '',
+          'This app requires permission to access your location. This is used to filter companies for relevancy on the explore page.',
+      'de':
+          'Diese App erfordert die Berechtigung, auf Ihren Standort zuzugreifen. Dies wird verwendet, um Unternehmen auf der Erkundungsseite nach Relevanz zu filtern.',
+      'es':
+          'Esta aplicación requiere permiso para acceder a su ubicación. Esto se utiliza para filtrar empresas por relevancia en la página de exploración.',
+      'fr':
+          'Cette application nécessite une autorisation pour accéder à votre position. Ceci est utilisé pour filtrer les entreprises en fonction de leur pertinence sur la page d\'exploration.',
+      'it':
+          'Questa app richiede l\'autorizzazione per accedere alla tua posizione. Viene utilizzato per filtrare le aziende in base alla pertinenza nella pagina di esplorazione.',
+      'pt':
+          'Este aplicativo requer permissão para acessar sua localização. Isso é usado para filtrar empresas por relevância na página de exploração.',
     },
     'g0mno07s': {
       'en': '',

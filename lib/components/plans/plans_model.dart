@@ -1,7 +1,10 @@
+import '/auth/supabase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/flutter_flow/revenue_cat_util.dart' as revenue_cat;
 import 'plans_widget.dart' show PlansWidget;
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +25,9 @@ class PlansModel extends FlutterFlowModel<PlansWidget> {
   // State field(s) for Carousel widget.
   CarouselController? carouselController;
   int carouselCurrentIndex = 1;
+
+  // Stores action output result for [RevenueCat - Purchase] action in Button widget.
+  bool? crowMonthlyResult;
 
   @override
   void initState(BuildContext context) {}

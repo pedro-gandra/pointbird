@@ -239,7 +239,7 @@ class _AfterAdWidgetState extends State<AfterAdWidget> {
                                             8.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            '51560xdf' /* $2.99 */,
+                                            '51560xdf' /* $1 */,
                                           ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
@@ -273,7 +273,7 @@ class _AfterAdWidgetState extends State<AfterAdWidget> {
                                     ],
                                   ),
                                 ),
-                                if (widget.pointsSaved! > 500)
+                                if (widget.pointsSaved! > 300)
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 0.0),

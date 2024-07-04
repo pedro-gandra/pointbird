@@ -1,2 +1,3 @@
-NSCameraUsageDescription = "Para tirar uma foto ou gravar um vídeo, este aplicativo requer permissão para acessar a câmera.";
-NSPhotoLibraryUsageDescription = "Para fazer upload de dados, este aplicativo requer permissão para acessar a biblioteca de fotos.";
+NSCameraUsageDescription = "Para tirar uma foto ou gravar um vídeo, este aplicativo requer permissão para acessar a câmera. Isso é necessário para tirar uma foto para o seu perfil, por exemplo.";
+NSPhotoLibraryUsageDescription = "Para fazer upload de dados, este aplicativo requer permissão para acessar a biblioteca de fotos. Isso é necessário para fazer upload de uma foto para o seu perfil, por exemplo.";
+NSLocationWhenInUseUsageDescription = "Este aplicativo requer permissão para acessar sua localização. Isso é usado para filtrar empresas por relevância na página de exploração.";

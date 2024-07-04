@@ -1,7 +1,10 @@
+import '/auth/supabase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/flutter_flow/revenue_cat_util.dart' as revenue_cat;
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -55,6 +58,8 @@ class _PlansWidgetState extends State<PlansWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return SingleChildScrollView(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -72,7 +77,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    if (MediaQuery.sizeOf(context).height > 750.0)
+                    if (MediaQuery.sizeOf(context).height > 780.0)
                       Text(
                         FFLocalizations.of(context).getText(
                           '2rmkof1a' /* Upgrade your plan! */,
@@ -87,7 +92,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                       ),
                     Container(
                       width: double.infinity,
-                      height: 580.0,
+                      height: 610.0,
                       child: CarouselSlider(
                         items: [
                           Column(
@@ -429,7 +434,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        15.0, 15.0, 15.0, 35.0),
+                                        15.0, 15.0, 15.0, 15.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
                                       mainAxisAlignment:
@@ -685,34 +690,87 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                   mainAxisAlignment:
                                                       MainAxisAlignment.center,
                                                   children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  8.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      child: Text(
+                                                    if (isiOS)
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    6.0,
+                                                                    0.0),
+                                                        child: Text(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'x977mh6k' /* $11.99 */,
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                                fontSize: 16.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                    if (isiOS)
+                                                      Text(
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          'vdu9i1x2' /* $2.99 */,
+                                                          '8g79i04n' /* ( */,
                                                         ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Poppins',
-                                                              fontSize: 18.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                            ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
                                                       ),
+                                                    Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'pa20gd2a' /* $1 */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
+                                                            fontSize: isiOS
+                                                                ? 16.0
+                                                                : 18.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                          ),
                                                     ),
                                                     Text(
                                                       FFLocalizations.of(
@@ -732,6 +790,32 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                                 FontWeight.w500,
                                                           ),
                                                     ),
+                                                    if (isiOS)
+                                                      Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'tlcyerv2' /* ) */,
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                      ),
                                                   ].divide(
                                                       SizedBox(width: 0.0)),
                                                 ),
@@ -753,7 +837,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ],
+                                              ].divide(SizedBox(height: 2.0)),
                                             ),
                                           ),
                                         if (!_model.annual)
@@ -774,7 +858,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        '7azgqyup' /* $4.99 */,
+                                                        '7azgqyup' /* $2.99 */,
                                                       ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
@@ -830,7 +914,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ],
+                                              ].divide(SizedBox(height: 2.0)),
                                             ),
                                           ),
                                         Padding(
@@ -998,10 +1082,28 @@ class _PlansWidgetState extends State<PlansWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    20.0, 25.0, 20.0, 0.0),
+                                                    20.0, 20.0, 20.0, 15.0),
                                             child: FFButtonWidget(
-                                              onPressed: () {
-                                                print('Button pressed ...');
+                                              onPressed: () async {
+                                                await actions.configureCustomer(
+                                                  currentUserUid,
+                                                  FFAppState().user.id,
+                                                  false,
+                                                );
+                                                _model.crowMonthlyResult =
+                                                    await revenue_cat
+                                                        .purchasePackage(
+                                                            'crow_monthly');
+                                                if (_model.crowMonthlyResult!) {
+                                                  await actions
+                                                      .configureCustomer(
+                                                    currentUserUid,
+                                                    FFAppState().user.id,
+                                                    true,
+                                                  );
+                                                }
+
+                                                setState(() {});
                                               },
                                               text: FFLocalizations.of(context)
                                                   .getText(
@@ -1042,7 +1144,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 30.0, 0.0, 0.0),
+                                                    0.0, 20.0, 0.0, 5.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -1059,6 +1161,76 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                             FontWeight.w600,
                                                       ),
                                             ),
+                                          ),
+                                        if (isiOS && (widget.idPlan! < 2))
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await launchURL(
+                                                      'https://pointbird.io/app-privacy-policy/');
+                                                },
+                                                child: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'el14a3n9' /* Privacy policy */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        fontSize: 12.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                ),
+                                              ),
+                                              InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await launchURL(
+                                                      'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/');
+                                                },
+                                                child: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'kw4wout3' /* Terms of use */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        fontSize: 12.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                       ],
                                     ),
@@ -1093,7 +1265,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                                   ),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        15.0, 15.0, 15.0, 35.0),
+                                        15.0, 15.0, 15.0, 15.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
                                       mainAxisAlignment:
@@ -1347,40 +1519,93 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                   mainAxisAlignment:
                                                       MainAxisAlignment.center,
                                                   children: [
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  8.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      child: Text(
+                                                    if (isiOS)
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    6.0,
+                                                                    0.0),
+                                                        child: Text(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'z3xwdb98' /* $35.99 */,
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                                fontSize: 16.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                              ),
+                                                        ),
+                                                      ),
+                                                    if (isiOS)
+                                                      Text(
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          'aubz3x8w' /* $5.99 */,
+                                                          'liimptbp' /* ( */,
                                                         ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Poppins',
-                                                              fontSize: 18.0,
-                                                              letterSpacing:
-                                                                  0.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w600,
-                                                            ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
                                                       ),
+                                                    Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '17zr1brp' /* $2.99 */,
+                                                      ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
+                                                            fontSize: isiOS
+                                                                ? 16.0
+                                                                : 18.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                          ),
                                                     ),
                                                     Text(
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        '2waf5aj9' /* /month */,
+                                                        'fnr6fpd2' /* /month */,
                                                       ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
@@ -1394,6 +1619,32 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                                 FontWeight.w500,
                                                           ),
                                                     ),
+                                                    if (isiOS)
+                                                      Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'vxy1aw3i' /* ) */,
+                                                        ),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Poppins',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                ),
+                                                      ),
                                                   ].divide(
                                                       SizedBox(width: 0.0)),
                                                 ),
@@ -1415,7 +1666,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ],
+                                              ].divide(SizedBox(height: 2.0)),
                                             ),
                                           ),
                                         if (!_model.annual)
@@ -1436,7 +1687,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'gzuhzq2v' /* $9.99 */,
+                                                        'gzuhzq2v' /* $8.99 */,
                                                       ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
@@ -1492,13 +1743,13 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ],
+                                              ].divide(SizedBox(height: 2.0)),
                                             ),
                                           ),
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 13.0, 0.0, 0.0),
+                                                  0.0, 17.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -1660,7 +1911,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    20.0, 25.0, 20.0, 0.0),
+                                                    20.0, 20.0, 20.0, 15.0),
                                             child: FFButtonWidget(
                                               onPressed: () {
                                                 print('Button pressed ...');
@@ -1704,7 +1955,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 30.0, 0.0, 0.0),
+                                                    0.0, 20.0, 0.0, 5.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
@@ -1721,6 +1972,76 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                             FontWeight.w600,
                                                       ),
                                             ),
+                                          ),
+                                        if (isiOS && (widget.idPlan! < 3))
+                                          Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            children: [
+                                              InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await launchURL(
+                                                      'https://pointbird.io/app-privacy-policy/');
+                                                },
+                                                child: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'hpa46fw4' /* Privacy policy */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        fontSize: 12.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                ),
+                                              ),
+                                              InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await launchURL(
+                                                      'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/');
+                                                },
+                                                child: Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'u1qvosmh' /* Terms of use */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        fontSize: 12.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                      ),
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                       ],
                                     ),
@@ -1756,7 +2077,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                         ),
                       ),
                     ),
-                    if (MediaQuery.sizeOf(context).height > 750.0)
+                    if (MediaQuery.sizeOf(context).height > 800.0)
                       Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,

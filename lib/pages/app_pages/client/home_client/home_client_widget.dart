@@ -44,6 +44,15 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
     super.initState();
     _model = createModel(context, () => HomeClientModel());
 
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      await actions.configureCustomer(
+        currentUserUid,
+        FFAppState().user.id,
+        true,
+      );
+    });
+
     _model.codeTextController ??= TextEditingController();
     _model.codeFocusNode ??= FocusNode();
 
@@ -379,7 +388,7 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                       androidAdUnitId:
                                           'ca-app-pub-3940256099942544/6300978111',
                                       iosAdUnitId:
-                                          'ca-app-pub-3940256099942544/2934735716',
+                                          'ca-app-pub-9807921451745876/4548901200',
                                       loadingBackgroundColor:
                                           FlutterFlowTheme.of(context).tertiary,
                                       loadingText: 'Loading ad...',

@@ -22,3 +22,4 @@ export 'onesignal_initialise.dart' show onesignalInitialise;
 export 'is_admin.dart' show isAdmin;
 export 'update_rates.dart' show updateRates;
 export 'pre_ad_function.dart' show preAdFunction;
+export 'configure_customer.dart' show configureCustomer;

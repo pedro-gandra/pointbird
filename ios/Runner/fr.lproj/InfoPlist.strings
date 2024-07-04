@@ -1,2 +1,3 @@
-NSCameraUsageDescription = "Afin de prendre une photo ou une vidéo, cette application nécessite une autorisation pour accéder à la caméra.";
-NSPhotoLibraryUsageDescription = "Afin de télécharger des données, cette application nécessite l'autorisation d'accéder à la photothèque.";
+NSCameraUsageDescription = "Afin de prendre une photo ou une vidéo, cette application nécessite une autorisation pour accéder à la caméra. Ceci est nécessaire pour prendre une photo pour votre profil, par exemple.";
+NSPhotoLibraryUsageDescription = "Afin de télécharger des données, cette application nécessite l'autorisation d'accéder à la photothèque. Ceci est nécessaire pour télécharger une photo pour votre profil, par exemple.";
+NSLocationWhenInUseUsageDescription = "Cette application nécessite une autorisation pour accéder à votre position. Ceci est utilisé pour filtrer les entreprises en fonction de leur pertinence sur la page d'exploration.";

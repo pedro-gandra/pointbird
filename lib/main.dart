@@ -14,6 +14,7 @@ import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
 import 'flutter_flow/nav/nav.dart';
 import 'index.dart';
+import 'flutter_flow/revenue_cat_util.dart' as revenue_cat;
 
 import '/flutter_flow/admob_util.dart';
 
@@ -32,6 +33,11 @@ void main() async {
 
   final appState = FFAppState(); // Initialize FFAppState
   await appState.initializePersistedState();
+
+  await revenue_cat.initialize(
+    "appl_NTMJxzsTFrJWAaDogzBRQPkUvPO",
+    "goog_KBrKbQZiYgzfmAuOgCUKjwkLpLK",
+  );
 
   runApp(ChangeNotifierProvider(
     create: (context) => appState,

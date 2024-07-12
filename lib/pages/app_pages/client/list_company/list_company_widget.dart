@@ -67,7 +67,7 @@ class _ListCompanyWidgetState extends State<ListCompanyWidget> {
                           queryFn: (q) => q
                               .eq(
                                 'id_client',
-                                widget.idClient,
+                                widget!.idClient,
                               )
                               .order('current_points'),
                         ),
@@ -88,6 +88,7 @@ class _ListCompanyWidgetState extends State<ListCompanyWidget> {
                           }
                           List<ViewHomeClientRow>
                               listViewViewHomeClientRowList = snapshot.data!;
+
                           return ListView.separated(
                             padding: EdgeInsets.zero,
                             primary: false,

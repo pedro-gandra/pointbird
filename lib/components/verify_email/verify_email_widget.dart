@@ -109,7 +109,7 @@ class _VerifyEmailWidgetState extends State<VerifyEmailWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 18.0, 0.0, 0.0),
                                   child: Text(
-                                    'An email was sent to: ${widget.email}',
+                                    'An email was sent to: ${widget!.email}',
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .labelMedium

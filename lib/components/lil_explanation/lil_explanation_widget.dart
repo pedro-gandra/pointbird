@@ -62,7 +62,7 @@ class _LilExplanationWidgetState extends State<LilExplanationWidget> {
               padding: EdgeInsetsDirectional.fromSTEB(15.0, 8.0, 15.0, 8.0),
               child: Text(
                 valueOrDefault<String>(
-                  widget.text,
+                  widget!.text,
                   '-',
                 ),
                 style: FlutterFlowTheme.of(context).bodyMedium.override(

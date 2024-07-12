@@ -56,26 +56,32 @@ class _CouponListWidgetState extends State<CouponListWidget> {
             false,
           );
 
-          await showDialog(
-            context: context,
-            builder: (dialogContext) {
-              return Dialog(
-                elevation: 0,
-                insetPadding: EdgeInsets.zero,
-                backgroundColor: Colors.transparent,
-                alignment: AlignmentDirectional(0.0, 0.0)
-                    .resolve(Directionality.of(context)),
-                child: GestureDetector(
-                  onTap: () => _model.unfocusNode.canRequestFocus
-                      ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-                      : FocusScope.of(context).unfocus(),
-                  child: AfterAdWidget(
-                    pointsSaved: _model.preAd!,
+          if (!FFAppState().planShow) {
+            await showDialog(
+              context: context,
+              builder: (dialogContext) {
+                return Dialog(
+                  elevation: 0,
+                  insetPadding: EdgeInsets.zero,
+                  backgroundColor: Colors.transparent,
+                  alignment: AlignmentDirectional(0.0, 0.0)
+                      .resolve(Directionality.of(context)),
+                  child: GestureDetector(
+                    onTap: () => _model.unfocusNode.canRequestFocus
+                        ? FocusScope.of(context)
+                            .requestFocus(_model.unfocusNode)
+                        : FocusScope.of(context).unfocus(),
+                    child: AfterAdWidget(
+                      pointsSaved: _model.preAd!,
+                    ),
                   ),
-                ),
-              );
-            },
-          ).then((value) => setState(() {}));
+                );
+              },
+            ).then((value) => setState(() {}));
+
+            FFAppState().planShow = true;
+            setState(() {});
+          }
         }
       }
     });
@@ -139,7 +145,7 @@ class _CouponListWidgetState extends State<CouponListWidget> {
                                 ),
                               ),
                               Text(
-                                '${widget.generalInfo!.disabledCoupons! > 0 ? '${widget.generalInfo?.activeCoupons?.toString()} (${((widget.generalInfo!.activeCoupons!) + (widget.generalInfo!.disabledCoupons!)).toString()})' : widget.generalInfo?.activeCoupons?.toString()}',
+                                '${widget!.generalInfo!.disabledCoupons! > 0 ? '${widget!.generalInfo?.activeCoupons?.toString()} (${((widget!.generalInfo!.activeCoupons!) + (widget!.generalInfo!.disabledCoupons!)).toString()})' : widget!.generalInfo?.activeCoupons?.toString()}',
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -162,7 +168,7 @@ class _CouponListWidgetState extends State<CouponListWidget> {
                                     queryFn: (q) => q
                                         .eq(
                                           'id_client',
-                                          widget.idClient,
+                                          widget!.idClient,
                                         )
                                         .order('active_status')
                                         .order('expiration'),
@@ -186,6 +192,7 @@ class _CouponListWidgetState extends State<CouponListWidget> {
                               List<ViewCouponsClientRow>
                                   listViewViewCouponsClientRowList =
                                   snapshot.data!;
+
                               return ListView.separated(
                                 padding: EdgeInsets.zero,
                                 primary: false,

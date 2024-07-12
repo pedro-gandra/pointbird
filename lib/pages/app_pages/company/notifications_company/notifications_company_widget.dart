@@ -70,7 +70,7 @@ class _NotificationsCompanyWidgetState
                           queryFn: (q) => q
                               .eq(
                                 'id_manager',
-                                widget.idManager,
+                                widget!.idManager,
                               )
                               .order('created_at'),
                           limit: 100,
@@ -92,6 +92,7 @@ class _NotificationsCompanyWidgetState
                           }
                           List<NotificationsRow> listViewNotificationsRowList =
                               snapshot.data!;
+
                           return ListView.separated(
                             padding: EdgeInsets.zero,
                             primary: false,

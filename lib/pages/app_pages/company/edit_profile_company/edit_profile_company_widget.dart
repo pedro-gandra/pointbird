@@ -40,19 +40,19 @@ class _EditProfileCompanyWidgetState extends State<EditProfileCompanyWidget> {
     _model = createModel(context, () => EditProfileCompanyModel());
 
     _model.nameTextController ??=
-        TextEditingController(text: widget.companyInfo?.name);
+        TextEditingController(text: widget!.companyInfo?.name);
     _model.nameFocusNode ??= FocusNode();
 
     _model.bioTextController ??=
-        TextEditingController(text: widget.companyInfo?.bio);
+        TextEditingController(text: widget!.companyInfo?.bio);
     _model.bioFocusNode ??= FocusNode();
 
     _model.linkTextController ??=
-        TextEditingController(text: widget.companyInfo?.link);
+        TextEditingController(text: widget!.companyInfo?.link);
     _model.linkFocusNode ??= FocusNode();
 
     _model.instagramTextController ??=
-        TextEditingController(text: widget.companyInfo?.instagram);
+        TextEditingController(text: widget!.companyInfo?.instagram);
     _model.instagramFocusNode ??= FocusNode();
   }
 
@@ -140,7 +140,7 @@ class _EditProfileCompanyWidgetState extends State<EditProfileCompanyWidget> {
                                           shape: BoxShape.circle,
                                         ),
                                         child: Image.network(
-                                          widget.companyInfo!.imageUrl!,
+                                          widget!.companyInfo!.imageUrl!,
                                           fit: BoxFit.cover,
                                         ),
                                       ),
@@ -588,12 +588,13 @@ class _EditProfileCompanyWidgetState extends State<EditProfileCompanyWidget> {
                                     List<CategoriesRow>
                                         categoryCategoriesRowList =
                                         snapshot.data!;
+
                                     return FlutterFlowDropDown<String>(
                                       controller:
                                           _model.categoryValueController ??=
                                               FormFieldController<String>(
                                         _model.categoryValue ??=
-                                            widget.companyInfo?.nameCategory,
+                                            widget!.companyInfo?.nameCategory,
                                       ),
                                       options: categoryCategoriesRowList
                                           .map((e) => e.name)
@@ -678,7 +679,7 @@ class _EditProfileCompanyWidgetState extends State<EditProfileCompanyWidget> {
                                       },
                                       matchingRows: (rows) => rows.eq(
                                         'id',
-                                        widget.companyInfo?.id,
+                                        widget!.companyInfo?.id,
                                       ),
                                     );
                                     if (_model.uploadedLocalFile1 != null &&
@@ -839,7 +840,7 @@ class _EditProfileCompanyWidgetState extends State<EditProfileCompanyWidget> {
                   parameter1: 'Edit profile',
                   action: 'close',
                   font: 15,
-                  blockBack: widget.blockBack,
+                  blockBack: widget!.blockBack,
                 ),
               ),
             ],

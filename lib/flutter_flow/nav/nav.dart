@@ -387,6 +387,20 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'chooseLanguage',
           path: '/chooseLanguage',
           builder: (context, params) => ChooseLanguageWidget(),
+        ),
+        FFRoute(
+          name: 'editProducts',
+          path: '/editProducts',
+          builder: (context, params) => EditProductsWidget(
+            companyInfo: params.getParam<ViewHomeCompanyRow>(
+              'companyInfo',
+              ParamType.SupabaseRow,
+            ),
+            json: params.getParam(
+              'json',
+              ParamType.JSON,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

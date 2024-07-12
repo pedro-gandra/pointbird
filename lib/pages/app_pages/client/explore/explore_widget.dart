@@ -117,7 +117,7 @@ class _ExploreWidgetState extends State<ExploreWidget>
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 2.0, 0.0, 0.0),
                                       child: Text(
-                                        'Your country: ${widget.country}',
+                                        'Your country: ${widget!.country}',
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -312,6 +312,7 @@ class _ExploreWidgetState extends State<ExploreWidget>
                                             List<CategoriesRow>
                                                 categoryCategoriesRowList =
                                                 snapshot.data!;
+
                                             return FlutterFlowDropDown<String>(
                                               controller: _model
                                                       .categoryValueController ??=
@@ -327,7 +328,7 @@ class _ExploreWidgetState extends State<ExploreWidget>
                                                     await actions
                                                         .exploreCompanies(
                                                   _model.categoryValue!,
-                                                  widget.country!,
+                                                  widget!.country!,
                                                   FFAppState().user.id,
                                                 );
                                                 _model.listCompanies = _model
@@ -544,7 +545,7 @@ class _ExploreWidgetState extends State<ExploreWidget>
                                                   await actions
                                                       .exploreCompanies2(
                                                 _model.textController.text,
-                                                widget.country!,
+                                                widget!.country!,
                                                 FFAppState().user.id,
                                               );
                                               _model.listCompanies = _model
@@ -665,6 +666,7 @@ class _ExploreWidgetState extends State<ExploreWidget>
                                                       final companies = _model
                                                           .listCompanies
                                                           .toList();
+
                                                       return ListView.builder(
                                                         padding:
                                                             EdgeInsets.zero,

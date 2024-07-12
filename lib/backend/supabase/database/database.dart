@@ -15,6 +15,7 @@ export 'tables/currencies.dart';
 export 'tables/companies.dart';
 export 'tables/view_posts_poll_client.dart';
 export 'tables/view_coupons_company.dart';
+export 'tables/products.dart';
 export 'tables/view_coupons_client.dart';
 export 'tables/notifications.dart';
 export 'tables/posts_clients.dart';

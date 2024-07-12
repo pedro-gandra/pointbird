@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
 import 'home_company_widget.dart' show HomeCompanyWidget;
@@ -24,6 +25,8 @@ class HomeCompanyModel extends FlutterFlowModel<HomeCompanyWidget> {
   ///  Local state fields for this page.
 
   int tabSelected = 1;
+
+  bool productsEmpty = false;
 
   ///  State fields for stateful widgets in this page.
 

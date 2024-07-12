@@ -1,3 +1,4 @@
+import '/components/purchase_confirm/purchase_confirm_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -42,7 +43,7 @@ class _PlansWidgetState extends State<PlansWidget> {
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.index = functions.changeInt(widget.idPlan!, '-', 1);
+      _model.index = functions.changeInt(widget!.idPlan!, '-', 1);
       setState(() {});
     });
   }
@@ -383,7 +384,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 40.0, 0.0, 0.0),
                                             child: Text(
-                                              widget.idPlan == 1
+                                              widget!.idPlan == 1
                                                   ? 'This is your plan'
                                                   : 'Free',
                                               style:
@@ -1076,69 +1077,123 @@ class _PlansWidgetState extends State<PlansWidget> {
                                             ].divide(SizedBox(width: 8.0)),
                                           ),
                                         ),
-                                        if (widget.idPlan! < 2)
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    20.0, 20.0, 20.0, 15.0),
-                                            child: FFButtonWidget(
-                                              onPressed: () async {
-                                                if (_model.annual) {
-                                                  _model.crowY = await actions
-                                                      .makePurchase(
-                                                    'crow_annual',
-                                                    'Crow Plan',
-                                                    'paywall_v1',
-                                                    FFAppState().user.id,
-                                                  );
-                                                } else {
-                                                  _model.crowM = await actions
-                                                      .makePurchase(
-                                                    'crow_monthly',
-                                                    'Crow Plan',
-                                                    'paywall_v1',
-                                                    FFAppState().user.id,
-                                                  );
-                                                }
+                                        if (widget!.idPlan! < 2)
+                                          Builder(
+                                            builder: (context) => Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      20.0, 20.0, 20.0, 15.0),
+                                              child: FFButtonWidget(
+                                                onPressed: () async {
+                                                  if (_model.annual) {
+                                                    _model.crowY = await actions
+                                                        .makePurchase(
+                                                      'crow_annual',
+                                                      'Crow Plan',
+                                                      'paywall_v1',
+                                                      FFAppState().user.id,
+                                                    );
+                                                    if (_model.crowY!) {
+                                                      Navigator.pop(context);
+                                                      await showDialog(
+                                                        context: context,
+                                                        builder:
+                                                            (dialogContext) {
+                                                          return Dialog(
+                                                            elevation: 0,
+                                                            insetPadding:
+                                                                EdgeInsets.zero,
+                                                            backgroundColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            alignment: AlignmentDirectional(
+                                                                    0.0, 0.0)
+                                                                .resolve(
+                                                                    Directionality.of(
+                                                                        context)),
+                                                            child:
+                                                                PurchaseConfirmWidget(),
+                                                          );
+                                                        },
+                                                      ).then((value) =>
+                                                          setState(() {}));
+                                                    }
+                                                  } else {
+                                                    _model.crowM = await actions
+                                                        .makePurchase(
+                                                      'crow_monthly',
+                                                      'Crow Plan',
+                                                      'paywall_v1',
+                                                      FFAppState().user.id,
+                                                    );
+                                                    if (_model.crowM!) {
+                                                      Navigator.pop(context);
+                                                      await showDialog(
+                                                        context: context,
+                                                        builder:
+                                                            (dialogContext) {
+                                                          return Dialog(
+                                                            elevation: 0,
+                                                            insetPadding:
+                                                                EdgeInsets.zero,
+                                                            backgroundColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            alignment: AlignmentDirectional(
+                                                                    0.0, 0.0)
+                                                                .resolve(
+                                                                    Directionality.of(
+                                                                        context)),
+                                                            child:
+                                                                PurchaseConfirmWidget(),
+                                                          );
+                                                        },
+                                                      ).then((value) =>
+                                                          setState(() {}));
+                                                    }
+                                                  }
 
-                                                setState(() {});
-                                              },
-                                              text: FFLocalizations.of(context)
-                                                  .getText(
-                                                'novc42lg' /* Upgrade now */,
-                                              ),
-                                              options: FFButtonOptions(
-                                                width: double.infinity,
-                                                height: 44.0,
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 0.0, 0.0),
-                                                iconPadding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: Colors.white,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                elevation: 3.0,
-                                                borderSide: BorderSide(
-                                                  color: Colors.transparent,
-                                                  width: 1.0,
+                                                  setState(() {});
+                                                },
+                                                text:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'novc42lg' /* Upgrade now */,
                                                 ),
-                                                borderRadius:
-                                                    BorderRadius.circular(12.0),
+                                                options: FFButtonOptions(
+                                                  width: double.infinity,
+                                                  height: 44.0,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 0.0),
+                                                  iconPadding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color: Colors.white,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                  elevation: 3.0,
+                                                  borderSide: BorderSide(
+                                                    color: Colors.transparent,
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          12.0),
+                                                ),
                                               ),
                                             ),
                                           ),
-                                        if (widget.idPlan == 2)
+                                        if (widget!.idPlan == 2)
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
@@ -1160,7 +1215,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                       ),
                                             ),
                                           ),
-                                        if (isiOS && (widget.idPlan! < 2))
+                                        if (isiOS && (widget!.idPlan! < 2))
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -1905,51 +1960,125 @@ class _PlansWidgetState extends State<PlansWidget> {
                                             ].divide(SizedBox(width: 8.0)),
                                           ),
                                         ),
-                                        if (widget.idPlan! < 3)
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    20.0, 20.0, 20.0, 15.0),
-                                            child: FFButtonWidget(
-                                              onPressed: () {
-                                                print('Button pressed ...');
-                                              },
-                                              text: FFLocalizations.of(context)
-                                                  .getText(
-                                                'lzxmiq72' /* Upgrade now */,
-                                              ),
-                                              options: FFButtonOptions(
-                                                width: double.infinity,
-                                                height: 44.0,
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 0.0, 0.0),
-                                                iconPadding:
-                                                    EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          color: Colors.white,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                elevation: 3.0,
-                                                borderSide: BorderSide(
-                                                  color: Colors.transparent,
-                                                  width: 1.0,
+                                        if (widget!.idPlan! < 3)
+                                          Builder(
+                                            builder: (context) => Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      20.0, 20.0, 20.0, 15.0),
+                                              child: FFButtonWidget(
+                                                onPressed: () async {
+                                                  if (_model.annual) {
+                                                    _model.eagleY =
+                                                        await actions
+                                                            .makePurchase(
+                                                      'eagle_annual',
+                                                      'Eagle Plan',
+                                                      'paywall_v1',
+                                                      FFAppState().user.id,
+                                                    );
+                                                    if (_model.eagleY!) {
+                                                      Navigator.pop(context);
+                                                      await showDialog(
+                                                        context: context,
+                                                        builder:
+                                                            (dialogContext) {
+                                                          return Dialog(
+                                                            elevation: 0,
+                                                            insetPadding:
+                                                                EdgeInsets.zero,
+                                                            backgroundColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            alignment: AlignmentDirectional(
+                                                                    0.0, 0.0)
+                                                                .resolve(
+                                                                    Directionality.of(
+                                                                        context)),
+                                                            child:
+                                                                PurchaseConfirmWidget(),
+                                                          );
+                                                        },
+                                                      ).then((value) =>
+                                                          setState(() {}));
+                                                    }
+                                                  } else {
+                                                    _model.eagleM =
+                                                        await actions
+                                                            .makePurchase(
+                                                      'eagle_monthly',
+                                                      'Eagle Plan',
+                                                      'paywall_v1',
+                                                      FFAppState().user.id,
+                                                    );
+                                                    if (_model.eagleM!) {
+                                                      Navigator.pop(context);
+                                                      await showDialog(
+                                                        context: context,
+                                                        builder:
+                                                            (dialogContext) {
+                                                          return Dialog(
+                                                            elevation: 0,
+                                                            insetPadding:
+                                                                EdgeInsets.zero,
+                                                            backgroundColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            alignment: AlignmentDirectional(
+                                                                    0.0, 0.0)
+                                                                .resolve(
+                                                                    Directionality.of(
+                                                                        context)),
+                                                            child:
+                                                                PurchaseConfirmWidget(),
+                                                          );
+                                                        },
+                                                      ).then((value) =>
+                                                          setState(() {}));
+                                                    }
+                                                  }
+
+                                                  setState(() {});
+                                                },
+                                                text:
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                  'lzxmiq72' /* Upgrade now */,
                                                 ),
-                                                borderRadius:
-                                                    BorderRadius.circular(12.0),
+                                                options: FFButtonOptions(
+                                                  width: double.infinity,
+                                                  height: 44.0,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 0.0),
+                                                  iconPadding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color: Colors.white,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                  elevation: 3.0,
+                                                  borderSide: BorderSide(
+                                                    color: Colors.transparent,
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          12.0),
+                                                ),
                                               ),
                                             ),
                                           ),
-                                        if (widget.idPlan == 3)
+                                        if (widget!.idPlan == 3)
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
@@ -1971,7 +2100,7 @@ class _PlansWidgetState extends State<PlansWidget> {
                                                       ),
                                             ),
                                           ),
-                                        if (isiOS && (widget.idPlan! < 3))
+                                        if (isiOS && (widget!.idPlan! < 3))
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -2056,7 +2185,8 @@ class _PlansWidgetState extends State<PlansWidget> {
                               0,
                               min(
                                   valueOrDefault<int>(
-                                    functions.changeInt(widget.openAt!, '-', 1),
+                                    functions.changeInt(
+                                        widget!.openAt!, '-', 1),
                                     0,
                                   ),
                                   2)),

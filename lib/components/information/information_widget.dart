@@ -95,7 +95,7 @@ class _InformationWidgetState extends State<InformationWidget> {
                               children: [
                                 Text(
                                   valueOrDefault<String>(
-                                    widget.title,
+                                    widget!.title,
                                     'title',
                                   ),
                                   textAlign: TextAlign.start,
@@ -115,7 +115,7 @@ class _InformationWidgetState extends State<InformationWidget> {
                                       0.0, 12.0, 0.0, 0.0),
                                   child: Text(
                                     valueOrDefault<String>(
-                                      widget.desc,
+                                      widget!.desc,
                                       'desc',
                                     ),
                                     style: FlutterFlowTheme.of(context)
@@ -138,7 +138,7 @@ class _InformationWidgetState extends State<InformationWidget> {
                                     onPressed: () async {
                                       Navigator.pop(context);
                                     },
-                                    text: widget.button!,
+                                    text: widget!.button!,
                                     options: FFButtonOptions(
                                       height: 40.0,
                                       padding: EdgeInsetsDirectional.fromSTEB(

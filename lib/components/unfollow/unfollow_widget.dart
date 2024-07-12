@@ -86,7 +86,7 @@ class _UnfollowWidgetState extends State<UnfollowWidget> {
                           Align(
                             alignment: AlignmentDirectional(0.0, 0.0),
                             child: Text(
-                              'Unfollow ${widget.companyInfo?.name}',
+                              'Unfollow ${widget!.companyInfo?.name}',
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .headlineMedium
@@ -135,11 +135,11 @@ class _UnfollowWidgetState extends State<UnfollowWidget> {
                             matchingRows: (rows) => rows
                                 .eq(
                                   'id_company',
-                                  widget.companyInfo?.idCompany,
+                                  widget!.companyInfo?.idCompany,
                                 )
                                 .eq(
                                   'id_client',
-                                  widget.companyInfo?.idClient,
+                                  widget!.companyInfo?.idClient,
                                 ),
                           );
 

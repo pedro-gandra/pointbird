@@ -187,7 +187,7 @@ class _CompanyCouponsWidgetState extends State<CompanyCouponsWidget> {
                               .asValidator(context),
                         ),
                       ),
-                      if (widget.active! > 0)
+                      if (widget!.active! > 0)
                         Align(
                           alignment: AlignmentDirectional(0.0, 0.0),
                           child: Text(
@@ -241,6 +241,7 @@ class _CompanyCouponsWidgetState extends State<CompanyCouponsWidget> {
                             List<ViewCouponsCompanyRow>
                                 listViewViewCouponsCompanyRowList =
                                 snapshot.data!;
+
                             return ListView.builder(
                               padding: EdgeInsets.zero,
                               primary: false,

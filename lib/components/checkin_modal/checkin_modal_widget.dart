@@ -107,7 +107,7 @@ class _CheckinModalWidgetState extends State<CheckinModalWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: Text(
-                              'You now have a ${widget.streak?.toString()} day streak, come back again tomorrow for even more points!',
+                              'You now have a ${widget!.streak?.toString()} day streak, come back again tomorrow for even more points!',
                               textAlign: TextAlign.start,
                               style: FlutterFlowTheme.of(context)
                                   .headlineMedium
@@ -123,7 +123,7 @@ class _CheckinModalWidgetState extends State<CheckinModalWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 25.0, 0.0, 15.0),
                             child: Text(
-                              'How check ins work for ${widget.companyInfo?.name}:',
+                              'How check ins work for ${widget!.companyInfo?.name}:',
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
@@ -146,7 +146,8 @@ class _CheckinModalWidgetState extends State<CheckinModalWidget> {
                           child: Builder(
                             builder: (context) {
                               final checkinDisplay =
-                                  widget.companyInfo?.checkIn?.toList() ?? [];
+                                  widget!.companyInfo?.checkIn?.toList() ?? [];
+
                               return GridView.builder(
                                 padding: EdgeInsets.zero,
                                 gridDelegate:
@@ -189,7 +190,7 @@ class _CheckinModalWidgetState extends State<CheckinModalWidget> {
                                               MediaQuery.sizeOf(context).width *
                                                   1.0,
                                           decoration: BoxDecoration(
-                                            color: widget.streak! <=
+                                            color: widget!.streak! <=
                                                     checkinDisplayIndex
                                                 ? FlutterFlowTheme.of(context)
                                                     .secondaryBackground
@@ -220,7 +221,7 @@ class _CheckinModalWidgetState extends State<CheckinModalWidget> {
                                                     .bodyMedium
                                                     .override(
                                                       fontFamily: 'Poppins',
-                                                      color: widget.streak! <=
+                                                      color: widget!.streak! <=
                                                               checkinDisplayIndex
                                                           ? FlutterFlowTheme.of(
                                                                   context)
@@ -242,7 +243,7 @@ class _CheckinModalWidgetState extends State<CheckinModalWidget> {
                                                     .bodyMedium
                                                     .override(
                                                       fontFamily: 'Poppins',
-                                                      color: widget.streak! <=
+                                                      color: widget!.streak! <=
                                                               checkinDisplayIndex
                                                           ? FlutterFlowTheme.of(
                                                                   context)

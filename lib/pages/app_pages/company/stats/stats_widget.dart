@@ -53,9 +53,9 @@ class _StatsWidgetState extends State<StatsWidget>
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.startDate = widget.start;
-      _model.endDate = widget.end;
-      _model.stats = widget.stats;
+      _model.startDate = widget!.start;
+      _model.endDate = widget!.end;
+      _model.stats = widget!.stats;
       setState(() {});
     });
 

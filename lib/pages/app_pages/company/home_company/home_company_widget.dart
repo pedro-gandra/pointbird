@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -110,6 +111,7 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
           }
           List<ViewHomeCompanyRow> homeCompanyViewHomeCompanyRowList =
               snapshot.data!;
+
           final homeCompanyViewHomeCompanyRow =
               homeCompanyViewHomeCompanyRowList.isNotEmpty
                   ? homeCompanyViewHomeCompanyRowList.first
@@ -567,7 +569,10 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                                 homeCompanyViewHomeCompanyRow!
                                                     .link!),
                                             'you shouldnt see this',
-                                          ).maybeHandleOverflow(maxChars: 32),
+                                          ).maybeHandleOverflow(
+                                            maxChars: 25,
+                                            replacement: '…',
+                                          ),
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -735,6 +740,363 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                 ],
                               ),
                             ),
+                            if (homeCompanyViewHomeCompanyRow!.productsCount! >
+                                0)
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 14.0, 0.0, 0.0),
+                                child: Container(
+                                  decoration: BoxDecoration(),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            20.0, 0.0, 20.0, 0.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Expanded(
+                                              child: Stack(
+                                                children: [
+                                                  Align(
+                                                    alignment:
+                                                        AlignmentDirectional(
+                                                            0.0, 0.0),
+                                                    child: Text(
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'e5fgb9kt' /* Popular products */,
+                                                      ),
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Poppins',
+                                                            fontSize: 14.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w600,
+                                                          ),
+                                                    ),
+                                                  ),
+                                                  Align(
+                                                    alignment:
+                                                        AlignmentDirectional(
+                                                            1.0, 0.0),
+                                                    child: InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        context.goNamed(
+                                                          'editProducts',
+                                                          queryParameters: {
+                                                            'companyInfo':
+                                                                serializeParam(
+                                                              homeCompanyViewHomeCompanyRow,
+                                                              ParamType
+                                                                  .SupabaseRow,
+                                                            ),
+                                                            'json':
+                                                                serializeParam(
+                                                              homeCompanyViewHomeCompanyRow
+                                                                  ?.productsJson,
+                                                              ParamType.JSON,
+                                                            ),
+                                                          }.withoutNulls,
+                                                          extra: <String,
+                                                              dynamic>{
+                                                            kTransitionInfoKey:
+                                                                TransitionInfo(
+                                                              hasTransition:
+                                                                  true,
+                                                              transitionType:
+                                                                  PageTransitionType
+                                                                      .rightToLeft,
+                                                              duration: Duration(
+                                                                  milliseconds:
+                                                                      200),
+                                                            ),
+                                                          },
+                                                        );
+                                                      },
+                                                      child: Icon(
+                                                        Icons.more_vert,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryText,
+                                                        size: 20.0,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 10.0, 0.0, 0.0),
+                                        child: Container(
+                                          width: double.infinity,
+                                          height: 145.0,
+                                          decoration: BoxDecoration(),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    10.0, 0.0, 10.0, 0.0),
+                                            child: Builder(
+                                              builder: (context) {
+                                                final products = (homeCompanyViewHomeCompanyRow
+                                                                ?.productsJson
+                                                                ?.toList()
+                                                                .map<ProductStruct?>(
+                                                                    ProductStruct
+                                                                        .maybeFromMap)
+                                                                .toList()
+                                                            as Iterable<
+                                                                ProductStruct?>)
+                                                        .withoutNulls
+                                                        ?.toList() ??
+                                                    [];
+
+                                                return ListView.separated(
+                                                  padding: EdgeInsets.zero,
+                                                  primary: false,
+                                                  shrinkWrap: true,
+                                                  scrollDirection:
+                                                      Axis.horizontal,
+                                                  itemCount: products.length,
+                                                  separatorBuilder: (_, __) =>
+                                                      SizedBox(width: 20.0),
+                                                  itemBuilder:
+                                                      (context, productsIndex) {
+                                                    final productsItem =
+                                                        products[productsIndex];
+                                                    return InkWell(
+                                                      splashColor:
+                                                          Colors.transparent,
+                                                      focusColor:
+                                                          Colors.transparent,
+                                                      hoverColor:
+                                                          Colors.transparent,
+                                                      highlightColor:
+                                                          Colors.transparent,
+                                                      onTap: () async {
+                                                        await launchURL(
+                                                            'https://${functions.replaceString('https://', '', productsItem.link)}');
+                                                      },
+                                                      child: Container(
+                                                        width: 95.0,
+                                                        decoration:
+                                                            BoxDecoration(),
+                                                        child: Column(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                              child:
+                                                                  CachedNetworkImage(
+                                                                fadeInDuration:
+                                                                    Duration(
+                                                                        milliseconds:
+                                                                            0),
+                                                                fadeOutDuration:
+                                                                    Duration(
+                                                                        milliseconds:
+                                                                            0),
+                                                                imageUrl:
+                                                                    productsItem
+                                                                        .imageUrl,
+                                                                width: 95.0,
+                                                                height: 95.0,
+                                                                fit: BoxFit
+                                                                    .cover,
+                                                              ),
+                                                            ),
+                                                            Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .center,
+                                                                  children: [
+                                                                    Text(
+                                                                      productsItem
+                                                                          .name
+                                                                          .maybeHandleOverflow(
+                                                                        maxChars:
+                                                                            15,
+                                                                        replacement:
+                                                                            '…',
+                                                                      ),
+                                                                      textAlign:
+                                                                          TextAlign
+                                                                              .center,
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Poppins',
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primaryText,
+                                                                            fontSize:
+                                                                                10.0,
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                            fontWeight:
+                                                                                FontWeight.w500,
+                                                                          ),
+                                                                    ),
+                                                                  ],
+                                                                ),
+                                                                Text(
+                                                                  '${homeCompanyViewHomeCompanyRow?.currencySymbol}${formatNumber(
+                                                                    productsItem
+                                                                        .price,
+                                                                    formatType:
+                                                                        FormatType
+                                                                            .custom,
+                                                                    format:
+                                                                        '#,###.00',
+                                                                    locale: '',
+                                                                  )}',
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .center,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Poppins',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        fontSize:
+                                                                            14.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w500,
+                                                                      ),
+                                                                ),
+                                                              ].divide(SizedBox(
+                                                                  height: 1.0)),
+                                                            ),
+                                                          ].divide(SizedBox(
+                                                              height: 5.0)),
+                                                        ),
+                                                      ),
+                                                    );
+                                                  },
+                                                );
+                                              },
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            if (homeCompanyViewHomeCompanyRow?.productsCount ==
+                                0)
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 14.0, 10.0, 0.0),
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.goNamed(
+                                      'editProducts',
+                                      queryParameters: {
+                                        'companyInfo': serializeParam(
+                                          homeCompanyViewHomeCompanyRow,
+                                          ParamType.SupabaseRow,
+                                        ),
+                                        'json': serializeParam(
+                                          homeCompanyViewHomeCompanyRow
+                                              ?.productsJson,
+                                          ParamType.JSON,
+                                        ),
+                                      }.withoutNulls,
+                                      extra: <String, dynamic>{
+                                        kTransitionInfoKey: TransitionInfo(
+                                          hasTransition: true,
+                                          transitionType:
+                                              PageTransitionType.rightToLeft,
+                                          duration: Duration(milliseconds: 200),
+                                        ),
+                                      },
+                                    );
+                                  },
+                                  child: Container(
+                                    width: double.infinity,
+                                    height: 80.0,
+                                    decoration: BoxDecoration(
+                                      color:
+                                          FlutterFlowTheme.of(context).tertiary,
+                                    ),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Icon(
+                                          Icons.add_shopping_cart,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
+                                          size: 26.0,
+                                        ),
+                                        Text(
+                                          FFLocalizations.of(context).getText(
+                                            'er4470a3' /* Add products */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                fontSize: 14.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w500,
+                                              ),
+                                        ),
+                                      ].divide(SizedBox(width: 15.0)),
+                                    ),
+                                  ),
+                                ),
+                              ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 20.0, 0.0, 0.0),
@@ -938,6 +1300,7 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                             List<ViewPostsViewRow>
                                                 offersViewPostsViewRowList =
                                                 snapshot.data!;
+
                                             return ListView.builder(
                                               padding: EdgeInsets.zero,
                                               primary: false,
@@ -1348,6 +1711,7 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                             List<ViewPostsPollRow>
                                                 pollsViewPostsPollRowList =
                                                 snapshot.data!;
+
                                             return ListView.builder(
                                               padding: EdgeInsets.zero,
                                               primary: false,
@@ -1611,6 +1975,7 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                                                           .convertPollOptions(
                                                                               pollsViewPostsPollRow.optionsInfo!)
                                                                           .toList();
+
                                                                       return Column(
                                                                         mainAxisSize:
                                                                             MainAxisSize.max,
@@ -1806,6 +2171,7 @@ class _HomeCompanyWidgetState extends State<HomeCompanyWidget> {
                                             List<ViewPostsViewRow>
                                                 socialViewPostsViewRowList =
                                                 snapshot.data!;
+
                                             return ListView.builder(
                                               padding: EdgeInsets.zero,
                                               primary: false,

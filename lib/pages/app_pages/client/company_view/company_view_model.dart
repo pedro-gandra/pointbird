@@ -13,6 +13,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import 'dart:math';
+import '/backend/schema/structs/index.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/admob_util.dart' as admob;
 import '/flutter_flow/custom_functions.dart' as functions;
@@ -40,6 +41,8 @@ class CompanyViewModel extends FlutterFlowModel<CompanyViewWidget> {
   int tabSelected = 1;
 
   bool isClick = false;
+
+  bool showProducts = false;
 
   ///  State fields for stateful widgets in this page.
 

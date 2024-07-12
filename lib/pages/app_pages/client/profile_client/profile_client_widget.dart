@@ -66,6 +66,7 @@ class _ProfileClientWidgetState extends State<ProfileClientWidget> {
           );
         }
         List<ClientsRow> profileClientClientsRowList = snapshot.data!;
+
         final profileClientClientsRow = profileClientClientsRowList.isNotEmpty
             ? profileClientClientsRowList.first
             : null;
@@ -612,6 +613,7 @@ class _ProfileClientWidgetState extends State<ProfileClientWidget> {
                               }
                               List<ViewClientsPlansRow>
                                   rowViewClientsPlansRowList = snapshot.data!;
+
                               final rowViewClientsPlansRow =
                                   rowViewClientsPlansRowList.isNotEmpty
                                       ? rowViewClientsPlansRowList.first

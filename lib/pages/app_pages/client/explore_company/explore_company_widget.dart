@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
+import '/backend/schema/structs/index.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/admob_util.dart' as admob;
 import '/flutter_flow/custom_functions.dart' as functions;
@@ -89,7 +90,7 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                             child: CachedNetworkImage(
                               fadeInDuration: Duration(milliseconds: 0),
                               fadeOutDuration: Duration(milliseconds: 0),
-                              imageUrl: widget.companyInfo!.imageUrl!,
+                              imageUrl: widget!.companyInfo!.imageUrl!,
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -110,7 +111,7 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                       child: Text(
                                         'Joined in: ${dateTimeFormat(
                                           'yMMMd',
-                                          widget.companyInfo?.createdAt,
+                                          widget!.companyInfo?.createdAt,
                                           locale: FFLocalizations.of(context)
                                               .languageCode,
                                         )}',
@@ -154,7 +155,7 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                             ),
                                             Text(
                                               formatNumber(
-                                                widget.companyInfo!.followers!,
+                                                widget!.companyInfo!.followers!,
                                                 formatType: FormatType.compact,
                                               ),
                                               style: FlutterFlowTheme.of(
@@ -202,7 +203,8 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                               ),
                                               Text(
                                                 formatNumber(
-                                                  widget.companyInfo!.discount!,
+                                                  widget!
+                                                      .companyInfo!.discount!,
                                                   formatType:
                                                       FormatType.compact,
                                                   currency: '\$',
@@ -242,8 +244,8 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          if (widget.companyInfo?.link != null &&
-                              widget.companyInfo?.link != '')
+                          if (widget!.companyInfo?.link != null &&
+                              widget!.companyInfo?.link != '')
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 15.0, 0.0),
@@ -254,14 +256,17 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                 highlightColor: Colors.transparent,
                                 onTap: () async {
                                   await launchURL(
-                                      'https://${functions.replaceString('https://', '', widget.companyInfo!.link!)}');
+                                      'https://${functions.replaceString('https://', '', widget!.companyInfo!.link!)}');
                                 },
                                 child: Text(
                                   valueOrDefault<String>(
                                     functions.replaceString('https://', '',
-                                        widget.companyInfo!.link!),
+                                        widget!.companyInfo!.link!),
                                     'you shouldnt see this',
-                                  ).maybeHandleOverflow(maxChars: 32),
+                                  ).maybeHandleOverflow(
+                                    maxChars: 25,
+                                    replacement: '…',
+                                  ),
                                   textAlign: TextAlign.start,
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -276,8 +281,8 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                 ),
                               ),
                             ),
-                          if (widget.companyInfo?.instagram != null &&
-                              widget.companyInfo?.instagram != '')
+                          if (widget!.companyInfo?.instagram != null &&
+                              widget!.companyInfo?.instagram != '')
                             Opacity(
                               opacity: 0.9,
                               child: InkWell(
@@ -290,7 +295,7 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                       'https://www.instagram.com/${valueOrDefault<String>(
                                     (String var1) {
                                       return var1 = var1.replaceAll("@", "");
-                                    }(widget.companyInfo!.instagram!),
+                                    }(widget!.companyInfo!.instagram!),
                                     'a',
                                   )}');
                                 },
@@ -305,8 +310,8 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                         ],
                       ),
                     ),
-                    if (widget.companyInfo?.bio != null &&
-                        widget.companyInfo?.bio != '')
+                    if (widget!.companyInfo?.bio != null &&
+                        widget!.companyInfo?.bio != '')
                       Align(
                         alignment: AlignmentDirectional(-1.0, 0.0),
                         child: Padding(
@@ -314,7 +319,7 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                               20.0, 8.0, 20.0, 0.0),
                           child: Text(
                             valueOrDefault<String>(
-                              widget.companyInfo?.bio,
+                              widget!.companyInfo?.bio,
                               'bio',
                             ),
                             textAlign: TextAlign.start,
@@ -348,7 +353,7 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                 children: [
                                   Text(
                                     formatNumber(
-                                      widget.companyInfo!.rating!,
+                                      widget!.companyInfo!.rating!,
                                       formatType: FormatType.custom,
                                       format: '#,##0.00',
                                       locale: '',
@@ -369,7 +374,7 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                           FlutterFlowTheme.of(context).primary,
                                     ),
                                     direction: Axis.horizontal,
-                                    rating: widget.companyInfo!.rating!,
+                                    rating: widget!.companyInfo!.rating!,
                                     unratedColor: FlutterFlowTheme.of(context)
                                         .secondaryText,
                                     itemCount: 5,
@@ -377,7 +382,7 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                   ),
                                   Text(
                                     '(${formatNumber(
-                                      widget.companyInfo?.reviews,
+                                      widget!.companyInfo?.reviews,
                                       formatType: FormatType.compact,
                                     )})',
                                     style: FlutterFlowTheme.of(context)
@@ -405,7 +410,7 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                     onPressed: () async {
                                       _model.followResult =
                                           await actions.followCompany(
-                                        widget.companyInfo!.code!,
+                                        widget!.companyInfo!.code!,
                                         FFAppState().user.id,
                                       );
                                       if (_model.followResult?.failDesc ==
@@ -549,7 +554,7 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                           'companyView',
                                           queryParameters: {
                                             'idCompany': serializeParam(
-                                              widget.companyInfo?.id,
+                                              widget!.companyInfo?.id,
                                               ParamType.int,
                                             ),
                                             'idClient': serializeParam(
@@ -601,9 +606,205 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                         ],
                       ),
                     ),
+                    if (widget!.companyInfo!.productsCount! > 0)
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                        child: Container(
+                          decoration: BoxDecoration(),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 0.0, 20.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      FFLocalizations.of(context).getText(
+                                        '7hproq4s' /* Popular products */,
+                                      ),
+                                      textAlign: TextAlign.center,
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            fontSize: 14.0,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 10.0, 0.0, 0.0),
+                                child: Container(
+                                  width: double.infinity,
+                                  height: 145.0,
+                                  decoration: BoxDecoration(),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        10.0, 0.0, 10.0, 0.0),
+                                    child: Builder(
+                                      builder: (context) {
+                                        final products = (widget!
+                                                        .companyInfo?.productsJson
+                                                        ?.toList()
+                                                        .map<ProductStruct?>(
+                                                            ProductStruct
+                                                                .maybeFromMap)
+                                                        .toList()
+                                                    as Iterable<ProductStruct?>)
+                                                .withoutNulls
+                                                ?.toList() ??
+                                            [];
+
+                                        return ListView.separated(
+                                          padding: EdgeInsets.zero,
+                                          primary: false,
+                                          shrinkWrap: true,
+                                          scrollDirection: Axis.horizontal,
+                                          itemCount: products.length,
+                                          separatorBuilder: (_, __) =>
+                                              SizedBox(width: 20.0),
+                                          itemBuilder:
+                                              (context, productsIndex) {
+                                            final productsItem =
+                                                products[productsIndex];
+                                            return InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                await launchURL(
+                                                    'https://${functions.replaceString('https://', '', productsItem.link)}');
+                                              },
+                                              child: Container(
+                                                width: 95.0,
+                                                decoration: BoxDecoration(),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  children: [
+                                                    ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                      child: CachedNetworkImage(
+                                                        fadeInDuration:
+                                                            Duration(
+                                                                milliseconds:
+                                                                    0),
+                                                        fadeOutDuration:
+                                                            Duration(
+                                                                milliseconds:
+                                                                    0),
+                                                        imageUrl: productsItem
+                                                            .imageUrl,
+                                                        width: 95.0,
+                                                        height: 95.0,
+                                                        fit: BoxFit.cover,
+                                                      ),
+                                                    ),
+                                                    Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            Text(
+                                                              productsItem.name
+                                                                  .maybeHandleOverflow(
+                                                                maxChars: 15,
+                                                                replacement:
+                                                                    '…',
+                                                              ),
+                                                              textAlign:
+                                                                  TextAlign
+                                                                      .center,
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Poppins',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                    fontSize:
+                                                                        10.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        Text(
+                                                          '${widget!.companyInfo?.currencySymbol}${formatNumber(
+                                                            productsItem.price,
+                                                            formatType:
+                                                                FormatType
+                                                                    .custom,
+                                                            format: '#,###.00',
+                                                            locale: '',
+                                                          )}',
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                                fontSize: 14.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                              ),
+                                                        ),
+                                                      ].divide(SizedBox(
+                                                          height: 1.0)),
+                                                    ),
+                                                  ].divide(
+                                                      SizedBox(height: 4.0)),
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 17.0, 0.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -748,7 +949,7 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                       queryFn: (q) => q
                                           .eq(
                                             'id_company',
-                                            widget.companyInfo?.id,
+                                            widget!.companyInfo?.id,
                                           )
                                           .eq(
                                             'postType',
@@ -782,6 +983,7 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                     }
                                     List<PostsRow> offersPostsRowList =
                                         snapshot.data!;
+
                                     return ListView.builder(
                                       padding: EdgeInsets.zero,
                                       primary: false,
@@ -1042,7 +1244,7 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                       queryFn: (q) => q
                                           .eq(
                                             'id_company',
-                                            widget.companyInfo?.id,
+                                            widget!.companyInfo?.id,
                                           )
                                           .eq(
                                             'postType',
@@ -1076,6 +1278,7 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                     }
                                     List<PostsRow> socialPostsRowList =
                                         snapshot.data!;
+
                                     return ListView.builder(
                                       padding: EdgeInsets.zero,
                                       primary: false,
@@ -1354,7 +1557,7 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                       queryFn: (q) => q
                                           .eq(
                                             'id_company',
-                                            widget.companyInfo?.id,
+                                            widget!.companyInfo?.id,
                                           )
                                           .order('created_at'),
                                       limit: 25,
@@ -1385,6 +1588,7 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                     List<ViewPostsPollRow>
                                         pollsViewPostsPollRowList =
                                         snapshot.data!;
+
                                     return ListView.builder(
                                       padding: EdgeInsets.zero,
                                       primary: false,
@@ -1605,6 +1809,7 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                                                                       pollsViewPostsPollRow
                                                                           .optionsInfo!)
                                                                   .toList();
+
                                                               return Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -1782,7 +1987,7 @@ class _ExploreCompanyWidgetState extends State<ExploreCompanyWidget> {
                   model: _model.simpleHeaderModel,
                   updateCallback: () => setState(() {}),
                   child: SimpleHeaderWidget(
-                    parameter1: widget.companyInfo?.name,
+                    parameter1: widget!.companyInfo?.name,
                     action: 'back',
                     font: 15,
                     blockBack: false,

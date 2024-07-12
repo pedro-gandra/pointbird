@@ -71,17 +71,17 @@ class _SimpleHeaderWidgetState extends State<SimpleHeaderWidget> {
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
-                      if (!widget.blockBack) {
-                        if (widget.action == 'homeClient') {
+                      if (!widget!.blockBack) {
+                        if (widget!.action == 'homeClient') {
                           context.goNamed('homeClient');
                         } else {
-                          if (widget.action == 'close') {
+                          if (widget!.action == 'close') {
                             Navigator.pop(context);
                           } else {
-                            if (widget.action == 'back') {
+                            if (widget!.action == 'back') {
                               context.safePop();
                             } else {
-                              if (widget.action == 'homeCompany') {
+                              if (widget!.action == 'homeCompany') {
                                 context.goNamed('homeCompany');
                               }
                             }
@@ -98,12 +98,12 @@ class _SimpleHeaderWidgetState extends State<SimpleHeaderWidget> {
                 ),
                 Text(
                   valueOrDefault<String>(
-                    widget.parameter1,
+                    widget!.parameter1,
                     'name company',
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Poppins',
-                        fontSize: widget.font?.toDouble(),
+                        fontSize: widget!.font?.toDouble(),
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w600,
                       ),

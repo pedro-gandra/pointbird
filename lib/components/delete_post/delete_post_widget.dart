@@ -138,7 +138,7 @@ class _DeletePostWidgetState extends State<DeletePostWidget> {
                           await PostsTable().delete(
                             matchingRows: (rows) => rows.eq(
                               'id',
-                              widget.idPost,
+                              widget!.idPost,
                             ),
                           );
                           Navigator.pop(context);

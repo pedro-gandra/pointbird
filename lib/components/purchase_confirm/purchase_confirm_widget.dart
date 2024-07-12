@@ -3,23 +3,18 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'reset_pass_model.dart';
-export 'reset_pass_model.dart';
+import 'purchase_confirm_model.dart';
+export 'purchase_confirm_model.dart';
 
-class ResetPassWidget extends StatefulWidget {
-  const ResetPassWidget({
-    super.key,
-    required this.email,
-  });
-
-  final String? email;
+class PurchaseConfirmWidget extends StatefulWidget {
+  const PurchaseConfirmWidget({super.key});
 
   @override
-  State<ResetPassWidget> createState() => _ResetPassWidgetState();
+  State<PurchaseConfirmWidget> createState() => _PurchaseConfirmWidgetState();
 }
 
-class _ResetPassWidgetState extends State<ResetPassWidget> {
-  late ResetPassModel _model;
+class _PurchaseConfirmWidgetState extends State<PurchaseConfirmWidget> {
+  late PurchaseConfirmModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -30,7 +25,7 @@ class _ResetPassWidgetState extends State<ResetPassWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ResetPassModel());
+    _model = createModel(context, () => PurchaseConfirmModel());
   }
 
   @override
@@ -43,7 +38,7 @@ class _ResetPassWidgetState extends State<ResetPassWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(35.0, 0.0, 35.0, 0.0),
+      padding: EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 0.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -92,7 +87,7 @@ class _ResetPassWidgetState extends State<ResetPassWidget> {
                                 children: [
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      '63adrdwn' /* Check your email */,
+                                      'np0edg4i' /* Congratulations! */,
                                     ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
@@ -100,37 +95,39 @@ class _ResetPassWidgetState extends State<ResetPassWidget> {
                                         .override(
                                           fontFamily: 'Poppins',
                                           color: FlutterFlowTheme.of(context)
-                                              .primaryText,
-                                          fontSize: 18.0,
+                                              .accent4,
+                                          fontSize: 20.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                         ),
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 18.0, 0.0, 0.0),
+                                        0.0, 25.0, 0.0, 0.0),
                                     child: Text(
-                                      'An email was sent to: ${widget!.email}',
+                                      FFLocalizations.of(context).getText(
+                                        'dmohyeld' /* Your purchase was successfull ... */,
+                                      ),
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
                                             fontFamily: 'Poppins',
                                             color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
+                                                .primaryText,
                                             fontSize: 13.0,
                                             letterSpacing: 0.0,
-                                            fontWeight: FontWeight.normal,
+                                            fontWeight: FontWeight.w500,
                                             lineHeight: 1.6,
                                           ),
                                     ),
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 18.0, 0.0, 0.0),
+                                        0.0, 25.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'e4frfzs6' /* Click on the link sent to set ... */,
+                                        'tq98ksq6' /* You can close this window and ... */,
                                       ),
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
@@ -139,9 +136,9 @@ class _ResetPassWidgetState extends State<ResetPassWidget> {
                                             fontFamily: 'Poppins',
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryText,
-                                            fontSize: 13.0,
+                                            fontSize: 12.0,
                                             letterSpacing: 0.0,
-                                            fontWeight: FontWeight.normal,
+                                            fontWeight: FontWeight.w500,
                                             lineHeight: 1.6,
                                           ),
                                     ),

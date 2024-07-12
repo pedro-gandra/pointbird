@@ -44,14 +44,6 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
     super.initState();
     _model = createModel(context, () => HomeClientModel());
 
-    // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      await actions.updateCustomerRevenue(
-        currentUserUid,
-        FFAppState().user.id,
-      );
-    });
-
     _model.codeTextController ??= TextEditingController();
     _model.codeFocusNode ??= FocusNode();
 
@@ -114,6 +106,7 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
         }
         List<ViewHomeClient2Row> homeClientViewHomeClient2RowList =
             snapshot.data!;
+
         final homeClientViewHomeClient2Row =
             homeClientViewHomeClient2RowList.isNotEmpty
                 ? homeClientViewHomeClient2RowList.first
@@ -343,62 +336,67 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                     animationsMap['textOnPageLoadAnimation']!),
                               ),
                             ),
-                          FutureBuilder<List<ViewClientsPlansRow>>(
-                            future: ViewClientsPlansTable().querySingleRow(
-                              queryFn: (q) => q.eq(
-                                'id_client',
-                                FFAppState().user.id,
+                          if (!isiOS)
+                            FutureBuilder<List<ViewClientsPlansRow>>(
+                              future: ViewClientsPlansTable().querySingleRow(
+                                queryFn: (q) => q.eq(
+                                  'id_client',
+                                  FFAppState().user.id,
+                                ),
                               ),
-                            ),
-                            builder: (context, snapshot) {
-                              // Customize what your widget looks like when it's loading.
-                              if (!snapshot.hasData) {
-                                return Center(
-                                  child: SizedBox(
-                                    width: 1.0,
-                                    height: 1.0,
-                                    child: CircularProgressIndicator(
-                                      valueColor: AlwaysStoppedAnimation<Color>(
-                                        FlutterFlowTheme.of(context)
-                                            .primaryBackground,
+                              builder: (context, snapshot) {
+                                // Customize what your widget looks like when it's loading.
+                                if (!snapshot.hasData) {
+                                  return Center(
+                                    child: SizedBox(
+                                      width: 1.0,
+                                      height: 1.0,
+                                      child: CircularProgressIndicator(
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                          FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }
+                                List<ViewClientsPlansRow>
+                                    containerViewClientsPlansRowList =
+                                    snapshot.data!;
+
+                                final containerViewClientsPlansRow =
+                                    containerViewClientsPlansRowList.isNotEmpty
+                                        ? containerViewClientsPlansRowList.first
+                                        : null;
+                                return Container(
+                                  decoration: BoxDecoration(),
+                                  child: Visibility(
+                                    visible:
+                                        containerViewClientsPlansRow?.ads ??
+                                            true,
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 15.0, 0.0, 1.0),
+                                      child: custom_widgets.DecentAdBanner(
+                                        width: double.infinity,
+                                        height: 50.0,
+                                        androidAdUnitId:
+                                            'ca-app-pub-3940256099942544/6300978111',
+                                        iosAdUnitId:
+                                            'ca-app-pub-9807921451745876/4548901200',
+                                        loadingBackgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .tertiary,
+                                        loadingText: 'Loading ad...',
+                                        textColor: FlutterFlowTheme.of(context)
+                                            .primaryText,
                                       ),
                                     ),
                                   ),
                                 );
-                              }
-                              List<ViewClientsPlansRow>
-                                  containerViewClientsPlansRowList =
-                                  snapshot.data!;
-                              final containerViewClientsPlansRow =
-                                  containerViewClientsPlansRowList.isNotEmpty
-                                      ? containerViewClientsPlansRowList.first
-                                      : null;
-                              return Container(
-                                decoration: BoxDecoration(),
-                                child: Visibility(
-                                  visible:
-                                      containerViewClientsPlansRow?.ads ?? true,
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 15.0, 0.0, 1.0),
-                                    child: custom_widgets.DecentAdBanner(
-                                      width: double.infinity,
-                                      height: 50.0,
-                                      androidAdUnitId:
-                                          'ca-app-pub-3940256099942544/6300978111',
-                                      iosAdUnitId:
-                                          'ca-app-pub-9807921451745876/4548901200',
-                                      loadingBackgroundColor:
-                                          FlutterFlowTheme.of(context).tertiary,
-                                      loadingText: 'Loading ad...',
-                                      textColor: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                    ),
-                                  ),
-                                ),
-                              );
-                            },
-                          ),
+                              },
+                            ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 14.0, 0.0, 0.0),
@@ -520,6 +518,7 @@ class _HomeClientWidgetState extends State<HomeClientWidget>
                                         List<ViewHomeClientRow>
                                             listViewViewHomeClientRowList =
                                             snapshot.data!;
+
                                         return ListView.separated(
                                           padding: EdgeInsets.zero,
                                           primary: false,

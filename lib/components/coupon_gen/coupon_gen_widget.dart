@@ -119,7 +119,7 @@ class _CouponGenWidgetState extends State<CouponGenWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 16.0, 0.0, 0.0),
                                     child: Text(
-                                      'You just generated a coupon for ${widget.name}.',
+                                      'You just generated a coupon for ${widget!.name}.',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -171,7 +171,7 @@ class _CouponGenWidgetState extends State<CouponGenWidget> {
                                                 .queryRows(
                                           queryFn: (q) => q.eq(
                                             'client_id',
-                                            widget.idClient,
+                                            widget!.idClient,
                                           ),
                                         );
 
@@ -183,7 +183,7 @@ class _CouponGenWidgetState extends State<CouponGenWidget> {
                                               ParamType.SupabaseRow,
                                             ),
                                             'idClient': serializeParam(
-                                              widget.idClient,
+                                              widget!.idClient,
                                               ParamType.int,
                                             ),
                                           }.withoutNulls,

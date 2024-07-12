@@ -155,6 +155,7 @@ enum ParamType {
   FFPlace,
   FFUploadedFile,
   JSON,
+
   DataStruct,
   SupabaseRow,
 }
@@ -237,6 +238,8 @@ dynamic deserializeParam<T>(
             return ViewPostsPollClientRow(data);
           case ViewCouponsCompanyRow:
             return ViewCouponsCompanyRow(data);
+          case ProductsRow:
+            return ProductsRow(data);
           case ViewCouponsClientRow:
             return ViewCouponsClientRow(data);
           case NotificationsRow:

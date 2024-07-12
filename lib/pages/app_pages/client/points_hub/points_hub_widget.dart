@@ -68,6 +68,7 @@ class _PointsHubWidgetState extends State<PointsHubWidget> {
           );
         }
         List<ViewPointsHubRow> pointsHubViewPointsHubRowList = snapshot.data!;
+
         final pointsHubViewPointsHubRow =
             pointsHubViewPointsHubRowList.isNotEmpty
                 ? pointsHubViewPointsHubRowList.first

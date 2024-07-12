@@ -177,3 +177,14 @@ bool dateExpired(DateTime date) {
 DateTime dateToUtc(DateTime date) {
   return date.toUtc();
 }
+
+dynamic productToJson(ProductStruct product) {
+  return {
+    'name': product.name,
+    'link': product.link,
+    'price': product.price,
+    'order': product.order,
+    'id_company': product.idCompany,
+    'imageUrl': product.imageUrl
+  };
+}

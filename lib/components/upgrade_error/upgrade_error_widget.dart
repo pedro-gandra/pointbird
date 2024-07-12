@@ -110,7 +110,7 @@ class _UpgradeErrorWidgetState extends State<UpgradeErrorWidget> {
                                   0.0, 12.0, 0.0, 0.0),
                               child: Text(
                                 valueOrDefault<String>(
-                                  widget.message,
+                                  widget!.message,
                                   'You can only follow 5 companies in your current plan. Upgrade your plan to perform this action.',
                                 ),
                                 textAlign: TextAlign.center,
@@ -151,9 +151,9 @@ class _UpgradeErrorWidgetState extends State<UpgradeErrorWidget> {
                                   alignment: AlignmentDirectional(0.0, 0.0)
                                       .resolve(Directionality.of(context)),
                                   child: PlansWidget(
-                                    idPlan: widget.idPlan!,
+                                    idPlan: widget!.idPlan!,
                                     openAt: functions.changeInt(
-                                        widget.idPlan!, '+', 1),
+                                        widget!.idPlan!, '+', 1),
                                   ),
                                 );
                               },

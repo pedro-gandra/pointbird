@@ -1,3 +1,4 @@
+import '/components/purchase_confirm/purchase_confirm_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -28,6 +29,10 @@ class PlansModel extends FlutterFlowModel<PlansWidget> {
   bool? crowY;
   // Stores action output result for [Custom Action - makePurchase] action in Button widget.
   bool? crowM;
+  // Stores action output result for [Custom Action - makePurchase] action in Button widget.
+  bool? eagleY;
+  // Stores action output result for [Custom Action - makePurchase] action in Button widget.
+  bool? eagleM;
 
   @override
   void initState(BuildContext context) {}

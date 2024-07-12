@@ -141,7 +141,7 @@ class _DeleteAccWidgetState extends State<DeleteAccWidget> {
                           GoRouter.of(context).clearRedirectLocation();
 
                           _model.deletion = await actions.deleteAccount(
-                            widget.userId!,
+                            widget!.userId!,
                           );
 
                           context.goNamedAuth('LoginPage', context.mounted);

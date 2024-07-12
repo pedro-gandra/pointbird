@@ -105,6 +105,7 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
           );
         }
         List<CompaniesRow> businessSetCompaniesRowList = snapshot.data!;
+
         final businessSetCompaniesRow = businessSetCompaniesRowList.isNotEmpty
             ? businessSetCompaniesRowList.first
             : null;
@@ -2109,6 +2110,7 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                         List<CurrenciesRow>
                                             currencyCurrenciesRowList =
                                             snapshot.data!;
+
                                         return FlutterFlowDropDown<int>(
                                           controller:
                                               _model.currencyValueController ??=
@@ -2239,6 +2241,7 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                                         List<CountriesRow>
                                             countryCountriesRowList =
                                             snapshot.data!;
+
                                         return FlutterFlowDropDown<String>(
                                           controller:
                                               _model.countryValueController ??=
@@ -2556,7 +2559,7 @@ class _BusinessSetWidgetState extends State<BusinessSetWidget> {
                       parameter1: 'Business settings',
                       action: 'back',
                       font: 15,
-                      blockBack: widget.blockBack,
+                      blockBack: widget!.blockBack,
                     ),
                   ),
                 ],

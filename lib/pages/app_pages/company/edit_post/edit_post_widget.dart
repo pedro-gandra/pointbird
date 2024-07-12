@@ -52,7 +52,7 @@ class _EditPostWidgetState extends State<EditPostWidget> {
       future: PostsTable().querySingleRow(
         queryFn: (q) => q.eq(
           'id',
-          widget.postId,
+          widget!.postId,
         ),
       ),
       builder: (context, snapshot) {
@@ -74,6 +74,7 @@ class _EditPostWidgetState extends State<EditPostWidget> {
           );
         }
         List<PostsRow> editPostPostsRowList = snapshot.data!;
+
         final editPostPostsRow =
             editPostPostsRowList.isNotEmpty ? editPostPostsRowList.first : null;
         return GestureDetector(
@@ -273,7 +274,7 @@ class _EditPostWidgetState extends State<EditPostWidget> {
                                                         matchingRows: (rows) =>
                                                             rows.eq(
                                                           'id',
-                                                          widget.postId,
+                                                          widget!.postId,
                                                         ),
                                                       );
                                                       _model.changes = true;
@@ -469,7 +470,7 @@ class _EditPostWidgetState extends State<EditPostWidget> {
                                                           matchingRows:
                                                               (rows) => rows.eq(
                                                             'id',
-                                                            widget.postId,
+                                                            widget!.postId,
                                                           ),
                                                         );
                                                         _model.changes = true;
@@ -687,7 +688,7 @@ class _EditPostWidgetState extends State<EditPostWidget> {
                                                                 (rows) =>
                                                                     rows.eq(
                                                               'id',
-                                                              widget.postId,
+                                                              widget!.postId,
                                                             ),
                                                           );
                                                           _model.changes = true;
@@ -758,6 +759,7 @@ class _EditPostWidgetState extends State<EditPostWidget> {
                       parameter1: 'Edit post',
                       action: 'homeCompany',
                       font: 15,
+                      blockBack: false,
                     ),
                   ),
                 ],

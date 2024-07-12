@@ -91,9 +91,9 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                           Align(
                             alignment: AlignmentDirectional(0.0, 0.0),
                             child: Text(
-                              widget.rating != null
-                                  ? 'Change rating for ${widget.name}'
-                                  : 'How do you rate ${widget.name}?',
+                              widget!.rating != null
+                                  ? 'Change rating for ${widget!.name}'
+                                  : 'How do you rate ${widget!.name}?',
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .headlineMedium
@@ -119,8 +119,8 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                                 ),
                                 direction: Axis.horizontal,
                                 initialRating: _model.ratingBarValue ??=
-                                    widget.rating != null
-                                        ? widget.rating!
+                                    widget!.rating != null
+                                        ? widget!.rating!
                                         : 0.0,
                                 unratedColor:
                                     FlutterFlowTheme.of(context).secondaryText,
@@ -138,7 +138,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                               child: Text(
                                 'Previous rating: ${valueOrDefault<String>(
                                   formatNumber(
-                                    widget.rating,
+                                    widget!.rating,
                                     formatType: FormatType.custom,
                                     format: '#,###.##',
                                     locale: '',
@@ -196,7 +196,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                             },
                             matchingRows: (rows) => rows.eq(
                               'id',
-                              widget.idReference,
+                              widget!.idReference,
                             ),
                           );
                           _model.response = true;

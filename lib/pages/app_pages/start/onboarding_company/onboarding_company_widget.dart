@@ -630,6 +630,7 @@ class _OnboardingCompanyWidgetState extends State<OnboardingCompanyWidget> {
                                                               FontWeight.normal,
                                                         ),
                                                 textAlign: TextAlign.start,
+                                                keyboardType: TextInputType.url,
                                                 validator: _model
                                                     .linkTextControllerValidator
                                                     .asValidator(context),
@@ -788,6 +789,7 @@ class _OnboardingCompanyWidgetState extends State<OnboardingCompanyWidget> {
                                                   List<CategoriesRow>
                                                       categoryCategoriesRowList =
                                                       snapshot.data!;
+
                                                   return FlutterFlowDropDown<
                                                       String>(
                                                     controller: _model

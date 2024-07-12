@@ -89,7 +89,7 @@ class _CompanyNavWidgetState extends State<CompanyNavWidget> {
                               0.0, 2.0, 0.0, 2.0),
                           child: FaIcon(
                             FontAwesomeIcons.home,
-                            color: widget.currentTab == 1
+                            color: widget!.currentTab == 1
                                 ? FlutterFlowTheme.of(context).primary
                                 : FlutterFlowTheme.of(context).secondaryText,
                             size: 21.0,
@@ -113,7 +113,7 @@ class _CompanyNavWidgetState extends State<CompanyNavWidget> {
                       children: [
                         Icon(
                           Icons.query_stats,
-                          color: widget.currentTab == 2
+                          color: widget!.currentTab == 2
                               ? FlutterFlowTheme.of(context).primary
                               : FlutterFlowTheme.of(context).secondaryText,
                           size: 26.0,
@@ -140,7 +140,7 @@ class _CompanyNavWidgetState extends State<CompanyNavWidget> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(6.0),
                             border: Border.all(
-                              color: widget.currentTab == 5
+                              color: widget!.currentTab == 5
                                   ? FlutterFlowTheme.of(context).primary
                                   : FlutterFlowTheme.of(context).secondaryText,
                               width: 2.0,
@@ -148,7 +148,7 @@ class _CompanyNavWidgetState extends State<CompanyNavWidget> {
                           ),
                           child: Icon(
                             Icons.add,
-                            color: widget.currentTab == 5
+                            color: widget!.currentTab == 5
                                 ? FlutterFlowTheme.of(context).primary
                                 : FlutterFlowTheme.of(context).secondaryText,
                             size: 21.0,
@@ -172,7 +172,7 @@ class _CompanyNavWidgetState extends State<CompanyNavWidget> {
                       children: [
                         Icon(
                           Icons.person_sharp,
-                          color: widget.currentTab == 3
+                          color: widget!.currentTab == 3
                               ? FlutterFlowTheme.of(context).primary
                               : FlutterFlowTheme.of(context).secondaryText,
                           size: 27.0,
@@ -195,7 +195,7 @@ class _CompanyNavWidgetState extends State<CompanyNavWidget> {
                       children: [
                         Icon(
                           Icons.help_outline_sharp,
-                          color: widget.currentTab == 4
+                          color: widget!.currentTab == 4
                               ? FlutterFlowTheme.of(context).primary
                               : FlutterFlowTheme.of(context).secondaryText,
                           size: 26.0,

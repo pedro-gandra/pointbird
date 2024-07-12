@@ -13,6 +13,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:async';
 import 'dart:math';
+import '/backend/schema/structs/index.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/admob_util.dart' as admob;
 import '/flutter_flow/custom_functions.dart' as functions;
@@ -62,17 +63,17 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
         queryFn: (q) => q
             .eq(
               'id_company',
-              widget.idCompany,
+              widget!.idCompany,
             )
             .eq(
               'id_client',
-              widget.idClient,
+              widget!.idClient,
             ),
       );
       _model.planInfo = await ViewClientsPlansTable().queryRows(
         queryFn: (q) => q.eq(
           'id_client',
-          widget.idClient,
+          widget!.idClient,
         ),
       );
       _model.checkInMessage =
@@ -121,11 +122,11 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                   queryFn: (q) => q
                       .eq(
                         'id_company',
-                        widget.idCompany,
+                        widget!.idCompany,
                       )
                       .eq(
                         'id_client',
-                        widget.idClient,
+                        widget!.idClient,
                       ),
                 )))
               .future,
@@ -149,6 +150,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
         }
         List<ViewCompanyViewRow> companyViewViewCompanyViewRowList =
             snapshot.data!;
+
         final companyViewViewCompanyViewRow =
             companyViewViewCompanyViewRowList.isNotEmpty
                 ? companyViewViewCompanyViewRowList.first
@@ -408,7 +410,10 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                               companyViewViewCompanyViewRow!
                                                   .link!),
                                           'you shouldnt see this',
-                                        ).maybeHandleOverflow(maxChars: 32),
+                                        ).maybeHandleOverflow(
+                                          maxChars: 25,
+                                          replacement: '…',
+                                        ),
                                         textAlign: TextAlign.start,
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -499,7 +504,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                20.0, 12.0, 20.0, 0.0),
+                                20.0, 12.0, 20.0, 4.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -688,9 +693,223 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                               ],
                             ),
                           ),
+                          if (companyViewViewCompanyViewRow!.productsCount! > 0)
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 8.0, 0.0, 0.0),
+                              child: Container(
+                                decoration: BoxDecoration(),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          20.0, 0.0, 20.0, 0.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            FFLocalizations.of(context).getText(
+                                              '60y0btnl' /* Popular products */,
+                                            ),
+                                            textAlign: TextAlign.center,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Poppins',
+                                                  fontSize: 14.0,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 10.0, 0.0, 0.0),
+                                      child: Container(
+                                        width: double.infinity,
+                                        height: 145.0,
+                                        decoration: BoxDecoration(),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10.0, 0.0, 10.0, 0.0),
+                                          child: Builder(
+                                            builder: (context) {
+                                              final products = (companyViewViewCompanyViewRow
+                                                              ?.productsJson
+                                                              ?.toList()
+                                                              .map<ProductStruct?>(
+                                                                  ProductStruct
+                                                                      .maybeFromMap)
+                                                              .toList()
+                                                          as Iterable<
+                                                              ProductStruct?>)
+                                                      .withoutNulls
+                                                      ?.toList() ??
+                                                  [];
+
+                                              return ListView.separated(
+                                                padding: EdgeInsets.zero,
+                                                primary: false,
+                                                shrinkWrap: true,
+                                                scrollDirection:
+                                                    Axis.horizontal,
+                                                itemCount: products.length,
+                                                separatorBuilder: (_, __) =>
+                                                    SizedBox(width: 20.0),
+                                                itemBuilder:
+                                                    (context, productsIndex) {
+                                                  final productsItem =
+                                                      products[productsIndex];
+                                                  return InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      await launchURL(
+                                                          'https://${functions.replaceString('https://', '', productsItem.link)}');
+                                                    },
+                                                    child: Container(
+                                                      width: 95.0,
+                                                      decoration:
+                                                          BoxDecoration(),
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8.0),
+                                                            child:
+                                                                CachedNetworkImage(
+                                                              fadeInDuration:
+                                                                  Duration(
+                                                                      milliseconds:
+                                                                          0),
+                                                              fadeOutDuration:
+                                                                  Duration(
+                                                                      milliseconds:
+                                                                          0),
+                                                              imageUrl:
+                                                                  productsItem
+                                                                      .imageUrl,
+                                                              width: 95.0,
+                                                              height: 95.0,
+                                                              fit: BoxFit.cover,
+                                                            ),
+                                                          ),
+                                                          Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            children: [
+                                                              Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .center,
+                                                                children: [
+                                                                  Text(
+                                                                    productsItem
+                                                                        .name
+                                                                        .maybeHandleOverflow(
+                                                                      maxChars:
+                                                                          15,
+                                                                      replacement:
+                                                                          '…',
+                                                                    ),
+                                                                    textAlign:
+                                                                        TextAlign
+                                                                            .center,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Poppins',
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primaryText,
+                                                                          fontSize:
+                                                                              10.0,
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                          fontWeight:
+                                                                              FontWeight.w500,
+                                                                        ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                              Text(
+                                                                '${companyViewViewCompanyViewRow?.currencySymbol}${formatNumber(
+                                                                  productsItem
+                                                                      .price,
+                                                                  formatType:
+                                                                      FormatType
+                                                                          .custom,
+                                                                  format:
+                                                                      '#,###.00',
+                                                                  locale: '',
+                                                                )}',
+                                                                textAlign:
+                                                                    TextAlign
+                                                                        .center,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Poppins',
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primaryText,
+                                                                      fontSize:
+                                                                          14.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .w500,
+                                                                    ),
+                                                              ),
+                                                            ].divide(SizedBox(
+                                                                height: 1.0)),
+                                                          ),
+                                                        ].divide(SizedBox(
+                                                            height: 5.0)),
+                                                      ),
+                                                    ),
+                                                  );
+                                                },
+                                              );
+                                            },
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 12.0, 0.0, 0.0),
+                                0.0, 7.0, 0.0, 0.0),
                             child: Container(
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context).primary,
@@ -703,7 +922,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                               ),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    20.0, 15.0, 20.0, 15.0),
+                                    20.0, 10.0, 20.0, 10.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -711,16 +930,15 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                     if (companyViewViewCompanyViewRow
                                             ?.currentPoints !=
                                         null)
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 10.0, 0.0, 10.0),
-                                            child: Text(
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 2.0, 0.0, 2.0),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
                                               FFLocalizations.of(context)
                                                   .getText(
                                                 '63i5c89n' /* Your points: */,
@@ -733,17 +951,12 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .alternate,
-                                                    fontSize: 15.0,
+                                                    fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                             ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 10.0, 0.0, 10.0),
-                                            child: Text(
+                                            Text(
                                               formatNumber(
                                                 companyViewViewCompanyViewRow!
                                                     .currentPoints!,
@@ -759,51 +972,53 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .alternate,
-                                                    fontSize: 16.0,
+                                                    fontSize: 15.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                             ),
-                                          ),
-                                          Icon(
-                                            Icons.arrow_right_alt_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .alternate,
-                                            size: 32.0,
-                                          ),
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 10.0, 15.0, 10.0),
-                                            child: Text(
-                                              formatNumber(
-                                                functions.convertPoints(
-                                                    companyViewViewCompanyViewRow
-                                                        ?.currentPoints),
-                                                formatType: FormatType.custom,
-                                                currency: '',
-                                                format: '##,##0.00',
-                                                locale: '',
+                                            Icon(
+                                              Icons.arrow_right_alt_rounded,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                              size: 30.0,
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 15.0, 0.0),
+                                              child: Text(
+                                                formatNumber(
+                                                  functions.convertPoints(
+                                                      companyViewViewCompanyViewRow
+                                                          ?.currentPoints),
+                                                  formatType: FormatType.custom,
+                                                  currency: '',
+                                                  format: '##,##0.00',
+                                                  locale: '',
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .alternate,
+                                                          fontSize: 15.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
                                               ),
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Poppins',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    fontSize: 16.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w600,
-                                                  ),
                                             ),
-                                          ),
-                                        ].divide(SizedBox(width: 10.0)),
+                                          ].divide(SizedBox(width: 10.0)),
+                                        ),
                                       ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 8.0, 0.0, 8.0),
+                                          0.0, 3.0, 0.0, 10.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -962,11 +1177,11 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                 ),
                                                 icon: Icon(
                                                   Icons.check_circle,
-                                                  size: 15.0,
+                                                  size: 16.0,
                                                 ),
                                                 options: FFButtonOptions(
                                                   width: 144.0,
-                                                  height: 40.0,
+                                                  height: 38.0,
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 0.0),
@@ -1028,11 +1243,11 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                             ),
                                             icon: Icon(
                                               Icons.monetization_on_sharp,
-                                              size: 15.0,
+                                              size: 16.0,
                                             ),
                                             options: FFButtonOptions(
                                               width: 144.0,
-                                              height: 40.0,
+                                              height: 38.0,
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               iconPadding: EdgeInsetsDirectional
@@ -1069,30 +1284,25 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                       Align(
                                         alignment:
                                             AlignmentDirectional(0.0, 0.0),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 7.0, 0.0, 0.0),
-                                          child: Text(
-                                            valueOrDefault<String>(
-                                              _model.checkInMessage,
-                                              'a',
-                                            ),
-                                            textAlign: TextAlign.start,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .alternate,
-                                                  fontSize: 12.0,
-                                                  letterSpacing: 0.0,
-                                                ),
+                                        child: Text(
+                                          valueOrDefault<String>(
+                                            _model.checkInMessage,
+                                            'a',
                                           ),
+                                          textAlign: TextAlign.start,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                                fontSize: 12.0,
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
-                                  ],
+                                  ].divide(SizedBox(height: 2.0)),
                                 ),
                               ),
                             ),
@@ -1301,6 +1511,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                           List<ViewPostsViewRow>
                                               offersViewPostsViewRowList =
                                               snapshot.data!;
+
                                           return ListView.builder(
                                             padding: EdgeInsets.zero,
                                             primary: false,
@@ -1535,7 +1746,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                       offersViewPostsViewRow,
                                                                       companyViewViewCompanyViewRow!
                                                                           .idReference!,
-                                                                      widget
+                                                                      widget!
                                                                           .idClient!,
                                                                     );
                                                                     setState(
@@ -1763,11 +1974,11 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                             queryFn: (q) => q
                                                 .eq(
                                                   'id_company',
-                                                  widget.idCompany,
+                                                  widget!.idCompany,
                                                 )
                                                 .eq(
                                                   'client_id',
-                                                  widget.idClient,
+                                                  widget!.idClient,
                                                 )
                                                 .order('created_at'),
                                             limit: 50,
@@ -1805,6 +2016,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                           List<ViewPostsPollClientRow>
                                               pollsViewPostsPollClientRowList =
                                               snapshot.data!;
+
                                           return ListView.builder(
                                             padding: EdgeInsets.zero,
                                             primary: false,
@@ -2007,6 +2219,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                         .convertPollOptions(
                                                                             pollsViewPostsPollClientRow.optionsInfo!)
                                                                         .toList();
+
                                                                     return Column(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -2042,7 +2255,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                                   }
                                                                                   _model.pointsPoll = await actions.votePoll(
                                                                                     pollsViewPostsPollClientRow,
-                                                                                    widget.idClient!,
+                                                                                    widget!.idClient!,
                                                                                     companyViewViewCompanyViewRow!.idReference!,
                                                                                     optionsItem.idOption,
                                                                                   );
@@ -2392,6 +2605,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                           List<ViewPostsViewRow>
                                               socialViewPostsViewRowList =
                                               snapshot.data!;
+
                                           return ListView.builder(
                                             padding: EdgeInsets.zero,
                                             primary: false,
@@ -2635,7 +2849,7 @@ class _CompanyViewWidgetState extends State<CompanyViewWidget>
                                                                       socialViewPostsViewRow,
                                                                       companyViewViewCompanyViewRow!
                                                                           .idReference!,
-                                                                      widget
+                                                                      widget!
                                                                           .idClient!,
                                                                     );
                                                                     setState(

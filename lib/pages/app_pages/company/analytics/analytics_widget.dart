@@ -1104,6 +1104,7 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget>
                                         List<CompaniesRow>
                                             textCompaniesRowList =
                                             snapshot.data!;
+
                                         final textCompaniesRow =
                                             textCompaniesRowList.isNotEmpty
                                                 ? textCompaniesRowList.first
@@ -1156,6 +1157,7 @@ class _AnalyticsWidgetState extends State<AnalyticsWidget>
                                         List<CompaniesRow>
                                             textCompaniesRowList =
                                             snapshot.data!;
+
                                         final textCompaniesRow =
                                             textCompaniesRowList.isNotEmpty
                                                 ? textCompaniesRowList.first

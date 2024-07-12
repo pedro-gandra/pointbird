@@ -141,7 +141,7 @@ class _DeactivateCouponWidgetState extends State<DeactivateCouponWidget> {
                             },
                             matchingRows: (rows) => rows.eq(
                               'id',
-                              widget.idCoupon,
+                              widget!.idCoupon,
                             ),
                           );
                           Navigator.pop(context);

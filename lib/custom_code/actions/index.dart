@@ -23,3 +23,6 @@ export 'pre_ad_function.dart' show preAdFunction;
 export 'initialize_revenue.dart' show initializeRevenue;
 export 'update_customer_revenue.dart' show updateCustomerRevenue;
 export 'make_purchase.dart' show makePurchase;
+export 'reorder_products.dart' show reorderProducts;
+export 'delete_product.dart' show deleteProduct;
+export 'supabase_products.dart' show supabaseProducts;

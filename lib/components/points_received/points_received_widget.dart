@@ -97,7 +97,7 @@ class _PointsReceivedWidgetState extends State<PointsReceivedWidget> {
                               children: [
                                 Text(
                                   '+${formatNumber(
-                                    widget.points,
+                                    widget!.points,
                                     formatType: FormatType.decimal,
                                     decimalType: DecimalType.automatic,
                                   )} points',
@@ -113,12 +113,12 @@ class _PointsReceivedWidgetState extends State<PointsReceivedWidget> {
                                         fontWeight: FontWeight.w500,
                                       ),
                                 ),
-                                if (widget.multiplier! > 1)
+                                if (widget!.multiplier! > 1)
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 5.0, 0.0, 0.0),
                                     child: Text(
-                                      '${widget.multiplier?.toString()}X multiplier - ${widget.planName} plan',
+                                      '${widget!.multiplier?.toString()}X multiplier - ${widget!.planName} plan',
                                       textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
                                           .headlineMedium
@@ -136,7 +136,7 @@ class _PointsReceivedWidgetState extends State<PointsReceivedWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 14.0, 0.0, 0.0),
                                   child: Text(
-                                    'You received points from ${widget.nameCompany} for ${widget.pointType}.',
+                                    'You received points from ${widget!.nameCompany} for ${widget!.pointType}.',
                                     style: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(

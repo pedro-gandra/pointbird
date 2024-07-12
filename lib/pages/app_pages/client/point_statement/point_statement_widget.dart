@@ -97,7 +97,7 @@ class _PointStatementWidgetState extends State<PointStatementWidget> {
                                       ),
                                       Text(
                                         formatNumber(
-                                          widget.companyInfo!.currentPoints!,
+                                          widget!.companyInfo!.currentPoints!,
                                           formatType: FormatType.decimal,
                                           decimalType: DecimalType.automatic,
                                         ),
@@ -125,7 +125,7 @@ class _PointStatementWidgetState extends State<PointStatementWidget> {
                                         'exchangePoints',
                                         queryParameters: {
                                           'idReference': serializeParam(
-                                            widget.companyInfo?.idReference,
+                                            widget!.companyInfo?.idReference,
                                             ParamType.int,
                                           ),
                                         }.withoutNulls,
@@ -179,7 +179,7 @@ class _PointStatementWidgetState extends State<PointStatementWidget> {
                                   queryFn: (q) => q
                                       .eq(
                                         'id_reference',
-                                        widget.companyInfo?.idReference,
+                                        widget!.companyInfo?.idReference,
                                       )
                                       .order('date'),
                                 )))
@@ -202,6 +202,7 @@ class _PointStatementWidgetState extends State<PointStatementWidget> {
                             List<ViewPointsStatementRow>
                                 listViewViewPointsStatementRowList =
                                 snapshot.data!;
+
                             return ListView.builder(
                               padding: EdgeInsets.zero,
                               primary: false,
@@ -258,6 +259,7 @@ class _PointStatementWidgetState extends State<PointStatementWidget> {
                                                   listViewViewPointsStatementRow
                                                       .events
                                                       .toList();
+
                                               return ListView.builder(
                                                 padding: EdgeInsets.zero,
                                                 reverse: true,
@@ -364,7 +366,7 @@ class _PointStatementWidgetState extends State<PointStatementWidget> {
                   model: _model.simpleHeaderModel,
                   updateCallback: () => setState(() {}),
                   child: SimpleHeaderWidget(
-                    parameter1: widget.companyInfo?.name,
+                    parameter1: widget!.companyInfo?.name,
                     action: 'back',
                     font: 15,
                   ),

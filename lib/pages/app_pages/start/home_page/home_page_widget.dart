@@ -60,6 +60,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             if (FFAppState().user.type == 'Business') {
               context.goNamed('homeCompany');
             } else {
+              await actions.updateCustomerRevenue(
+                currentUserUid,
+                FFAppState().user.id,
+              );
+
               context.goNamed('homeClient');
             }
           }

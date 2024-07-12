@@ -89,7 +89,7 @@ class _ClientNavWidgetState extends State<ClientNavWidget> {
                               0.0, 2.0, 0.0, 2.0),
                           child: FaIcon(
                             FontAwesomeIcons.home,
-                            color: widget.currentTab == 1
+                            color: widget!.currentTab == 1
                                 ? FlutterFlowTheme.of(context).primary
                                 : FlutterFlowTheme.of(context).secondaryText,
                             size: 22.0,
@@ -113,7 +113,7 @@ class _ClientNavWidgetState extends State<ClientNavWidget> {
                       children: [
                         Icon(
                           Icons.monetization_on_outlined,
-                          color: widget.currentTab == 2
+                          color: widget!.currentTab == 2
                               ? FlutterFlowTheme.of(context).primary
                               : FlutterFlowTheme.of(context).secondaryText,
                           size: 28.0,
@@ -136,7 +136,7 @@ class _ClientNavWidgetState extends State<ClientNavWidget> {
                       children: [
                         Icon(
                           Icons.person_sharp,
-                          color: widget.currentTab == 3
+                          color: widget!.currentTab == 3
                               ? FlutterFlowTheme.of(context).primary
                               : FlutterFlowTheme.of(context).secondaryText,
                           size: 30.0,
@@ -159,7 +159,7 @@ class _ClientNavWidgetState extends State<ClientNavWidget> {
                       children: [
                         Icon(
                           Icons.help_outline_sharp,
-                          color: widget.currentTab == 4
+                          color: widget!.currentTab == 4
                               ? FlutterFlowTheme.of(context).primary
                               : FlutterFlowTheme.of(context).secondaryText,
                           size: 28.0,

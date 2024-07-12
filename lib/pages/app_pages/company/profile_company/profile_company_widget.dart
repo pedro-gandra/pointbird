@@ -65,6 +65,7 @@ class _ProfileCompanyWidgetState extends State<ProfileCompanyWidget> {
           );
         }
         List<CompaniesRow> profileCompanyCompaniesRowList = snapshot.data!;
+
         final profileCompanyCompaniesRow =
             profileCompanyCompaniesRowList.isNotEmpty
                 ? profileCompanyCompaniesRowList.first

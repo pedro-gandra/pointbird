@@ -70,4 +70,17 @@ class ViewExploreRow extends SupabaseDataRow {
 
   double? get relevancy => getField<double>('relevancy');
   set relevancy(double? value) => setField<double>('relevancy', value);
+
+  int? get productsCount => getField<int>('products_count');
+  set productsCount(int? value) => setField<int>('products_count', value);
+
+  dynamic? get productsJson => getField<dynamic>('products_json');
+  set productsJson(dynamic? value) => setField<dynamic>('products_json', value);
+
+  String? get currencyCode => getField<String>('currency_code');
+  set currencyCode(String? value) => setField<String>('currency_code', value);
+
+  String? get currencySymbol => getField<String>('currency_symbol');
+  set currencySymbol(String? value) =>
+      setField<String>('currency_symbol', value);
 }

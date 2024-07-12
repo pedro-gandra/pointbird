@@ -273,7 +273,7 @@ class _AfterAdWidgetState extends State<AfterAdWidget> {
                                     ],
                                   ),
                                 ),
-                                if (widget.pointsSaved! > 300)
+                                if (widget!.pointsSaved! > 300)
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 20.0, 0.0, 0.0),
@@ -300,7 +300,7 @@ class _AfterAdWidgetState extends State<AfterAdWidget> {
                                         Text(
                                           formatNumber(
                                             functions.convertPoints(
-                                                widget.pointsSaved),
+                                                widget!.pointsSaved),
                                             formatType: FormatType.custom,
                                             currency: '\$',
                                             format: '#,###.##',

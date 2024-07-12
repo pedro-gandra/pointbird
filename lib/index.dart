@@ -70,3 +70,5 @@ export '/pages/authentication/adm_board/adm_board_widget.dart'
     show AdmBoardWidget;
 export '/pages/app_pages/start/choose_language/choose_language_widget.dart'
     show ChooseLanguageWidget;
+export '/pages/app_pages/company/edit_products/edit_products_widget.dart'
+    show EditProductsWidget;

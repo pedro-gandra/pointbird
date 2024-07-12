@@ -61,7 +61,7 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
             ..complete(ViewHomeClientTable().querySingleRow(
               queryFn: (q) => q.eq(
                 'id_reference',
-                widget.idReference,
+                widget!.idReference,
               ),
             )))
           .future,
@@ -85,6 +85,7 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
         }
         List<ViewHomeClientRow> exchangePointsViewHomeClientRowList =
             snapshot.data!;
+
         final exchangePointsViewHomeClientRow =
             exchangePointsViewHomeClientRowList.isNotEmpty
                 ? exchangePointsViewHomeClientRowList.first
@@ -122,6 +123,7 @@ class _ExchangePointsWidgetState extends State<ExchangePointsWidget> {
                   }
                   List<ViewClientsPlansRow> stackViewClientsPlansRowList =
                       snapshot.data!;
+
                   final stackViewClientsPlansRow =
                       stackViewClientsPlansRowList.isNotEmpty
                           ? stackViewClientsPlansRowList.first

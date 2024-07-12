@@ -66,13 +66,13 @@ class _FullInfoWidgetState extends State<FullInfoWidget> {
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      if (widget.par1 != null && widget.par1 != '')
+                      if (widget!.par1 != null && widget!.par1 != '')
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 67.0, 0.0, 0.0),
                           child: Text(
                             valueOrDefault<String>(
-                              widget.par1,
+                              widget!.par1,
                               'a',
                             ),
                             textAlign: TextAlign.justify,
@@ -85,10 +85,10 @@ class _FullInfoWidgetState extends State<FullInfoWidget> {
                                 ),
                           ),
                         ),
-                      if (widget.par2 != null && widget.par2 != '')
+                      if (widget!.par2 != null && widget!.par2 != '')
                         Text(
                           valueOrDefault<String>(
-                            widget.par2,
+                            widget!.par2,
                             'a',
                           ),
                           textAlign: TextAlign.justify,
@@ -99,10 +99,10 @@ class _FullInfoWidgetState extends State<FullInfoWidget> {
                                     letterSpacing: 0.0,
                                   ),
                         ),
-                      if (widget.par3 != null && widget.par3 != '')
+                      if (widget!.par3 != null && widget!.par3 != '')
                         Text(
                           valueOrDefault<String>(
-                            widget.par3,
+                            widget!.par3,
                             'a',
                           ),
                           textAlign: TextAlign.justify,
@@ -113,10 +113,10 @@ class _FullInfoWidgetState extends State<FullInfoWidget> {
                                     letterSpacing: 0.0,
                                   ),
                         ),
-                      if (widget.par4 != null && widget.par4 != '')
+                      if (widget!.par4 != null && widget!.par4 != '')
                         Text(
                           valueOrDefault<String>(
-                            widget.par4,
+                            widget!.par4,
                             'a',
                           ),
                           textAlign: TextAlign.justify,
@@ -135,7 +135,7 @@ class _FullInfoWidgetState extends State<FullInfoWidget> {
                 model: _model.simpleHeaderModel,
                 updateCallback: () => setState(() {}),
                 child: SimpleHeaderWidget(
-                  parameter1: widget.title,
+                  parameter1: widget!.title,
                   action: 'back',
                   font: 15,
                 ),

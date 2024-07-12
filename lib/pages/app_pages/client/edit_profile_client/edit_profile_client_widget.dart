@@ -38,7 +38,7 @@ class _EditProfileClientWidgetState extends State<EditProfileClientWidget> {
     _model = createModel(context, () => EditProfileClientModel());
 
     _model.textController ??=
-        TextEditingController(text: widget.clientInfo?.name);
+        TextEditingController(text: widget!.clientInfo?.name);
     _model.textFieldFocusNode ??= FocusNode();
   }
 
@@ -128,7 +128,7 @@ class _EditProfileClientWidgetState extends State<EditProfileClientWidget> {
                                               shape: BoxShape.circle,
                                             ),
                                             child: Image.network(
-                                              widget.clientInfo!.imageUrl!,
+                                              widget!.clientInfo!.imageUrl!,
                                               fit: BoxFit.cover,
                                             ),
                                           ),
@@ -329,7 +329,7 @@ class _EditProfileClientWidgetState extends State<EditProfileClientWidget> {
                                           _model.dropDownValueController ??=
                                               FormFieldController<String>(
                                         _model.dropDownValue ??=
-                                            widget.clientInfo?.gender,
+                                            widget!.clientInfo?.gender,
                                       ),
                                       options: [
                                         FFLocalizations.of(context).getText(
@@ -408,12 +408,13 @@ class _EditProfileClientWidgetState extends State<EditProfileClientWidget> {
                                         List<CountriesRow>
                                             countryCountriesRowList =
                                             snapshot.data!;
+
                                         return FlutterFlowDropDown<String>(
                                           controller:
                                               _model.countryValueController ??=
                                                   FormFieldController<String>(
                                             _model.countryValue ??=
-                                                widget.clientInfo?.nameCountry,
+                                                widget!.clientInfo?.nameCountry,
                                           ),
                                           options: countryCountriesRowList
                                               .map((e) => e.name)
@@ -525,7 +526,7 @@ class _EditProfileClientWidgetState extends State<EditProfileClientWidget> {
                                           },
                                           matchingRows: (rows) => rows.eq(
                                             'id',
-                                            widget.clientInfo?.id,
+                                            widget!.clientInfo?.id,
                                           ),
                                         );
                                         if (_model.uploadedLocalFile1 != null &&
